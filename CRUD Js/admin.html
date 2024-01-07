@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="admin.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>POST product</h1>
+        <input type="text" id="id" placeholder="id"/>
+        <input type="text" id="title" placeholder="title"/>
+        <input type="text" id="author" placeholder="author"/>
+        <button onclick="addproduct()">submit</button>
+    </div>
+
+
+    <div class="container">
+        <h1>Delete product</h1>
+        <input type="text" id="delete_id" placeholder="enter id to delete"/>
+        <button onclick="deleteproduct()">submit</button>
+    </div>
+
+
+    <div class="container">
+        <h1>PUT Method</h1>
+        <input type="text" id="idput" placeholder="id"/>
+        <input type="text" id="titleput" placeholder="title"/>
+        <input type="text" id="authorput" placeholder="author"/>
+        <button onclick="putproduct()">submit</button>
+    </div>
+
+    <div class="container">
+        <h1>PATCH Method</h1>
+        <input type="text" id="idpatch" placeholder="id"/>
+        <input type="text" id="titlepatch" placeholder="title"/>
+        <input type="text" id="authorpatch" placeholder="author"/>
+        <button onclick="patchproduct()">submit</button>
+    </div>
+</body>
+</html>
+
+<script src="admin.js"></script>
