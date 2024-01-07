@@ -1,0 +1,38 @@
+.home-wrapper{
+    max-width: 1280px;
+    margin: auto;
+}
+.home-1st-page-inside{
+    display: flex;
+    gap: 10px;
+}
+.home-1st-page-inside-image-slider img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.home-2nd-page-banner {
+margin-top: 25px;
+}
+.home-2nd-page-banner img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.home-3rd-page-wrap{
+    display: flex;
+    gap: 10px;
+}
+.home-3rd-page-multi-images img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.home-4th-page-wrap{
+    display: flex;
+}
+.home-4th-page-multi img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+}

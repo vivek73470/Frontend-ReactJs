@@ -1,0 +1,56 @@
+/* Header Container */
+.vax {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+/* Navigation Links */
+.none-decrt {
+  text-decoration: none;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.none-decrt:hover {
+  background-color: #555;
+}
+
+/* Sub-links */
+.sub-links {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  padding: 8px;
+  z-index: 1; /* Ensure sub-links appear above other content */
+  border-radius: 0 0 4px 4px; /* Rounded bottom corners */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sub-links shadow */
+}
+
+/* Parent Link (Products) */
+.parent-link {
+  position: relative;
+}
+
+/* Show Sub-links on Parent Link Hover */
+.parent-link:hover .sub-links {
+  display: block;
+}
+
+/* Style Sub-links */
+.sub-links a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  padding: 8px 16px;
+  transition: background-color 0.3s ease;
+}
+
+.sub-links a:hover {
+  background-color: #555;
+  border-radius: 4px;
+}
