@@ -32,7 +32,7 @@ function signin(e) {
 
         if (email === user.email && password === user.password) {
             isUserFound = true;
-            window.location.href = "index.html";
+            window.location.href = "../Home section/index.html";
         }
 
 
