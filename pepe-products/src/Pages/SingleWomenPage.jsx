@@ -17,10 +17,11 @@ function SingleWomenPage() {
 
     async function singledata() {
         try {
-           
+            console.log("aaa")
             let res = await fetch(`http://localhost:3500/womensdata/${id}`);
             let data = await res.json();
             setApiData(data);
+            console.log("aabbacc")
             console.log("apidatataata", apidata)
             console.log("data", data)
         } catch (err) {

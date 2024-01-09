@@ -1,5 +1,8 @@
 import React from 'react'
 import '../css/home.css'
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
+// import Slider from "react-slick";
 import Footer from '../Components/Footer/footer'
 import Image1gif from '../Assets/image 1.gif'
 import Image2 from '../Assets/image 2.webp'
@@ -17,13 +20,27 @@ import NewArrivals from './NewArrivals'
 import CategoryToBag from './CategoryToBag'
 import BestSeller from './BestSeller';
 import StupidCollection from './StupidCollection'
+
+
 const Home = () => {
+
+  // const settings = {
+  //   dots: true,
+  //   infinite: true,
+  //   slidesToShow: 3,
+  //   slidesToScroll: 1,
+  //   autoplay: true,
+  //   speed: 2000,
+  //   autoplaySpeed: 2000,
+  //   cssEase: "linear"
+  // };
 
   return (
     <>
       <div className='home-container'>
         <div className='home-wrapper'>
           <div className='home-1st-page'>
+          {/* <Slider {...settings}> */}
             <div className='home-1st-page-inside'>
               <div className='home-1st-page-inside-image-slider'>
                 <img src={Image1gif} alt='home1' />
@@ -41,6 +58,7 @@ const Home = () => {
                 <img src={Image5} alt='home1' />
               </div>
             </div>
+            {/* </Slider> */}
 
           </div>
           <div className='home-2nd-page'>
