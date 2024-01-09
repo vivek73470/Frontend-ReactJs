@@ -1,0 +1,15 @@
+.best-seller-screen{
+    max-width: 1280px;
+    margin: auto;
+}
+.best-heading{
+    text-align: center;
+}
+.seller-design-data{
+    display: flex;
+}
+.best-seller-imgee img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}

@@ -1,0 +1,27 @@
+.newarrivals-wrap{
+    max-width: 1280px;
+    margin: auto;
+}
+.newarrivals-heading>h2{
+  text-align: center;
+}
+.arrival-design-data{
+    display: flex;
+}
+
+.arrival-design-data img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.gangstext>h2{
+    text-align: center;
+}
+.gangs-Image-arrival{
+    display: flex;
+}
+.gangs-Image-arrival img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}

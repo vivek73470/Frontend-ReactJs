@@ -1,0 +1,15 @@
+.stupid-screen{
+    max-width: 1280px;
+    margin: auto;
+}
+.stutext{
+    text-align: center;
+}
+.collImg{
+    display: flex;
+}
+.collImg img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}

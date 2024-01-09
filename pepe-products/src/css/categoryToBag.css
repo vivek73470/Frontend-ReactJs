@@ -1,0 +1,17 @@
+.catbag{
+    max-width: 1280px;
+    margin: auto;
+}
+.boy-girl{
+    display: flex;
+
+}
+.catbag-heading{
+    text-align: center;
+}
+.cat-to-bag-image img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+
+}
