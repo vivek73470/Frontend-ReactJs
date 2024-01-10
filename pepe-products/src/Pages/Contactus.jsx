@@ -1,33 +1,87 @@
 import React from 'react'
 import '../css/contact.css'
+import { useState } from 'react'
 import Footer from '../Components/Footer/footer'
 
 function Contactus() {
+  const initState ={
+    name: "",
+    email: "",
+    phone: "",
+    message: ""
+  }
+const[formData,setFormData]= useState(initState);
+
+const handleChange = (e) =>{
+  const{name,value}=e.target;
+  setFormData((prevformData) =>({
+    ...prevformData,
+    [name]:value
+    
+  }));
+
+  console.log(`${name}: ${value}`);
+}
+
+const handleSubmit =(e)=>{
+  e.preventDefault();
+  console.log(formData);
+  setFormData(initState);
+
+}
   return (
     <>
-    <div className="contact-form">
-      <h2>Contact Us</h2>
-      <form>
-        <div className="form-group">
-          <label htmlFor="name">Name:</label>
-          <input type="text" id="name" name="name" placeholder="Your Name" required />
-        </div>
-        <div className="form-group">
-          <label htmlFor="email">Email:</label>
-          <input type="email" id="email" name="email" placeholder="Your Email" required />
-        </div>
-        <div className="form-group">
-          <label htmlFor="phone">Phone Number:</label>
-          <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required />
-        </div>
-        <div className="form-group">
-          <label htmlFor="message">Message:</label>
-          <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-        </div>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-    <Footer/>
+      <div className="contact-form">
+        <h2>Contact Us</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label>Name:</label>
+            <input
+              name="name"
+              type="text"
+              id="name"
+              placeholder="Your Name"
+              value={formData.name}
+              onChange={handleChange}
+               />
+          </div>
+          <div className="form-group">
+            <label>Email:</label>
+            <input
+              name="email"
+              type="email"
+              id="email"
+              placeholder="Your Email"
+              value={formData.email}
+              onChange={handleChange}
+               />
+          </div>
+          <div className="form-group">
+            <label>Phone Number:</label>
+            <input
+              name="phone"
+              type="tel"
+              id="phone"
+              placeholder="Your Phone Number"
+              value={formData.phone}
+              onChange={handleChange}
+              />
+          </div>
+          <div className="form-group">
+            <label>Message:</label>
+            <textarea
+              name="message"
+              id="message"
+              placeholder="Your Message"
+              value={formData.message}
+              onChange={handleChange}
+              >
+              </textarea>
+          </div>
+          <input type="submit" value="Submit"/>
+        </form>
+      </div>
+      <Footer />
     </>
   )
 }
