@@ -1,7 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
-import '../css/sign.css'
+import '../css/signup.css'
 import { useNavigate } from 'react-router-dom';
+import Imagesignup from '../Assets/login image.webp'
+import { Link } from 'react-router-dom';
 
 const initState = {
   username: '',
@@ -41,44 +43,69 @@ function Signup() {
 
   return (
     <>
-      <div className='sign-incard'>
-        <div className='login-card'>
-          <h1 className='welcome'>Please Register</h1>
-          <p className='content'>Enter your name, email and password to sign up!</p>
+      <div className='signup-screen'>
+        <div className='signup-left-side'>
+          <div>
+            <h2 className='signup-welcome-to'>Welcome to the world of Fashion Store!</h2>
+          </div>
+          <div className='signup-incard-left-side-image'>
+            <img src={Imagesignup} alt='' />
+          </div>
+        </div>
 
-          <form className='content-form' onSubmit={handleSubmit}>
-            <input
-              name='username'
-              type='text'
-              className='form-content-input'
-              id='form-content-name'
-              placeholder='Name'
-              value={formData.username}
-              onChange={handleChange}
-            />
-            <br />
-            <input
-              name='email'
-              type='email'
-              className='form-content-input'
-              placeholder='Email'
-              value={formData.email}
-              onChange={handleChange}
-            />
-            <br />
-            <input
-              name='password'
-              type='password'
-              className='form-content-input'
-              placeholder='Password'
-              value={formData.password}
-              onChange={handleChange}
-            />
-            <br />
-            <div className='form-button'>
-              <button id='btn-frm'>Sign Up</button>
+        <div className='login-card'>
+          <div className='signup-wraper'>
+            <div className='login-card-adminsignin'>
+              <div className='login-card-adminsignin-head'>
+                <h1 className='welcome'>Sign Up</h1>
+              </div>
+              <div className='login-card-adminsignup'>
+                <p className='content'> have an account?</p>
+                <Link to='/signin'>
+                  <p className='content-signup'>SignIn</p>
+                </Link>
+              </div>
             </div>
-          </form>
+
+            <div>
+              <form className='content-form' onSubmit={handleSubmit}>
+                <input
+                  name='username'
+                  type='text'
+                  className='form-content-input-signup'
+                  id='form-content-name-signup'
+                  placeholder='Name'
+                  value={formData.username}
+                  onChange={handleChange}
+                  required
+                />
+                <br />
+                <input
+                  name='email'
+                  type='email'
+                  className='form-content-input-signup'
+                  placeholder='Email'
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+                <br />
+                <input
+                  name='password'
+                  type='password'
+                  className='form-content-input-signup'
+                  placeholder='Password'
+                  value={formData.password}
+                  onChange={handleChange}
+                  required
+                />
+                <br />
+                <div className='form-button-signup'>
+                  <button id='btn-frm-signup'>Sign Up</button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </>

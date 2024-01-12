@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import '../css/sign.css';
-import { useNavigate } from 'react-router-dom';
+import LoginImage from '../Assets/login image.webp';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Components/Context/AuthContext';
 
 const SignIn = () => {
-  const {toggleAuth }= React.useContext(AuthContext);
+  const { toggleAuth } = React.useContext(AuthContext);
   const initState = {
     email: '',
     password: ''
   };
 
- const [formData, setFormData] = useState(initState);
-const navigate=useNavigate()
+  const [formData, setFormData] = useState(initState);
+  const navigate = useNavigate()
 
   const handleChange = (e) => {
     setFormData({
@@ -26,7 +27,7 @@ const navigate=useNavigate()
     e.preventDefault();
 
     // Retrieve user data from localStorage
-    
+
     let allUsers = JSON.parse(localStorage.getItem('users')) || [];
     let isUserFound = false;
 
@@ -35,7 +36,7 @@ const navigate=useNavigate()
     allUsers.forEach((user) => {
       if (formData.email === user.email && formData.password === user.password) {
         isUserFound = true;
-      toggleAuth();  // Set authentication to true (or log in)
+        toggleAuth();  // Set authentication to true (or log in)
         navigate("/adminpage")
       }
     });
@@ -48,39 +49,62 @@ const navigate=useNavigate()
 
   return (
     <>
-<div className='sign-incard'>
-    <div className='login-card'>
-      <h1 className='welcome'>Admin SignIn !</h1>
-      <p className='content'>Enter your email and password to sign in!</p>
-
-      <form className='content-form' onSubmit={handleSubmit}>
-        <input
-          name='email'
-          type='email'
-          placeholder='Email'
-          className='form-content-input'
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-      
-        <br />
-        <input
-          name='password'
-          type='password'
-          placeholder='Password'
-          className='form-content-input'
-          value={formData.password}
-          onChange={handleChange}
-          required
-        />
-        
-        <br />
-         <div  className='form-button'>
-        <button id='btn-frm'>Submit</button>
+      <div className='sign-incard'>
+        <div className='sign-incard-left-side'>
+          <div>
+            <h2 className='signin-welcome-to'>Welcome to the world of Fashion Store!</h2>
+          </div>
+          <div className='sign-incard-left-side-image'>
+            <img src={LoginImage} alt='' />
+          </div>
         </div>
-      </form>
-      </div>
+        <div className='login-card'>
+          <div className='login-card-wrap'>
+            <div className='login-card-adminsignin'>
+              <div className='login-card-adminsignin-head'>
+                <h1 className='welcome'>Admin SignIn !</h1>
+              </div>
+              <div className='login-card-adminsignup'>
+                <p className='content'>Don't have account?</p>
+                <Link to='/signup'>
+                <p className='content-signup'>Signup</p>
+                </Link>
+              </div>
+
+            </div>
+
+            <form className='content-form' onSubmit={handleSubmit}>
+              <div className='content-form-input-wid'>
+              <input
+                name='email'
+                type='email'
+                placeholder='Email'
+                className='form-content-input'
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+              </div>
+              
+              <div className='content-form-input-wid'>
+      
+              <input
+                name='password'
+                type='password'
+                placeholder='Password'
+                className='form-content-input'
+                value={formData.password}
+                onChange={handleChange}
+                required
+              />
+              </div>
+
+              <div className='form-button'>
+                <button id='btn-frm'>Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </>
   );

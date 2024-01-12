@@ -31,12 +31,13 @@ function AllRoute() {
   
   // Check if the user is on the Admin page or its related sections
   const isOnAdminPage = location.pathname.includes('/adminpage');
+  const isOnSignUpPage = location.pathname.includes('/signup');
 
   // Only show the Navbar on pages that are NOT SignIn or Admin pages
   return (
     <>
       {/* Show the Navbar except on SignIn or Admin pages */}
-      {!isSignInPage && !isOnAdminPage && <Navbar />}
+      {!isSignInPage && !isOnSignUpPage && !isOnAdminPage && <Navbar />}
 
       <Routes>
         <Route path={"/"} element={<Home />}></Route>

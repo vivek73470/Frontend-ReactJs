@@ -13,8 +13,8 @@ const links =[
      ]
   },
     {path:  '/contact-us',title:'Contact Us'},
-    {path:  '/signin',title:'SignIn'},
-    {path: '/signup', title:'SignUp'}
+    {path:  '/signin',title:'Login'},
+    // {path: '/signup', title:'SignUp'}
     
 ];
 
