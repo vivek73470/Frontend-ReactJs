@@ -6,7 +6,7 @@ import Delete from '../../Pages/Delete';
 import Logout from '../../Pages/Logout';
 import Addproduct from '../../Pages/Addproduct';
 
-function Sidebar({handleLinkClick}) {
+function Sidebar({ handleLinkClick }) {
 
     return (
         <>
@@ -19,17 +19,17 @@ function Sidebar({handleLinkClick}) {
                     </div>
                     <div className='sidebar-screen-wrapper-listdetails'>
                         <ul className='sidebar-screen-wrapper-listdetails-ul'>
-                            
-                            <button onClick={()=>handleLinkClick(<Dashboard/>)}>Dashboard </button>
-                            <button onClick={()=>handleLinkClick(<Profile/>)}>Profile</button>
-                            <button onClick={()=>handleLinkClick(<Addproduct/>)}>Add Product </button>
-                            <button onClick={()=>handleLinkClick(<Delete/>)}> Delete Product </button>
-                            
+
+                            <button onClick={() => handleLinkClick(<Dashboard />)}>Dashboard </button>
+                            <button onClick={() => handleLinkClick(<Profile />)}>Profile</button>
+                            <button onClick={() => handleLinkClick(<Addproduct />)}>Add Product </button>
+                            <button onClick={() => handleLinkClick(<Delete />)}> Delete Product </button>
+
                         </ul>
-                </div>
-                <div className='sidebar-screen-wrapper-logout'>
-                <button onClick={()=>handleLinkClick(<Logout/>)}> Logout</button>
-                </div>
+                    </div>
+                    <div className='sidebar-screen-wrapper-logout'>
+                        <button onClick={() => handleLinkClick(<Logout />)}> Logout</button>
+                    </div>
                 </div>
 
             </div>

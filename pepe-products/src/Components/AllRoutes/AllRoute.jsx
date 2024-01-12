@@ -21,6 +21,7 @@ import MenClothsPage from '../../Pages/MenClothsPage';
 import Footer from '../Footer/footer';
 
 
+
 function AllRoute() {
 
   // Find out where the user is in the app
