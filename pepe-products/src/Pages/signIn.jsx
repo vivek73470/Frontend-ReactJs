@@ -36,7 +36,8 @@ const SignIn = () => {
     allUsers.forEach((user) => {
       if (formData.email === user.email && formData.password === user.password) {
         isUserFound = true;
-        toggleAuth();  // Set authentication to true (or log in)
+        // Set authentication to true (or log in)
+        toggleAuth();  
         navigate("/adminpage")
       }
     });

@@ -15,7 +15,7 @@
 .sign-incard-left-side-image {
   margin: auto;
   width: 80%;
-  height: 500px;
+  height: 400px;
 }
 .sign-incard-left-side-image img {
 width: 100%;
@@ -126,4 +126,5 @@ object-fit: contain;
   display: flex;
 max-width: 1280px;
 margin: auto;
+align-items: center;
 }

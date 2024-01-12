@@ -53,13 +53,13 @@ function Signup() {
           </div>
         </div>
 
-        <div className='login-card'>
+        <div className='signup-card'>
           <div className='signup-wraper'>
-            <div className='login-card-adminsignin'>
+            <div className='signup-card-adminsignin'>
               <div className='login-card-adminsignin-head'>
                 <h1 className='welcome'>Sign Up</h1>
               </div>
-              <div className='login-card-adminsignup'>
+              <div className='signup-card-adminsignup'>
                 <p className='content'> have an account?</p>
                 <Link to='/signin'>
                   <p className='content-signup'>SignIn</p>
