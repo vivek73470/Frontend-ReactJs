@@ -18,7 +18,6 @@ function Admin() {
         setProfile(e);
     }
 
-
     return (
         <>
             <div className='main-admin-screen'>
