@@ -45,7 +45,6 @@ function SingleWomenPage() {
     return (
         <>
         <div className='single-product-mainscreen'>
-            {/* <h1>{apidata.id}</h1> */}
             <div className='single-product-wrapscreen'>
                 <div className='single-product-sidebar'>
                     <div className='single-product-insidebar' >

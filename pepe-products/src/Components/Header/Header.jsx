@@ -10,6 +10,7 @@ const links =[
      subLinks:[
       {path: '/womencloths',title: 'Womens Collection'},
       {path: '/mencloths',title: 'Mens Collection'},
+      {path: '/mobilecover',title: 'Mobile Cover'},
      ]
   },
     {path:  '/contact-us',title:'Contact Us'},

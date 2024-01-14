@@ -19,6 +19,8 @@ import Contactus from '../../Pages/Contactus';
 import SingleMenPage from '../../Pages/SingleMenPage';
 import MenClothsPage from '../../Pages/MenClothsPage';
 import Footer from '../Footer/footer';
+import MobileCover from '../../Pages/MobileCover';
+// import SingleMobile from '../../Pages/SingleMobile';
 
 
 
@@ -59,9 +61,11 @@ function AllRoute() {
         <Route path={'/logout'} element={<Logout />}></Route>
         <Route path={'/contact-us'} element={<Contactus/>}></Route>
         <Route path={'/womencloths'} element={<WomenPage/>}></Route>
+        <Route path={'/mobilecover'} element={<MobileCover/>}></Route>
         <Route path={'/footer'} element={<Footer/>}></Route>
         <Route path={'/singlemen/:id'} element={<SingleMenPage/>}></Route>
         <Route path={'/singlewomen/:id'} element={<SingleWomenPage/>}></Route>
+        {/* <Route path={'/singlemobile/:id'} element={<SingleMobile/>}></Route> */}
    
 
 

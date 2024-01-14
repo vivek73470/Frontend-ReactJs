@@ -3,6 +3,7 @@ import '../css/dashboard.css'
 import { useState } from 'react'
 import AdminMenProducts from './AdminMenProducts'
 import AdminWomenProduct from './AdminWomenProduct'
+import AdminMobile from './AdminMobile'
 
 
 function Dashboard() {
@@ -11,8 +12,6 @@ function Dashboard() {
   const handleSectionClick = (e) => {
     setSelectedSections(e)
   };
-
-
 
   return (
     <>
@@ -67,7 +66,7 @@ function Dashboard() {
                   </div>
                   <div className='dashboard-addproduct-btn'>
                     <button className='dashboard-buttn'
-                      onClick={() => handleSectionClick(<AdminWomenProduct />)}>
+                      onClick={() => handleSectionClick(<AdminMobile/>)}>
                       View Mobile Products
                     </button>
                   </div>

@@ -5,3 +5,7 @@
   background-color: #f4f7fe;
   width: 100%;
 }
+.admin-screen-header{
+  position: sticky;
+  top: 0;
+}
