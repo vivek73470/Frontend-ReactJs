@@ -20,7 +20,7 @@ import SingleMenPage from '../../Pages/SingleMenPage';
 import MenClothsPage from '../../Pages/MenClothsPage';
 import Footer from '../Footer/footer';
 import MobileCover from '../../Pages/MobileCover';
-// import SingleMobile from '../../Pages/SingleMobile';
+import SingleMobile from '../../Pages/SingleMobile';
 
 
 
@@ -45,7 +45,7 @@ function AllRoute() {
       <Routes>
         <Route path={"/"} element={<Home />}></Route>
         <Route path={"/Aboutus"} element={<Aboutus />}></Route>
-        <Route path={"/mencloths"} element={<MenClothsPage />}></Route>
+        <Route path={`/mencloths`} element={<MenClothsPage />}></Route>
         <Route path={'/signin'} element={<SignIn />}></Route>
         <Route path={'/signup'} element={<Signup />}></Route>
         <Route path={'/addproduct'} element={<Addproduct />}></Route>
@@ -60,17 +60,12 @@ function AllRoute() {
         <Route path={'/setting'} element={<Setting />}></Route>
         <Route path={'/logout'} element={<Logout />}></Route>
         <Route path={'/contact-us'} element={<Contactus/>}></Route>
-        <Route path={'/womencloths'} element={<WomenPage/>}></Route>
-        <Route path={'/mobilecover'} element={<MobileCover/>}></Route>
+        <Route path={`/womencloths`} element={<WomenPage/>}></Route>
+        <Route path={`/mobilecover`} element={<MobileCover/>}></Route>
         <Route path={'/footer'} element={<Footer/>}></Route>
-        <Route path={'/singlemen/:id'} element={<SingleMenPage/>}></Route>
-        <Route path={'/singlewomen/:id'} element={<SingleWomenPage/>}></Route>
-        {/* <Route path={'/singlemobile/:id'} element={<SingleMobile/>}></Route> */}
-   
-
-
-
-        {/* <Route path={"/admin/:id"} element={<singlePage/>}></Route> */}
+        <Route path={`/singlemen/:id`} element={<SingleMenPage/>}></Route>
+        <Route path={`/singlewomen/:id`} element={<SingleWomenPage/>}></Route>
+        <Route path={`/singlemobile/:id`} element={<SingleMobile/>}></Route>
 
 
       </Routes>

@@ -18,7 +18,9 @@ function SingleWomenPage() {
     async function singledata() {
         try {
             let res = await fetch(`http://localhost:3500/womensdata/${id}`);
+    
             let data = await res.json();
+            console.log('fetched data', data);
             setApiData(data);
         } catch (err) {
             console.log(err);
