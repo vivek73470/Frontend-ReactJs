@@ -16,6 +16,15 @@ justify-content: space-between;
     background: #FFF;
     box-shadow: 0px 4px 35px 0px rgba(0, 0, 0, 0.08);
 }
+.dashboard-addproduct-llink-add{
+    background-color: lightgray;
+    padding: 30px 30px 55px 30px;
+    margin: auto;
+    width: 308px;
+    height: auto;
+    border-radius: 35px;
+    box-shadow: 0px 4px 35px 0px rgba(0, 0, 0, 0.08);
+}
 .dashboard-delproduct-llink {
     padding: 30px 30px 55px 30px;
     margin: auto;

@@ -1,8 +1,10 @@
 import React from 'react'
 import { useState,useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function AdminMobile() {
     const [apiData, setApiData] = useState({});
+    const navigate =useNavigate()
 
     async function getData() {
         try {
@@ -22,14 +24,14 @@ function AdminMobile() {
   return (
    <>
      <div className='Adminmen-product-screen'>
-                <h3>Men's Products</h3>
+                <h3>Mobile Covers</h3>
                 <div className='Adminmen-product-screen-wrapper'>
                     {apiData.length > 0 && apiData.map((elem, index) => (
                         <div className='admin-men-prdct' key={index}>
                             <img src={elem.productImgTagSrc} alt='' />
                             <p className='admin-product-brandname'>{elem.brand_namez}</p>
                             <p className='admin-product-title-name'>{elem.clr_shade_4}</p>
-                            {/* <button onClick={()=>navigate(`/singlemen/${elem.id}`)}>View details</button> */}
+                            <button onClick={()=>navigate(`/singlemobile/${elem.id}`)}>View details</button>
                         </div>
                     ))}
 

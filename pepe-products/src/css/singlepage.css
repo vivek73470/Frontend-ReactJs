@@ -1,120 +1,141 @@
-
-.single-product-mainscreen{
+.single-product-mainscreen {
     max-width: 1280px;
     margin: auto;
     margin-top: 20px;
 }
+
 .single-product-wrapscreen {
     display: flex;
     gap: 25px;
-    
+
 }
+
 .single-product-other-single img {
     width: 575px;
     height: 855px;
 }
-.single-product-clickimage{
+
+.single-product-clickimage {
     width: 700px;
     height: auto;
 }
-.single-product-insidebar{
-        height: 140px;
-        width: 173px;
-    
+
+.single-product-insidebar {
+    height: 140px;
+    width: 173px;
+
 }
-.single-product-insidebar img{
+
+.single-product-insidebar img {
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
-.single-product-fashion{
-font-size: 22px;
+
+.single-product-fashion {
+    font-size: 22px;
     text-align: left;
     font-weight: 500;
     color: rgb(79, 83, 98);
 }
-.single-product-men{
-font-size: 15px;
-text-align: left;
-color: rgb(79, 83, 98);
+
+.single-product-men {
+    font-size: 15px;
+    text-align: left;
+    color: rgb(79, 83, 98);
 }
+
 .single-product-sizeflex {
     gap: 20px;
     display: flex;
     cursor: pointer;
 }
-.single-product-actdiscount{
+
+.single-product-actdiscount {
     display: flex;
     align-items: center;
     gap: 15px;
 }
-.single-product-discount{
+
+.single-product-discount {
     font-size: 20px;
     font-weight: 500;
 }
-.single-product-actual{
+
+.single-product-actual {
     text-decoration: line-through;
     font-size: 12px;
     color: rgba(0, 0, 0, 0.48);
 }
-.single-product-off{
+
+.single-product-off {
     display: flex;
     gap: 8px;
 }
-.single-page-inclusive{
+
+.single-page-inclusive {
     color: rgba(0, 0, 0, 0.48);
     font-size: 14px;
     text-align: left;
 }
-.single-page-details{
-display: flex;
+
+.single-page-details {
+    display: flex;
     gap: 15px;
     margin-top: 10px;
     font-size: 13px;
 }
+
 .single-product-1st {
     border: 1px solid grey;
     padding: 5px;
     background: rgba(0, 0, 0, 0.64);
 }
-.single-product-2nd{
+
+.single-product-2nd {
     border: 1px solid black;
     padding: 5px;
 }
-.single-page-border{
+
+.single-page-border {
     border-bottom: 2px solid black;
 }
-.single-page-tribe{
+
+.single-page-tribe {
     text-align: left;
     margin-top: 15px;
     font-size: 14px;
     color: rgba(0, 0, 0, 0.48);
 }
-.single-product-select{
-font-size: 22px;
+
+.single-product-select {
+    font-size: 22px;
     font-weight: 650;
     text-align: left;
 }
+
 .single-page-size-btnn {
-  border-radius: 6px;
+    border-radius: 6px;
     padding: 6px;
     border: 1px solid black;
     color: var(--chakra-colors-white);
     background: var(--chakra-colors-black);
 }
-.single-product-garment{
-font-size: 13px;
-color: rgba(0, 0, 0, 0.48);
-}
-.single-product-detail-box{
-background-color: rgb(255, 255, 255);
-border-radius: 8px;
-margin-bottom: 16px;
-padding: 20px 16px;
-border: 1px solid rgb(234, 234, 242);
+
+.single-product-garment {
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.48);
 }
 
-.single-product-datail-head{
+.single-product-detail-box {
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    margin-bottom: 16px;
+    padding: 20px 16px;
+    border: 1px solid rgb(234, 234, 242);
+}
+
+.single-product-datail-head {
     color: rgb(53, 53, 67);
     font-style: normal;
     font-weight: 700;
@@ -124,16 +145,31 @@ border: 1px solid rgb(234, 234, 242);
     margin: 0px;
     padding: 0px;
 }
-.single-product-description{
+
+.single-product-description {
     background-color: rgb(255, 255, 255);
     border-radius: 8px;
     margin-bottom: 16px;
     padding: 20px 16px;
     border: 1px solid rgb(234, 234, 242);
 }
-.single-product-brand{
+
+.single-product-brand {
     margin: 2px;
 }
-.single-product-sidebar{
+
+.single-product-sidebar {
     width: 250px;
+}
+
+.prdct-size-mobile {
+    width: 350px;
+    height: 783px;
+
+}
+
+.prdct-size-mobile img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }

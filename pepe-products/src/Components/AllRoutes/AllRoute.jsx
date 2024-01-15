@@ -4,7 +4,7 @@ import Aboutus from '../../Pages/About';
 import Home from '../../Pages/Home';
 import SignIn from '../../Pages/signIn';
 import Signup from '../../Pages/signup';
-import Addproduct from '../../Pages/Addproduct';
+import Addproduct from '../../Pages/AddMenproduct';
 import Delete from '../../Pages/Delete';
 import Navbar from '../Header/Header';
 import Admin from '../AdminPage/Admin';

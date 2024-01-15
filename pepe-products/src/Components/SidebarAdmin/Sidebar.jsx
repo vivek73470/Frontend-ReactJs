@@ -4,7 +4,7 @@ import Dashboard from '../../Pages/Dashboard';
 import Profile from '../../Pages/Profile';
 import Delete from '../../Pages/Delete';
 import Logout from '../../Pages/Logout';
-import Addproduct from '../../Pages/Addproduct';
+import AdminAddProducts from '../../Pages/AdminAddProducts';
 
 function Sidebar({ handleLinkClick }) {
 
@@ -22,7 +22,7 @@ function Sidebar({ handleLinkClick }) {
 
                             <button onClick={() => handleLinkClick(<Dashboard />)}>Dashboard </button>
                             <button onClick={() => handleLinkClick(<Profile />)}>Profile</button>
-                            <button onClick={() => handleLinkClick(<Addproduct />)}>Add Product </button>
+                            <button onClick={() => handleLinkClick(<AdminAddProducts />)}>Add Product </button>
                             <button onClick={() => handleLinkClick(<Delete />)}> Delete Product </button>
 
                         </ul>
