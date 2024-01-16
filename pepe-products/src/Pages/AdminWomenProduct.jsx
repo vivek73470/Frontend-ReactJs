@@ -2,6 +2,7 @@ import React from 'react'
 import '../css/adminmen.css'
 import { useNavigate } from 'react-router-dom';
 import { useState,useEffect } from 'react';
+import ThreeDot from '../Assets/three dots.png'
 function AdminWomenProduct() {
     const [apiData, setApiData] = useState([]);
     const navigate =useNavigate()
@@ -27,6 +28,9 @@ function AdminWomenProduct() {
                 <div className='Adminmen-product-screen-wrapper'>
                     {apiData.length > 0 && apiData.map((elem, index) => (
                         <div className='admin-men-prdct' key={index}>
+                                <div id='three-dot-rell'> 
+                            <img src={ThreeDot} alt='' />
+                            </div>
                             <img src={elem.productImgTagSrc} alt='' />
                             <p className='admin-product-brandname'>{elem.brand_namez}</p>
                             <p className='admin-product-title-name'>{elem.clr_shade_4}</p>

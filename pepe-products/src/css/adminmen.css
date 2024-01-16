@@ -3,13 +3,50 @@
     grid-template-columns: repeat(3, 1fr);
     row-gap: 40px;
     column-gap: 40px;
+}
 
+.showthree-options {
+    display: grid;
+    border-radius: 15px;
+    background-color: #fff;
+    position: absolute;
+    top: 106%;
+    right: 0;
+    gap: 2px;
+    padding: 3px;
+}
+.show-three-optionsbutton{
+    font-size: 16px;
+    color: black;
+    background-color: #fff;
+    font-weight: 700;
+}
+.show-three-optionsbutton:hover{
+    background-color: gray;
+  
+}
+
+#three-dot-rell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    width: 25px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 3%;
+    right: 3.5%;
+    padding: 10px;
+    cursor: pointer;
 }
 .Adminmen-product-screen{
     max-width: 1280px;
     margin: auto;
 }
 .admin-men-prdct {
+    position: relative;
+    overflow: hidden;
     width: 100%;
     height: auto;
     max-width: 300px;
@@ -22,6 +59,11 @@
     height: auto;
     border-radius: 5px;
     transition: transform 0.3s ease;
+}
+#three-dot-rell img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
 }
 .admin-men-prdct>button{
     border-radius: 9px;

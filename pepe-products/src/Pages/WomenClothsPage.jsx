@@ -16,9 +16,7 @@
                 console.log(data);
                 setData(data)
                 console.log(apidata)
-        
             }
-
             catch (err) {
                 console.log(err);
             }
