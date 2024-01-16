@@ -12,11 +12,15 @@ function Dashboard() {
   const handleSectionClick = (e) => {
     setSelectedSections(e)
   };
+  // Define a function named handleSectionClick that takes an argument e (presumably a React component) 
+  // and sets the selectedSections state to this component when called.
 
   return (
     <>
       <div className='dashboard-screen'>
         <div className='dashboard-wrappeer'>
+
+        {/* If something is selected, show that. Otherwise, show something else." This pattern is often used to conditionally render */}
 
           {selectedSections ? (
             <div>{selectedSections}</div>
