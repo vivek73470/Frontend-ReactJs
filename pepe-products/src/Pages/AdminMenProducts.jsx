@@ -48,12 +48,8 @@ function AdminMenProducts() {
         setShowSubLinks((prev) => (prev === index ? null : index));
     };
 
-    const handleEditLink = (productIdentifier) => {
-
-        // productId={productIdentifier} is a prop being passed to the EditProductAdmin component. 
-        // This prop is named productId, and its value is the id parameter that was passed to the handleEditLink function.
-
-        setHandleEdit(<EditProductAdmin productIs={productIdentifier}/>);
+    const handleEditLink = (e) => {
+        setHandleEdit(e);
     }
 
     return (
@@ -71,7 +67,7 @@ function AdminMenProducts() {
                                     <img src={ThreeDot} alt='' />
                                     {showSubLinks === index && (
                                         <div className='showthree-options'>
-                                            <button onClick={() => handleEditLink(elem.id)} className='show-three-optionsbutton'>Edit</button>
+                                            <button onClick={() => handleEditLink(<EditProductAdmin/>)} className='show-three-optionsbutton'>Edit</button>
                                             <button onClick={() => { DeleteProduct(elem.id) }} className='show-three-optionsbutton'>Delete</button>
                                             <button onClick={() => navigate(`/singlemen/${elem.id}`)} className='show-three-optionsbutton'>View</button>
                                         </div>

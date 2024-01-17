@@ -6989,5 +6989,14 @@
       "discount_price_box": 379,
       "rating": "2"
     }
+  ],
+  "user": [
+    {
+      "id": "1",
+      "username": "Vivek",
+      "email": "vivek@gmail.com",
+      "password": "Vivek@123"
+    }
+
   ]
 }

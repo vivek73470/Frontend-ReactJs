@@ -23,29 +23,58 @@ const SignIn = () => {
   };
 
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Retrieve user data from localStorage
-
-    let allUsers = JSON.parse(localStorage.getItem('users')) || [];
-    let isUserFound = false;
+    //  Retrieve user data from localStorage
+    // let allUsers = JSON.parse(localStorage.getItem('users')) || [];
+    // let isUserFound = false;
 
     // Check if provided credentials match any user data
+    // allUsers.forEach((user) => {
+    //   if (formData.email === user.email && formData.password === user.password) {
+    //     isUserFound = true;
 
-    allUsers.forEach((user) => {
-      if (formData.email === user.email && formData.password === user.password) {
-        isUserFound = true;
-        // Set authentication to true (or log in)
-        toggleAuth();  
-        navigate("/adminpage")
-      }
-    });
+    // Set authentication to true (or log in)
+    // toggleAuth();  
+    // navigate("/adminpage")
+    //   }
+    // });
 
-    if (!isUserFound) {
-      alert('Email or password is incorrect.');
+    // if (!isUserFound) {
+    //   alert('Email or password is incorrect.');
+    // }
+
+
+    try {
+      let isUserFound = false;
+      let res = await fetch(`http://localhost:3500/user`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+      let users = await res.json();
+
+  // Check if provided credentials match any user data
+  users.forEach((user) => {
+    if (user.email === formData.email && user.password === formData.password) {
+      isUserFound = true;
+      toggleAuth();
+      navigate("/adminpage");
+
+      // Clear form fields after successful authentication
+      setFormData(initState);
     }
-  };
+  });
+
+  if (!isUserFound) {
+    alert('Email or password is incorrect.');
+  }
+} catch (err) {
+  console.log(err);
+}
+};
 
 
   return (
@@ -68,7 +97,7 @@ const SignIn = () => {
               <div className='login-card-adminsignup'>
                 <p className='content'>Don't have account?</p>
                 <Link to='/signup'>
-                <p className='content-signup'>Signup</p>
+                  <p className='content-signup'>Signup</p>
                 </Link>
               </div>
 
@@ -76,28 +105,28 @@ const SignIn = () => {
 
             <form className='content-form' onSubmit={handleSubmit}>
               <div className='content-form-input-wid'>
-              <input
-                name='email'
-                type='email'
-                placeholder='Email'
-                className='form-content-input'
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
+                <input
+                  name='email'
+                  type='email'
+                  placeholder='Email'
+                  className='form-content-input'
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
               </div>
-              
+
               <div className='content-form-input-wid'>
-      
-              <input
-                name='password'
-                type='password'
-                placeholder='Password'
-                className='form-content-input'
-                value={formData.password}
-                onChange={handleChange}
-                required
-              />
+
+                <input
+                  name='password'
+                  type='password'
+                  placeholder='Password'
+                  className='form-content-input'
+                  value={formData.password}
+                  onChange={handleChange}
+                  required
+                />
               </div>
 
               <div className='form-button'>

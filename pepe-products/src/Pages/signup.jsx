@@ -27,17 +27,38 @@ function Signup() {
 
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
 
     // Save form data to localStorage
-    let users = JSON.parse(localStorage.getItem('users')) || [];
-    users.push(formData);
-    localStorage.setItem('users', JSON.stringify(users));
+    // let users = JSON.parse(localStorage.getItem('users')) || [];
+    // users.push(formData);
+    // localStorage.setItem('users', JSON.stringify(users));
 
     // Clear form fields after submission
-    setFormData(initState);
-    navigate("/");
+    // setFormData(initState);
+    // navigate("/");
+
+    try{
+      let res = await fetch(`http://localhost:3500/user`,{
+        method:'POST',
+
+        body:JSON.stringify(formData),
+
+        headers:{
+          'Content-Type': 'application/json',
+        }
+      })
+
+      let data = await res.json();
+      console.log(data)
+      setFormData(initState)
+
+    }
+    catch(err){
+      console.log(err);
+    }
+
   };
 
 

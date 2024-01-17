@@ -1,9 +1,11 @@
 import React from 'react'
+import '../css/editadmin.css'
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 
-function EditProductAdmin({productId}) {
+function EditProductAdmin() {
+  const {id}=useParams();
   const[formData,setFormData]=useState({
-    id:productId,
     productImgTagSrc: '',
     plp: '',
     brand_namez: '',
@@ -13,28 +15,23 @@ function EditProductAdmin({productId}) {
     discount_price_box:''
   });
 
-  const handleChange =(e)=>{
-  setFormData({
-    ...formData,
-    [e.target.name]:e.target.value
-  })
-  }
-
+ 
 async function EditProduct(){
-  try{
-  let res = await fetch(`http://localhost:3500/mensdata`,{
+
+  let res = await fetch(`http://localhost:3500/mensdata/${id}`,{
     method:'PUT',
-    body:JSON.stringify(formData),
+
+    body: JSON.stringify(formData),
 
     headers:{
       'Content-Type':'application/json',
     },
 
-  })
+  });
+ 
   let data = await res.json();
   console.log(data);
   setFormData({
-    id: productId,
     productImgTagSrc: '',
     plp: '',
     brand_namez: '',
@@ -43,11 +40,16 @@ async function EditProduct(){
     actualPriceText:'',
     discount_price_box:''
   })
-  }
-  catch(err){
-  console.log(err)
-  }
+
+
 }
+
+const handleChange =(e)=>{
+  setFormData({
+    ...formData,
+    [e.target.name]:e.target.value
+  })
+  }
 
  const handleSubmit =(e)=>{
   e.preventDefault();
@@ -59,15 +61,6 @@ EditProduct();
  <div className='edit-product-screen'>
   <div className='edit-product-wrapper'>
     <form className='edit-prdct-form' onSubmit={handleSubmit}>
-      {/* <input
-      name='id'
-      type='text'
-      placeholder='Id'
-      className='edit-prdct-field'
-      value={FormData.id}
-      onChange={handleChange}
-      />
-      <br/> */}
       <input
             name='productImgTagSrc'
             type="text"
@@ -134,7 +127,7 @@ EditProduct();
           />
           <br />
 
-      <button className='editproduct-button' onClick={EditProduct}>Update</button>
+      <button className='editproduct-button' type='submit'>Update</button>
     </form>
   </div>
  </div>
