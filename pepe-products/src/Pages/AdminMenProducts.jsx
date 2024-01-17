@@ -68,6 +68,9 @@ function AdminMenProducts() {
                                     {showSubLinks === index && (
                                         <div className='showthree-options'>
                                             <button onClick={() => handleEditLink(<EditProductAdmin/>)} className='show-three-optionsbutton'>Edit</button>
+                                            
+                                            {/* Button with Inline Function
+                                            It directly calls DeleteProduct(elem.id) when the button is clicked. */}
                                             <button onClick={() => { DeleteProduct(elem.id) }} className='show-three-optionsbutton'>Delete</button>
                                             <button onClick={() => navigate(`/singlemen/${elem.id}`)} className='show-three-optionsbutton'>View</button>
                                         </div>

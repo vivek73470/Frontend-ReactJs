@@ -6997,6 +6997,15 @@
       "email": "vivek@gmail.com",
       "password": "Vivek@123"
     }
-
+  ],
+  "profile": [
+    {
+      "username": "Vivek",
+      "email": "vivek@gmail.com",
+      "DOB": "",
+      "gender": "male",
+      "address": "chandigarh",
+      "number": "7347063116"
+    }
   ]
 }

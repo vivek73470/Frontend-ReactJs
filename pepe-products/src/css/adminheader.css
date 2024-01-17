@@ -1,7 +1,23 @@
-.Admin-Header-screen-wrapper{
-padding: 26px;
-background: #FFF;
-box-shadow: 0px 4px 35px 0px rgba(0, 0, 0, 0.08);
-display: flex;
-justify-content: space-around;
+.Admin-Header-screen-wrapper {
+    padding-left: 76px;
+    padding-right: 76px;
+    padding-bottom: 26px;
+    padding-top: 26px;
+    background: #FFF;
+    box-shadow: 0px 4px 35px 0px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: space-between;
+}
+
+.Admin-Header-profile{
+  display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+}
+.Admin-Header-profile-image{
+    border: 1px solid;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
 }

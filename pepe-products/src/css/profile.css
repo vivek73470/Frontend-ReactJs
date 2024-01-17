@@ -1,0 +1,40 @@
+/* profile.css */
+
+.Profile-Form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  .Profile-Form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .Profile-Form button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .Profile-Form button:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Optional: Add media queries for responsiveness */
+  @media (max-width: 600px) {
+    .Profile-Form {
+      width: 80%;
+    }
+  }
+  
