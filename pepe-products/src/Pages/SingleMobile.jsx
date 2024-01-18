@@ -7,17 +7,16 @@ import Footer from '../Components/Footer/footer';
 
 function SingleMobile() {
 
-    const [mobileData, setMobileData] = useState([]);
-    const { id } = useParams();
+    const [mobileData, setMobileData] = useState({});
+    let { id } = useParams();
+
 
     async function getData() {
         try {
             let res = await fetch(`http://localhost:3500/mobiles/${id}`)
-            console.log('vi', res)
+            console.log('try', res)
             let data = await res.json();
-            console.log("gh", data)
             setMobileData(data)
-            console.log('data set successfully')
 
         }
         catch (err) {
@@ -26,9 +25,7 @@ function SingleMobile() {
     }
 
     useEffect(() => {
-        console.log('useeffectis called')
         getData();
-        console.log("gtrfg", mobileData)
 
     }, [])
 

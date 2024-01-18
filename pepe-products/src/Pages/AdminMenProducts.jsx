@@ -20,7 +20,6 @@ function AdminMenProducts() {
             console.log(err);
         }
     }
-
     async function DeleteProduct(id) {
         try {
             let res = await fetch(`http://localhost:3500/mensdata/${id}`, {

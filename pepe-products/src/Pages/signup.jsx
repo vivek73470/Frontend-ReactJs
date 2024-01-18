@@ -53,6 +53,7 @@ function Signup() {
       let data = await res.json();
       console.log(data)
       setFormData(initState)
+      navigate('/')
 
     }
     catch(err){

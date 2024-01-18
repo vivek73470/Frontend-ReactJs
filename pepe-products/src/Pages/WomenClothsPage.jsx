@@ -27,20 +27,6 @@
         
         }, [])
 
-        // async function deleteProduct(id) {
-        //     let res = await fetch(`http://localhost:3500/product/${id}`, {
-        //         method: 'DELETE',
-
-        //         headers: {
-        //             'Content-Type': 'application/json',
-        //         }
-        //     });
-
-        //     let data = await res.json();
-        //     console.log(data)
-        //     getData()
-
-        // }
 
         return (
             <>
@@ -61,9 +47,7 @@
                                     <p className='product-actual-price'>₹{e.actualPriceText}</p>
                                 </div>
                                 <p className='product-title-members'>₹{e.discount_price_box} For Tribe Members</p>
-                                {/* <div style={{ display: "flex" }}>
-                                    <button onClick={() => { deleteProduct(e.id) }}>delete</button>
-                                </div> */}
+                          
 
                             </div>
                         )}

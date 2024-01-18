@@ -34,8 +34,7 @@ function MobileCover() {
                 <div className='product-page-content'>
                     {apidata.length > 0 && apidata.map((e, i) =>
                         <div className='prdct-size' key={e.id}
-                        onClick={()=>navigate(`/singlemobile/${e.id}`)}
-                         >
+                        onClick={()=>navigate(`/singlemobile/${e.id}`)} >
                             <img src={e.productImgTagSrc} alt={i} />
                             <p className='product-brandname'>{e.brand_namez}</p>
                             <p className='product-title-name'>{e.clr_shade_4}</p>

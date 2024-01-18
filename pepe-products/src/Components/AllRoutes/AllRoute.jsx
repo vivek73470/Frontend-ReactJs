@@ -22,6 +22,7 @@ import Footer from '../Footer/footer';
 import MobileCover from '../../Pages/MobileCover';
 import SingleMobile from '../../Pages/SingleMobile';
 import EditProductAdmin from '../../Pages/EditProductAdmin';
+import AdminAddProducts from '../../Pages/AdminAddProducts';
 
 
 
@@ -32,7 +33,7 @@ function AllRoute() {
 
   // Check if the user is on the Sign In page
   const isSignInPage = location.pathname === '/signin';
-  
+
   // Check if the user is on the Admin page or its related sections
   const isOnAdminPage = location.pathname.includes('/adminpage');
   const isOnSignUpPage = location.pathname.includes('/signup');
@@ -46,28 +47,33 @@ function AllRoute() {
       <Routes>
         <Route path={"/"} element={<Home />}></Route>
         <Route path={"/Aboutus"} element={<Aboutus />}></Route>
-        <Route path={`/mencloths`} element={<MenClothsPage />}></Route>
+        <Route path={'/contact-us'} element={<Contactus />}></Route>
         <Route path={'/signin'} element={<SignIn />}></Route>
         <Route path={'/signup'} element={<Signup />}></Route>
-        <Route path={'/addproduct'} element={<Addproduct />}></Route>
-        <Route path={'/deleteproduct'} element={<Delete />}></Route>
+        <Route path={'/footer'} element={<Footer />}></Route>
         <Route path={'/adminpage'} element={
           <PrivateRoute>
             <Admin />
           </PrivateRoute>}>
         </Route>
+
+        <Route path={'/womencloths'} element={<WomenPage />}></Route>
+        <Route path={'/singlewomen/:id'} element={<SingleWomenPage />}></Route>
+        <Route path={'/mencloths'} element={<MenClothsPage />}></Route>
+        <Route path={'/singlemen/:id'} element={<SingleMenPage />}></Route>
+        <Route path={'/mobilecover'} element={<MobileCover />}></Route>
+        <Route path={'/singlemobile/:id'} element={<SingleMobile />}></Route>
+
+        <Route path={'/adminadd'} element={<AdminAddProducts />}></Route>
+        <Route path={'/addproduct'} element={<Addproduct />}></Route>
+        <Route path={'/deleteproduct'} element={<Delete />}></Route>
         <Route path={'/profilepage'} element={<Profile />}></Route>
         <Route path={'/dashboard'} element={<Dashboard />}></Route>
         <Route path={'/setting'} element={<Setting />}></Route>
         <Route path={'/logout'} element={<Logout />}></Route>
-        <Route path={'/contact-us'} element={<Contactus/>}></Route>
-        <Route path={`/womencloths`} element={<WomenPage/>}></Route>
-        <Route path={`/mobilecover`} element={<MobileCover/>}></Route>
-        <Route path={'/footer'} element={<Footer/>}></Route>
-        <Route path={`/singlemen/:id`} element={<SingleMenPage/>}></Route>
-        <Route path={`/singlewomen/:id`} element={<SingleWomenPage/>}></Route>
-        <Route path={`/singlemobile/:id`} element={<SingleMobile/>}></Route>
-        <Route path={`/editpage/:id`} element={<EditProductAdmin/>}></Route>
+        <Route path={'/editpage/:id'} element={<EditProductAdmin />}></Route>
+        <Route path={'/profile/:userId'} element={<Profile />}></Route>
+      
 
 
       </Routes>

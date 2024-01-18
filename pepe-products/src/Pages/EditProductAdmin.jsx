@@ -17,15 +17,15 @@ function EditProductAdmin() {
 
  
 async function EditProduct(){
-
+try{
   let res = await fetch(`http://localhost:3500/mensdata/${id}`,{
     method:'PUT',
 
     body: JSON.stringify(formData),
 
-    headers:{
-      'Content-Type':'application/json',
-    },
+    headers: {
+      'Content-Type': 'application/json',
+    }
 
   });
  
@@ -40,7 +40,10 @@ async function EditProduct(){
     actualPriceText:'',
     discount_price_box:''
   })
-
+}
+catch(error){
+  console.log(error)
+}
 
 }
 
@@ -51,9 +54,9 @@ const handleChange =(e)=>{
   })
   }
 
- const handleSubmit =(e)=>{
+ const handleSubmit = (e)=>{
   e.preventDefault();
-EditProduct();
+  EditProduct();
  }
 
   return (
@@ -127,7 +130,7 @@ EditProduct();
           />
           <br />
 
-      <button className='editproduct-button' type='submit'>Update</button>
+      <button className='editproduct-button' onClick={EditProduct}>Update</button>
     </form>
   </div>
  </div>

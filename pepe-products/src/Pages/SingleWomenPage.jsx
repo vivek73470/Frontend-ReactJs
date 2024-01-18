@@ -8,7 +8,7 @@ function SingleWomenPage() {
 
     // apidata: Stores data retrieved from an API call.
     // selectedImage: Keeps track of the currently selected image.
-    const{id}=useParams();
+    let{ id } = useParams();
 
     const [apidata, setApiData] = useState([]);
     const [selectedImage, setSelectedImage] = useState('');
@@ -16,9 +16,9 @@ function SingleWomenPage() {
 
 
     async function singledata() {
+        console.log('vivek',id)
         try {
             let res = await fetch(`http://localhost:3500/womensdata/${id}`);
-    
             let data = await res.json();
             console.log('fetched data', data);
             setApiData(data);

@@ -1,18 +1,22 @@
 import React from 'react'
 import '../css/profile.css'
 import { useState } from 'react'
+import { useParams } from 'react-router-dom'
 
 
 function Profile() {
+  const {id} =useParams();
+  console.log('par',id)
   const[data,setData]=useState({
+    id:'',
     username:'',
     email:'',
-    DOB:'',
-    gender:'',
-    address:'',
-    number:''
-  })
 
+    gender:'',
+    number:'',
+    address:''
+  
+  })
 
   const handleChange =(e) =>{
     setData({
@@ -22,13 +26,13 @@ function Profile() {
 
   }
 
- 
-
 async function editProfile(){
+  console.log('image',id)
   try{
-let res = await fetch(`http://localhost:3500/profile`,{
+let res = await fetch(`http://localhost:3500/profile/${id}`,{
   method:'PUT',
   body:JSON.stringify(data),
+  
   headers:{
     'Content-Type':'application/json',
   }
@@ -37,12 +41,13 @@ let res = await fetch(`http://localhost:3500/profile`,{
 let updatedData = await res.json();
 console.log(updatedData)
 setData({
+  id:'',
   username:'',
   email:'',
-  DOB:'',
   gender:'',
-  address:'',
-  number:''
+  number:'',
+  address:''
+  
 })
   }
   catch(err){
@@ -74,14 +79,14 @@ setData({
     onChange={handleChange}
     />
     <br/>
-    <input
+    {/* <input
     name='DOB'
     type='date'
     placeholder='DOB'
     value={data.DOB}
     onChange={handleChange}
     />
-    <br/>
+    <br/> */}
     <input
     name='gender'
     type='text'
