@@ -35,7 +35,7 @@ function AllRoute() {
   const isSignInPage = location.pathname === '/signin';
 
   // Check if the user is on the Admin page or its related sections
-  const isOnAdminPage = location.pathname.includes('/adminpage');
+  const isOnAdminPage = location.pathname.includes('/admin');
   const isOnSignUpPage = location.pathname.includes('/signup');
 
   // Only show the Navbar on pages that are NOT SignIn or Admin pages
@@ -51,7 +51,7 @@ function AllRoute() {
         <Route path={'/signin'} element={<SignIn />}></Route>
         <Route path={'/signup'} element={<Signup />}></Route>
         <Route path={'/footer'} element={<Footer />}></Route>
-        <Route path={'/adminpage'} element={
+        <Route path={'/admin/*'} element={
           <PrivateRoute>
             <Admin />
           </PrivateRoute>}>
@@ -64,11 +64,11 @@ function AllRoute() {
         <Route path={'/mobilecover'} element={<MobileCover />}></Route>
         <Route path={'/singlemobile/:id'} element={<SingleMobile />}></Route>
 
-        <Route path={'/adminadd'} element={<AdminAddProducts />}></Route>
+        {/* <Route path={'/adminaddproduct'} element={<AdminAddProducts />}></Route> */}
         <Route path={'/addproduct'} element={<Addproduct />}></Route>
         <Route path={'/deleteproduct'} element={<Delete />}></Route>
-        <Route path={'/profilepage'} element={<Profile />}></Route>
-        <Route path={'/dashboard'} element={<Dashboard />}></Route>
+        {/* <Route path={'/profilepage'} element={<Profile />}></Route> */}
+        {/* <Route path={'/dashboard'} element={<Dashboard />}></Route> */}
         <Route path={'/setting'} element={<Setting />}></Route>
         <Route path={'/logout'} element={<Logout />}></Route>
         <Route path={'/editpage/:id'} element={<EditProductAdmin />}></Route>

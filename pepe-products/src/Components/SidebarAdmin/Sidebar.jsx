@@ -1,22 +1,22 @@
 import React from 'react'
 import '../../css/sidebar.css';
-import { useNavigate } from 'react-router-dom';
-import Dashboard from '../../Pages/Dashboard';
-import Profile from '../../Pages/Profile';
-import AdminAddProducts from '../../Pages/AdminAddProducts';
+import { useState } from 'react';
+import { useNavigate,NavLink } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthContext';
+import Dashboard from '../../Pages/Dashboard';
 
-// functional component, that takes a prop named handleLinkClick
-function Sidebar({ handleLinkClick }) {
+function Sidebar() {
+
     const {toggleAuth} = React.useContext(AuthContext);
     const navigate =useNavigate();
+
 
     const handleLogout =() =>{
         toggleAuth();// Set authentication to false
         navigate('/signin');
-    }
+    }   
 
-      
+
 
     return (
         <>
@@ -30,17 +30,21 @@ function Sidebar({ handleLinkClick }) {
                     <div className='sidebar-screen-wrapper-listdetails'>
                         <ul className='sidebar-screen-wrapper-listdetails-ul'>
 
-                        {/* Create a button with an onClick event that calls the handleLinkClick function
-                         with the Dashboard component as an argument when clicked. */}
-                         {/* and when one of them is clicked, it will call the function passed via the prop. */}
-                            <button onClick={() => handleLinkClick(<Dashboard />)}>Dashboard </button>
-                            {/* <button onClick={() => handleLinkClick(<Profile />)}>Profile</button> */}
-                            <button onClick={() => handleLinkClick(<AdminAddProducts />)}>Add Product </button>
-                            {/* <button onClick={() => handleLinkClick(<Delete />)}> Delete Product </button> */}
-                            <button onClick={()=>handleLinkClick(<Profile/>)}>Setting</button>
-
-                            {/* This button, when clicked, triggers the handleLinkClick function received as a prop. 
-                            It passes the <Dashboard /> component to this function, updating the profile state in the Admin component. */}
+                        <li>
+                        <NavLink to="/admin/dashboard"  activeClassName="active-link">
+                  Dashboard
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/admin/adminaddproduct" activeClassName="active-link">
+                  Add Products
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/admin/profile" activeClassName="active-link">
+                  Profile
+                </NavLink>
+              </li>
 
                         </ul>
                     </div>
@@ -49,7 +53,6 @@ function Sidebar({ handleLinkClick }) {
                         <button onClick={handleLogout}> Logout</button>
                     </div>
                 </div>
-
             </div>
         </>
     )
