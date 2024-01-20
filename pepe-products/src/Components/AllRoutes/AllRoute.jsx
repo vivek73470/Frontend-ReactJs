@@ -45,17 +45,32 @@ function AllRoute() {
       {!isSignInPage && !isOnSignUpPage && !isOnAdminPage && <Navbar />}
 
       <Routes>
-        <Route path={"/"} element={<Home />}></Route>
+      
+      {/* is used to define what to show when someone first visits your website,enters the root URL */}
+        <Route index element={<Home />} />
+        <Route path="/admin" element={
+          <PrivateRoute>
+            <Admin />
+          </PrivateRoute>}>
+          <Route index element={<Dashboard />} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="addproduct" element={<AdminAddProducts />} />
+          <Route path="profile" element={<Profile />} />
+          <Route path="addproduct" element={<Addproduct />} />
+          <Route path="deleteproduct" element={<Delete />} />
+          <Route path="setting" element={<Setting />} />
+          <Route path="logout" element={<Logout />} />
+          <Route path="editpage/:id" element={<EditProductAdmin />} />
+          <Route path="profile/:userId" element={<Profile />} />
+        </Route>
+
+        <Route path="/" element={<Home />} />
         <Route path={"/Aboutus"} element={<Aboutus />}></Route>
         <Route path={'/contact-us'} element={<Contactus />}></Route>
         <Route path={'/signin'} element={<SignIn />}></Route>
         <Route path={'/signup'} element={<Signup />}></Route>
         <Route path={'/footer'} element={<Footer />}></Route>
-        <Route path={'/admin/*'} element={
-          <PrivateRoute>
-            <Admin />
-          </PrivateRoute>}>
-        </Route>
+
 
         <Route path={'/womencloths'} element={<WomenPage />}></Route>
         <Route path={'/singlewomen/:id'} element={<SingleWomenPage />}></Route>
@@ -64,16 +79,9 @@ function AllRoute() {
         <Route path={'/mobilecover'} element={<MobileCover />}></Route>
         <Route path={'/singlemobile/:id'} element={<SingleMobile />}></Route>
 
-        {/* <Route path={'/adminaddproduct'} element={<AdminAddProducts />}></Route> */}
-        <Route path={'/addproduct'} element={<Addproduct />}></Route>
-        <Route path={'/deleteproduct'} element={<Delete />}></Route>
-        {/* <Route path={'/profilepage'} element={<Profile />}></Route> */}
-        {/* <Route path={'/dashboard'} element={<Dashboard />}></Route> */}
-        <Route path={'/setting'} element={<Setting />}></Route>
-        <Route path={'/logout'} element={<Logout />}></Route>
-        <Route path={'/editpage/:id'} element={<EditProductAdmin />}></Route>
-        <Route path={'/profile/:userId'} element={<Profile />}></Route>
-      
+
+
+
 
 
       </Routes>

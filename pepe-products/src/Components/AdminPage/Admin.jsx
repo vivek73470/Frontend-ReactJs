@@ -22,12 +22,10 @@ function Admin() {
                         </div>
                         <div className='page-content'>
                             <Outlet />
-
                         </div>
                     </div>
                 </div>
             </div>
-
         </>
     )
 }
