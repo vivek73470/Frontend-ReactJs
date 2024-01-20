@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 function EditProductAdmin() {
-  const {id}=useParams();
+  const {id} = useParams();
   const[formData,setFormData]=useState({
     productImgTagSrc: '',
     plp: '',

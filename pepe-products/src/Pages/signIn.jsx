@@ -61,7 +61,7 @@ const SignIn = () => {
     if (user.email === formData.email && user.password === formData.password) {
       isUserFound = true;
       toggleAuth();
-      navigate("/admin");
+      navigate('/admin');
 
       // Clear form fields after successful authentication
       setFormData(initState);

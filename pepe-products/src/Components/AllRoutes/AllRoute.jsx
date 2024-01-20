@@ -23,6 +23,9 @@ import MobileCover from '../../Pages/MobileCover';
 import SingleMobile from '../../Pages/SingleMobile';
 import EditProductAdmin from '../../Pages/EditProductAdmin';
 import AdminAddProducts from '../../Pages/AdminAddProducts';
+import AdminMenProducts from '../../Pages/AdminMenProducts';
+import AdminMobile from '../../Pages/AdminMobile';
+import AdminWomenProduct from '../../Pages/AdminWomenProduct';
 
 
 
@@ -57,10 +60,13 @@ function AllRoute() {
           <Route path="addproduct" element={<AdminAddProducts />} />
           <Route path="profile" element={<Profile />} />
           <Route path="addproduct" element={<Addproduct />} />
+          <Route path="menproducts" element={<AdminMenProducts />} />
+          <Route path="mobiles-cover" element={<AdminMobile />} />
+          <Route path="women-products" element={<AdminWomenProduct />} />
           <Route path="deleteproduct" element={<Delete />} />
           <Route path="setting" element={<Setting />} />
           <Route path="logout" element={<Logout />} />
-          <Route path="editpage/:id" element={<EditProductAdmin />} />
+          <Route path="edit-product/:id" element={<EditProductAdmin />} />
           <Route path="profile/:userId" element={<Profile />} />
         </Route>
 

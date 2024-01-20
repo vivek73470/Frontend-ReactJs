@@ -118,6 +118,7 @@ object-fit: contain;
 }
 
 #btn-frm:hover {
+  border: 1px solid gray;
   background-color: #fff;
   color: red;
 }

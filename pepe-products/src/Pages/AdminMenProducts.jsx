@@ -2,12 +2,11 @@ import React, { useEffect, useState } from 'react'
 import '../css/adminmen.css'
 import ThreeDot from '../Assets/three dots.png'
 import { useNavigate } from 'react-router-dom';
-import EditProductAdmin from './EditProductAdmin';
+
 
 function AdminMenProducts() {
     const [apiData, setApiData] = useState([]);
     const [showSubLinks, setShowSubLinks] = useState(null);
-    const [handleEdit, setHandleEdit] = useState(null);
     const navigate = useNavigate()
 
     async function getData() {
@@ -20,6 +19,11 @@ function AdminMenProducts() {
             console.log(err);
         }
     }
+        // UseEffect hook to fetch data when the component mounts
+        useEffect(() => {
+            getData();
+        }, [])
+
     async function DeleteProduct(id) {
         try {
             let res = await fetch(`http://localhost:3500/mensdata/${id}`, {
@@ -37,25 +41,14 @@ function AdminMenProducts() {
         }
     }
 
-    // UseEffect hook to fetch data when the component mounts
-    useEffect(() => {
-        getData();
-    }, [])
-
     // This prev represents the current state value of showSubLinks
     const handleThreeDotClick = (index) => {
         setShowSubLinks((prev) => (prev === index ? null : index));
     };
 
-    const handleEditLink = (e) => {
-        setHandleEdit(e);
-    }
 
     return (
         <>
-          {handleEdit ? (
-                    <div>{handleEdit}</div>
-                ) : (
             <div className='Adminmen-product-screen'>
                 <h3>Men's Products</h3>
               
@@ -66,7 +59,7 @@ function AdminMenProducts() {
                                     <img src={ThreeDot} alt='' />
                                     {showSubLinks === index && (
                                         <div className='showthree-options'>
-                                            <button onClick={() => handleEditLink(<EditProductAdmin/>)} className='show-three-optionsbutton'>Edit</button>
+                                            <button onClick={() => navigate(`edit-product/${elem.id}`)} className='show-three-optionsbutton'>Edit</button>
                                             
                                             {/* Button with Inline Function
                                             It directly calls DeleteProduct(elem.id) when the button is clicked. */}
@@ -84,7 +77,6 @@ function AdminMenProducts() {
                     </div>
               
             </div>
-             )}
         </>
     )
 }

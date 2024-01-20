@@ -1,30 +1,15 @@
 import React from 'react'
 import '../css/dashboard.css'
-import { useState } from 'react'
-import AdminMenProducts from './AdminMenProducts'
-import AdminWomenProduct from './AdminWomenProduct'
-import AdminMobile from './AdminMobile'
+import { useNavigate } from 'react-router-dom'
 
 
 function Dashboard() {
-  const [selectedSections, setSelectedSections] = useState(null)
-
-  const handleSectionClick = (e) => {
-    setSelectedSections(e)
-  };
-  // Define a function named handleSectionClick that takes an argument e (presumably a React component) 
-  // and sets the selectedSections state to this component when called.
+  const navigate = useNavigate();
 
   return (
     <>
       <div className='dashboard-screen'>
         <div className='dashboard-wrappeer'>
-
-        {/* If something is selected, show that. Otherwise, show something else." This pattern is often used to conditionally render */}
-
-          {selectedSections ? (
-            <div>{selectedSections}</div>
-          ) : (
             <div className='dashboard-adddelete'>
               <div className='dashboard-addproduct'>
                 <div className='dashboard-addproduct-llink'>
@@ -37,7 +22,7 @@ function Dashboard() {
                   <div className='dashboard-addproduct-btn'>
 
                     <button className='dashboard-buttn'
-                      onClick={() => handleSectionClick(<AdminMenProducts />)}>
+                      onClick={() => navigate('menproducts')}>
                       View Men Products
                     </button>
 
@@ -54,7 +39,7 @@ function Dashboard() {
                   </div>
                   <div className='dashboard-addproduct-btn'>
                     <button className='dashboard-buttn'
-                      onClick={() => handleSectionClick(<AdminWomenProduct />)}>
+                      onClick={() => navigate('women-products')}>
                       View Women Products
                     </button>
                   </div>
@@ -70,14 +55,13 @@ function Dashboard() {
                   </div>
                   <div className='dashboard-addproduct-btn'>
                     <button className='dashboard-buttn'
-                      onClick={() => handleSectionClick(<AdminMobile/>)}>
+                      onClick={() => navigate('mobiles-cover')}>
                       View Mobile Products
                     </button>
                   </div>
                 </div>
               </div>
             </div>
-          )}
         </div>
       </div>
     </>

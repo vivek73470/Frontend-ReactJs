@@ -1,9 +1,8 @@
 import React from 'react'
 import '../../css/sidebar.css';
-import { useState } from 'react';
 import { useNavigate, NavLink } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthContext';
-import Dashboard from '../../Pages/Dashboard';
+
 
 function Sidebar() {
 
@@ -13,7 +12,7 @@ function Sidebar() {
 
   const handleLogout = () => {
     toggleAuth();// Set authentication to false
-    navigate('/signin');
+    navigate('/login');
   }
 
 
