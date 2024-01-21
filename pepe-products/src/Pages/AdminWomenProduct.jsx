@@ -3,12 +3,11 @@ import '../css/adminmen.css'
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import ThreeDot from '../Assets/three dots.png'
-import EditProductAdmin from './EditProductAdmin';
+
 
 function AdminWomenProduct() {
     const [apiData, setApiData] = useState([]);
     const [showSubLinks, setShowSubLinks] = useState(null);
-    const [handleEdit, setHandleEdit] = useState(null);
     const navigate = useNavigate()
 
     async function getData() {
@@ -47,15 +46,10 @@ function AdminWomenProduct() {
         setShowSubLinks((prev) => (prev === index ? null : index));
     };
 
-    const handleEditLink = (e) => {
-        setHandleEdit(e);
-    }
+
 
     return (
         <>
-            {handleEdit ? (
-                    <div>{handleEdit}</div>
-                ) : (
             <div className='Adminmen-product-screen'>
                 <h3>Women's Products</h3>
                 <div className='Adminmen-product-screen-wrapper'>
@@ -65,7 +59,7 @@ function AdminWomenProduct() {
                                 <img src={ThreeDot} alt='' />
                                 {showSubLinks === index &&(
                                        <div className='showthree-options'>
-                                       <button onClick={() => handleEditLink(<EditProductAdmin/>)} className='show-three-optionsbutton'>Edit</button>
+                                       <button onClick={() => navigate(`edit-product/${elem.id}`)} className='show-three-optionsbutton'>Edit</button>
                                        <button onClick={() => { DeleteProduct(elem.id) }} className='show-three-optionsbutton'>Delete</button>
                                        <button onClick={() => navigate(`/singlemen/${elem.id}`)} className='show-three-optionsbutton'>View</button>
                                    </div>
@@ -81,7 +75,7 @@ function AdminWomenProduct() {
                 </div>
 
             </div>
-                )}
+                
         </>
     )
 }

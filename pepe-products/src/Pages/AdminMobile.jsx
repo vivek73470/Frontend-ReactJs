@@ -3,12 +3,11 @@ import '../css/adminmen.css'
 import { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ThreeDot from '../Assets/three dots.png'
-import EditProductAdmin from './EditProductAdmin';
+
 
 function AdminMobile() {
     const [apiData, setApiData] = useState({});
     const [showSubLinks, setShowSubLinks] = useState(null);
-    const [handleEdit, setHandleEdit] = useState(null);
     const navigate =useNavigate()
 
     async function getData() {
@@ -46,16 +45,12 @@ function AdminMobile() {
         setShowSubLinks((prev) => (prev === index ? null : index));
     };
 
-    const handleEditLink = (e) => {
-        setHandleEdit(e);
-    }
+
 
 
   return (
    <>
-     {handleEdit ? (
-                    <div>{handleEdit}</div>
-                ) : (
+
      <div className='Adminmen-product-screen'>
                 <h3>Mobile Covers</h3>
                 <div className='Adminmen-product-screen-wrapper'>
@@ -65,7 +60,7 @@ function AdminMobile() {
                             <img src={ThreeDot} alt='' />
                             {showSubLinks === index && (
                                         <div className='showthree-options'>
-                                            <button onClick={() => handleEditLink(<EditProductAdmin/>)} className='show-three-optionsbutton'>Edit</button>
+                                            <button onClick={() => navigate(`edit-product/${elem.id}`)} className='show-three-optionsbutton'>Edit</button>
                                             
                                             {/* Button with Inline Function
                                             It directly calls DeleteProduct(elem.id) when the button is clicked. */}
@@ -84,7 +79,7 @@ function AdminMobile() {
                 </div>
 
             </div>
-                )}
+              
    </>
   )
 }
