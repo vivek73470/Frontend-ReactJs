@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../css/singlepage.css';
 import { useLocation } from 'react-router-dom';
 import Footer from '../Components/Footer/footer';
+import Navbar from '../Components/Header/Header';
 
 function SingleMenPage() {
     // apidata and selectedImage are state variables managed using the useState hook
@@ -52,6 +53,7 @@ function SingleMenPage() {
 
     return (
         <>
+        <Navbar/>
         <div className='single-product-mainscreen'>
             <div className='single-product-wrapscreen'>
                 <div className='single-product-sidebar'>

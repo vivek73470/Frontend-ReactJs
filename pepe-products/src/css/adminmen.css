@@ -3,6 +3,13 @@
     grid-template-columns: repeat(3, 1fr);
     row-gap: 40px;
     column-gap: 40px;
+    border-radius: 15.662px;
+    background: #FFF;
+    box-shadow: 7.831px 7.831px 19.578px 0px rgba(0, 0, 0, 0.08);
+    padding-top: 35px;
+    padding-bottom: 35px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .showthree-options {
@@ -15,15 +22,17 @@
     gap: 2px;
     padding: 3px;
 }
-.show-three-optionsbutton{
+
+.show-three-optionsbutton {
     font-size: 16px;
     color: black;
     background-color: #fff;
     font-weight: 700;
 }
-.show-three-optionsbutton:hover{
+
+.show-three-optionsbutton:hover {
     background-color: gray;
-  
+
 }
 
 #three-dot-rell {
@@ -40,10 +49,12 @@
     padding: 10px;
     cursor: pointer;
 }
-.Adminmen-product-screen{
+
+.Adminmen-product-screen {
     max-width: 1280px;
     margin: auto;
 }
+
 .admin-men-prdct {
     position: relative;
     overflow: hidden;
@@ -53,27 +64,32 @@
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 8px;
+    margin: auto;
 }
+
 .admin-men-prdct img {
     width: 100%;
     height: auto;
     border-radius: 5px;
     transition: transform 0.3s ease;
 }
+
 #three-dot-rell img {
     width: 35px;
     height: 35px;
     border-radius: 50%;
 }
-.admin-men-prdct>button{
+
+.admin-men-prdct>button {
     border-radius: 9px;
     background-color: #335918;
     color: #fff;
 
 }
-.admin-men-prdct>button:hover{
+
+.admin-men-prdct>button:hover {
     background-color: #fff;
     color: black;
     border: 1px solid;
-    
+
 }

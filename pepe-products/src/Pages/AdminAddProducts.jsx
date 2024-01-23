@@ -1,25 +1,16 @@
 import React from 'react'
 import '../css/dashboard.css'
-import { useState } from 'react';
-import Addproduct from './AddMenproduct';
-import AddWomenproduct from './AddWomenproduct';
-import AddMobileproduct from './AddMobileproduct';
+import { useNavigate } from 'react-router-dom';
 
 function AdminAddProducts() {
-    const [selectedSections, setSelectedSections] = useState(null)
+    const navigate =useNavigate();
 
-    const handleSectionClick = (e) => {
-      setSelectedSections(e)
-    };
+
 
   return (
     <>
     <div className='dashboard-screen'>
       <div className='dashboard-wrappeer'>
-
-        {selectedSections ? (
-          <div>{selectedSections}</div>
-        ) : (
           <div className='dashboard-adddelete'>
             <div className='dashboard-addproduct'>
               <div className='dashboard-addproduct-llink-add'>
@@ -32,8 +23,8 @@ function AdminAddProducts() {
                 <div className='dashboard-addproduct-btn'>
 
                   <button className='dashboard-buttn'
-                    onClick={() => handleSectionClick(<Addproduct />)}>
-                    Add Men Products
+                    onClick={() => navigate(`/add-men-product`)}>
+                   <p>Add Men Products</p> 
                   </button>
 
                 </div>
@@ -49,7 +40,7 @@ function AdminAddProducts() {
                 </div>
                 <div className='dashboard-addproduct-btn'>
                   <button className='dashboard-buttn'
-                    onClick={() => handleSectionClick(<AddWomenproduct />)}>
+                    onClick={() => navigate(`/add-women-product`)}>
                     Add Women Products
                   </button>
                 </div>
@@ -65,14 +56,14 @@ function AdminAddProducts() {
                 </div>
                 <div className='dashboard-addproduct-btn'>
                   <button className='dashboard-buttn'
-                    onClick={() => handleSectionClick(<AddMobileproduct/>)}>
+                    onClick={() => navigate(`/add-mobile-product`)}>
                     Add Mobile Products
                   </button>
                 </div>
               </div>
             </div>
           </div>
-        )}
+ 
       </div>
     </div>
   </>

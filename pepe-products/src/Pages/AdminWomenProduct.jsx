@@ -59,7 +59,7 @@ function AdminWomenProduct() {
                                 <img src={ThreeDot} alt='' />
                                 {showSubLinks === index &&(
                                        <div className='showthree-options'>
-                                       <button onClick={() => navigate(`edit-product/${elem.id}`)} className='show-three-optionsbutton'>Edit</button>
+                                       <button onClick={() => navigate(`/edit-product/${elem.id}`)} className='show-three-optionsbutton'>Edit</button>
                                        <button onClick={() => { DeleteProduct(elem.id) }} className='show-three-optionsbutton'>Delete</button>
                                        <button onClick={() => navigate(`/singlemen/${elem.id}`)} className='show-three-optionsbutton'>View</button>
                                    </div>

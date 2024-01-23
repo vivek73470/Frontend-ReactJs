@@ -3325,16 +3325,6 @@
       "off": 31,
       "rating": "1",
       "id": "104"
-    },
-    {
-      "productImgTagSrc": "https://image.shutterstock.com/image-photo/stack-colorful-clothes-pile-clothing-260nw-2203081765.jpg",
-      "plp": "DESIGN OF THE DAY",
-      "brand_namez": "Burberry",
-      "clr_shade_4": "Men's White The Ryuk Graphic Printed T-shirt",
-      "discountedPriceText": "500",
-      "actualPriceText": "999",
-      "discount_price_box": "319",
-      "id": "105"
     }
   ],
   "womensdata": [
@@ -6966,33 +6956,26 @@
       "discount_price_box": 379,
       "rating": "2",
       "id": "52"
-    },
-    {
-      "id": "53",
-      "productImgTagSrc": "https://images.pexels.com/photos/842811/pexels-photo-842811.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-      "brand_namez": "Burberry",
-      "clr_shade_4": "Men's White The Ryuk Graphic Printed T-shirt",
-      "discountedPriceText": "500",
-      "actualPriceText": "999",
-      "discount_price_box": "319"
     }
   ],
   "user": [
     {
       "id": "f366",
-      "username": "Vivek",
-      "email": "vivek@gmail.com",
-      "password": "12345"
-    }
-  ],
-  "profile": [
-    {
-      "id": "cec8",
-      "username": "Vivek",
+      "username": "Sapna",
       "email": "vivek@gmail.com",
       "gender": "male",
+      "number": "0123456789",
       "address": "chandigarh",
-      "number": "7347063116"
+      "password": "12345"
+    },
+    {
+      "id": "69fa",
+      "username": "Bhupinder",
+      "email": "Bhupinder@gmail.com",
+      "password": "12345",
+      "gender": "male",
+      "number": "0123456789",
+      "address": "chandigarh"
     }
   ]
 }

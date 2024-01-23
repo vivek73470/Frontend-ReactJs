@@ -2,6 +2,7 @@ import React from 'react'
 import { useState,useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Footer from '../Components/Footer/footer';
+import Navbar from '../Components/Header/Header';
 
 function SingleWomenPage() {
     // apidata and selectedImage are state variables managed using the useState hook
@@ -16,7 +17,6 @@ function SingleWomenPage() {
 
 
     async function singledata() {
-        console.log('vivek',id)
         try {
             let res = await fetch(`http://localhost:3500/womensdata/${id}`);
             let data = await res.json();
@@ -46,6 +46,7 @@ function SingleWomenPage() {
 
     return (
         <>
+        <Navbar/>
         <div className='single-product-mainscreen'>
             <div className='single-product-wrapscreen'>
                 <div className='single-product-sidebar'>

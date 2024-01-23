@@ -3,6 +3,7 @@ import '../css/productpage.css'
 import { useState,useEffect } from 'react';
 import Footer from '../Components/Footer/footer';
 import { useNavigate } from 'react-router-dom';
+import Navbar from '../Components/Header/Header';
 
 function MobileCover() {
     const [apidata, setData] = useState([])
@@ -27,9 +28,13 @@ function MobileCover() {
 
   return (
          <>
+         <Navbar/>
             <div className='product-page-mainscreen'>
                 <div className='product-page-sidebar'>
                     <h1>Mobile Covers</h1>
+                    <div className='count-total-prd'>
+                    <p>Total Products:</p> <h5> {apidata.length}</h5>
+                    </div>
                 </div>
                 <div className='product-page-content'>
                     {apidata.length > 0 && apidata.map((e, i) =>

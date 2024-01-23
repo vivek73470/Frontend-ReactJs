@@ -20,6 +20,7 @@ import NewArrivals from './NewArrivals'
 import CategoryToBag from './CategoryToBag'
 import BestSeller from './BestSeller';
 import StupidCollection from './StupidCollection'
+import Navbar from '../Components/Header/Header'
 
 
 const Home = () => {
@@ -37,6 +38,7 @@ const Home = () => {
 
   return (
     <>
+    <Navbar/>
       <div className='home-container'>
         <div className='home-wrapper'>
           <div className='home-1st-page'>

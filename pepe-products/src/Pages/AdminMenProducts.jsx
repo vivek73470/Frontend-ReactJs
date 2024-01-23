@@ -59,7 +59,7 @@ function AdminMenProducts() {
                                     <img src={ThreeDot} alt='' />
                                     {showSubLinks === index && (
                                         <div className='showthree-options'>
-                                            <button onClick={() => navigate(`edit-product/${elem.id}`)} className='show-three-optionsbutton'>Edit</button>
+                                            <button onClick={() => navigate(`/edit-product/${elem.id}`)} className='show-three-optionsbutton'>Edit</button>
                                             
                                             {/* Button with Inline Function
                                             It directly calls DeleteProduct(elem.id) when the button is clicked. */}

@@ -3,6 +3,7 @@ import '../css/productpage.css'
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Footer from '../Components/Footer/footer';
+import Navbar from '../Components/Header/Header';
 
 function MenClothsPage() {
     const [apidata, setData] = useState([])
@@ -27,27 +28,17 @@ function MenClothsPage() {
         getData();
     }, [])
 
-    // async function deleteProduct(id) {
-    //     let res = await fetch(`http://localhost:3500/product/${id}`, {
-    //         method: 'DELETE',
-
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //         }
-    //     });
-
-    //     let data = await res.json();
-    //     console.log(data)
-    //     getData()
-
-    // }
-
     return (
         <>
+        <Navbar/>
       
             <div className='product-page-mainscreen'>
                 <div className='product-page-sidebar'>
                     <h1>Men Clothing</h1>
+                    <div className='count-total-prd'>
+                    <p>Total Products:</p> <h5> {apidata.length}</h5>
+                    </div>
+                  
                 </div>
                 <div className='product-page-content'>
                     {apidata.length > 0 && apidata.map((e, i) =>
@@ -62,9 +53,6 @@ function MenClothsPage() {
                                 <p className='product-actual-price'>₹{e.actualPriceText}</p>
                             </div>
                             <p className='product-title-members'>₹{e.discount_price_box} For Tribe Members</p>
-                            {/* <div style={{ display: "flex" }}>
-                                <button onClick={() => { deleteProduct(e.id) }}>delete</button>
-                            </div> */}
 
                         </div>
                     )}

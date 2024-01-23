@@ -3,7 +3,7 @@ import '../css/adminaddprod.css'
 
 function AddMobileproduct() {
     const [data, setData] = React.useState({
-        id: '',
+        // id: '',
         productImgTagSrc: '',
         brand_namez: '',
         clr_shade_4: '',
@@ -28,7 +28,7 @@ function AddMobileproduct() {
         let dat = await res.json();
         console.log(dat);
         setData({
-          id: '',
+          // id: '',
           productImgTagSrc: '',
           brand_namez: '',
           clr_shade_4: '',
@@ -57,7 +57,7 @@ function AddMobileproduct() {
     <div className="container-addproduct">
       <h1 className='addproduct-title'>Add Mobile's Product</h1>
       <form className='addproduct-form' onSubmit={handleSubmit}>
-        <input
+        {/* <input
           name='id'
           type="text"
           className='addproduct-input'
@@ -66,7 +66,7 @@ function AddMobileproduct() {
           value={data.id}
           onChange={handleChange}
         />
-        <br />
+        <br /> */}
         <input
           name='productImgTagSrc'
           type="text"

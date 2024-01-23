@@ -1,10 +1,12 @@
 import React from 'react'
 import '../css/about.css'
 import Footer from '../Components/Footer/footer'
+import Navbar from '../Components/Header/Header'
 
 function Aboutus() {
   return (
   <>
+   <Navbar/>
     <div className="about-us">
       <div className="about-us-content">
         <h1>About Us</h1>

@@ -23,8 +23,7 @@ const SignIn = () => {
   };
 
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+
 
     //  Retrieve user data from localStorage
     // let allUsers = JSON.parse(localStorage.getItem('users')) || [];
@@ -45,7 +44,7 @@ const SignIn = () => {
     //   alert('Email or password is incorrect.');
     // }
 
-
+async function LoginToDashboard(){
     try {
       let isUserFound = false;
       let res = await fetch(`http://localhost:3500/user`, {
@@ -60,8 +59,10 @@ const SignIn = () => {
   users.forEach((user) => {
     if (user.email === formData.email && user.password === formData.password) {
       isUserFound = true;
+
+      localStorage.setItem('userId',user.id)
       toggleAuth();
-      navigate('/admin');
+      navigate('/dashboard');
 
       // Clear form fields after successful authentication
       setFormData(initState);
@@ -74,6 +75,10 @@ const SignIn = () => {
 } catch (err) {
   console.log(err);
 }
+}
+const handleSubmit =  (e) => {
+  e.preventDefault(e);
+  LoginToDashboard();
 };
 
 
@@ -130,7 +135,7 @@ const SignIn = () => {
               </div>
 
               <div className='form-button'>
-                <button id='btn-frm'>Submit</button>
+                <button id='btn-frm' onClick={()=>LoginToDashboard()}>Submit</button>
               </div>
             </form>
           </div>

@@ -6,7 +6,6 @@ import { useParams } from 'react-router-dom';
 
 function EditProductAdmin() {
   const { id } = useParams();
-  console.log('par', id);
   const [formData, setFormData] = useState({
     productImgTagSrc: '',
     plp: '',
@@ -18,7 +17,7 @@ function EditProductAdmin() {
   });
 
   async function EditProduct() {
-    console.log('asy',id)
+
     try {
       let res = await fetch(`http://localhost:3500/mensdata/${id}`, {
         method: 'PUT',
@@ -129,7 +128,7 @@ function EditProductAdmin() {
             />
             <br />
 
-            <button className="editproduct-button" onClick={() => EditProduct(id)}>
+            <button className="editproduct-button" onClick={() => EditProduct()}>
               Update
             </button>
           </form>

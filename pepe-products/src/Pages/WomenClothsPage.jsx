@@ -3,6 +3,7 @@
     import { useState,useEffect } from 'react';
     import { useNavigate } from 'react-router-dom';
     import Footer from '../Components/Footer/footer';
+import Navbar from '../Components/Header/Header';
 
     function WomenPage() {
         
@@ -30,10 +31,14 @@
 
         return (
             <>
+            <Navbar/>
         
                 <div className='product-page-mainscreen'>
                     <div className='product-page-sidebar'>
                         <h1>Womens Clothing</h1>
+                        <div className='count-total-prd'>
+                    <p>Total Products:</p> <h5> {apidata.length}</h5>
+                    </div>
                     </div>
                     <div className='product-page-content'>
                         {apidata.length > 0 && apidata.map((e, i) =>

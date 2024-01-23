@@ -3,6 +3,7 @@ import '../css/singlepage.css'
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Footer from '../Components/Footer/footer';
+import Navbar from '../Components/Header/Header';
 
 
 function SingleMobile() {
@@ -31,6 +32,7 @@ function SingleMobile() {
 
     return (
         <>
+        <Navbar/>
             <div className='single-product-mainscreen'>
                 <div className='single-product-wrapscreen'>
                     <div className='single-mobile-sidebar'>
