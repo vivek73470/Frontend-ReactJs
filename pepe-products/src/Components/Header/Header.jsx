@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import '../../css/header.css';
+import { useState } from 'react';
 
 const links =[
     {path:  '/',title:'Home'},
@@ -20,6 +21,7 @@ const links =[
 ];
 
 function Navbar() {
+
   return (
     <>
       <div className='vax'>
@@ -65,6 +67,17 @@ function Navbar() {
           </div>
         ))}
       </div>
+      
+      {/* <div className='header-search-section'>
+      <input
+            type="text"
+            className='search-header'
+            placeholder="Search"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <button onClick={()=>handleSearch()}>search</button>
+      </div> */}
     </>
   );
 }

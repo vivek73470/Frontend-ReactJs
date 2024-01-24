@@ -22,29 +22,7 @@ const SignIn = () => {
     });
   };
 
-
-
-
-    //  Retrieve user data from localStorage
-    // let allUsers = JSON.parse(localStorage.getItem('users')) || [];
-    // let isUserFound = false;
-
-    // Check if provided credentials match any user data
-    // allUsers.forEach((user) => {
-    //   if (formData.email === user.email && formData.password === user.password) {
-    //     isUserFound = true;
-
-    // Set authentication to true (or log in)
-    // toggleAuth();  
-    // navigate("/adminpage")
-    //   }
-    // });
-
-    // if (!isUserFound) {
-    //   alert('Email or password is incorrect.');
-    // }
-
-async function LoginToDashboard(){
+  async function LoginToDashboard() {
     try {
       let isUserFound = false;
       let res = await fetch(`http://localhost:3500/user`, {
@@ -55,31 +33,36 @@ async function LoginToDashboard(){
       })
       let users = await res.json();
 
-  // Check if provided credentials match any user data
-  users.forEach((user) => {
-    if (user.email === formData.email && user.password === formData.password) {
-      isUserFound = true;
+      // Check if provided credentials match any user data
+      users.forEach((user) => {
+        if (user.email === formData.email && user.password === formData.password) {
+          isUserFound = true;
+          toggleAuth();
+          localStorage.setItem('userId', user.id)
+          navigate(`/dashboard`);
 
-      localStorage.setItem('userId',user.id)
-      toggleAuth();
-      navigate('/dashboard');
 
-      // Clear form fields after successful authentication
-      setFormData(initState);
+        }
+      });
+
+      console.log("userfound", isUserFound)
+
+      // if(isUserFound){
+      //   toggleAuth();
+      //   console.log("toggle",toggleAuth)
+      //   navigate('/dashboard');
+      // }
+      // else{
+      //   alert('Email or Password is incorrect')
+      // }
+
+    } catch (err) {
+      console.log(err);
     }
-  });
-
-  if (!isUserFound) {
-    alert('Email or password is incorrect.');
   }
-} catch (err) {
-  console.log(err);
-}
-}
-const handleSubmit =  (e) => {
-  e.preventDefault(e);
-  LoginToDashboard();
-};
+  const handleSubmit = (e) => {
+    e.preventDefault(e);
+  };
 
 
   return (
@@ -133,9 +116,8 @@ const handleSubmit =  (e) => {
                   required
                 />
               </div>
-
               <div className='form-button'>
-                <button id='btn-frm' onClick={()=>LoginToDashboard()}>Submit</button>
+                <button id='btn-frm' onClick={() => LoginToDashboard()}>Submit</button>
               </div>
             </form>
           </div>

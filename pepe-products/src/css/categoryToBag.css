@@ -1,10 +1,15 @@
 .catbag{
-    max-width: 1280px;
-    margin: auto;
+  
 }
 .boy-girl{
+    width: 99%;
+    margin: auto;
     display: flex;
 
+}
+.cat-to-bag-image{
+    height: 440px;
+    width: 100%;
 }
 .catbag-heading{
     text-align: center;

@@ -6,7 +6,9 @@
   padding: 20px;
   margin-top: 50px;
 }
-
+.whole-container{
+  display: flex;
+}
 
 .product-page-sidebar {
   padding: 20px;

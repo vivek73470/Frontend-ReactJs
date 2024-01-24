@@ -42,7 +42,6 @@ function Sidebar({ Children }) {
 
   const handleLogout = () => {
     localStorage.removeItem('userId')
-    localStorage.removeItem('isAuth');
     navigate('/signin');
   }
 

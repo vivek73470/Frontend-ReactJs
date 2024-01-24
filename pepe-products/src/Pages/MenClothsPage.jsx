@@ -30,15 +30,14 @@ function MenClothsPage() {
 
     return (
         <>
-        <Navbar/>
-      
+            <Navbar />
             <div className='product-page-mainscreen'>
                 <div className='product-page-sidebar'>
                     <h1>Men Clothing</h1>
                     <div className='count-total-prd'>
-                    <p>Total Products:</p> <h5> {apidata.length}</h5>
+                        <p>Total Products:</p> <h5> {apidata.length}</h5>
                     </div>
-                  
+
                 </div>
                 <div className='product-page-content'>
                     {apidata.length > 0 && apidata.map((e, i) =>
@@ -58,7 +57,7 @@ function MenClothsPage() {
                     )}
                 </div>
             </div>
-            <Footer/>
+            <Footer />
 
         </>
     )

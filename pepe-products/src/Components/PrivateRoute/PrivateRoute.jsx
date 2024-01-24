@@ -4,8 +4,9 @@ import { Navigate } from "react-router-dom"
 
 function PrivateRoute({children}){
     const {isAuth} =React.useContext(AuthContext);
-
-    if(!isAuth){
+    
+//not authenticated becoz initial set to false in authcontext
+    if(!isAuth){  
         return <Navigate to="/signin"/>;
     }
 

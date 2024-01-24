@@ -1,6 +1,5 @@
 .popular-wrapper{
-    width: 1280px;
-    margin: auto;
+
 }
 .pop-mens-wrap{
     display: flex;
@@ -24,4 +23,12 @@
 }
 .pop-catg{
     text-align: center;
+}
+.pop-mens-multi{
+    width: 100%;
+    height: 440px;
+}
+.pop-womens-multi{
+    width: 100%;
+    height: 440px;
 }

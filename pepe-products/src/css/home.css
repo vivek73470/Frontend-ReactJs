@@ -1,10 +1,9 @@
 .home-wrapper{
-    max-width: 1280px;
-    margin: auto;
+
 }
 .home-1st-page-inside{
-    display: flex;
-    gap: 10px;
+   /* padding-left: 5px;
+   padding-right: 5px; */
 }
 
 .home-1st-page-inside-image-slider img{
@@ -21,8 +20,14 @@ margin-top: 25px;
     object-fit: contain;
 }
 .home-3rd-page-wrap{
+    width: 96%;
+    margin: auto;
     display: flex;
+    justify-content: center;
     gap: 10px;
+    height: 440px;
+    text-align: center;
+    padding-bottom: 45px;
 }
 .home-3rd-page-multi-images img{
     width: 100%;
@@ -30,7 +35,13 @@ margin-top: 25px;
     object-fit: contain;
 }
 .home-4th-page-wrap{
+    width: 99%;
+    margin: auto;
     display: flex;
+}
+.home-4th-page-multi{
+    width: 49.5%;
+    margin: auto;
 }
 .home-4th-page-multi img{
     width: 100%;
