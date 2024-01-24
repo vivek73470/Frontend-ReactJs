@@ -1,15 +1,32 @@
 .stupid-screen{
-    max-width: 1280px;
-    margin: auto;
+    /* max-width: 99%;
+    margin: auto; */
 }
 .stutext{
     text-align: center;
 }
-.collImg{
+.collImg {
+    max-width: 99%;
+    margin: auto;
     display: flex;
+}
+.coll-inside-stpd{
+    width: 49.5%;
+    margin: auto;
 }
 .collImg img{
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+.banImg{
+    max-width: 99%;
+    margin: auto;
+
+}
+.banImg img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    
 }

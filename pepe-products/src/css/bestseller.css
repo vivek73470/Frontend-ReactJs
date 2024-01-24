@@ -1,6 +1,7 @@
 .best-seller-screen{
-    max-width: 99%;
+    max-width: 99.5%;
     margin: auto;
+    padding-bottom: 40px;
 }
 .best-heading{
     text-align: center;

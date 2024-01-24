@@ -33,11 +33,12 @@ const handleSubmit =(e)=>{
   return (
     <>
     <Navbar/>
+    <div className='contact-screen'>
+      <span className='contact-getin'><h2>Get in Touch with us</h2></span>
       <div className="contact-form">
-        <h2>Contact Us</h2>
-        <form onSubmit={handleSubmit}>
+        <h4 className='contact-drop'>Drop us a message</h4>
+        <form className='contact-frmm' onSubmit={handleSubmit}>
           <div className="form-group">
-            <label>Name:</label>
             <input
               name="name"
               type="text"
@@ -48,7 +49,7 @@ const handleSubmit =(e)=>{
                />
           </div>
           <div className="form-group">
-            <label>Email:</label>
+          
             <input
               name="email"
               type="email"
@@ -59,7 +60,7 @@ const handleSubmit =(e)=>{
                />
           </div>
           <div className="form-group">
-            <label>Phone Number:</label>
+          
             <input
               name="phone"
               type="tel"
@@ -70,7 +71,7 @@ const handleSubmit =(e)=>{
               />
           </div>
           <div className="form-group">
-            <label>Message:</label>
+           
             <textarea
               name="message"
               id="message"
@@ -80,8 +81,9 @@ const handleSubmit =(e)=>{
               >
               </textarea>
           </div>
-          <input type="submit" value="Submit"/>
+          <input type="submit" className='contact-bnt' value="Submit"/>
         </form>
+      </div>
       </div>
       <Footer />
     </>

@@ -5,11 +5,14 @@
   text-align: center;
 }
 .arrival-design-data{
+    max-width: 99.5%;
+    width: 100%;
+    margin: auto;
     padding-bottom: 30px;
 }
 .home-arrival-mens{
-    /* height: 100%;
-    width: 100%; */
+   height: 775px;
+  
 }
 .home-arrival-mens img{
     height: 100%;
@@ -27,7 +30,7 @@ width: 100%;
     text-align: center;
 }
 .gangs-Image-arrival{
-    width: 99%;
+    max-width: 100%;
     margin: auto;
     display: flex;
 }
@@ -37,6 +40,6 @@ width: 100%;
     object-fit: contain;
 }
 .gangns-home-arrival{
-    width: 49.5%;
+    width: 50%;
     margin: auto;
 }

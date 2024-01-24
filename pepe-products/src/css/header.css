@@ -11,6 +11,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 2);
 }
 
+
 /* Navigation Links */
 .none-decrt {
   font-size: 19px;
@@ -58,4 +59,26 @@
 .sub-links a:hover {
   background-color: #555;
   border-radius: 4px;
+}
+.header-search-section{
+  padding: 16px;
+  width: 390px;
+}
+  .search-header {
+    width: 100%;
+    padding: 12px;
+    border-radius: 11px;
+    background-color: #eeeeee;
+    border: none;
+    outline: none;
+
+}
+.search-header:focus {
+border: none;
+
+}
+.screen-search {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }

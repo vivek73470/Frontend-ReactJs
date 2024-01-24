@@ -67,17 +67,23 @@ function Navbar() {
           </div>
         ))}
       </div>
-      
-      {/* <div className='header-search-section'>
+      <div className='screen-search'>
+      <div></div>
+      <div className='header-search-section'>
       <input
             type="text"
             className='search-header'
             placeholder="Search"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            // value={searchTerm}
+            // onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <button onClick={()=>handleSearch()}>search</button>
-      </div> */}
+        
+      </div>
+      </div>
+      
+      
+      <hr className='horint-line' />
+   
     </>
   );
 }
