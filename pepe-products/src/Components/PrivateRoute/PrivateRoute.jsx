@@ -4,10 +4,14 @@ import { Navigate } from "react-router-dom"
 
 function PrivateRoute({children}){
     const {isAuth} =React.useContext(AuthContext);
-    
+    const token =localStorage.getItem('userId')
+    console.log('token',token);
 //not authenticated becoz initial set to false in authcontext
-    if(!isAuth){  
+    if(!token){  
         return <Navigate to="/signin"/>;
+    }
+    else{
+       < Navigate to="/dashboard"/>
     }
 
     return children;

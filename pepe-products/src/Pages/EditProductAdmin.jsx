@@ -61,6 +61,7 @@ function EditProductAdmin() {
     <>
       <div className="edit-product-screen">
         <div className="edit-product-wrapper">
+          <span className='admin-edit-head'><h3>Edit Product</h3></span>
           <form className="edit-prdct-form" onSubmit={handleSubmit}>
             <input
               name="productImgTagSrc"

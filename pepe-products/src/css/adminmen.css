@@ -11,6 +11,10 @@
     padding-left: 15px;
     padding-right: 15px;
 }
+.adminmen-prdct-gap{
+    padding-top: 45px;
+    padding-bottom: 35px;
+}
 
 .showthree-options {
     display: grid;
@@ -65,6 +69,9 @@
     padding: 10px;
     border-radius: 8px;
     margin: auto;
+    border-radius: 15.662px;
+    background: #FFF;
+    box-shadow: 7.831px 7.831px 19.578px 0px rgba(0, 0, 0, 0.08);
 }
 
 .admin-men-prdct img {
@@ -81,9 +88,13 @@
 }
 
 .admin-men-prdct>button {
+    width: 100%;
     border-radius: 9px;
     background-color: #335918;
     color: #fff;
+    padding: 8px;
+    margin-top: 16px;
+    border: none;
 
 }
 

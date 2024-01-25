@@ -52,7 +52,7 @@ function AdminMobile() {
    <>
 
      <div className='Adminmen-product-screen'>
-                <h3>Mobile Covers</h3>
+                <h2 className='adminmen-prdct-gap'>Mobile Covers</h2>
                 <div className='Adminmen-product-screen-wrapper'>
                     {apiData.length > 0 && apiData.map((elem, index) => (
                         <div className='admin-men-prdct' key={index}>
@@ -60,7 +60,7 @@ function AdminMobile() {
                             <img src={ThreeDot} alt='' />
                             {showSubLinks === index && (
                                         <div className='showthree-options'>
-                                            <button onClick={() => navigate(`/edit-product/${elem.id}`)} className='show-three-optionsbutton'>Edit</button>
+                                            <button onClick={() => navigate(`/edit-mobile-product/${elem.id}`)} className='show-three-optionsbutton'>Edit</button>
                                             
                                             {/* Button with Inline Function
                                             It directly calls DeleteProduct(elem.id) when the button is clicked. */}

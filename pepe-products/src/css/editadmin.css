@@ -3,13 +3,13 @@
 .edit-product-screen {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+   margin-top: 75px;
   }
   
   .edit-product-wrapper {
+    width: 550px;
     background-color: #f4f4f4;
-    padding: 20px;
+    padding: 30px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
@@ -17,7 +17,6 @@
   .edit-prdct-form {
     display: flex;
     flex-direction: column;
-    max-width: 300px;
     margin: 0 auto;
   }
   
@@ -40,6 +39,9 @@
   .editproduct-button:hover {
     background-color: #45a049;
   }
-  
-  /* Add more styles as needed */
+  .admin-edit-head >h3 {
+    text-align: center;
+    padding-bottom: 33px;
+}
+
   

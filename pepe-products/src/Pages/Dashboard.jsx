@@ -40,7 +40,7 @@ function Dashboard() {
   }
   useEffect(() => {
     getMenData();
-  }, [])
+  }, []);
 
 
   async function getWomenData() {
@@ -67,28 +67,26 @@ function Dashboard() {
             <div className='dashboard-addproduct'>
               <div className='dashboard-addproduct-llink'>
                 <div className='dashboard-addproduct-details'>
-                  <h2>Mens Products</h2>
+                  <h2>Total Mens Products</h2>
                 </div>
-                <div className='dashboard-addproduct-number'>
-                  <span><h5> {apidata.length}</h5></span>
+                <div className='dashboard-addproduct-number-men'>
+                  <span className='dashbrd-total-men'><h3> {apidata.length}</h3></span>
                 </div>
-                <div className='dashboard-addproduct-btn'>
-
+                <div className='dashboard-addproduct-btn-men'>
                   <button className='dashboard-buttn'
                     onClick={() => navigate(`/menproducts`)}>
                     View Men Products
                   </button>
-
                 </div>
               </div>
             </div>
             <div className='dashboard-deleteproduct'>
               <div className='dashboard-delproduct-llink'>
                 <div className='dashboard-addproduct-details'>
-                  <h2>Womens Products</h2>
+                  <h2>Total Womens Products</h2>
                 </div>
                 <div className='dashboard-addproduct-number'>
-                  <span>{womenData.length}</span>
+                  <span><h3>{womenData.length}</h3></span>
                 </div>
                 <div className='dashboard-addproduct-btn'>
                   <button className='dashboard-buttn'
@@ -101,10 +99,10 @@ function Dashboard() {
             <div className='dashboard-mobileproduct'>
               <div className='dashboard-mobproduct-llink'>
                 <div className='dashboard-addproduct-details'>
-                  <h2>Mobile Products</h2>
+                  <h2>Total Mobile Products</h2>
                 </div>
                 <div className='dashboard-addproduct-number'>
-                  <span><h5>{mobileData.length}</h5></span>
+                  <span><h3>{mobileData.length}</h3></span>
                 </div>
                 <div className='dashboard-addproduct-btn'>
                   <button className='dashboard-buttn'

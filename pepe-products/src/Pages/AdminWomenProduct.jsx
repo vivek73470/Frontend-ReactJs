@@ -51,7 +51,7 @@ function AdminWomenProduct() {
     return (
         <>
             <div className='Adminmen-product-screen'>
-                <h3>Women's Products</h3>
+                <h2 className='adminmen-prdct-gap'>Women's Products</h2>
                 <div className='Adminmen-product-screen-wrapper'>
                     {apiData.length > 0 && apiData.map((elem, index) => (
                         <div className='admin-men-prdct' key={index}>
@@ -59,7 +59,7 @@ function AdminWomenProduct() {
                                 <img src={ThreeDot} alt='' />
                                 {showSubLinks === index &&(
                                        <div className='showthree-options'>
-                                       <button onClick={() => navigate(`/edit-product/${elem.id}`)} className='show-three-optionsbutton'>Edit</button>
+                                       <button onClick={() => navigate(`/edit-women-product/${elem.id}`)} className='show-three-optionsbutton'>Edit</button>
                                        <button onClick={() => { DeleteProduct(elem.id) }} className='show-three-optionsbutton'>Delete</button>
                                        <button onClick={() => navigate(`/singlemen/${elem.id}`)} className='show-three-optionsbutton'>View</button>
                                    </div>

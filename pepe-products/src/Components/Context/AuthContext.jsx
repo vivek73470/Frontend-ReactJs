@@ -8,6 +8,7 @@ function AuthContextProvider({ children }) {
     // isAuth holds the current authentication status
     const [isAuth, setIsAuth] = useState(false);
 
+
     const toggleAuth = () => {
       // whatsever value is just change it 
         setIsAuth(!isAuth);

@@ -11,16 +11,17 @@ function AdminAddProducts() {
     <>
     <div className='dashboard-screen'>
       <div className='dashboard-wrappeer'>
+      <h3 className='add-prdt-top'>Add your products</h3>
           <div className='dashboard-adddelete'>
-            <div className='dashboard-addproduct'>
+            <div className='dashboard-addproductt'>
               <div className='dashboard-addproduct-llink-add'>
                 <div className='dashboard-addproduct-details'>
-                  <h2>Mens Products</h2>
+                  <h2 className='add-animation'>Mens Products</h2>
                 </div>
-                <div className='dashboard-addproduct-number'>
+                <div className='dashboard-addproduct-number-dd'>
                   <span></span>
                 </div>
-                <div className='dashboard-addproduct-btn'>
+                <div className='dashboard-addproduct-btns'>
 
                   <button className='dashboard-buttn'
                     onClick={() => navigate(`/add-men-product`)}>
@@ -30,15 +31,15 @@ function AdminAddProducts() {
                 </div>
               </div>
             </div>
-            <div className='dashboard-deleteproduct'>
+            <div className='dashboard-deleteproductt'>
               <div className='dashboard-addproduct-llink-add'>
                 <div className='dashboard-addproduct-details'>
-                  <h2>Womens Products</h2>
+                  <h2 >Womens Products</h2>
                 </div>
-                <div className='dashboard-addproduct-number'>
+                <div className='dashboard-addproduct-number-dd'>
                   <span></span>
                 </div>
-                <div className='dashboard-addproduct-btn'>
+                <div className='dashboard-addproduct-btns'>
                   <button className='dashboard-buttn'
                     onClick={() => navigate(`/add-women-product`)}>
                     Add Women Products
@@ -46,15 +47,15 @@ function AdminAddProducts() {
                 </div>
               </div>
             </div>
-            <div className='dashboard-mobileproduct'>
+            <div className='dashboard-mobileproductt'>
               <div className='dashboard-addproduct-llink-add'>
                 <div className='dashboard-addproduct-details'>
                   <h2>Mobile Products</h2>
                 </div>
-                <div className='dashboard-addproduct-number'>
+                <div className='dashboard-addproduct-number-dd'>
                   <span></span>
                 </div>
-                <div className='dashboard-addproduct-btn'>
+                <div className='dashboard-addproduct-btns'>
                   <button className='dashboard-buttn'
                     onClick={() => navigate(`/add-mobile-product`)}>
                     Add Mobile Products

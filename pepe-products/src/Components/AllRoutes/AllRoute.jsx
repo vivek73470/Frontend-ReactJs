@@ -1,12 +1,11 @@
 import React from 'react'
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Aboutus from '../../Pages/About';
 import Home from '../../Pages/Home';
 import SignIn from '../../Pages/signIn';
 import Signup from '../../Pages/signup';
 import Addproduct from '../../Pages/AddMenproduct';
 import Delete from '../../Pages/Delete';
-import Navbar from '../Header/Header';
 import Admin from '../AdminPage/Admin';
 import Profile from '../../Pages/Profile';
 import Dashboard from '../../Pages/Dashboard';
@@ -27,6 +26,8 @@ import AdminMobile from '../../Pages/AdminMobile';
 import AdminWomenProduct from '../../Pages/AdminWomenProduct';
 import AddWomenproduct from '../../Pages/AddWomenproduct';
 import AddMobileproduct from '../../Pages/AddMobileproduct';
+import EditWomenProduct from '../../Pages/EditWomenProduct';
+import EditMobileProduct from '../../Pages/EditMobileProduct';
 
 
 
@@ -84,6 +85,8 @@ function AllRoute() {
           <Route path="deleteproduct" element={<Delete />} />
           <Route path="setting" element={<Setting />} />
           <Route path="edit-product/:id" element={<EditProductAdmin />} />
+          <Route path="edit-women-product/:id" element={<EditWomenProduct />} />
+          <Route path="edit-mobile-product/:id" element={<EditMobileProduct />} />
           <Route path="profile" element={<Profile />} />
         </Route>
 

@@ -45,17 +45,6 @@ const SignIn = () => {
         }
       });
 
-      console.log("userfound", isUserFound)
-
-      // if(isUserFound){
-      //   toggleAuth();
-      //   console.log("toggle",toggleAuth)
-      //   navigate('/dashboard');
-      // }
-      // else{
-      //   alert('Email or Password is incorrect')
-      // }
-
     } catch (err) {
       console.log(err);
     }

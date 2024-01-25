@@ -1,6 +1,7 @@
 /* profile.css */
 
 .Profile-Form {
+  display: flex;
     max-width: 400px;
     margin: 20px auto;
     padding: 20px;
