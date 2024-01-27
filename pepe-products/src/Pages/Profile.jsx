@@ -15,6 +15,7 @@ function Profile() {
 
   })
   const userId = localStorage.getItem('userId');
+  console.log("viv",userId)
   useEffect(() => {
     const fetchProfileData = async () => {
       try {
@@ -102,9 +103,10 @@ function Profile() {
 
   return (
     <>
-
+   <h2 className='profile-persnl'>Personal Info..</h2>
       <form className='Profile-Form' onSubmit={handleSubmit}>
         <div className='profile-left-frm'>
+          <div className='inside-prfle-lftfrm'>
           <input
             name='username'
             type='text'
@@ -153,6 +155,9 @@ function Profile() {
             onChange={handleChange}
           />
           <br />
+          <button type='submit' onClick={() => editProfile()}>Update</button>
+          </div>
+
           <div className='profilr-pic'>
           <input
             name='profilephoto'
@@ -161,14 +166,13 @@ function Profile() {
             onChange={handleProfileChange}
           />
           {data.profilephoto && (
-            <img
+            < img
               src={data.profilephoto}
               alt='Profile Photo'
-              style={{ maxWidth: '100%', marginTop: '10px' }}
             />
           )}
         </div>
-          <button type='submit' onClick={() => editProfile()}>Update</button>
+       
         </div>
 
 
