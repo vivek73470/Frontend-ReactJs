@@ -28,6 +28,7 @@ import AddWomenproduct from '../../Pages/AddWomenproduct';
 import AddMobileproduct from '../../Pages/AddMobileproduct';
 import EditWomenProduct from '../../Pages/EditWomenProduct';
 import EditMobileProduct from '../../Pages/EditMobileProduct';
+import NotFound from '../NotFoundPage/NotFound';
 
 
 
@@ -67,6 +68,7 @@ function AllRoute() {
         <Route path={'/singlemen/:id'} element={<SingleMenPage />}/>
         <Route path={'/mobilecover'} element={<MobileCover />}/>
         <Route path={'/singlemobile/:id'} element={<SingleMobile />}/>
+        <Route path={"*"} element={<NotFound/>}/>
 
         <Route path="/" element={
           <PrivateRoute>

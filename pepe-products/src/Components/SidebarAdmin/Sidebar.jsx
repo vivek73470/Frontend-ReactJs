@@ -31,12 +31,12 @@ function Sidebar({ Children }) {
       path: 'profile',
       icon: <CgProfile />
       ,
-    },
-    {
-      title: 'Setting',
-      path: 'setting',
-      icon: <CiSettings />,
     }
+    // {
+    //   title: 'Setting',
+    //   path: 'setting',
+    //   icon: <CiSettings />,
+    // }
   ]
 
 

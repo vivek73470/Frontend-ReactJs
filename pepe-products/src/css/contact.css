@@ -59,6 +59,7 @@
     border-radius: 10px;
     background-color: #335918;
     color: #fff;
+    cursor: pointer;
   }
   .contact-bnt:hover{
   background-color: #fff;

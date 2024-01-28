@@ -23,15 +23,17 @@
     position: absolute;
     top: 106%;
     right: 0;
-    gap: 2px;
-    padding: 3px;
+    gap: 11px;
+    padding: 11px;
 }
 
 .show-three-optionsbutton {
-    font-size: 16px;
+    font-size: 18px;
     color: black;
     background-color: #fff;
     font-weight: 700;
+    border: none;
+    cursor: pointer;
 }
 
 .show-three-optionsbutton:hover {
@@ -95,6 +97,7 @@
     padding: 8px;
     margin-top: 16px;
     border: none;
+    cursor: pointer;
 
 }
 

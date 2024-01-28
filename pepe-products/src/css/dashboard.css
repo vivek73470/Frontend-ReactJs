@@ -88,6 +88,7 @@
     padding: 15px;
     border-radius: 21px;
     border: none;
+    cursor: pointer;
 }
 
 .dashboard-buttn:hover {

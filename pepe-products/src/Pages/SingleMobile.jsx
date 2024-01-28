@@ -44,7 +44,7 @@ function SingleMobile() {
 
                     <div className='single-product-details'>
                         <p className='single-product-fashion'>Fashion Store</p>
-                        <p className='single-product-men'>Men's White The Ryuk Graphic Printed T-shirt</p>
+                        <p className='single-product-men'>Gambling Problem Printed Premium Glass Cover For OnePlus 9RT (Impact Resistant, Matte Finish)</p>
                         <div className='single-product-actdiscount'>
                             <p className='single-product-discount'>रु.{mobileData.discountedPriceText}</p>
                             <p className='single-product-actual'>{mobileData.actualPriceText}रु.</p>
@@ -83,17 +83,15 @@ function SingleMobile() {
                         <div className='single-product-detail-box'>
                             <p className='single-product-datail-head' >Product Details</p>
                             <div>
-                                <p className='single-product-brand'>Brand:Burberry</p>
-                                <p className='single-product-brand'>Product Name: Men's White "The Ryuk" Graphic Printed T-shirt</p>
-                                <p className='single-product-brand'>Product Type: Full Sleeve T-shirt</p>
+                                <p className='single-product-brand'>Brand:Silicone/Rubber</p>
+                                <p className='single-product-brand'>Product Name: Provides a sleek and rugged appearance, offering enhanced durability.</p>
+                                <p className='single-product-brand'>Product Type: Full Silicone Glass</p>
                             </div>
 
                         </div>
                         <div className='single-product-description'>
                             <p className='single-product-datail-head'>Description</p>
-                            <p>Elevate your casual wardrobe with this stylish and comfortable men's full sleeve T-shirt from Burberry.
-                                The "The Ryuk" Graphic Printed design adds a touch of contemporary flair to your outfit, making it perfect for casual outings or relaxed days.
-                                Crafted with high-quality fabric, this T-shirt ensures a comfortable fit and long-lasting wear.</p>
+                            <p>When choosing a mobile cover, it's essential to consider your specific needs, such as the level of protection required, preferred design, and any additional features you may find useful. Additionally, ensure that the cover is compatible with your specific mobile phone model.</p>
                         </div>
                     </div>
                 </div>

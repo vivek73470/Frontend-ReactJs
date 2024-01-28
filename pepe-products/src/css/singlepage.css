@@ -1,7 +1,7 @@
 .single-product-mainscreen {
     max-width: 1280px;
     margin: auto;
-    margin-top: 20px;
+    padding-top: 10px;
 }
 
 .single-product-wrapscreen {
@@ -21,8 +21,8 @@
 }
 
 .single-product-insidebar {
-    height: 140px;
-    width: 173px;
+    height: 139px;
+    width: 170px;
 
 }
 
@@ -43,6 +43,7 @@
     font-size: 15px;
     text-align: left;
     color: rgb(79, 83, 98);
+    padding-top: 6px;
 }
 
 .single-product-sizeflex {
@@ -55,6 +56,7 @@
     display: flex;
     align-items: center;
     gap: 15px;
+    padding-top: 12px;
 }
 
 .single-product-discount {
@@ -81,23 +83,27 @@
 
 .single-page-details {
     display: flex;
-    gap: 15px;
-    margin-top: 10px;
+    gap: 25px;
+    margin-top: 25px;
     font-size: 13px;
+   
 }
 
 .single-product-1st {
     border: 1px solid grey;
-    padding: 5px;
+    padding: 11px;
     background: rgba(0, 0, 0, 0.64);
 }
 
 .single-product-2nd {
     border: 1px solid black;
     padding: 5px;
+    display: flex;
+    align-items: center;
 }
 
 .single-page-border {
+    padding-bottom: 20px;
     border-bottom: 2px solid black;
 }
 
@@ -109,20 +115,26 @@
 }
 
 .single-product-select {
+    padding-top: 15px;
+    padding-bottom: 15px;
     font-size: 22px;
     font-weight: 650;
     text-align: left;
 }
 
 .single-page-size-btnn {
+    text-align: center;
+    width: 24px;
     border-radius: 6px;
-    padding: 6px;
+    padding: 10px;
     border: 1px solid black;
     color: var(--chakra-colors-white);
     background: var(--chakra-colors-black);
 }
 
 .single-product-garment {
+    padding-top: 15px;
+    padding-bottom: 15px;
     font-size: 13px;
     color: rgba(0, 0, 0, 0.48);
 }
@@ -130,7 +142,7 @@
 .single-product-detail-box {
     background-color: rgb(255, 255, 255);
     border-radius: 8px;
-    margin-bottom: 16px;
+    margin-bottom: 25px;
     padding: 20px 16px;
     border: 1px solid rgb(234, 234, 242);
 }
@@ -159,7 +171,7 @@
 }
 
 .single-product-sidebar {
-    width: 250px;
+    width: 170px;
 }
 
 .prdct-size-mobile {

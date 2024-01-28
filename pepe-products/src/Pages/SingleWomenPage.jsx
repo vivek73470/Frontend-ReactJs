@@ -66,7 +66,7 @@ function SingleWomenPage() {
                 </div>
                 <div className='single-product-details'>
                     <p className='single-product-fashion'>Fashion Store</p>
-                    <p className='single-product-men'>Men's White The Ryuk Graphic Printed T-shirt</p>
+                    <p className='single-product-men'>Women's White The Ryuk Graphic Printed T-shirt</p>
                     {apidata && (
                         <div className='single-product-actdiscount'>
                             <p className='single-product-discount'>रु.{apidata.discount_price_box}</p>
@@ -111,14 +111,14 @@ function SingleWomenPage() {
                         <p className='single-product-datail-head' >Product Details</p>
                         <div>
                             <p className='single-product-brand'>Brand:Burberry</p>
-                              <p className='single-product-brand'>Product Name: Men's White "The Ryuk" Graphic Printed T-shirt</p>
+                              <p className='single-product-brand'>Product Name: Women's White "The Ryuk" Graphic Printed T-shirt</p>
                               <p className='single-product-brand'>Product Type: Full Sleeve T-shirt</p>
                         </div>
 
                     </div>
                     <div className='single-product-description'>
                         <p className='single-product-datail-head'>Description</p>
-                        <p>Elevate your casual wardrobe with this stylish and comfortable men's full sleeve T-shirt from Burberry. 
+                        <p>Elevate your casual wardrobe with this stylish and comfortable women's full sleeve T-shirt from Burberry. 
                             The "The Ryuk" Graphic Printed design adds a touch of contemporary flair to your outfit, making it perfect for casual outings or relaxed days.
                              Crafted with high-quality fabric, this T-shirt ensures a comfortable fit and long-lasting wear.</p>
                     </div>

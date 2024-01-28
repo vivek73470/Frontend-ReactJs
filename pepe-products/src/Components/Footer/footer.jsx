@@ -7,7 +7,7 @@ function Footer() {
     {
       title: 'Customer Service',
       links: [
-        { path: '/contact', title: 'Contact Us' },
+        { path: '/contact-us', title: 'Contact Us' },
         { path: '/faq', title: 'FAQ' },
         { path: '/shipping', title: 'Shipping Information' },
       ],
