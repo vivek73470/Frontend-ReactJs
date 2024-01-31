@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { handleAdd } from '../React-Redux/action';
+import { handleAdd } from '../React-Redux/Counter/action';
 
 function TodoInput({addTodo}) {
     const[text,setText]=useState('');

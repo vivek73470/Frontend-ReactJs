@@ -1,6 +1,9 @@
-import { legacy_createStore } from "redux";
-import { reducer } from "../React-Redux/reducer";
+import { legacy_createStore,combineReducers } from "redux";
+import { reducer as CountReducer } from "./Counter/reducer";
+import {reducer as TodoReducer} from './Todos/reducer'
 
-const store = legacy_createStore(reducer)
+const rootReducer = combineReducers ({CountReducer, TodoReducer});
+
+const store = legacy_createStore(rootReducer)
 
 export {store}

@@ -1,12 +1,12 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { handleAdd } from '../React-Redux/action';
-import { handleReduce } from '../React-Redux/action';
+import { handleAdd } from '../React-Redux/Counter/action';
+import { handleReduce } from '../React-Redux/Counter/action';
 
 function Counter() {
     // reduxStore - can name anything
     const count = useSelector((reduxStore) => {
-   return reduxStore.count;
+   return reduxStore.CountReducer.count;
 });
 
 

@@ -2,16 +2,15 @@ import React, { useEffect } from 'react'
 import TodoInput from './TodoInput'
 import axios from 'axios'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux'
-import { GeTodosRequest, GeTodosSuccess,GeTodosError, PostTodosRequest, PostTodosError} from '../React-Redux/action';
+import { GeTodosRequest, GeTodosSuccess,GeTodosError, PostTodosRequest, PostTodosError} from '../React-Redux/Todos/action';
 import { store } from '../React-Redux/store';
 
 function Todo() {
         const dispatch = useDispatch();
-        console.log("h888i")
         const { todos,isLoading} = useSelector((store)=>{
                 console.log(store)
                 return {
-                todos:store.todos,
+                todos:store.TodoReducer.todos,
                 isLoading:store.isLoading,
                 }
                
@@ -44,13 +43,13 @@ function Todo() {
                                 title,
                                 status:false
                         };
-                        dispatch(PostTodosRequest());
+                        // dispatch(PostTodosRequest());
                         axios.post(`http://localhost:3500/todos`,payload)
                         .then((r) =>{
-                                dispatch(PostTodosRequest(r.data));
+                                // dispatch(PostTodosRequest(r.data));
                         })
                         .catch((e)=>{
-                                dispatch(PostTodosError());
+                                // dispatch(PostTodosError());
                         })
                 }
 
