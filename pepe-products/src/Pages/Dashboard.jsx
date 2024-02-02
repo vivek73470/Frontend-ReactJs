@@ -2,8 +2,7 @@ import React from 'react'
 import '../css/dashboard.css'
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import MobileCover from './MobileCover'
-import { getData } from '../Components/api/api';
+import { getData, getMenData, getWomenData } from '../Components/api/api';
 
 
 function Dashboard() {
@@ -22,45 +21,36 @@ function Dashboard() {
         console.log(err);
       }
     };
-
     fetchData();
-
   }, [])
 
-  async function getMenData() {
-    try {
-      let res = await fetch(`http://localhost:3500/mensdata/`);
-      let data = await res.json();
-      console.log(data);
 
-      setData(data)
-      console.log(apidata)
-    }
-
-    catch (err) {
-      console.log(err);
-    }
-  }
   useEffect(() => {
-    getMenData();
+   const fetchWomenData =async()=>{
+    try{
+      const data = await getWomenData();
+      setWomenData(data)
+    } catch(err){
+      console.log(err)
+    }
+   }
+   fetchWomenData();
+  }, [])
+
+
+  useEffect(() => {
+    const fetchMenData =async()=>{
+      try{
+        const data = await getMenData();
+        setData(data)
+      } catch(err){
+        console.log(err)
+      }
+     }
+     fetchMenData();
+
   }, []);
 
-
-  async function getWomenData() {
-    try {
-      let res = await fetch(`http://localhost:3500/womensdata/`);
-      let data = await res.json();
-      console.log(data);
-      setWomenData(data)
-      console.log(apidata)
-    }
-    catch (err) {
-      console.log(err);
-    }
-  }
-  useEffect(() => {
-    getWomenData();
-  }, [])
 
   return (
     <>

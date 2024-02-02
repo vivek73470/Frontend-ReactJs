@@ -27,8 +27,7 @@ function SingleMobile() {
 
     useEffect(() => {
         getData();
-
-    }, [])
+    },[])
 
     return (
         <>

@@ -1,31 +1,25 @@
 import React from 'react'
 import '../css/productpage.css'
 import { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom';
 import Footer from '../Components/Footer/footer';
 import Navbar from '../Components/Header/Header';
+import { getMenData } from '../Components/api/api';
 
 function MenClothsPage() {
     const [apidata, setData] = useState([])
     const navigate = useNavigate()
 
-    async function getData() {
-        try {
-            let res = await fetch(`http://localhost:3500/mensdata/`);
-            let data = await res.json();
-            console.log(data);
-
-            setData(data)
-            console.log(apidata)
-        }
-
-        catch (err) {
-            console.log(err);
-        }
-    }
-
     useEffect(() => {
-        getData();
+        const fetchMenData = async () => {
+            try {
+              const data = await getMenData();
+              setData(data);
+            } catch (err) {
+              console.log(err);
+            }
+          };
+          fetchMenData();
     }, [])
 
     return (
