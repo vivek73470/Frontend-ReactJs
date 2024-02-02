@@ -4,26 +4,26 @@ import { useState,useEffect } from 'react';
 import Footer from '../Components/Footer/footer';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../Components/Header/Header';
+import { getData } from '../Components/api/api';
+
+
 
 function MobileCover() {
     const [apidata, setData] = useState([])
     const navigate = useNavigate();
 
-    async function getData() {
-        try {
-            let res = await fetch(`http://localhost:3500/mobiles/`);
-            let data = await res.json();
-            console.log(data);
-
-            setData(data)
-            console.log(apidata)
-        }
-        catch (err) {
-            console.log(err);
-        }
-    }
     useEffect(() => {
-        getData();
+        const fetchData = async () => {
+            try {
+              const data = await getData();
+              setData(data);
+            } catch (err) {
+              console.log(err);
+            }
+          };
+      
+          fetchData();
+      
     }, [])
 
   return (

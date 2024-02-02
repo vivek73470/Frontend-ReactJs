@@ -15,7 +15,6 @@ function Profile() {
 
   })
   const userId = localStorage.getItem('userId');
-  console.log("viv",userId)
   useEffect(() => {
     const fetchProfileData = async () => {
       try {

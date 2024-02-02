@@ -2,6 +2,8 @@ import React from 'react'
 import '../css/dashboard.css'
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import MobileCover from './MobileCover'
+import { getData } from '../Components/api/api';
 
 
 function Dashboard() {
@@ -10,18 +12,19 @@ function Dashboard() {
   const [mobileData, setMobileData] = useState([])
   const navigate = useNavigate();
 
-  async function getMobileData() {
-    try {
-      let res = await fetch(`http://localhost:3500/mobiles/`);
-      let data = await res.json();
-      setMobileData(data)
-    }
-    catch (err) {
-      console.log(err);
-    }
-  }
+ 
   useEffect(() => {
-    getMobileData();
+    const fetchData = async () => {
+      try {
+        const data = await getData();
+        setMobileData(data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetchData();
+
   }, [])
 
   async function getMenData() {
