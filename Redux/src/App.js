@@ -1,14 +1,39 @@
 
 import './App.css';
-import React from 'react'
+import React, { useState } from 'react'
 import Counter from './Components/Counter';
 import Todo from './Components/Todo';
+import { useDispatch, useSelector } from 'react-redux';
+import axios from 'axios';
+import { loginError, loginRequest, loginSuccess } from './React-Redux/AuthReducer/action';
 // import { store } from './Redux/store';
 // import {handleAddActionObj} from './Redux/action'
 // import { useState } from 'react';
 
 function App() {
+  const isAuth =useSelector(store => store.AuthReducer.isAuth)
+const[useremail,setUserEmail]=useState('');
+const[userpassword,setUserPassword]=useState('');
+const dispatch =useDispatch();
 
+
+const handleLogin =()=>{
+  if(useremail){
+    const payload ={
+      email:useremail,
+      password:userpassword
+    }
+    dispatch(loginRequest())
+      axios.post('https://reqres.in/api/login',payload ).then(r =>{
+        dispatch(loginSuccess(r.data.token))
+      })
+      .catch(e=>{
+        dispatch(loginError)
+      })
+    
+  }
+
+}
   //we can access it by  calling the getstate() from store
 // const {dispatch,getState,subscribe}=store;
 //   const {count} =getState() // return same initial state 16 and destructuring the count
@@ -45,7 +70,25 @@ function App() {
   return (
 <>
 <Counter/>
-<Todo/>
+{isAuth && <Todo/>}
+
+<div>
+  <input
+  type='email'
+  placeholder='email'
+  value={useremail}
+  onChange ={(e)=>setUserEmail(e.target.value)}
+  />
+  <br/>
+  <input
+  type='password'
+  placeholder='password'
+  value={userpassword}
+  onChange ={(e)=>setUserPassword(e.target.value)}
+  />
+  <br/>
+  <button onClick={handleLogin}>Login</button>
+  </div>
 
 {/* <div>
   <h1>count {count}</h1>

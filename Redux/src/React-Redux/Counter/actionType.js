@@ -1,5 +1,7 @@
 export const ADD = 'ADD';
+console.log("viv2")
 export const REDUCE = 'REDUCE';
+console.log("viv3")
 
 
 // export const POST_TODOS_REQUEST = "POST_TODOS_REQUEST";

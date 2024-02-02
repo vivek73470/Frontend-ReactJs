@@ -3,12 +3,14 @@ import * as types from './actionType'
 // creator fn
 
 const handleAdd = (payload)=>{
+    console.log("add",payload)
     return {  
         type: types.ADD,
         payload,
     } 
 }
 const handleReduce = (payload) => {
+    console.log("reduce",payload)
     return {   
         type: types.REDUCE,
         payload,

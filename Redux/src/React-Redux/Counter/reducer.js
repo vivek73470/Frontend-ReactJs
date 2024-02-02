@@ -12,6 +12,7 @@ const reducer = (oldState = initialState, action) => {
     switch (type) {
         case types.ADD:
             const newCount = oldState.count + payload
+            console.log('hi1',newCount)
             saveData ('count',newCount)
             return { ...oldState, count:newCount }
 

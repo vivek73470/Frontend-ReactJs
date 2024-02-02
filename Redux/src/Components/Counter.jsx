@@ -13,10 +13,13 @@ function Counter() {
  const dispatch = useDispatch();
  
     const addHandler =()=>{
-        dispatch(handleAdd(1))
+        //it will go to reducer
+        // the dispatch function is called with the action handleAdd(5)
+        dispatch(handleAdd(5))
     }
 
     const reduceHandler =()=>{
+         //it will go to reducer
         dispatch(handleReduce(1))
     }
 
