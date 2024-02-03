@@ -1,6 +1,6 @@
 
 import React from 'react'
-import '../../css/admin.css'
+import '../AdminPage/admin.css'
 import { Outlet } from 'react-router-dom';
 import Sidebar from '../SidebarAdmin/Sidebar';
 import AdminHeader from '../AdminHeader/AdminHeader';

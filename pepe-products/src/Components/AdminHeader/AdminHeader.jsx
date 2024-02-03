@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import '../../css/adminheader.css'
+import '../AdminHeader/adminheader.css'
 import { Navigate, useNavigate } from 'react-router-dom';
 
 function AdminHeader() {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import '../../css/sidebar.css';
+import '../SidebarAdmin/sidebar.css';
 import { useNavigate, NavLink } from 'react-router-dom';
 import { MdOutlineDashboard, MdOutlineProductionQuantityLimits } from "react-icons/md";
 import { CiSettings } from "react-icons/ci";

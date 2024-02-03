@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import '../../css/header.css';
+import '../Header/header.css';
 import { useState } from 'react';
 
 const links =[
