@@ -11,7 +11,7 @@ const getMusicRecordRequest =()=>{
 const getMusicRecord = async(dispatch) =>{
     try{
         dispatch(getMusicRecordRequest());
-        const res = await axios.get(``)
+        const res = await axios.get("http://localhost:3500/albums")
         dispatch({
             type:types.GET_MUSIC_RECORD_SUCCESS,
             payload:res.data
@@ -22,7 +22,7 @@ const getMusicRecord = async(dispatch) =>{
     }
     catch(err){
         dispatch({
-            type:types.GET_MUSIC_RECORD_ERROR
+            type:types.GET_MUSIC_RECORD_FAILURE
         })
 
     }
