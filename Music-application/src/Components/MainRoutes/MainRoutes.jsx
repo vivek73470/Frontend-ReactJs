@@ -1,8 +1,8 @@
 import React from 'react'
-import Login from './Login'
-import SingleMusicRecord from './SingleMusicRecord'
-import EditMusicRecord from './EditMusicRecord'
-import MusicRecords from './MusicRecords'
+import Login from '../../Pages/Login/Login'
+import SingleMusicRecord from '../../Pages/SingleMusic/SingleMusicRecord'
+import EditMusicRecord from '../../Pages/EditMusic/EditMusicRecord'
+import MusicRecords from '../../Pages/MusicRecords/MusicRecords'
 import { Route, Routes } from 'react-router-dom'
 
 function MainRoutes() {
