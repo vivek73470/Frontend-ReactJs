@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import './index.css'
 import FilterSort from '../../Components/FilterSort/FilterSort'
 import MusicAlbums from '../../Components/MusicAlbum/MusicAlbums'
 
