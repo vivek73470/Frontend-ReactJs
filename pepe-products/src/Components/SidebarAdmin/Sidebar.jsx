@@ -6,6 +6,8 @@ import { CiSettings } from "react-icons/ci";
 import { FaBars } from "react-icons/fa";
 import { TbLogout } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // takes a prop named Children.
 function Sidebar({ Children }) {
@@ -43,6 +45,7 @@ function Sidebar({ Children }) {
   const handleLogout = () => {
     localStorage.removeItem('userId')
     navigate('/signin');
+    toast("Logout Successfully!");
   }
 
 

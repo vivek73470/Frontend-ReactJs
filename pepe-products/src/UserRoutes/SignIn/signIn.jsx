@@ -3,6 +3,9 @@ import '../SignIn/sign.css';
 import LoginImage from '../../Assets/login image.webp';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Components/Context/AuthContext';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const SignIn = () => {
   const { toggleAuth } = React.useContext(AuthContext);
@@ -40,6 +43,10 @@ const SignIn = () => {
           toggleAuth();
           localStorage.setItem('userId', user.id)
           navigate(`/dashboard`);
+          toast("Login Successfully!");
+       
+
+          
 
 
         }
@@ -51,11 +58,13 @@ const SignIn = () => {
   }
   const handleSubmit = (e) => {
     e.preventDefault(e);
+  
   };
 
 
   return (
     <>
+     
       <div className='sign-incard'>
         <div className='sign-incard-left-side'>
           <div>
@@ -111,7 +120,10 @@ const SignIn = () => {
             </form>
           </div>
         </div>
+ 
       </div>
+     
+     
     </>
   );
 };
