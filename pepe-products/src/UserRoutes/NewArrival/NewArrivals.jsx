@@ -26,9 +26,6 @@ function NewArrivals() {
             let data = await res.json();
             console.log(data)
             setHomeData(data);
-            console.log(homeData)
-            console.log("abc")
-
         }
         catch (err) {
             console.log(err);
