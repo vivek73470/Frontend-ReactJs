@@ -34,21 +34,9 @@ import NotFound from '../NotFoundPage/NotFound';
 
 function AllRoute() {
 
-  // Find out where the user is in the app
-  // const location = useLocation();
-
-  // Check if the user is on the Sign In page
-  // const isSignInPage = location.pathname === '/signin';
-
-  // Check if the user is on the Admin page or its related sections
-  // const isOnAdminPage = location.pathname.includes('/dashboard');
-  // const isOnSignUpPage = location.pathname.includes('/signup');
-
-  // Only show the Navbar on pages that are NOT SignIn or Admin pages
   return (
     <>
-      {/* Show the Navbar except on SignIn or Admin pages */}
-      {/* {!isSignInPage && !isOnSignUpPage && !isOnAdminPage && <Navbar />} */}
+
 
       <Routes>
       
