@@ -33,6 +33,7 @@ margin-top: 25px;
     width: 100%;
     margin: auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
     height: 440px;
@@ -48,6 +49,7 @@ margin-top: 25px;
     width: 100%;
     margin: auto;
     display: flex;
+    flex-wrap: wrap;
 }
 .home-4th-page-multi{
     width: 50%;
