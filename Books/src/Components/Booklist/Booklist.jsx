@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import {useSelector,useDispatch} from "react-redux"
-import { getbooks } from "../Redux/Appdata/action";
-import { Bookcard } from "./Bookcard";
+import { getbooks } from "../../Redux/Appdata/action";
+import { Bookcard } from "../Bookcard/Bookcard";
 import styled from "styled-components";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
 export const Booklist=()=>{

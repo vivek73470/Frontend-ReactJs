@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
-import { login } from "../Redux/Authdata/action";
+import { login } from "../../Redux/Authdata/action";
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setpassword] = useState("");

@@ -1,0 +1,22 @@
+.book-screen {
+    display: flex;
+    border: 1px solid red;
+}
+
+.Bookfilter {
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    justify-content: center;
+
+}
+
+.Bookwrap {
+    width: 100%;
+    border: 2px solid green;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    padding: 18px;
+
+}

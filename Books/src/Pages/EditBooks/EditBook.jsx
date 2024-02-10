@@ -1,8 +1,8 @@
 import React from "react";
 import  { useEffect,useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
-import { Bookcard } from "../Components/Bookcard";
-import { getbooks } from "../Redux/Appdata/action";
+import { Bookcard } from "../../Components/Bookcard/Bookcard";
+import { getbooks } from "../../Redux/Appdata/action";
 import {useDispatch,useSelector} from "react-redux"
 
 export const EditBook=()=>{

@@ -1,10 +1,10 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { RequireAuth } from "../Components/RequireAuth";
-import { Books } from "./Books";
-import { EditBook } from "./EditBook";
-import { Login } from "./Login";
-import { SingleBook } from "./SingleBook";
+import { RequireAuth } from "../RequireAuth/RequireAuth";
+import { Books } from '../../Pages/Books/Books'
+import { EditBook } from "../../Pages/EditBooks/EditBook";
+import { Login } from "../../Pages/Login/Login";
+import { SingleBook } from "../../Pages/SingleBook/SingleBook";
 export const MainRoutes = () => {
   return (
     <Routes>
