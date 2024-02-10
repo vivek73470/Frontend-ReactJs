@@ -19,5 +19,25 @@
     justify-content: center;
     padding: 18px;
     row-gap: 40px;
+    column-gap: 12px;
 
+}
+
+@media screen and (max-width:768px){
+    .book-screen {
+        display: grid;
+        grid-template-columns: 100%;
+       
+    }
+    .Bookfilter {
+    width: 90%;
+    margin: auto;
+    
+    }
+    .Bookwrap {
+ display: flex;
+ flex-wrap: wrap;
+
+    
+    }
 }

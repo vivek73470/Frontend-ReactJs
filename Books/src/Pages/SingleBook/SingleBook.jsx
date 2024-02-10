@@ -19,19 +19,22 @@ useEffect(()=>{
 },[books.length,dispatch])
 
    //get the data form the redux store.
-   useEffect(()=>{
+   // in filter we will go through all item but in find it will return if it matches
+   useEffect(()=>{ 
     if(id){
         const book=books.find(item=>item.id===Number(id))
+        // if current book is present then setCurrentBook
         book && setCurrentBook(book)
     }
+    // if we used any variable inside useeffect then we have to pass inside dependancy array
    },[id,books])
     return(
         <div>
         <div>SingleBook</div>
-        {/* <div>{currentBook.author}</div>
+        <div>{currentBook.author}</div>
         <div>{currentBook.book_name}</div>
         <div>{currentBook.category}</div>
-        <div>{currentBook.release_year}</div> */}
+        <div>{currentBook.release_year}</div>
          <Bookcard bookdata={currentBook}/>
         </div>
     )

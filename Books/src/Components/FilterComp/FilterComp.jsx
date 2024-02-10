@@ -5,7 +5,7 @@ export const FilterComp = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const initialCtaegory = searchParams.getAll("category");
   const initalSort = searchParams.getAll("sort");
-  console.log("initalcategory", initialCtaegory);
+
   const [category, setcategory] = useState(initialCtaegory || []);
   
   const [sort, setsortby] = useState(initalSort[1] || "");
@@ -29,13 +29,11 @@ export const FilterComp = () => {
     setsortby(e.target.value);
   };
 
-  //   console.log(category)
   //if the category changes,then update the value in the URL search params
   useEffect(() => {
     let params = {};
     params.category = category;
     sort && (params.sort = sort);
-    console.log("params", params);
     setSearchParams(params);
   }, [category, setSearchParams, sort]);
 

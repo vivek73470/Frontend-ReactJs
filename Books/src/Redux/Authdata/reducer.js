@@ -7,7 +7,9 @@ const initstate = {
 };
 
 export const reducer = (state = initstate, action) => {
+  // DESTRUCTURE Type AND Payload from action object
   const { type, payload } = action;
+
   switch (type) {
     case types.USER_LOGIN_REQUEST:
       return {
