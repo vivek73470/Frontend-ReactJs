@@ -1,4 +1,5 @@
 import React from "react";
+import './products.css'
 import { Filter } from "../../Components/FilterComponent/FilterComponent"
 import {useDispatch, useSelector} from "react-redux"
 import {useEffect} from "react" 
@@ -8,7 +9,6 @@ import {fetchData} from "../../Redux/products/action";
 const Watches = () => {
   const dispatch=useDispatch()
   const watches=useSelector((store)=>store.ProductReducer.products)
-  console.log("watches",watches)
   const [searchParams]=useSearchParams()
 
   useEffect(()=>{

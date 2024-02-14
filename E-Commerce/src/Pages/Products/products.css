@@ -12,11 +12,12 @@
     display: grid;
     grid-template-columns: repeat(3,1fr);
     column-gap: 26px;
+    margin-top: 75px;
+    row-gap: 30px;
 }
 .productlist-design{
     max-width: 200px;
-    margin: auto;
-    margin-top: 75px;
+  display: grid;
     padding: 30px;
     background-color: #f8f8f8;
     border-radius: 8px;
@@ -32,4 +33,15 @@
     height: 100%;
     object-fit: contain;
 
+}
+.product-filter{
+    width: 200px;
+
+}
+.product-actual-title{
+    margin: 0px;
+    margin-top: 13px;
+}
+.product-actual-price{
+    margin: 0px;
 }

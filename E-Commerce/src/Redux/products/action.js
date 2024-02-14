@@ -1,7 +1,7 @@
 import axios from 'axios';
 import * as types from './actionType';
 
-const fetchDataRequest =(payload)=>{
+const fetchDataRequest =()=>{
     return{
         type:types.FETCH_DATA_REQUEST,
       
@@ -32,5 +32,33 @@ const fetchData =(params)=>(dispatch) =>{
     };
 
 
+    const getSingleProductRequest =()=>{
+        return{
+            type:types.GET_SINGLE_PRODUCT_REQUEST,
+          
+        }
+    }
+    
+    const getSingleProductSuccess =(payload)=>{
+        return{
+            type:types.GET_SINGLE_PRODUCT_SUCCESS,
+            payload,
+        }
+    }
+    
+    const getSingleProductFailure =()=>{
+        return{
+            type:types.GET_SINGLE_PRODUCT_FAILURE,
+            
+        }
+    }
 
-export {fetchData};
+    const getSingleProduct = (id) => (dispatch) =>{
+        dispatch(getSingleProductRequest())
+        axios.get(`http://localhost:8080/products/${id}`)
+        .then(r => dispatch(getSingleProductSuccess(r.data)))
+   .catch(e => dispatch(getSingleProductFailure(e.data)))
+    }
+    
+
+export {fetchData,getSingleProduct};

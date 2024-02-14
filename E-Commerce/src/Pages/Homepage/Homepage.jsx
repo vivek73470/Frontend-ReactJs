@@ -4,7 +4,6 @@ import Products from '../Products/Products'
 function Homepage() {
   return (
    <>
-   <p>homepage</p>
    <Products/>
    </>
   )
