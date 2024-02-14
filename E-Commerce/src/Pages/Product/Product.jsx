@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'
-import { getSingleProduct } from '../../Redux/products/action';
-import { store } from '../../Redux/store';
+import { addProductCart, getSingleProduct } from '../../Redux/products/action';
+// import { store } from '../../Redux/store';
+import { FaRegStar } from "react-icons/fa6";
 
 function Product() {
   const {id} = useParams();
@@ -16,15 +17,27 @@ if(id){
 }
   },[dispatch,id])
 
-  console.log(currentProduct)
+const addToCartHandler = () =>{
+  currentProduct && dispatch(addProductCart(currentProduct));
+
+}
+
+
   return (
   <>
   <div className='single-product-screen'>
     <img src={currentProduct.image} alt="" />
-    <p>{currentProduct.description}</p>
+  
+    <FaRegStar />
+    <FaRegStar />
+    <FaRegStar />
+    <FaRegStar />
+    <FaRegStar />
     <p> {currentProduct.title}</p>
     <p>{currentProduct.price}</p>
-   
+    <p>{currentProduct.description}</p>
+
+    <button onClick={addToCartHandler}>Add to Cart</button>
 
   </div>
   
