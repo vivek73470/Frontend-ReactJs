@@ -1,3 +1,35 @@
+
+.product-screen{
+    max-width: 1280px;
+    margin: auto;
+}
 .product-screen-wrapper{
     display: flex;
+}
+
+.product-listing{
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 26px;
+}
+.productlist-design{
+    max-width: 200px;
+    margin: auto;
+    margin-top: 75px;
+    padding: 30px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.product-imgstyle {
+    width: 100px;
+    height: 300px;
+
+}
+.productlist-design img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
 }

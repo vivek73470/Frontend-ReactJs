@@ -1,33 +1,41 @@
-import React, { useEffect } from 'react'
-import './products.css'
-import FilterComponent from '../../Components/FilterComponent/FilterComponent'
-import { useDispatch, useSelector } from 'react-redux'
-import { fetchData } from '../../Redux/products/action';
+import React from "react";
+import { Filter } from "../../Components/FilterComponent/FilterComponent"
+import {useDispatch, useSelector} from "react-redux"
+import {useEffect} from "react" 
+import {useSearchParams} from "react-router-dom"
+import {fetchData} from "../../Redux/products/action";
 
-function Products() {
-    const products = useSelector((store) => store.ecommerceData.products)
-  const dispatch = useDispatch();
+const Watches = () => {
+  const dispatch=useDispatch()
+  const watches=useSelector((store)=>store.ProductReducer.products)
+  console.log("watches",watches)
+  const [searchParams]=useSearchParams()
 
-    useEffect(()=>{
-        if(products?.length === 0){
-            dispatch(fetchData())
-        }
-    },[dispatch,products?.length])
-    
-    // useEffect(()=>{
-    
-    //         dispatch(fetchData())
-        
-    // },[])
-    // console.log("useeffect",products)
+  useEffect(()=>{
+    let getParams={
+      params:{category:searchParams.getAll("category")}
+    }
+    dispatch(fetchData(getParams))
+  },[searchParams,dispatch])
+
+
     return (
         <>
             <div className='product-screen'>
                 <div className='product-screen-wrapper'>
                     <div className='product-filter'>
-                        <FilterComponent />
+                       <Filter/>
                     </div>
                     <div className='product-listing'>
+                        { watches.length > 0 &&
+                            watches.map((item) => {
+                                return <div className="productlist-design" key={item.id}>
+                                 <img className='product-imgstyle' src={item.image} alt="prodct" />
+                                 <p className='product-actual-title'>{item.title}</p>
+                                 <p className='product-actual-price'>₹{item.price}</p>
+                         
+                                </div>
+                            })}
 
                     </div>
                 </div>
@@ -36,4 +44,4 @@ function Products() {
     )
 }
 
-export default Products
+export default Watches
