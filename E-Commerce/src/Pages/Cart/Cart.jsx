@@ -3,6 +3,7 @@ import './cart.css'
 import { MdDelete } from "react-icons/md";
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteProductCart } from '../../Redux/products/action';
+import Checkout from '../../Components/Checkout/Checkout';
 
 
 function Cart() {
@@ -31,7 +32,7 @@ function Cart() {
           
           })}
         </div>
-
+      <Checkout cart = {cart}/>
       </div>
     </>
   )
@@ -40,14 +41,13 @@ function Cart() {
 function CartItem({ id, title, image, description, price, removeProduct }) {
   return (
     <>
-      <div>
+      <div className='cart-container'>
         <div className='cart-scrn-bdr'>
           <div className='cartitm-bdr'>
             <img src={image} alt="" />
           </div>
           <div className='cartitm-bdr'>
             <h2>{title}</h2>
-
             <p>
               {description}
             </p>
@@ -55,8 +55,9 @@ function CartItem({ id, title, image, description, price, removeProduct }) {
             <button onClick={() => removeProduct(id)} className='rmv-btn'><MdDelete />Remove  </button>
           </div>
         </div>
+      
       </div>
-      <button >Checkout</button>
+
     </>
   )
 }

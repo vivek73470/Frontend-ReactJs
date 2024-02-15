@@ -6,6 +6,7 @@ import Products from '../../Pages/Products/Products'
 import Cart from '../../Pages/Cart/Cart'
 import Product from '../../Pages/Product/Product'
 import CartCounter from '../CartCounter/CartCounter'
+import Checkout from '../Checkout/Checkout'
 
 function AllRoutes() {
   return (
@@ -16,6 +17,7 @@ function AllRoutes() {
     <Route path='/cart' element={<Cart/>}/>
     <Route path='/cart-counter' element={<CartCounter/>}/>
     <Route path='/products/:id' element={<Product/>}/>
+    <Route path='/check' element={<Checkout/>}/>
   </Routes>
   
   </>
