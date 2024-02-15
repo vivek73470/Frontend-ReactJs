@@ -3,9 +3,9 @@ import * as types from './actionType';
 const initialState = {
     products: [],
     error: '',
-    CurrentProduct:{},
+    CurrentProduct: {},
     loading: false,
-    cart:[]
+    cart: []
 
 }
 
@@ -34,47 +34,81 @@ const reducer = (state = initialState, action) => {
                 loading: false
             }
 
-            case types.GET_SINGLE_PRODUCT_REQUEST:
-                return {
-                    ...state,
-                    loading: true,
-                }
-    
-            case types.GET_SINGLE_PRODUCT_SUCCESS:
-                return {
-                    ...state,
-                    error: '',
-                    CurrentProduct:payload,
-                    loading: false
-                }
-    
-            case types.GET_SINGLE_PRODUCT_FAILURE:
-                return {
-                    ...state,
-                    error: payload,
-                    loading: false
-                }
+        case types.GET_SINGLE_PRODUCT_REQUEST:
+            return {
+                ...state,
+                loading: true,
+            }
 
-                case types.ADD_PRODUCT_CART_REQUEST:
-                    return {
-                        ...state,
-                        loading: true,
-                    }
-        
-                case types.ADD_PRODUCT_CART_SUCCESS:
-                    return {
-                        ...state,
-                        error: '',
-                       cart: [...state.cart,payload],
-                        loading: false
-                    }
-        
-                case types.ADD_PRODUCT_CART_FAILURE:
-                    return {
-                        ...state,
-                        error: payload,
-                        loading: false
-                    }
+        case types.GET_SINGLE_PRODUCT_SUCCESS:
+            return {
+                ...state,
+                error: '',
+                CurrentProduct: payload,
+                loading: false
+            }
+
+        case types.GET_SINGLE_PRODUCT_FAILURE:
+            return {
+                ...state,
+                error: payload,
+                loading: false
+            }
+
+        case types.ADD_PRODUCT_CART_REQUEST:
+            return {
+                ...state,
+                loading: true,
+            }
+
+        case types.ADD_PRODUCT_CART_SUCCESS:
+            return {
+                ...state,
+                error: '',
+                cart: [...state.cart, payload],
+                loading: false
+            }
+
+        case types.ADD_PRODUCT_CART_FAILURE:
+            return {
+                ...state,
+                error: payload,
+                loading: false
+            }
+
+        case types.FETCH_CART_REQUEST:
+            return {
+                ...state,
+                loading: true,
+            }
+
+        case types.FETCH_CART_SUCCESS:
+            return {
+                ...state,
+                error: '',
+                cart: [...payload],
+                loading: false
+            }
+
+        case types.FETCH_CART_FAILURE:
+            return {
+                ...state,
+                error: payload,
+                loading: false
+            }
+
+        case types.REMOVE_PRODUCT_CART_REQUEST:
+            return {
+                ...state,
+                error: payload,
+                loading: true,
+            }
+        case types.REMOVE_PRODUCT_CART_FAILURE:
+            return {
+                ...state,
+                error: payload,
+                loading: false,
+            }
         default:
             return state;
     }

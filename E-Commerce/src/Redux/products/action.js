@@ -61,6 +61,7 @@ const getSingleProduct = (id) => (dispatch) => {
 }
 
 const addProductCartRequest = () => {
+    console.log("my request")
     return {
         type: types.ADD_PRODUCT_CART_REQUEST,
 
@@ -88,5 +89,67 @@ const addProductCart = (product) => (dispatch) => {
         .catch(e => dispatch(addProductCartFailure(e.data)))
 }
 
+const fetchCartRequest = () => {
+    return {
+        type: types.FETCH_CART_REQUEST,
 
-export { fetchData, getSingleProduct, addProductCart };
+    }
+}
+
+const fetchCartSuccess = (payload) => {
+    console.log("pay",payload)
+    return {
+        type: types.FETCH_CART_SUCCESS,
+        payload,
+    }
+}
+
+const fetchCartFailure = () => {
+    return {
+        type: types.FETCH_CART_FAILURE,
+
+    }
+}
+
+const fetchCart = (payload) => (dispatch)=>{
+    dispatch(fetchCartRequest());
+    axios.get(`http://localhost:8080/cart`)
+    .then(r => dispatch(fetchCartSuccess(r.data)))
+    .catch(e => dispatch(fetchCartFailure(e.data)))
+
+}
+
+
+const deleteProductCartRequest = () => {
+    return {
+        type: types.REMOVE_PRODUCT_CART_REQUEST,
+
+    }
+}
+
+const deleteProductCartSuccess = (payload) => {
+    console.log("pay",payload)
+    return {
+        type: types.REMOVE_PRODUCT_CART_SUCCESS,
+        payload,
+    }
+}
+
+const deleteProductCartFailure = () => {
+    return {
+        type: types.REMOVE_PRODUCT_CART_FAILURE,
+
+    }
+}
+
+const deleteProductCart =(id)=> (dispatch) =>{
+    dispatch(deleteProductCartRequest())
+    axios.delete(`http://localhost:8080/cart/${id}`)
+    .then((r) => {
+     dispatch(deleteProductCartSuccess(r.data))
+ } )
+ .then(() => dispatch(fetchCart()))
+    .catch((e) => dispatch(deleteProductCartFailure(e.data)))
+}
+
+export { fetchData, getSingleProduct, addProductCart,fetchCart,deleteProductCart };

@@ -1,4 +1,5 @@
 import React from "react";
+import './filter.css'
 import { useSearchParams } from "react-router-dom";
 import { useState, useEffect } from "react"
 
@@ -49,11 +50,12 @@ const Filter = () => {
             onChange={handleChange} />
           <label>jewelery</label>
         </div>
-        <div>
+        <div className="">
           <input type="checkbox"
             value="women's clothing"
             checked={category.includes("women's clothing")}
-            onChange={handleChange} />
+            onChange={handleChange}
+            />
           <label>womens</label>
         </div>
       </div>

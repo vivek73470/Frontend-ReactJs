@@ -1,0 +1,24 @@
+.profile-pht {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.prfl-pic{
+    position: relative;
+}
+.profile-menu-options {
+    position: absolute;
+    right: 0px;
+    top: 40px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.list-mne{
+    cursor: pointer;
+}
+.list-mne:hover{
+   background-color: gray;
+}
