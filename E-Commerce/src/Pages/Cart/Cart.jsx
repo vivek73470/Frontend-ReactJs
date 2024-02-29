@@ -16,6 +16,7 @@ function Cart() {
   }
   return (
     <>
+    
       <div className='cart-design-screen'>
         <div className='cart-headinf'>
           <h2>Cart</h2>
