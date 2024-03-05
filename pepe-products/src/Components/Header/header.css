@@ -60,25 +60,33 @@
   background-color: #555;
   border-radius: 4px;
 }
-.header-search-section{
-  padding: 16px;
-  width: 390px;
+
+
+
+.header-hamburger{
+  background-color: #fff;
+  display: none;
+  color:black;
 }
-  .search-header {
-    width: 100%;
-    padding: 12px;
-    border-radius: 11px;
-    background-color: #eeeeee;
-    border: none;
-    outline: none;
+.hamburger-imageee>p{
+  font-weight: 700;
+  font-size: 28px;
+  color: #ff5757;
+
 
 }
-.search-header:focus {
-border: none;
 
-}
-.screen-search {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+@media screen and (max-width: 768px){
+  .header-hamburger{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+padding-left: 40px;
+padding-right: 40px;
+padding-top: 20px;
+padding-bottom: 20px;
+  }
+  .vax {
+     display: none;
+  }
 }
