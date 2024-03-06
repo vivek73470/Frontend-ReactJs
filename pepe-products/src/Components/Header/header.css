@@ -4,10 +4,12 @@
   top: 0;
   z-index: 2;
   background-color: #333;
-  color: #fff;
   display: flex;
-  justify-content: space-around;
-  padding: 20px;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left:  70px;
+  padding-right: 70px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 2);
 }
 
@@ -17,76 +19,62 @@
   font-size: 19px;
   text-decoration: none;
   color: #fff;
-  padding: 8px 16px;
+
   border-radius: 4px;
   transition: background-color 0.3s ease;
 }
 
 .none-decrt:hover {
-  background-color: #555;
+ color: #ff5757;
+ transform: scale(0.9);
 }
 
-/* Sub-links */
-.sub-links {
-  display: none;
-  position: absolute;
-  background-color: #333;
-  padding: 8px;
-  z-index: 1; /* Ensure sub-links appear above other content */
-  border-radius: 0 0 4px 4px; /* Rounded bottom corners */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sub-links shadow */
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 120px;
 }
 
-/* Parent Link (Products) */
-.parent-link {
-  position: relative;
+.nav-item a.title-home {
+  color: #ff5757;
+  font-weight: bold;
+  font-size: 24px;
+  font-family: 'slick';
+ 
 }
-
-/* Show Sub-links on Parent Link Hover */
-.parent-link:hover .sub-links {
-  display: block;
-}
-
-/* Style Sub-links */
-.sub-links a {
-  display: block;
-  text-decoration: none;
+.nav-item a.title-home:hover {
   color: #fff;
-  padding: 8px 16px;
-  transition: background-color 0.3s ease;
+  transform: scale(0.9);
+ 
 }
 
-.sub-links a:hover {
-  background-color: #555;
-  border-radius: 4px;
-}
-
-
-
-.header-hamburger{
+.header-hamburger {
   background-color: #fff;
   display: none;
-  color:black;
+  color: black;
 }
-.hamburger-imageee>p{
+
+.hamburger-imageee>p {
   font-weight: 700;
   font-size: 28px;
   color: #ff5757;
+  font-family: 'slick';
 
 
 }
 
-@media screen and (max-width: 768px){
-  .header-hamburger{
+@media screen and (max-width: 768px) {
+  .header-hamburger {
     display: flex;
     align-items: center;
     justify-content: space-between;
-padding-left: 40px;
-padding-right: 40px;
-padding-top: 20px;
-padding-bottom: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
+
   .vax {
-     display: none;
+    display: none;
   }
 }

@@ -8,8 +8,8 @@ function Footer() {
       title: 'Customer Service',
       links: [
         { path: '/contact-us', title: 'Contact Us' },
+        { path: '/Aboutus', title: 'About us' },
         { path: '/faq', title: 'FAQ' },
-        { path: '/shipping', title: 'Shipping Information' },
       ],
     },
     {
