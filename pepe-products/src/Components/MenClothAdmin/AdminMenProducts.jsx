@@ -51,7 +51,6 @@ function AdminMenProducts() {
         <>
             <div className='Adminmen-product-screen'>
                 <h2 className='adminmen-prdct-gap'>Men's Products</h2>
-              
                     <div className='Adminmen-product-screen-wrapper'>
                         {apiData.length > 0 && apiData.map((elem, index) => (
                             <div className='admin-men-prdct' key={index}>

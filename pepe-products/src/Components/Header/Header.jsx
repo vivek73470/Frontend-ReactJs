@@ -78,7 +78,7 @@ function Navbar() {
                     ))}
                 </div>
             )}
-            <hr className='horint-line' />
+            {/* <hr className='horint-line' /> */}
         </>
     );
 }
