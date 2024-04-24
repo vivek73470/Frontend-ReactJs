@@ -1,5 +1,6 @@
 import axios from 'axios';
 import * as types from './actionType';
+import { type } from '@testing-library/user-event/dist/type';
 
 const fetchDataRequest = () => {
     return {
@@ -25,8 +26,7 @@ const fetchDataFailure = (payload) => {
 
 const fetchData = (params) => (dispatch) => {
     dispatch(fetchDataRequest());
-    axios.get(`http://localhost:8080/products`, params
-    )
+    axios.get(`http://localhost:8080/products`, params)
         .then((r) => dispatch(fetchDataSuccess(r.data)))
         .catch((e) => dispatch(fetchDataFailure(e.data)))
 };
@@ -152,4 +152,38 @@ const deleteProductCart =(id)=> (dispatch) =>{
     .catch((e) => dispatch(deleteProductCartFailure(e.data)))
 }
 
-export { fetchData, getSingleProduct, addProductCart,fetchCart,deleteProductCart };
+ const addOrderRequest = () =>{
+    return{
+        type:types.ADD_ORDER_REQUEST
+    }
+ }
+ const addOrderSuccess = (payload) =>{
+    return{
+        type:types.ADD_ORDER_SUCCESS,
+        payload,
+    }
+ }
+ const addOrderFailure = (payload) =>{
+    return{
+        type:types.ADD_ORDER_FAILURE,
+        payload,
+    }
+ }
+
+const addOrder = (payload) => (dispatch) => {
+    console.log("payload", payload);
+    dispatch(addOrderRequest());
+
+    axios.post('http://localhost:8080/orders/', payload)
+        .then(response => {
+            // Dispatch action indicating success and possibly pass response data
+            dispatch(addOrderSuccess(response.data));
+        })
+        .catch(error => {
+            // Dispatch action indicating failure and possibly pass error data
+            dispatch(addOrderFailure(error));
+        });
+}
+
+
+export { fetchData, getSingleProduct, addProductCart,fetchCart,deleteProductCart,addOrder };

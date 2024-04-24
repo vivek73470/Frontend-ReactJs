@@ -8,6 +8,7 @@ import Product from '../../Pages/Product/Product'
 import CartCounter from '../CartCounter/CartCounter'
 import Checkout from '../Checkout/Checkout'
 
+
 function AllRoutes() {
   return (
   <>

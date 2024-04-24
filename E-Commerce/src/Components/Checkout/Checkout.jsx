@@ -4,8 +4,9 @@ import Modal from 'react-modal';
 import { useState } from 'react';
 
 
-function Checkout({ cart }) {
-    console.log("checkout", cart)
+function Checkout({ cart, checkoutHandler }) {
+    console.log("checkoutpage", cart)
+    console.log("checkHandler", checkoutHandler)
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -24,17 +25,17 @@ function Checkout({ cart }) {
                     isOpen={isModalOpen}
                     onRequestClose={handleCloseModal}
                     contentLabel="Checkout Modal"
-                >
+                   >
                     <div>
                         <h2>Confirm Purchase</h2>
                         {cart.map((product) =>
                             <div key={product.id}>
                                 <div>  <img src={product.image} alt="" /></div>
-                              
+
                                 <p>{product.title}</p>
                             </div>
                         )}
-                        <button onClick={handleCloseModal}>Close</button>
+                        <button onClick={checkoutHandler}>Confirm</button>
                     </div>
                 </Modal>
             </div>

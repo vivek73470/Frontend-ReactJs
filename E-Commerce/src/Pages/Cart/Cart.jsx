@@ -2,22 +2,26 @@ import React from 'react'
 import './cart.css'
 import { MdDelete } from "react-icons/md";
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteProductCart } from '../../Redux/products/action';
+import { addOrder, deleteProductCart } from '../../Redux/products/action';
 import Checkout from '../../Components/Checkout/Checkout';
 
 
 function Cart() {
   const cart = useSelector((store) => store.ProductReducer.cart)
-  console.log("cart",cart)
+  console.log("cartpag",cart)
   const dispatch = useDispatch();
   const removeProduct = (id) => {
     console.log("going to remove product", id)
     dispatch(deleteProductCart(id))
+  };
+
+  const checkoutHandler =()=>{
+    dispatch(addOrder(cart))
   }
   return (
     <>
     
-      <div className='cart-design-screen'>
+      <div className='cart-design-screen'> 
         <div className='cart-headinf'>
           <h2>Cart</h2>
           {cart.length && cart.map((product) => {
@@ -30,10 +34,10 @@ function Cart() {
               image={product.image}
               removeProduct={removeProduct}
               />
-          
           })}
         </div>
-      <Checkout cart = {cart}/>
+      <Checkout cart = {cart} checkoutHandler={checkoutHandler}/>
+      {/* curly braces like {cart} passing a JavaScript expression as a prop, we can write anything inside curly braces and pass as a props */}
       </div>
     </>
   )
@@ -56,9 +60,7 @@ function CartItem({ id, title, image, description, price, removeProduct }) {
             <button onClick={() => removeProduct(id)} className='rmv-btn'><MdDelete />Remove  </button>
           </div>
         </div>
-      
       </div>
-
     </>
   )
 }
