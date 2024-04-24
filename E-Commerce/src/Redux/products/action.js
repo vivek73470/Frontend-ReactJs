@@ -215,5 +215,35 @@ Promise.all(deleteOrders)
 }
 
 
+const fetchOrderRequest = () => {
+    return {
+        type: types.FETCH_ORDER_REQUEST,
 
-export { fetchData,emptyCart, getSingleProduct, addProductCart,fetchCart,deleteProductCart,addOrder };
+    }
+}
+
+const fetchOrderSuccess = (payload) => {
+    console.log("pay",payload)
+    return {
+        type: types.FETCH_ORDER_SUCCESS,
+        payload,
+    }
+}
+
+const fetchOrderFailure = () => {
+    return {
+        type: types.FETCH_ORDER_FAILURE,
+
+    }
+}
+
+const fetchOrder = (payload) => (dispatch)=>{
+    dispatch(fetchOrderRequest());
+    axios.get(`http://localhost:8080/orders`)
+    .then(r => dispatch(fetchOrderSuccess(r.data)))
+    .catch(e => dispatch(fetchOrderFailure(e.data)))
+
+}
+
+
+export { fetchData,emptyCart, fetchOrder, getSingleProduct, addProductCart,fetchCart,deleteProductCart,addOrder };

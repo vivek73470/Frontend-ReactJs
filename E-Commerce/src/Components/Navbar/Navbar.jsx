@@ -5,6 +5,7 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import CartCounter from '../CartCounter/CartCounter';
 import { Link, Link as RouterLink } from 'react-router-dom';
 
+
 function Navbar() {
   return (
     <>

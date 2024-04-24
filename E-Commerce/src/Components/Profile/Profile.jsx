@@ -4,7 +4,7 @@ import profile from '../../Assets/Screenshot (140).png';
 
 function Profile() {
   const [open, setOpen] = useState(false);
-  const Menus = ["Profile", "Login", "Logout"];
+  const Menus = ["Profile", "Your Cart", "Login", "Logout"];
 
   const menuRef = useRef();
   const imgRef = useRef();
