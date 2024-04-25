@@ -8,6 +8,7 @@ import Product from '../../Pages/Product/Product'
 import CartCounter from '../CartCounter/CartCounter'
 import Checkout from '../Checkout/Checkout'
 import Order from '../../Pages/OrderPage/order'
+import Login from '../../Pages/Login/login'
 
 
 function AllRoutes() {
@@ -21,6 +22,7 @@ function AllRoutes() {
     <Route path='/products/:id' element={<Product/>}/>
     <Route path='/check' element={<Checkout/>}/>
     <Route path='/orders' element={<Order/>}/>
+    <Route path= '/login' element={<Login/>}/>
   </Routes>
   
   </>

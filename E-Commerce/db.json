@@ -317,5 +317,12 @@
         }
       }
     ]
+  ],
+  "user":[
+    {
+      "id": "1",
+      "email": "vivek@gmail.com",
+      "password": "12345"
+    }
   ]
 }
