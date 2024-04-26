@@ -1,29 +1,42 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { signIn } from '../../Redux/auth/action';
+import { signUp } from '../../Redux/auth/action';
 
-function Login() {
+function Signup() {
     const dispatch = useDispatch();
-    const[formData, setFormData]=useState({ email: '', password: '' })
+const[formData,setFormData] = useState(
+    { username:'', email: '', password: '' }
+)
 
-    const handleChange =(e)=>{
-        setFormData({
-            ...formData,
-            [e.target.name]:e.target.value
-        })
-   console.log(e.target.value)
-    }
+const handleChange =(e)=>{
+    setFormData({
+        ...formData,
+        [e.target.name]:e.target.value
+    })
+}
 
-    const Submithandler =(e)=>{
-        e.preventDefault();
-        dispatch(signIn(formData));
-        setFormData({ email: '', password: '' });
-    }
+const Submithandler=(e)=>{
+    e.preventDefault();
+    dispatch(signUp(formData))
+    setFormData(  { username:'', email: '', password: '' })
+}
+
   return (
    <>
-<div>
-    <h2>Login</h2>
+   <div>
+    <h2>Signup</h2>
     <form onSubmit={Submithandler}>
+    <div>
+            <label htmlFor="">Email</label>
+            <input 
+            name='username'
+            type="text"
+            id='text'
+            placeholder='enter name'
+            value={formData.username}
+            onChange={handleChange}
+             />
+        </div>
         <div>
             <label htmlFor="">Email</label>
             <input 
@@ -53,4 +66,4 @@ function Login() {
   )
 }
 
-export default Login
+export default Signup

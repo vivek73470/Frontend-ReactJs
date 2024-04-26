@@ -318,11 +318,18 @@
       }
     ]
   ],
-  "user":[
+  "user": [
     {
       "id": "1",
+      "username": "",
       "email": "vivek@gmail.com",
       "password": "12345"
+    },
+    {
+      "username": "Vivek",
+      "email": "ankita@gmail.com",
+      "password": "12345",
+      "id": "WILT16F"
     }
   ]
 }

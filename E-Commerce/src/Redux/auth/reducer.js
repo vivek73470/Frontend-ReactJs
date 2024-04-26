@@ -1,8 +1,8 @@
-import { SIGNIN_FAILURE, SIGNIN_SUCCESS, SIGNIN_REQUEST } from "./action";
+import { SIGNIN_FAILURE, SIGNIN_SUCCESS, SIGNIN_REQUEST, SIGNUP_FAILURE, SIGNUP_SUCCESS, SIGNUP_REQUEST } from "./action";
 
 const initialState = {
     auth: false,
-    token:''
+    token: ''
 }
 
 const reducer = (state = initialState, action) => {
@@ -24,10 +24,28 @@ const reducer = (state = initialState, action) => {
                 auth: false
             }
 
+
+            
+        case SIGNUP_REQUEST:
+            return {
+                ...state,
+                auth: false
+            }
+        case SIGNUP_SUCCESS:
+            return {
+                ...state,
+                auth: true,
+                token: action.payload
+            }
+        case SIGNUP_FAILURE:
+            return {
+                auth: false
+            }
+
         default:
             return state;
 
     }
 
-} 
-export{reducer}
+}
+export { reducer }
