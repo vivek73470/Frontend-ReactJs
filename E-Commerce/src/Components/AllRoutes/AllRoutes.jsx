@@ -10,6 +10,7 @@ import Checkout from '../Checkout/Checkout'
 import Order from '../../Pages/OrderPage/order'
 import Login from '../../Pages/Login/login'
 import Signup from '../../Pages/Signup/signup'
+import AuthWrapper from '../AuthWrapper/authWrapper'
 
 
 function AllRoutes() {
@@ -18,7 +19,7 @@ function AllRoutes() {
   <Routes>
     <Route path='/' element={<Homepage/>}/>
     <Route path='/products' element={<Products/>}/>
-    <Route path='/cart' element={<Cart/>}/>
+    <Route path='/cart' element={<AuthWrapper><Cart/></AuthWrapper>}/>
     <Route path='/cart-counter' element={<CartCounter/>}/>
     <Route path='/products/:id' element={<Product/>}/>
     <Route path='/check' element={<Checkout/>}/>

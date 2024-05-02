@@ -15,10 +15,10 @@ const SignInRequest = () => {
         type: SIGNIN_REQUEST
     }
 }
-const SignInSuccess = (token) => {
+const SignInSuccess = (payload) => {
     return {
         type: SIGNIN_SUCCESS,
-        payload:token
+        payload,
     }
 }
 const SignInFailure = () => {
@@ -30,16 +30,13 @@ const SignInFailure = () => {
 export const signIn = (formData) => async (dispatch) => {
     try {
         dispatch(SignInRequest());
-        // Make API call to authenticate user
         const res = await fetch('http://localhost:8080/user');
         const users = await res.json();
-        const user = users.find(u => u.email === formData.email && u.password === formData.password);
-        if (user) {
-            dispatch(SignInSuccess(user.id));
-            localStorage.setItem('userId', user.id);
-        } else {
-            dispatch(SignInFailure());
-        }
+        const userdata = users.find(u => u.email === formData.email && u.password === formData.password);
+    
+            dispatch(SignInSuccess(userdata.id));
+            localStorage.setItem('userId', userdata.id);
+        
     } catch (error) {
         console.error('Error during sign in:', error);
         dispatch(SignInFailure());
@@ -53,10 +50,10 @@ const SignUpRequest = () => {
         type: SIGNUP_REQUEST
     }
 }
-const SignUpSuccess = (payload) => {
+const SignUpSuccess = () => {
     return {
         type: SIGNUP_SUCCESS,
-        payload,
+      
     }
 }
 const SignUpFailure = () => {
@@ -68,7 +65,6 @@ const SignUpFailure = () => {
 export const signUp = (formData) => async (dispatch) => {
     try {
         dispatch(SignUpRequest());
-        // Make API call to register user
         const res = await fetch('http://localhost:8080/user', {
             method: 'POST',
 
@@ -79,12 +75,8 @@ export const signUp = (formData) => async (dispatch) => {
             },
         });
         const user = await res.json();
-        if (user) {
-            dispatch(SignUpSuccess(user.token));
-            localStorage.setItem('token', user.token);
-        } else {
-            dispatch(SignUpFailure());
-        }
+            dispatch(SignUpSuccess(user));
+ 
     } catch (error) {
         console.error('Error during sign up:', error);
         dispatch(SignUpFailure());
