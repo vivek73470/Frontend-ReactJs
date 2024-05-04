@@ -45,3 +45,12 @@
 .product-actual-price{
     margin: 0px;
 }
+.loaderimgg{
+    width: 30px;
+    height: 30px;
+}
+.loaderimgg img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}

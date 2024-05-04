@@ -97,7 +97,6 @@ const fetchCartRequest = () => {
 }
 
 const fetchCartSuccess = (payload) => {
-    console.log("pay",payload)
     return {
         type: types.FETCH_CART_SUCCESS,
         payload,

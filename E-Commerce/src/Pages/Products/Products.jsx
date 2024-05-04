@@ -1,45 +1,58 @@
-import React from "react";
+import React, { useState } from "react";
 import './products.css'
 import { Filter } from "../../Components/FilterComponent/FilterComponent"
 import {useDispatch, useSelector} from "react-redux"
 import {useEffect} from "react" 
 import {useSearchParams} from "react-router-dom"
 import {fetchData} from "../../Redux/products/action";
-
+import loader from '../../../src/Assets/load.jpg'
 const Watches = () => {
+    const[loading,setLoading] = useState(true)
   const dispatch=useDispatch()
   const watches=useSelector((store)=>store.ProductReducer.products)
+  console.log("prdct wat",watches)
   const [searchParams]=useSearchParams()
 
-  useEffect(()=>{
-    let getParams={
-      params:{category:searchParams.getAll("category")}
+  useEffect(() => {
+    setLoading(true);
+    let getParams = {
+      params: { category: searchParams.getAll("category") }
     }
-    dispatch(fetchData(getParams))
-  },[searchParams,dispatch])
+    setTimeout(() => { 
+      dispatch(fetchData(getParams))
+      setLoading(false);
+    }, 1000); 
+  }, [searchParams, dispatch])
 
 
     return (
         <>
-            <div className='product-screen'>
-                <div className='product-screen-wrapper'>
-                    <div className='product-filter'>
-                       <Filter/>
-                    </div>
-                    <div className='product-listing'>
-                        { watches.length > 0 &&
-                            watches.map((item) => {
-                                return <div className="productlist-design" key={item.id}>
-                                 <img className='product-imgstyle' src={item.image} alt="prodct" />
-                                 <p className='product-actual-title'>{item.title}</p>
-                                 <p className='product-actual-price'>₹{item.price}</p>
-                         
-                                </div>
-                            })}
-
-                    </div>
+    <div className='product-screen'>
+        <div className='product-screen-wrapper'>
+          <div className='product-filter'>
+            <Filter />
+          </div>
+          <div className='product-listing'>
+            {loading ? ( 
+                <div className="loaderimgg">
+                    <img src = {loader}/>
+                      <p>Loading...</p>
                 </div>
-            </div>
+          
+            ) : (
+              watches.length > 0 &&
+              watches.map((item) => (
+                <div className="productlist-design" key={item.id}>
+                  <img className='product-imgstyle' src={item.image} alt="prodct" />
+                  <p className='product-actual-title'>{item.title}</p>
+                  <p className='product-actual-price'>₹{item.price}</p>
+                </div>
+              ))
+              
+            )}
+          </div>
+        </div>
+      </div>
         </>
     )
 }
