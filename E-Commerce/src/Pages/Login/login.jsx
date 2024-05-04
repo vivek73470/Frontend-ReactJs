@@ -1,40 +1,34 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { signIn } from '../../Redux/auth/action';
-import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+
 
 function Login() {
-    const authStatus = useSelector(store => store.AuthReducer.auth)
-    const location = useDispatch();
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const[formData, setFormData]=useState({ email: '', password: '' })
+
 
     const handleChange =(e)=>{
         setFormData({
             ...formData,
             [e.target.name]:e.target.value
         })
-   console.log(e.target.value)
     }
-
-
-
-    const Submithandler =(e)=>{
+    const Submithandler = async (e) => {
         e.preventDefault();
         dispatch(signIn(formData));
-        setFormData({ email: '', password: '' });
-       
-    }
-    useEffect(()=>{
-        if(location?.state && authStatus){
-            navigate(location.state,{replace:true})
+            const response = await dispatch(signIn(formData));
+            if (response.status ) {
+                setFormData({ email: '', password: '' });
+                navigate('/products');
+            }
+            if(!response.status){
+                alert("wrong password OR email")
+            }   
+    };
 
-        }
-    },[location?.state, navigate,authStatus])
-    console.log(location)
   return (
    <>
 <div>

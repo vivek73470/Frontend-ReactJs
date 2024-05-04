@@ -7,7 +7,7 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     const { type, payload } = action;
-    // console.log("user data ",payload)
+    console.log("user data reducer",payload)
     switch (type) {
         case SIGNIN_REQUEST:
             return {
@@ -20,6 +20,7 @@ const reducer = (state = initialState, action) => {
                 auth: true,
                 token: payload
             }
+     
         case SIGNIN_FAILURE:
             return {
                 auth: false

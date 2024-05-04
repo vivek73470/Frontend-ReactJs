@@ -33,13 +33,13 @@ export const signIn = (formData) => async (dispatch) => {
         const res = await fetch('http://localhost:8080/user');
         const users = await res.json();
         const userdata = users.find(u => u.email === formData.email && u.password === formData.password);
-    
-            dispatch(SignInSuccess(userdata.id));
             localStorage.setItem('userId', userdata.id);
-        
-    } catch (error) {
-        console.error('Error during sign in:', error);
-        dispatch(SignInFailure());
+             dispatch(SignInSuccess({status:true}))
+            return {status:true}
+                
+    } 
+    catch (error) {
+      return {status:false}
    
     }
 };
@@ -50,9 +50,10 @@ const SignUpRequest = () => {
         type: SIGNUP_REQUEST
     }
 }
-const SignUpSuccess = () => {
+const SignUpSuccess = (payload) => {
     return {
         type: SIGNUP_SUCCESS,
+        payload,
       
     }
 }

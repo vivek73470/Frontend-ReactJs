@@ -1,21 +1,18 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import {Navigate, useLocation } from 'react-router-dom'
+import {Navigate } from 'react-router-dom'
 
 function AuthWrapper({children}) {
-    const location = useLocation()
-    const authStatus = useSelector(store => store.AuthReducer.auth)
-    console.log("abc",authStatus)
-
-    if(authStatus){
-   return children;
+ const userId = localStorage.getItem('userId')
+console.log("hii auth ",userId)
+    if(!userId){
+   return <Navigate to='/login' replace={true} />
 }
-return <Navigate to='/login' replace={true} state='/cart'/>
-    
   return (
+  <div>
+  {children}
+  </div>
 
-<>
-</>
   )
 }
 

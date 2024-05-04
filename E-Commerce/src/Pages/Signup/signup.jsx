@@ -27,7 +27,7 @@ const Submithandler=(e)=>{
     <h2>Signup</h2>
     <form onSubmit={Submithandler}>
     <div>
-            <label htmlFor="">Email</label>
+            <label htmlFor="">UserName</label>
             <input 
             name='username'
             type="text"
