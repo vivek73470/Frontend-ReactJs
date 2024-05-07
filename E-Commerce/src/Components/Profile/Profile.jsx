@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react'
 import './profile.css';
-import profile from '../../Assets/Screenshot (140).png';
 import { CgProfile } from "react-icons/cg";
 
 function Profile() {

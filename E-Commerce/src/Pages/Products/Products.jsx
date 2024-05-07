@@ -6,7 +6,10 @@ import {useEffect} from "react"
 import {useSearchParams} from "react-router-dom"
 import {fetchData} from "../../Redux/products/action";
 import loader from '../../../src/Assets/load.jpg'
-const Watches = () => {
+import Footer from "../../Components/Footer/footer";
+
+
+const Products = () => {
     const[loading,setLoading] = useState(true)
   const dispatch=useDispatch()
   const watches=useSelector((store)=>store.ProductReducer.products)
@@ -55,8 +58,9 @@ const Watches = () => {
           </div>
         </div>
       </div>
+      <Footer/>
         </>
     )
 }
 
-export default Watches
+export default Products

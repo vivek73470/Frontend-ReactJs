@@ -1,7 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
+import './login.css'
 import { signIn } from '../../Redux/auth/action';
 import { useNavigate } from 'react-router-dom';
+import slider from '../../Assets/Slide.png'
+import { Link } from 'react-router-dom';
+import Footer from '../../Components/Footer/footer'
 
 
 function Login() {
@@ -30,36 +34,79 @@ function Login() {
     };
 
   return (
-   <>
-<div>
-    <h2>Login</h2>
-    <form onSubmit={Submithandler}>
+//    <>
+// <div>
+  
+//     <form className='register-frm' onSubmit={Submithandler}>
+//         <div>
+//             <input 
+//             name='email'
+//             type="email"
+//             id='text'
+//             placeholder='enter email'
+//             value={formData.email}
+//             onChange={handleChange}
+//              />
+//         </div>
+//         <div>
+//             <input 
+//             name='password'
+//             type="password"
+//             id='text'
+//             placeholder='password'
+//             value={formData.password}
+//             onChange={handleChange}
+//              />
+//         </div>
+//         <button className='register-btn' type="submit">Log IN</button>
+//     </form>
+// </div>
+//    </>
+
+<>
+<div className='register-container'>
+    <div className='register-image'>
+        <img src={slider} alt="" />
+    </div>
+    <div>
+        <p className='register-acntcrt'>Login in to Topshop</p>
+        <p className='register-acntcrt-entr'>Enter Your details below</p>
+
+        <form className='register-frm' onSubmit={Submithandler}>
         <div>
-            <label htmlFor="">Email</label>
             <input 
             name='email'
             type="email"
-            id='email'
+            id='text'
             placeholder='enter email'
             value={formData.email}
             onChange={handleChange}
              />
         </div>
         <div>
-        <label htmlFor="">password</label>
             <input 
             name='password'
             type="password"
-            id='password'
+            id='text'
             placeholder='password'
             value={formData.password}
             onChange={handleChange}
              />
         </div>
-        <input type="submit" />
+        <button className='register-btn' type="submit">Log IN</button>
     </form>
+        
+        <div style={{textAlign:'center'}}>
+        <span className='register-already-actn'>Don't have an account?  </span>
+        <Link to='/signup'>
+        <span style={{color:'gray',textDecoration:'underline'}}>Register</span>
+        </Link>
+        </div>
+    </div>
+
 </div>
-   </>
+<Footer/>
+</>
   )
 }
 

@@ -14,10 +14,14 @@ function Navbar() {
       <div className='navbar-screen'>
         <div className='navbar-wrapper'>
           <div className='header-exclusive'>
-            <p>Exclusive</p>
+            <p>TOPSHOP</p>
           </div>
-
           <div className='navbar-cart-parent'>
+          <div className='header-dsp-hme'>
+            <span className='navbar-head-homcnt'>Home</span>
+            <span className='navbar-head-homcnt'>Contact</span>
+            <span className='navbar-head-homcnt'>About</span>
+          </div>
             <div class="your-events-searchstyle">
               <span className='span-search-header'>
                 < CiSearch />
