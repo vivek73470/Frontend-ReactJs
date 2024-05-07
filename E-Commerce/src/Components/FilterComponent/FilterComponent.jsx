@@ -34,21 +34,21 @@ const Filter = () => {
             value="men's clothing"
             checked={category.includes("men's clothing")}
             onChange={handleChange} />
-          <label>mens cloth</label>
+          <label>Men cloths</label>
         </div>
         <div>
           <input type="checkbox"
             value="bags"
             checked={category.includes("bags")}
             onChange={handleChange} />
-          <label>bags</label>
+          <label>Bags</label>
         </div>
         <div>
           <input type="checkbox"
-            value="jewelery"
-            checked={category.includes("jewelery")}
+            value="covers"
+            checked={category.includes("covers")}
             onChange={handleChange} />
-          <label>jewelery</label>
+          <label>Mobile Covers</label>
         </div>
         <div className="">
           <input type="checkbox"
@@ -56,7 +56,7 @@ const Filter = () => {
             checked={category.includes("women's clothing")}
             onChange={handleChange}
             />
-          <label>womens</label>
+          <label>Women cloths</label>
         </div>
       </div>
     </div>
