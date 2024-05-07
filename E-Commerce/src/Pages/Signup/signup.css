@@ -52,6 +52,7 @@ padding: 50px 0px 50px 0px;
     color: #fff;
     padding: 12px 20px;
     margin-bottom: 10px;
+    cursor: pointer;
   }
   .register-already-actn{
     font-size: 16px;
