@@ -11,6 +11,7 @@ import Order from '../../Pages/OrderPage/order'
 import Login from '../../Pages/Login/login'
 import Signup from '../../Pages/Signup/signup'
 import AuthWrapper from '../AuthWrapper/authWrapper'
+import Footer from '../Footer/footer'
 
 
 function AllRoutes() {
@@ -26,6 +27,7 @@ function AllRoutes() {
     <Route path='/orders' element={<Order/>}/>
     <Route path= '/login' element={<Login/>}/>
     <Route path= '/signup' element={<Signup/>}/>
+    <Route path='/footer' element={<Footer/>}/>
   </Routes>
   
   </>
