@@ -10,18 +10,20 @@ const Watches = () => {
     const[loading,setLoading] = useState(true)
   const dispatch=useDispatch()
   const watches=useSelector((store)=>store.ProductReducer.products)
-  console.log("prdct wat",watches)
+
   const [searchParams]=useSearchParams()
+
 
   useEffect(() => {
     setLoading(true);
     let getParams = {
       params: { category: searchParams.getAll("category") }
     }
+
     setTimeout(() => { 
       dispatch(fetchData(getParams))
       setLoading(false);
-    }, 1000); 
+    }, 100); 
   }, [searchParams, dispatch])
 
 

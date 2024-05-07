@@ -2,14 +2,64 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 20px 40px;
+    background-color: #fff;
+    box-shadow: 0px 4.934579372406006px 19.738317489624023px 0px #1f1b2d1f;
 }
 .navbar-cart{
     display: flex;
-    gap: 8px;
+    column-gap: 18px;
+    align-items: center;
+}
+.navbar-cart-parent{
+    display: flex;
+    column-gap: 18px;
     align-items: center;
 }
 .cart-counter{
     position: relative;
     padding: 0 0.5rem 0 0;
+}
+.header-login-register{
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+.header-registr{
+    color: black;
+    font-weight: 640;
+    font-size: 20px;
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+}
+.header-cart-img{
+    font-size: 18px;
+}
+.header-exclusive{
+    font-size: 20px;
+    font-weight: bold;
+}
+.your-events-searchstyle {
+    display: flex;
+    flex-direction: row;
+    width: 270px;
+    background: #f5f5f5;
+    border: 1px solid #f3f3f3;
+    border-radius: 20px;
+    align-items: center;
+    padding: 10px 16px;
+}
+.your-events-searchbox-head {
+    text-indent: 8px;
+    outline: 0;
+    border: 0;
+    width: 100%;
+    background: #f5f5f5;
+}
+.span-search-header{
+    width: 100%;
+    display: flex;
+    align-items: center;
 }

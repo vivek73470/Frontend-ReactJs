@@ -1,10 +1,11 @@
 import React, { useRef, useState } from 'react'
 import './profile.css';
 import profile from '../../Assets/Screenshot (140).png';
+import { CgProfile } from "react-icons/cg";
 
 function Profile() {
   const [open, setOpen] = useState(false);
-  const Menus = ["Profile", "Your Cart", "Login", "Logout"];
+  const Menus = ["Profile", "Logout"];
 
   const menuRef = useRef();
   const imgRef = useRef();
@@ -18,12 +19,17 @@ function Profile() {
     <>
       <div className='profile-screen'>
         <div className='prfl-pic'>
-          <img
-          ref={imgRef}
-          onClick={()=> setOpen(!open)}
-           className='profile-pht'
-            src={profile} 
-            alt="user" />
+          
+        <span
+  className='profile-pht'
+  ref={imgRef}
+  onClick={(e) => {
+    e.stopPropagation(); // Stop event propagation
+    setOpen(!open);
+  }}
+>
+  <CgProfile />
+</span>
 
           {
             open && (

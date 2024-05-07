@@ -25,6 +25,7 @@ const fetchDataFailure = (payload) => {
 
 
 const fetchData = (params) => (dispatch) => {
+    console.log("par",params)
     dispatch(fetchDataRequest());
     axios.get(`http://localhost:8080/products`, params)
         .then((r) => dispatch(fetchDataSuccess(r.data)))

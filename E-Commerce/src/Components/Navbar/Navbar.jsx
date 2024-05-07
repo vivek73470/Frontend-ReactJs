@@ -3,7 +3,9 @@ import './navbar.css'
 import Profile from '../Profile/Profile'
 import { MdOutlineShoppingCart } from "react-icons/md";
 import CartCounter from '../CartCounter/CartCounter';
-import { Link, Link as RouterLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { CiSearch } from "react-icons/ci";
+
 
 
 function Navbar() {
@@ -11,17 +13,41 @@ function Navbar() {
     <>
       <div className='navbar-screen'>
         <div className='navbar-wrapper'>
-          <div>
-            <h4>logo</h4>
+          <div className='header-exclusive'>
+            <p>Exclusive</p>
           </div>
-          <div className='navbar-cart'>
-            <Link as={RouterLink} to='/cart' >
+
+          <div className='navbar-cart-parent'>
+            <div class="your-events-searchstyle">
+              <span className='span-search-header'>
+                < CiSearch />
+                <input type="search" class="your-events-searchbox-head" placeholder="What are you looking for" />
+              </span>
+
+            </div>
+           <div className='navbar-cart'>
+            <Link to='/cart' >
               <div className='cart-counter'>
                 <CartCounter />
               </div>
-              <MdOutlineShoppingCart />
+              <span className='header-cart-img'>
+                <MdOutlineShoppingCart />
+              </span>
             </Link>
+
             <Profile />
+            <div className='header-login-register'>
+              <Link to='/signup'>
+                <span className='header-registr'>Register/</span>
+              </Link>
+              <Link to='/login'>
+                <span className='header-registr'>Login</span>
+              </Link>
+            </div>
+            </div>
+
+
+
 
           </div>
 
