@@ -21,8 +21,8 @@ function Cart() {
     <>
     
       <div className='cart-design-screen'> 
-        <div className='cart-headinf'>
-          <h2>Shopping Cart</h2>
+      <h2 className='cart-shopping-crt'>Shopping Cart</h2>
+        <div className='cart-headinf style-4'>
           {cart.length && cart.map((product) => {
             return <CartItem
              key={product.id}
@@ -35,6 +35,7 @@ function Cart() {
               />
           })}
         </div>
+
       <Checkout cart = {cart} checkoutHandler={checkoutHandler}/>
       {/* curly braces like {cart} passing a JavaScript expression as a prop, we can write anything inside curly braces and pass as a props */}
       </div>

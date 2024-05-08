@@ -5,8 +5,6 @@ import { useState } from 'react';
 
 
 function Checkout({ cart, checkoutHandler }) {
-    console.log("checkoutpage", cart)
-
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const handleCheckout = () => {
@@ -18,23 +16,24 @@ function Checkout({ cart, checkoutHandler }) {
     };
     return (
         <>
-            <div>
-                <button onClick={handleCheckout}>Checkout</button>
-                <Modal
+            <div className='checkout-container-parent'>
+                <button className='checkout-btn' onClick={handleCheckout}>Checkout</button>
+                <Modal 
                     isOpen={isModalOpen}
                     onRequestClose={handleCloseModal}
                     contentLabel="Checkout Modal"
                    >
-                    <div>
-                        <h2>Confirm Purchase</h2>
+                    <div className='parent-chck-btn'>
+                        <h2 className='confirm-prch-ctr'>Confirm Purchase</h2>
+                        <div className='checkout-inside-design'>
                         {cart.map((product) =>
-                            <div key={product.id}>
-                                <div>  <img src={product.image} alt="" /></div>
-
+                            <div className='checkout-max-ovr' key={product.id}>
+                                <div className='checkout-imagels'>  <img src={product.image} alt="" /></div>
                                 <p>{product.title}</p>
                             </div>
                         )}
-                        <button onClick={checkoutHandler}>Confirm</button>
+                          </div>
+                        <button className='check-cnfm-ordr' onClick={checkoutHandler}>Confirm Orders</button>
                     </div>
                 </Modal>
             </div>

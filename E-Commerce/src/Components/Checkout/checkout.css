@@ -1,0 +1,54 @@
+.checkout-btn{
+
+    padding: 10px;
+    width: 35.5%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    background-color: gray;
+    border: none;
+    font-size: 18px;
+    color: #fff;
+    margin-top: 20px;
+    align-items: center;
+    border-radius: 9px;
+    cursor: pointer;
+}
+.checkout-imagels{
+    width: 300px;
+    height: 370px;
+}
+.checkout-imagels img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.checkout-inside-design{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    column-gap: 25px;
+    row-gap: 25px;
+}
+.checkout-max-ovr{
+    border: 1px solid gray;
+    padding: 8px;
+    max-width: 320px;
+}
+.confirm-prch-ctr{
+    text-align: center;
+}
+.check-cnfm-ordr{
+    margin-top: 40px;
+    padding: 10px 66px;
+    border-radius: 10px;
+    border: none;
+    background-color: #000000;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 550;
+}
+.parent-chck-btn{
+text-align: center;
+}
