@@ -22,7 +22,7 @@ function Cart() {
     
       <div className='cart-design-screen'> 
         <div className='cart-headinf'>
-          <h2>Cart</h2>
+          <h2>Shopping Cart</h2>
           {cart.length && cart.map((product) => {
             return <CartItem
              key={product.id}
@@ -47,7 +47,8 @@ function CartItem({ id, title, image, description, price, removeProduct }) {
     <>
       <div className='cart-container'>
         <div className='cart-scrn-bdr'>
-          <div className='cartitm-bdr'>
+          <div className='cart-brdr'>
+          <div className='cartitm-bdr-ims'>
             <img src={image} alt="" />
           </div>
           <div className='cartitm-bdr'>
@@ -55,9 +56,12 @@ function CartItem({ id, title, image, description, price, removeProduct }) {
             <p>
               {description}
             </p>
-            <p>{price}</p>
-            <button onClick={() => removeProduct(id)} className='rmv-btn'><MdDelete />Remove  </button>
+            <p className='cart-add-price'>रु.{price}</p>
+            <button onClick={() => removeProduct(id)} className='rmv-btn'>
+              <MdDelete />   Remove  </button>
           </div>
+          </div>
+       
         </div>
       </div>
     </>
