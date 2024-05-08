@@ -89,6 +89,13 @@ const reducer = (state = initialState, action) => {
                 error: '',
                 cart: [...payload],
                 loading: false
+                // const payload = [1, 2, 3];
+                // const cart = [...payload]; Creates a new array [1, 2, 3]
+                
+                // const payload = [1, 2, 3];
+                // const cart = [payload]; Creates a new array containing the `payload` array as a single element: [[1, 2, 3]]
+                
+            
             }
 
         case types.FETCH_CART_FAILURE:

@@ -6,7 +6,6 @@ import { useState } from 'react';
 
 function Checkout({ cart, checkoutHandler }) {
     console.log("checkoutpage", cart)
-    console.log("checkHandler", checkoutHandler)
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 

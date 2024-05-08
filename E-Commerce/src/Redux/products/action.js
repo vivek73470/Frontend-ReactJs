@@ -1,6 +1,6 @@
 import axios from 'axios';
 import * as types from './actionType';
-import { type } from '@testing-library/user-event/dist/type';
+// import { type } from '@testing-library/user-event/dist/type';
 
 const fetchDataRequest = () => {
     return {
@@ -16,7 +16,7 @@ const fetchDataSuccess = (payload) => {
     }
 }
 
-const fetchDataFailure = (payload) => {
+const fetchDataFailure = () => {
     return {
         type: types.FETCH_DATA_FAILURE,
 
@@ -29,6 +29,7 @@ const fetchData = (params) => (dispatch) => {
     dispatch(fetchDataRequest());
     axios.get(`http://localhost:8080/products`, params)
         .then((r) => dispatch(fetchDataSuccess(r.data)))
+        // This response(r) object contains various properties including the data property, which holds the response data returned from the server.
         .catch((e) => dispatch(fetchDataFailure(e.data)))
 };
 
@@ -62,7 +63,6 @@ const getSingleProduct = (id) => (dispatch) => {
 }
 
 const addProductCartRequest = () => {
-    console.log("my request")
     return {
         type: types.ADD_PRODUCT_CART_REQUEST,
 
@@ -83,9 +83,10 @@ const addProductCartFailure = () => {
     }
 }
 
-const addProductCart = (product) => (dispatch) => {
+// prod is a parameter representing the product that you want to add to the cart
+const addProductCart = (prod) => (dispatch) => {
     dispatch(addProductCartRequest());
-    axios.post(`http://localhost:8080/cart`, product)
+    axios.post(`http://localhost:8080/cart`, prod)
         .then(r => dispatch(addProductCartSuccess(r.data)))
         .catch(e => dispatch(addProductCartFailure(e.data)))
 }
@@ -128,7 +129,6 @@ const deleteProductCartRequest = () => {
 }
 
 const deleteProductCartSuccess = (payload) => {
-    console.log("pay",payload)
     return {
         type: types.REMOVE_PRODUCT_CART_SUCCESS,
         payload,
@@ -171,7 +171,6 @@ const deleteProductCart =(id)=> (dispatch) =>{
  }
 
 const addOrder = (payload) => (dispatch) => {
-    console.log("payload", payload);
     dispatch(addOrderRequest());
 
     axios.post(`http://localhost:8080/orders`, payload)

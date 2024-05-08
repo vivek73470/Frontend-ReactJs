@@ -8,10 +8,9 @@ import Checkout from '../../Components/Checkout/Checkout';
 
 function Cart() {
   const cart = useSelector((store) => store.ProductReducer.cart)
-  console.log("cartpag",cart)
   const dispatch = useDispatch();
+  
   const removeProduct = (id) => {
-    console.log("going to remove product", id)
     dispatch(deleteProductCart(id))
   };
 

@@ -4,7 +4,6 @@ import { Route } from 'react-router-dom'
 import Homepage from '../../Pages/Homepage/Homepage'
 import Products from '../../Pages/Products/Products'
 import Cart from '../../Pages/Cart/Cart'
-import Product from '../../Pages/Product/Product'
 import CartCounter from '../CartCounter/CartCounter'
 import Checkout from '../Checkout/Checkout'
 import Order from '../../Pages/OrderPage/order'
@@ -12,6 +11,7 @@ import Login from '../../Pages/Login/login'
 import Signup from '../../Pages/Signup/signup'
 import AuthWrapper from '../AuthWrapper/authWrapper'
 import Footer from '../Footer/footer'
+import SingleProduct from '../../Pages/SingleProduct/Product'
 
 
 function AllRoutes() {
@@ -22,7 +22,7 @@ function AllRoutes() {
     <Route path='/products' element={<Products/>}/>
     <Route path='/cart' element={<AuthWrapper><Cart/></AuthWrapper>}/>
     <Route path='/cart-counter' element={<CartCounter/>}/>
-    <Route path='/products/:id' element={<Product/>}/>
+    <Route path='/cartproducts/:id' element={<SingleProduct/>}/>
     <Route path='/check' element={<Checkout/>}/>
     <Route path='/orders' element={<Order/>}/>
     <Route path= '/login' element={<Login/>}/>
