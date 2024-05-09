@@ -1,7 +1,7 @@
 import React from 'react'
 import { Routes } from 'react-router-dom'
 import { Route } from 'react-router-dom'
-import Homepage from '../../Pages/Homepage/Homepage'
+import Home from '../../Pages/Homepage/Home'
 import Products from '../../Pages/Products/Products'
 import Cart from '../../Pages/Cart/Cart'
 import CartCounter from '../CartCounter/CartCounter'
@@ -18,7 +18,7 @@ function AllRoutes() {
   return (
   <>
   <Routes>
-    <Route path='/' element={<Homepage/>}/>
+    <Route path='/' element={<Home/>}/>
     <Route path='/products' element={<Products/>}/>
     <Route path='/cart' element={<AuthWrapper><Cart/></AuthWrapper>}/>
     <Route path='/cart-counter' element={<CartCounter/>}/>
