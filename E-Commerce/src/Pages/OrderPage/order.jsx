@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import './order.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchOrder } from '../../Redux/products/action';
 
@@ -14,15 +15,22 @@ function Order() {
     return (
         <>
             <div>
-                <h2 >Your Orders</h2>
+                <h2 style={{textAlign:'center'}} >Your Orders</h2>
                 <div>
                     {orders.length > 0 &&
                         orders[0].map((elem) => (
-                            <div key={elem.id}>
-                                <img src={elem.image} alt="" />
-                                <p>{elem.title}</p>
-                                <p>{elem.description}</p>
-                                <p>{elem.price}</p>
+                            <div className='order-scroll style-4' key={elem.id}>
+                                <div className='orders-degn-flx '>
+                                    <div className='cartitm-bdr-ims'>
+                                        <img src={elem.image} alt="" />
+                                    </div>
+                                    <div className='cartitm-bdr'>
+                                        <h2 style={{textAlign:'center'}}>{elem.title}</h2>
+                                        <p className='order-description'>{elem.description}</p>
+                                        <p className='cart-add-price-order'>रु.{elem.price}</p>
+                                    </div>
+                                </div>
+
                             </div>
 
                         ))}

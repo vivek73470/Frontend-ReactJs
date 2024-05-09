@@ -48,6 +48,7 @@
     color: #fff;
     font-size: 18px;
     font-weight: 550;
+    cursor: pointer;
 }
 .parent-chck-btn{
 text-align: center;

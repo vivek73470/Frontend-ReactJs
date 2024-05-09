@@ -30,6 +30,9 @@ function Navbar() {
 
             </div>
            <div className='navbar-cart'>
+            <Link to='/orders'>
+            <span className='header-registr-yr'>Your <br/>Orders</span>
+            </Link>
             <Link to='/cart' >
               <div className='cart-counter'>
                 <CartCounter />

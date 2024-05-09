@@ -17,7 +17,9 @@ function Checkout({ cart, checkoutHandler }) {
     return (
         <>
             <div className='checkout-container-parent'>
-                <button className='checkout-btn' onClick={handleCheckout}>Checkout</button>
+                {cart.length>0 &&(
+                    <button className='checkout-btn' onClick={handleCheckout}>Checkout</button>
+                )}
                 <Modal 
                     isOpen={isModalOpen}
                     onRequestClose={handleCloseModal}

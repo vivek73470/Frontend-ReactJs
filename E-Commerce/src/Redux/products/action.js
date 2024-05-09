@@ -175,12 +175,10 @@ const addOrder = (payload) => (dispatch) => {
 
     axios.post(`http://localhost:8080/orders`, payload)
         .then(response => {
-            // Dispatch action indicating success and possibly pass response data
             dispatch(addOrderSuccess(response.data));
         })
         .then(()=>dispatch(emptyCart(payload)))
         .catch(error => {
-            // Dispatch action indicating failure and possibly pass error data
             dispatch(addOrderFailure(error));
         });
 }
