@@ -14,6 +14,10 @@ function Checkout({ cart, checkoutHandler }) {
     const handleCloseModal = () => {
         setIsModalOpen(false);
     };
+    const handleConfirmOrders = () => {
+        checkoutHandler(); // Call the function to confirm orders
+        setIsModalOpen(false); // Close the modal
+    };
     return (
         <>
             <div className='checkout-container-parent'>
@@ -35,7 +39,7 @@ function Checkout({ cart, checkoutHandler }) {
                             </div>
                         )}
                           </div>
-                        <button className='check-cnfm-ordr' onClick={checkoutHandler}>Confirm Orders</button>
+                        <button className='check-cnfm-ordr' onClick={handleConfirmOrders}>Confirm Orders</button>
                     </div>
                 </Modal>
             </div>

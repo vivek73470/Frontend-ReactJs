@@ -36,13 +36,13 @@ const Filter = () => {
             onChange={handleChange} />
           <label>Men cloths</label>
         </div>
-        <div>
+        {/* <div>
           <input type="checkbox"
             value="bags"
             checked={category.includes("bags")}
             onChange={handleChange} />
           <label>Bags</label>
-        </div>
+        </div> */}
         <div>
           <input type="checkbox"
             value="covers"

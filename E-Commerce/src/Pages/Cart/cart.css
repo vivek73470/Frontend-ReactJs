@@ -3,10 +3,11 @@
 }
 .cartitm-bdr{
     width: 335px;
-    height: 370px;
+    height: auto;
 }
 .cartitm-bdr-ims{
     width: 335px;
+    margin: auto;
     height: 370px;
     border-right: 1px solid gray;
 }
@@ -40,6 +41,7 @@ object-fit: contain;
     cursor: pointer;
 }
 .cart-brdr{
+    padding: 5px 5px 10px 5px;
     border: 1px solid gray;
     display: flex;
     border-radius: 9px;

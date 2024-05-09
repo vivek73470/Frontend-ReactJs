@@ -1,4 +1,5 @@
 .cartitm-bdr-ims{
+    margin: auto;
     width: 335px;
     height: 370px;
     border-right: 1px solid gray;
@@ -10,18 +11,22 @@ object-fit: contain;
 }
 .cartitm-bdr{
     width: 335px;
-    height: 370px;
+    height:auto
 }
 .order-scroll{
+    padding-right:  5px;
     max-height: 650px;
     overflow-y: scroll;
     max-width: 700px;
     margin: auto;
 }
 .orders-degn-flx{
+    margin-bottom: 10px;
+    padding: 5px 5px 10px 5px;
     display: flex;
     align-items: center;
     border: 1px solid gray;
+    border-radius: 10px;
 
 }
 .cart-add-price-order{
