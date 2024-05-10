@@ -19,8 +19,11 @@ function Navbar() {
           <div className='navbar-cart-parent'>
           <div className='header-dsp-hme'>
             <Link to='/'>
-            <span className='navbar-head-homcnt'>Home</span></Link>
+            <span className='navbar-head-homcnt'>Home</span>
+            </Link>
+            <Link to='/contact-us'>
             <span className='navbar-head-homcnt'>Contact</span>
+            </Link>
             <span className='navbar-head-homcnt'>About</span>
           </div>
             <div class="your-events-searchstyle">

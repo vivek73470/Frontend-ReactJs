@@ -12,6 +12,7 @@ import Signup from '../../Pages/Signup/signup'
 import AuthWrapper from '../AuthWrapper/authWrapper'
 import Footer from '../Footer/footer'
 import SingleProduct from '../../Pages/SingleProduct/Product'
+import Contactus from '../../Pages/Contact/Contactus'
 
 
 
@@ -29,6 +30,7 @@ function AllRoutes() {
     <Route path= '/login' element={<Login/>}/>
     <Route path= '/signup' element={<Signup/>}/>
     <Route path='/footer' element={<Footer/>}/>
+    <Route path='/contact-us' element={<Contactus/>}/>
   </Routes>
   
   </>

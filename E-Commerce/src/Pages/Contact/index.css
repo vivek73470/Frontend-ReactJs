@@ -1,0 +1,68 @@
+/* ContactUs.css */
+.contact-screen {
+    padding-top: 40px;
+    padding-bottom: 70px;
+    background-color: #f0f8fb;
+  }
+  .contact-getin >h2{
+    text-align: center;
+    font-style: normal;
+      font-size: 40px;
+      font-family: 'Noto Sans';
+  }
+  .contact-form {
+    max-width: 445px;
+    margin: 0 auto;
+    margin-top: 30px;
+    border-radius: 20px;
+    background-color: #f5fff7;
+    padding-top: 30px;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-bottom: 42px;
+  }
+  .contact-drop{
+    font-size: 25px;
+  }
+  .contact-frmm{
+    padding-top: 30px;
+  }
+    .contact-form h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .form-group {
+      margin-bottom: 24px;
+    }
+    
+    
+    .form-group input,
+    .form-group textarea {
+      width: 94%;
+      padding: 13px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+    }
+    
+    .form-group textarea {
+      height: 100px;
+      max-width: 94%;
+    }
+    
+   
+    
+   .contact-bnt{
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      background-color: #335918;
+      color: #fff;
+      cursor: pointer;
+    }
+    .contact-bnt:hover{
+    background-color: #fff;
+    color: black;
+    }
+    
