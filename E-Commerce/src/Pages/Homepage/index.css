@@ -60,3 +60,23 @@ margin-top: 25px;
     height: 100%;
     object-fit: contain; 
 }
+.best-seller-screen{
+    max-width: 99.5%;
+    margin: auto;
+    padding-bottom: 40px;
+}
+.best-heading{
+    text-align: center;
+}
+.seller-design-data{
+    
+}
+.best-seller-imgeeq img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.best-seller-imgeeq {
+ width:300px !important ;
+ height: 350px;
+}

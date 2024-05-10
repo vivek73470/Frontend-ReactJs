@@ -20,7 +20,7 @@ function Popular() {
                         <h1>Popular Categories</h1>
                     </div>
                     <div className='pop-mens'>
-                        <Link to='/mencloths'>
+                        <Link to=''>
                             <div className='pop-mens-wrap'>
                                 <div className='pop-mens-multi'>
                                     <img src={Pop1} alt='' />
@@ -46,7 +46,7 @@ function Popular() {
                     </div>
 
                     <div className='pop-womens'>
-                        <Link to='/womencloths'>
+                        <Link to=''>
                             <div className='pop-women-wrap'>
                                 <div className='pop-womens-multi'>
                                 <img src="https://images.bewakoof.com/uploads/grid/app/category-box-new-boyfriend-tees-1668773241.jpg" alt="" />

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './index.css'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -15,9 +15,26 @@ import Image8 from '../../Assets/image 8.webp'
 import Image9 from '../../Assets/image 9.webp'
 import Image10 from '../../Assets/image 10.webp'
 import Popular from '../Popular/Popular';
-// import Products from '../Products/Products'
+import CategoryToBag from '../CategoryToBag/categoryToBag';
+import StupidCollection from '../StupidCollection/StupidCollection';
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import '../../Components/Footer/footer'
+import Footer from '../../Components/Footer/footer';
+import { useDispatch } from 'react-redux';
+import { fetchData } from '../../Redux/products/action';
+
 
 function Home() {
+  const dispatch = useDispatch()
+  const seller = useSelector((store) => store.ProductReducer.products.slice(0, 10))
+
+  useEffect(() => {
+    dispatch(fetchData()); // Dispatch action to fetch products when component mounts
+  }, [dispatch]);
+
+  // Remaining component code...
+
 
   const settings = {
     dots: true,
@@ -35,32 +52,34 @@ function Home() {
       <div className='home-container'>
         <div className='home-wrapper'>
 
-        <div className='home-1st-page'>
-        
-        <div className='home-1st-page-inside'>
-        <Slider {...settings}>
-          <div className='home-1st-page-inside-image-slider'>
-            <img src={Image1gif} alt='home1' />
-          </div>
-          <div className='home-1st-page-inside-image-slider'>
-            <img src={Image2} alt='home1' />
-          </div>
-          <div className='home-1st-page-inside-image-slider'>
-            <img src={Image3} alt='home1' />
-          </div>
-          <div className='home-1st-page-inside-image-slider'>
-            <img src={Image4} alt='home1' />
-          </div>
-          <div className='home-1st-page-inside-image-slider'>
-            <img src={Image5} alt='home1' />
-          </div>
-          </Slider>
-        </div>
-      
+          <div className='home-1st-page'>
 
-      </div>
+            <div className='home-1st-page-inside'>
+              <Slider {...settings}>
+                <div className='home-1st-page-inside-image-slider'>
+                  <img src={Image1gif} alt='home1' />
+                </div>
+                <div className='home-1st-page-inside-image-slider'>
+                  <img src={Image2} alt='home1' />
+                </div>
+                <div className='home-1st-page-inside-image-slider'>
+                  <img src={Image3} alt='home1' />
+                </div>
+                <div className='home-1st-page-inside-image-slider'>
+                  <img src={Image4} alt='home1' />
+                </div>
+                <div className='home-1st-page-inside-image-slider'>
+                  <img src={Image5} alt='home1' />
+                </div>
+              </Slider>
+            </div>
 
-      <div className='home-2nd-page'>
+
+          </div>
+
+          <div className='home-2nd-page'>
+
+
             <div className='home-2nd-page-banner'>
               <img src={HomeBanner} alt='home-banner' />
             </div>
@@ -107,9 +126,31 @@ function Home() {
               </div>
             </div>
           </div>
-          <Popular/>
+          <Popular />
+          <div className='best-seller-screen'>
+            <div className='best-heading'>
+              <h2>Best Sellers</h2>
+            </div>
+            <Link to="/products">
+              <div className='seller-design-data'>
+                <Slider {...settings}>
+                  {seller.length > 0 && seller.map((elem) =>
+                    <div className='best-seller-imgeeq' key={elem.id}>
+                      <img src={elem.image} alt='' />
+                    </div>
+                  )}
+                </Slider>
+              </div>
+            </Link>
+          </div>
+          <CategoryToBag />
+          <StupidCollection />
+
+        
+
         </div>
       </div>
+      <Footer/>
     </>
   )
 }

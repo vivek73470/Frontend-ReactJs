@@ -12,6 +12,7 @@ const Products = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch()
   const watches = useSelector((store) => store.ProductReducer.products)
+  console.log('product useselector',watches)
 
   const [searchParams] = useSearchParams()
 

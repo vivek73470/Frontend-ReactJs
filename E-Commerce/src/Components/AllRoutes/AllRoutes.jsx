@@ -14,6 +14,7 @@ import Footer from '../Footer/footer'
 import SingleProduct from '../../Pages/SingleProduct/Product'
 
 
+
 function AllRoutes() {
   return (
   <>
