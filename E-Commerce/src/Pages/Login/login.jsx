@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import slider from '../../Assets/Slide.png'
 import { Link } from 'react-router-dom';
 import Footer from '../../Components/Footer/footer'
+import Navbar from '../../Components/Navbar/Navbar';
 
 
 function Login() {
@@ -26,7 +27,7 @@ function Login() {
             const response = await dispatch(signIn(formData));
             if (response.status ) {
                 setFormData({ email: '', password: '' });
-                navigate('/products');
+                navigate('/dashboard');
             }
             if(!response.status){
                 alert("wrong password OR email")
@@ -34,36 +35,9 @@ function Login() {
     };
 
   return (
-//    <>
-// <div>
-  
-//     <form className='register-frm' onSubmit={Submithandler}>
-//         <div>
-//             <input 
-//             name='email'
-//             type="email"
-//             id='text'
-//             placeholder='enter email'
-//             value={formData.email}
-//             onChange={handleChange}
-//              />
-//         </div>
-//         <div>
-//             <input 
-//             name='password'
-//             type="password"
-//             id='text'
-//             placeholder='password'
-//             value={formData.password}
-//             onChange={handleChange}
-//              />
-//         </div>
-//         <button className='register-btn' type="submit">Log IN</button>
-//     </form>
-// </div>
-//    </>
 
 <>
+<Navbar/>
 <div className='register-container'>
     <div className='register-image'>
         <img src={slider} alt="" />

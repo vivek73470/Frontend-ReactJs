@@ -4,6 +4,7 @@ import { MdDelete } from "react-icons/md";
 import { useSelector, useDispatch } from 'react-redux';
 import { addOrder, deleteProductCart } from '../../Redux/products/action';
 import Checkout from '../../Components/Checkout/Checkout';
+import Navbar from '../../Components/Navbar/Navbar';
 
 
 function Cart() {
@@ -18,8 +19,9 @@ function Cart() {
     dispatch(addOrder(cart))
   }
   return (
-    <>
     
+    <>
+        <Navbar/>
       <div className='cart-design-screen'> 
       <h2 className='cart-shopping-crt'>Shopping Cart</h2>
         <div className='cart-headinf style-4'>
@@ -46,6 +48,7 @@ function Cart() {
 function CartItem({ id, title, image, description, price, removeProduct }) {
   return (
     <>
+
       <div className='cart-container'>
         <div className='cart-scrn-bdr'>
           <div className='cart-brdr'>

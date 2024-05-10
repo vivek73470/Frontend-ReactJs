@@ -6,6 +6,7 @@ import { useEffect } from "react"
 import { useNavigate, useSearchParams } from "react-router-dom"
 import { fetchData } from "../../Redux/products/action";
 import Footer from "../../Components/Footer/footer";
+import Navbar from "../../Components/Navbar/Navbar";
 
 
 const Products = () => {
@@ -28,6 +29,7 @@ const Products = () => {
 
   return (
     <>
+    <Navbar/>
       <div className='product-screen'>
         <div className='product-screen-wrapper'>
           <div className='product-filter'>

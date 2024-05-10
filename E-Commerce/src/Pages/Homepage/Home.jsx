@@ -23,6 +23,7 @@ import '../../Components/Footer/footer'
 import Footer from '../../Components/Footer/footer';
 import { useDispatch } from 'react-redux';
 import { fetchData } from '../../Redux/products/action';
+import Navbar from '../../Components/Navbar/Navbar';
 
 
 function Home() {
@@ -49,6 +50,7 @@ function Home() {
 
   return (
     <>
+    <Navbar/>
       <div className='home-container'>
         <div className='home-wrapper'>
 

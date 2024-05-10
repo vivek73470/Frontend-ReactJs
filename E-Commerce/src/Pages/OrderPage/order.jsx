@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import './order.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchOrder } from '../../Redux/products/action';
+import Navbar from '../../Components/Navbar/Navbar';
 
 function Order() {
     const dispatch = useDispatch();
@@ -14,6 +15,7 @@ function Order() {
 
     return (
         <>
+        <Navbar/>
             <div>
                 <h2 style={{textAlign:'center'}}>Your Orders</h2>
                 <div  className='order-scroll style-4'>

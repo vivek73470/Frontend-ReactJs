@@ -2,6 +2,7 @@ import React from 'react'
 import './index.css'
 import { useState } from 'react'
 import Footer from '../../Components/Footer/footer';
+import Navbar from '../../Components/Navbar/Navbar';
 
 
 function Contactus() {
@@ -32,6 +33,7 @@ const handleSubmit =(e)=>{
 }
   return (
     <>
+    <Navbar/>
     <div className='contact-screen'>
       <span className='contact-getin'><h2>Get in Touch with us</h2></span>
       <div className="contact-form">

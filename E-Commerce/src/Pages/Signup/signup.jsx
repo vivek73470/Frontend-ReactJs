@@ -5,6 +5,7 @@ import { signUp } from '../../Redux/auth/action';
 import slider from '../../Assets/Slide.png'
 import { Link } from 'react-router-dom';
 import Footer from '../../Components/Footer/footer'
+import Navbar from '../../Components/Navbar/Navbar';
 
 function Signup() {
     const dispatch = useDispatch();
@@ -27,6 +28,7 @@ function Signup() {
 
     return (
         <>
+        <Navbar/>
             <div className='register-container'>
                 <div className='register-image'>
                     <img src={slider} alt="" />
