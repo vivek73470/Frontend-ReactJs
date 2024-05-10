@@ -13,6 +13,7 @@ import AuthWrapper from '../AuthWrapper/authWrapper'
 import Footer from '../Footer/footer'
 import SingleProduct from '../../Pages/SingleProduct/Product'
 import Contactus from '../../Pages/Contact/Contactus'
+import NotFound from '../../Pages/NotFoundPage/NotFound'
 
 
 
@@ -31,6 +32,8 @@ function AllRoutes() {
     <Route path= '/signup' element={<Signup/>}/>
     <Route path='/footer' element={<Footer/>}/>
     <Route path='/contact-us' element={<Contactus/>}/>
+    <Route path='*' element={<NotFound/>}/>
+
   </Routes>
   
   </>

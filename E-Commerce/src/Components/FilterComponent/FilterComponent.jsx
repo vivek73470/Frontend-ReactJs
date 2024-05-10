@@ -25,31 +25,34 @@ const Filter = () => {
   }, [category, setSerchparams])
 
   return (
-    <div>
-      <h3>Filters</h3>
-      <div>Category</div>
+    <div className="filter-categrs">
+      <h3>Categories</h3>
+   
       <div data-testid="filter-category">
-        <div>
+        <div className="filter-pdng">
           <input type="checkbox"
+          id="filtr-chck"
             value="men's clothing"
             checked={category.includes("men's clothing")}
             onChange={handleChange} />
-          <label>Men cloths</label>
+          <label className="filter-label-dgn">Men cloths</label>
         </div>
-        <div>
+        <div className="filter-pdng">
           <input type="checkbox"
+              id="filtr-chck"
             value="covers"
             checked={category.includes("covers")}
             onChange={handleChange} />
-          <label>Mobile Covers</label>
+          <label className="filter-label-dgn">Mobile Covers</label>
         </div>
-        <div className="">
+        <div className="filter-pdng">
           <input type="checkbox"
+              id="filtr-chck"
             value="women's clothing"
             checked={category.includes("women's clothing")}
             onChange={handleChange}
             />
-          <label>Women cloths</label>
+          <label className="filter-label-dgn">Women cloths</label>
         </div>
       </div>
     </div>

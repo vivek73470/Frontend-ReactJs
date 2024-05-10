@@ -9,18 +9,18 @@ function Footer() {
         {
             title: 'Account',
             links: [
-                { title: 'Home' },
-                { title: 'Login' },
-                { title: 'Register' },
-                { title: 'Cart' },
+                {path:'/', title: 'Home' },
+                {path:'/products', title: 'Products' },
+                {path:'/contact-us', title: 'Contact' },
+                {path:'/cart', title: 'Cart' },
             ],
         },
         {
             title: 'Policies',
             links: [
-                { title: 'Terms of Service' },
-                { title: 'Privacy Policy' },
-                { title: 'FAQ' },
+                {path:'/terms', title: 'Terms of Service' },
+                {path:'/privacy', title: 'Privacy Policy' },
+                {path:'/faq', title: 'FAQ' },
             ],
         },
     ];

@@ -21,10 +21,13 @@ function Navbar() {
             <Link to='/'>
             <span className='navbar-head-homcnt'>Home</span>
             </Link>
+            <Link to='/products'>
+            <span className='navbar-head-homcnt'>Products</span>
+            </Link>
             <Link to='/contact-us'>
             <span className='navbar-head-homcnt'>Contact</span>
             </Link>
-            <span className='navbar-head-homcnt'>About</span>
+        
           </div>
             <div class="your-events-searchstyle">
               <span className='span-search-header'>
