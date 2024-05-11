@@ -27,7 +27,7 @@ function Login() {
             const response = await dispatch(signIn(formData));
             if (response.status ) {
                 setFormData({ email: '', password: '' });
-                navigate('/dashboard');
+                navigate('/admin');
             }
             if(!response.status){
                 alert("wrong password OR email")

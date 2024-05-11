@@ -15,30 +15,50 @@ import SingleProduct from '../../Pages/SingleProduct/Product'
 import Contactus from '../../Pages/Contact/Contactus'
 import NotFound from '../../Pages/NotFoundPage/NotFound'
 import Dashboard from '../Dashboard/Dashboard'
+import Admin from '../AdminPage/Admin'
+import Sidebar from '../SidebarAdmin/Sidebar'
+import AdminHeader from '../AdminHeader/AdminHeader'
+import ProfileAd from '../AdminProfile/ProfileAd'
 
 
 
 function AllRoutes() {
   return (
-  <>
-  <Routes>
-    <Route path='/' element={<Home/>}/>
-    <Route path='/products' element={<Products/>}/>
-    <Route path='/cart' element={<AuthWrapper><Cart/></AuthWrapper>}/>
-    <Route path='/cart-counter' element={<CartCounter/>}/>
-    <Route path='/cartproducts/:id' element={<SingleProduct/>}/>
-    <Route path='/check' element={<Checkout/>}/>
-    <Route path='/orders' element={<Order/>}/>
-    <Route path= '/login' element={<Login/>}/>
-    <Route path= '/signup' element={<Signup/>}/>
-    <Route path='/footer' element={<Footer/>}/>
-    <Route path='/contact-us' element={<Contactus/>}/>
-    <Route path='/dashboard' element={<Dashboard/>}/>
-    <Route path='*' element={<NotFound/>}/>
+    <>
+      <Routes>
 
-  </Routes>
-  
-  </>
+        {/* user Routes */}
+        <Route path='/' element={<Home />} />
+        <Route path='/products' element={<Products />} />
+        <Route path='/cart' element={<Cart />} />
+        <Route path='/cart-counter' element={<CartCounter />} />
+        <Route path='/cartproducts/:id' element={<SingleProduct />} />
+        <Route path='/check' element={<Checkout />} />
+        <Route path='/orders' element={<Order />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<Signup />} />
+        <Route path='/footer' element={<Footer />} />
+        <Route path='/contact-us' element={<Contactus />} />
+     
+        <Route path='*' element={<NotFound />} />
+
+        {/* Admin Routes */}
+        <Route path='/admin' element={
+          <AuthWrapper>
+            <Admin />
+          </AuthWrapper>}>
+              <Route index element={<Dashboard />} />
+          <Route path='admin/dashboard' element={<Dashboard />} />
+          <Route path='admin/sidebar' element={<Sidebar />} />
+          <Route path='admin/header' element={<AdminHeader />} />
+          <Route path='admin/profile' element={<ProfileAd />} />
+
+        </Route>
+
+
+      </Routes>
+
+    </>
   )
 }
 
