@@ -24,8 +24,8 @@ function Sidebar({ Children }) {
       icon: <MdOutlineDashboard />
     },
     {
-      title: 'Product',
-      path: 'addproduct',
+      title: 'Add Product',
+      path: 'admin/add-product',
       icon: <MdOutlineProductionQuantityLimits />,
     },
     {

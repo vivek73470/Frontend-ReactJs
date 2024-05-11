@@ -19,6 +19,7 @@ import Admin from '../AdminPage/Admin'
 import Sidebar from '../SidebarAdmin/Sidebar'
 import AdminHeader from '../AdminHeader/AdminHeader'
 import ProfileAd from '../AdminProfile/ProfileAd'
+import AddProduct from '../AddProduct/AddProduct'
 
 
 
@@ -52,6 +53,7 @@ function AllRoutes() {
           <Route path='admin/sidebar' element={<Sidebar />} />
           <Route path='admin/header' element={<AdminHeader />} />
           <Route path='admin/profile' element={<ProfileAd />} />
+          <Route path='admin/add-product' element={<AddProduct />} />
 
         </Route>
 

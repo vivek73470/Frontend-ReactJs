@@ -2,12 +2,12 @@ import { SIGNIN_FAILURE, SIGNIN_SUCCESS, SIGNIN_REQUEST, SIGNUP_FAILURE, SIGNUP_
 
 const initialState = {
     auth: false,
-    token: ''
+    user:null
 }
 
 const reducer = (state = initialState, action) => {
     const { type, payload } = action;
-    // console.log("user data reducer",payload)
+    console.log("user data reducer",payload)
     switch (type) {
         case SIGNIN_REQUEST:
             return {
@@ -18,7 +18,8 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 auth: true,
-                token: payload
+                user:payload.user,
+                
             }
      
         case SIGNIN_FAILURE:

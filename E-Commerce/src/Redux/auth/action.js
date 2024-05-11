@@ -34,13 +34,12 @@ export const signIn = (formData) => async (dispatch) => {
         const users = await res.json();
         const userdata = users.find(u => u.email === formData.email && u.password === formData.password);
             localStorage.setItem('userId', userdata.id);
-             dispatch(SignInSuccess({status:true}))
+             dispatch(SignInSuccess({status:true,user:userdata}))
             return {status:true}
                 
     } 
     catch (error) {
       return {status:false}
-   
     }
 };
 
@@ -68,9 +67,7 @@ export const signUp = (formData) => async (dispatch) => {
         dispatch(SignUpRequest());
         const res = await fetch('http://localhost:8080/user', {
             method: 'POST',
-
             body: JSON.stringify(formData),
-
             headers: {
                 'Content-Type': 'application/json',
             },
