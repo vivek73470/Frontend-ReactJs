@@ -1,46 +1,26 @@
 import React from 'react'
 import './index.css'
+import { useDispatch } from 'react-redux'
+import { addProducts } from '../../Redux/products/action';
 
 function Addproduct() {
+  const dispatch = useDispatch();
   const [data, setData] = React.useState({
-    productImgTagSrc: '',
+    category: '',
+    title: '',
+    price: '',
+    description: '',
     plp: '',
     brand_namez: '',
-    clr_shade_4: '',
     discountedPriceText: '',
-    actualPriceText:'',
-    discount_price_box:''
+    actualPriceText: '',
+    discount_price_box: '',
+    image: '',
   })
 
-  async function addproduct() {
-    let res = await fetch(`http://localhost:8080/mensdata/`, {
-      method: 'POST',
 
-      body: JSON.stringify(data),
-
-      headers: {
-        'Content-Type': 'application/json',
-      },
-
-
-    });
-
-    let dat = await res.json();
-    console.log(dat);
-    setData({
-      productImgTagSrc: '',
-      plp: '',
-      brand_namez: '',
-      clr_shade_4: '',
-      discountedPriceText: '',
-      actualPriceText:'',
-      discount_price_box:''
-    }
-    )
-  }
 
   const handleChange = (e) => {
-
     setData((prevdata) => ({
       ...prevdata,
       [e.target.name]: e.target.value
@@ -50,31 +30,57 @@ function Addproduct() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setData(data)
+    dispatch(addProducts(data))
+    console.log('Data:', data);
   }
 
   return (
     <>
       <div className="container-addproduct">
-        <h1 className='addproduct-title'>Add Men's Product</h1>
+        <h1 className='addproduct-title'>Add Products</h1>
         <form className='addproduct-form' onSubmit={handleSubmit}>
-          {/* <input
-            name='id'
-            type="text"
+
+          <select
+            name='category'
             className='addproduct-input'
-            id="id"
-            placeholder="Id"
-            value={data.id}
+            value={data.category}
             onChange={handleChange}
-          />
-          <br /> */}
+          >
+             <option value='' disabled>Select Category</option>
+            <option value="men's clothing">Men's Clothing</option>
+            <option value="women's clothing">Women's Clothing</option>
+            <option value="covers">Mobile Cover</option>
+
+          </select>
+          <br />
           <input
-            name='productImgTagSrc'
+            name='image'
             type="text"
             className='addproduct-input'
             id="title"
-            placeholder="productImgTagSrc"
-            value={data.productImgTagSrc}
+            placeholder="image"
+            value={data.image}
+            onChange={handleChange}
+          />
+          <br />
+          <input
+            name='title'
+            type="text"
+            className='addproduct-input'
+            id="title"
+            placeholder="title"
+            value={data.title}
+            onChange={handleChange}
+          />
+          <br />
+
+          <input
+            name='brand_namez'
+            type="text"
+            className='addproduct-input'
+            id="author"
+            placeholder="brand_namez"
+            value={data.brand_namez}
             onChange={handleChange}
           />
           <br />
@@ -89,22 +95,22 @@ function Addproduct() {
           />
           <br />
           <input
-            name='brand_namez'
+            name='price'
             type="text"
             className='addproduct-input'
-            id="author"
-            placeholder="brand_namez"
-            value={data.brand_namez}
+            id="image"
+            placeholder="price"
+            value={data.price}
             onChange={handleChange}
           />
           <br />
           <input
-            name='clr_shade_4'
+            name='description'
             type="text"
             className='addproduct-input'
             id="author"
-            placeholder="clr_shade_4"
-            value={data.clr_shade_4}
+            placeholder="description"
+            value={data.description}
             onChange={handleChange}
           />
           <br />
@@ -140,8 +146,7 @@ function Addproduct() {
             onChange={handleChange}
           />
           <br />
-
-          <button className='addproduct-button' onClick={addproduct}>submit</button>
+          <button className='addproduct-button' >submit</button>
         </form>
       </div>
 

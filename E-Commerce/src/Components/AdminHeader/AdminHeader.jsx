@@ -7,7 +7,6 @@ import { fetchUserData } from '../../Redux/auth/action';
 function AdminHeader() {
   const dispatch =useDispatch();
   const userDetails = useSelector((store)=>store.AuthReducer.userData)
-  console.log('headerdet',userDetails)
    const userId= localStorage.getItem('userId')
 
   useEffect(() => {

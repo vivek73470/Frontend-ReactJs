@@ -6,13 +6,13 @@ const initialState = {
     CurrentProduct: {},
     loading: false,
     cart: [],
-    orders:[]
+    orders: []
 
 }
 
 const reducer = (state = initialState, action) => {
     const { type, payload } = action;
-    console.log('reducer',payload)
+    console.log(' add reducer', payload)
 
     switch (type) {
         case types.FETCH_DATA_REQUEST:
@@ -92,11 +92,11 @@ const reducer = (state = initialState, action) => {
                 loading: false
                 // const payload = [1, 2, 3];
                 // const cart = [...payload]; Creates a new array [1, 2, 3]
-                
+
                 // const payload = [1, 2, 3];
                 // const cart = [payload]; Creates a new array containing the `payload` array as a single element: [[1, 2, 3]]
-                
-            
+
+
             }
 
         case types.FETCH_CART_FAILURE:
@@ -119,26 +119,46 @@ const reducer = (state = initialState, action) => {
                 loading: false,
             }
 
-            case types.FETCH_ORDER_REQUEST:
-                return {
-                    ...state,
-                    loading: true,
-                }
-    
-            case types.FETCH_ORDER_SUCCESS:
-                return {
-                    ...state,
-                    error: '',
-                    orders: [...payload],
-                    loading: false
-                }
-    
-            case types.FETCH_ORDER_FAILURE:
-                return {
-                    ...state,
-                    error: payload,
-                    loading: false
-                }
+        case types.FETCH_ORDER_REQUEST:
+            return {
+                ...state,
+                loading: true,
+            }
+
+        case types.FETCH_ORDER_SUCCESS:
+            return {
+                ...state,
+                error: '',
+                orders: [...payload],
+                loading: false
+            }
+
+        case types.FETCH_ORDER_FAILURE:
+            return {
+                ...state,
+                error: payload,
+                loading: false
+            }
+
+        case types.ADD_PRODUCT_REQUEST:
+            return {
+                ...state,
+                loading: true,
+            }
+
+        case types.ADD_PRODUCT_SUCCESS:
+            return {
+                ...state,
+                products: [...state.products, payload], // Append the new product to existing products
+                loading: false
+            }
+
+        case types.ADD_PRODUCT_FAILURE:
+            return {
+                ...state,
+                error: payload,
+                loading: false
+            }
         default:
             return state;
     }

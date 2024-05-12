@@ -1,6 +1,6 @@
 import axios from 'axios';
 import * as types from './actionType';
-// import { type } from '@testing-library/user-event/dist/type';
+
 
 const fetchDataRequest = () => {
     return {
@@ -23,7 +23,6 @@ const fetchDataFailure = () => {
     }
 }
 
-
 const fetchData = (params) => (dispatch) => {
     console.log(" actions paamsr",params)
     dispatch(fetchDataRequest());
@@ -32,7 +31,6 @@ const fetchData = (params) => (dispatch) => {
         // This response(r) object contains various properties including the data property, which holds the response data returned from the server.
         .catch((e) => dispatch(fetchDataFailure(e.data)))
 };
-
 
 const getSingleProductRequest = () => {
     return {
@@ -120,7 +118,6 @@ const fetchCart = (payload) => (dispatch)=>{
 
 }
 
-
 const deleteProductCartRequest = () => {
     return {
         type: types.REMOVE_PRODUCT_CART_REQUEST,
@@ -157,12 +154,14 @@ const deleteProductCart =(id)=> (dispatch) =>{
         type:types.ADD_ORDER_REQUEST
     }
  }
+
  const addOrderSuccess = (payload) =>{
     return{
         type:types.ADD_ORDER_SUCCESS,
         payload,
     }
  }
+
  const addOrderFailure = (payload) =>{
     return{
         type:types.ADD_ORDER_FAILURE,
@@ -188,11 +187,13 @@ const emptyCartRequest =()=>{
         type: types.EMPTY_CART_REQUEST
     }
 }
+
 const emptyCartSuccess =()=>{
     return{
         type: types.EMPTY_CART_SUCCESS
     }
 }
+
 const emptyCartFailure  =()=>{
     return{
         type: types.EMPTY_CART_FAILURE
@@ -210,7 +211,6 @@ Promise.all(deleteOrders)
 .then((r)=>dispatch(emptyCartSuccess()))
 .catch((e)=>dispatch(emptyCartFailure()))
 }
-
 
 const fetchOrderRequest = () => {
     return {
@@ -242,5 +242,30 @@ const fetchOrder = (payload) => (dispatch)=>{
 
 }
 
+const AddProductsRequest =()=>{
+    return{
+        type:types.ADD_PRODUCT_REQUEST
+}
+}
+const AddProductsSuccess =(payload)=>{
+    console.log('add action',payload)
+    return{
+        type:types.ADD_PRODUCT_SUCCESS,
+        payload,
+}
+}
+const AddProductsFailure =()=>{
+    return{
+        type:types.ADD_PRODUCT_FAILURE
+}
+}
 
-export { fetchData,emptyCart, fetchOrder, getSingleProduct, addProductCart,fetchCart,deleteProductCart,addOrder };
+const addProducts = (data) => (dispatch)=>{
+    console.log('add actio prod',data)
+    dispatch(AddProductsRequest());
+    axios.post(`http://localhost:8080/products`,data)
+    .then(r => dispatch(AddProductsSuccess(r.data)))
+    .catch(e => dispatch(AddProductsFailure(e.data)))
+
+}
+export { fetchData,emptyCart, fetchOrder, getSingleProduct, addProductCart,fetchCart,deleteProductCart,addOrder,addProducts };
