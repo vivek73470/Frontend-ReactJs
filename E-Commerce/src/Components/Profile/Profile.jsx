@@ -9,39 +9,40 @@ function Profile() {
   const menuRef = useRef();
   const imgRef = useRef();
 
-  window.addEventListener("click",(e) =>{
-    if(e.target !== menuRef.current && e.target !== imgRef.current){
+  window.addEventListener("click", (e) => {
+    if (e.target !== menuRef.current && e.target !== imgRef.current) {
       setOpen(false);
     }
-  });
+  }
+);
   return (
     <>
       <div className='profile-screen'>
         <div className='prfl-pic'>
-          
-        <span
-  className='profile-pht'
-  ref={imgRef}
-  onClick={(e) => {
-    e.stopPropagation(); // Stop event propagation
-    setOpen(!open);
-  }}
->
-  <CgProfile />
-</span>
+
+          <span
+            className='profile-pht'
+            ref={imgRef}
+            onClick={(e) => {
+              e.stopPropagation(); // Stop event propagation
+              setOpen(!open);
+            }}
+          >
+            <CgProfile />
+          </span>
 
           {
             open && (
               <div
-              ref={menuRef}
-               className='profile-menu-options'>
+                ref={menuRef}
+                className='profile-menu-options'>
                 <ul>
                   {
                     Menus.map((menu) => (
-                      <li 
-                      onClick={()=>setOpen(false)}
-                      className='list-mne'
-                       key={menu}>{menu}</li>
+                      <li
+                        onClick={() => setOpen(false)}
+                        className='list-mne'
+                        key={menu}>{menu}</li>
                     ))
                   }
                 </ul>
