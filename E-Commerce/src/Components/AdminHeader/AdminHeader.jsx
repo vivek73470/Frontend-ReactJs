@@ -20,25 +20,8 @@ function AdminHeader() {
       <div className='Admin-Header-screen'>
         <div className='Admin-Header-screen-wrapper'>
           <div className='Admin-Header-title'>
-            <h2>Welcome {userDetails.username}</h2>
+            <span>Welcome {userDetails.username}</span>
           </div>
-          <div className='Admin-Header-profile'>
-            {/* <div><h3>Profile</h3> */}
-            {/* </div> */}
-            <div className='Admin-Header-profile-image'>
-            {userDetails.profilephoto && (
-            < img
-              src={userDetails.profilephoto}
-              alt='Profile Photo'
-            
-            />
-           
-          )}
-           
-            </div>
-          </div>
-
-
         </div>
       </div>
     </>

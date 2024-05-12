@@ -1,151 +1,156 @@
-.dashboard-adddelete {
+.dashboard-wrappeer {
+    max-width: 1430px;
+    margin: auto;
+    box-shadow: 7.831155300140381px 7.831155300140381px 19.5778865814209px 0px #00000014;
+    background: #fff;
+    border-radius: 16px;
+    padding: 10px 20px 30px 20px;
+}
+.dash-admin-addbtn{
     display: flex;
+    align-items: center;
+    height: 68px;
     justify-content: space-between;
 }
-
-.dashboard-wrappeer {
-    max-width: 1230px;
-    margin: auto;
-    margin-top: 70px;
+.dash-admin-addbtn>span{
+    font-size: 18px;
+    font-weight: 550;
 }
-
-.dashboard-addproduct-llink {
-    padding: 30px 30px 49px 30px;
-    margin: auto;
-    width: 308px;
-    height: auto;
-    border-radius: 35px;
-    background: #FFF;
-    box-shadow: 0px 4px 35px 0px rgba(0, 0, 0, 0.08);
-}
-
-.dashboard-addproduct-llink-add {
-    background-color:#fff;
-    padding: 30px 30px 60px 30px;
-    margin: auto;
-    width: 308px;
-    height: auto;
-    border-radius: 35px;
-    box-shadow: 0px 4px 35px 0px rgba(0, 0, 0, 0.08);
-}
-
-.dashboard-delproduct-llink {
-    padding: 30px 30px 55px 30px;
-    margin: auto;
-    width: 308px;
-    height: auto;
-    border-radius: 35px;
-    background: #FFF;
-    box-shadow: 0px 4px 35px 0px rgba(0, 0, 0, 0.08);
-}
-
-.dashboard-mobproduct-llink {
-    padding: 30px 30px 55px 30px;
-    margin: auto;
-    width: 308px;
-    height: auto;
-    border-radius: 35px;
-    background: #FFF;
-    box-shadow: 0px 4px 35px 0px rgba(0, 0, 0, 0.08);
-}
-
-.dashboard-addproduct-details>h2 {
-    text-align: center;
-    font-size: 30px;
-    font-weight: 650;
-    color: black;
-}
-
-.dashboard-addproduct-number {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    margin-top: 30px;
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    background: padding-box;
-    box-shadow: 0px 4px 35px 0px rgba(0, 0, 0, 0.08);
-}
-.dashboard-addproduct-number-men {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    margin-top: 53px;
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    background: padding-box;
-    box-shadow: 0px 4px 35px 0px rgba(0, 0, 0, 0.08);
-}
-
-.dashboard-buttn {
-    width: 100%;
-    background-color: #335918;
+.your-events{
+    background: #db4444;
+    border: 0;
     color: #fff;
-    padding: 15px;
-    border-radius: 21px;
-    border: none;
+    padding: 15px 28px;
+    border-radius: 24px;
     cursor: pointer;
-}
+    transition: 0.5s;
+    font-weight: 600;
 
-.dashboard-buttn:hover {
-    background-color: white;
+}
+.your-events:hover {
     color: red;
-    border: 1px solid black;
-
+    background-color: #fff;
+    border: 1px solid red;
+  }
+  .dash-ad-viewdtls{
+    width: 100%;
+    padding: 7.4px 0px;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid #db4444;
+    color: #db4444;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  .dash-ad-viewdtls:hover{
+color: #fff;
+background-color: #db4444;
+  }
+  .break-line {
+    width: 100%;
+    margin: 5px;
+    border: 1px solid #f2f2f2;
 }
-.dashboard-addproduct-btn {
-    margin-top: 63px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.product-listing-dash{
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    column-gap: 26px;
+    row-gap: 30px;
 }
-.dashboard-addproduct-btns {
-    margin-top: 180px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.dashboard-addproduct-btn-men {
-    margin-top: 88px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.add-prdt-top {
-    font-size: 22px;
-    font-weight: bold;
-    padding-bottom: 30px;
-    text-decoration: underline;
-}
-
-/* .add-prdt-top {
-    color: red;
-    margin-bottom: 30px;
+.productlist-design-dash{
+    width: 100%;
+    height: max-content;
+    max-width: 300px;
+    padding: 10px;
+    border-radius: 18px;
+    box-shadow: 7.1147541999816895px 7.1147541999816895px 35.57377243041992px 0px #0000000f;
+    background: #fff;
     position: relative;
-    font-family: sans-serif;
-    text-transform: uppercase;
-    font-size: 2em;
-    letter-spacing: 4px;
-    overflow: hidden;
-    color: white; 
-    background: linear-gradient(90deg, #000, #fff, #000);
-    background-repeat: no-repeat;
-    background-size: 80%;
-    animation: animate 3s linear infinite;
-    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+    padding: 15px;
+    border: 1px solid #e6e6e6;
+   
 }
+.productlist-design-dash img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
 
-@keyframes animate {
-    0% {
-        background-position: -500%;
-    }
-    100% {
-        background-position: 500%;
-    }
-} */
+}
+.productlist-design-dash img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 
+}
+.productlist-design-dash img:hover {
+    transform: scale(0.9); 
+  }
 
+.product-actual-price-dash{
+    margin: 0px;
+}
+.loaderimgg-dash{
+    width: 30px;
+    height: 30px;
+}
+.loaderimgg-dash img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.product-brandname-dash {
+    margin-top: 5px;
+    font-size: 12px;
+    margin-bottom: 7px;
+}
+.product-actual-title-dash{
+    opacity: 0.7;
+    font-weight: 500;
+    margin-top: 5px;
+    font-size: 16px;
+
+    margin-bottom: 1px;
+}
+.product-price-description-dash {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+.product-discount-price-dash {
+    font-size: 16px;
+    font-weight: 700;
+
+    margin: 0px;
+}
+.product-actual-price-dash {
+    color: #7e7e7e;
+    font-size: 14px;
+    font-weight: 300;
+    text-decoration: line-through;
+
+}
+.product-title-members-dash {
+    width: 142px;
+    background: #f7f7f7;
+    color: rgba(0, 0, 0, .81);
+    font-size: 11px;
+    font-weight: 700;
+
+    margin-top: 2px;
+    margin-bottom: 6px;
+}
+.prdct-size-dash img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+
+    transition: transform 0.3s ease;
+  }
+  .prdct-size-dash img:hover {
+    transform: scale(0.9); 
+  }
+  

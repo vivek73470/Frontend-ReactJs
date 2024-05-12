@@ -1,32 +1,16 @@
 .Admin-Header-screen-wrapper {
     padding-left: 76px;
-    padding-right: 76px;
-    padding-bottom: 26px;
-    padding-top: 26px;
-    background: #FFF;
-    box-shadow: 0px 4px 35px 0px rgba(0, 0, 0, 0.08);
+    background: #F4f7fe;
     display: flex;
+    height: 100px;
+    margin: auto;
     justify-content: space-between;
     align-items: center;
+    
 }
-.Admin-Header-title >h2{
-  font-size: 42px;
-}
-.Admin-Header-profile{
-  display: flex;
-align-items: center;
-justify-content: center;
-gap: 10px;
-}
-.Admin-Header-profile-image{
-    width: 60px;
-    /* height: 90px; */
-    border-radius: 50%;
-}
-.Admin-Header-profile-image img{
-  width: 100%;
-  height: 100%;
-  border-radius: 40px;
-  object-fit: contain;
-  cursor: pointer;
+
+.Admin-Header-title>span{
+  font-size: 30px;
+  color: #000000;
+  font-weight: 700;
 }

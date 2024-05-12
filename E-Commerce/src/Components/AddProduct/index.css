@@ -1,17 +1,17 @@
 /* adminaddprod.css */
 
 .container-addproduct {
-    max-width: 600px;
-    margin: 0 auto;
-    margin-top: 75px;
+  max-width: 1430px;
+  margin: 0 auto;
+  margin-top: 25px;
     padding: 30px;
-    background-color: #f8f8f8;
+    background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0px 4.934579372406006px 19.738317489624023px 0px #1f1b2d1f; */
+    box-shadow: 7.1147541999816895px 7.1147541999816895px 35.57377243041992px 0px #0000000f;
   }
   
   .addproduct-title {
-    text-align: center;
     font-size: 24px;
     margin-bottom: 20px;
   }
@@ -22,6 +22,7 @@
   }
   
   .addproduct-input {
+    width: 45%;
     margin-bottom: 15px;
     padding: 10px;
     border: 1px solid #ddd;
@@ -30,16 +31,25 @@
   }
   
   .addproduct-button {
-    background-color: #007bff;
+    background: #db4444;
+    border: 0;
     color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
+    padding: 15px 28px;
+    border-radius: 24px;
     cursor: pointer;
-    font-size: 16px;
+    transition: 0.5s;
+    font-weight: 600;
+
+}
+.addproduct-button :hover {
+    color: red;
+    background-color: #fff;
+    border: 1px solid red;
   }
+
   
-  .addproduct-button:hover {
-    background-color: #0056b3;
+  .add-admin-prd-rww{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
-  

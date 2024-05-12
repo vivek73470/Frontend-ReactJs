@@ -59,7 +59,6 @@ const SetInRequest = () => {
     }
 }
 const SetInSuccess = (payload) => {
-    console.log('action',payload)
     return {
         type: SET_SUCCESS,
         payload,
