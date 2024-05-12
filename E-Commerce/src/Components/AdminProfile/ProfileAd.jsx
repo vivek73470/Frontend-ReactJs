@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import './index.css'
+import { useDispatch, useSelector } from 'react-redux';
+import { UpdateProf, fetchUserData } from '../../Redux/auth/action';
 
 function ProfileAd() {
+  const dispatch = useDispatch();
+  const profileData = useSelector((store)=>store.AuthReducer.userData)
+  console.log('profl details',profileData)
+
   const [data, setData] = useState({
     username: '',
     email: '',
@@ -13,58 +19,18 @@ function ProfileAd() {
 
   })
   const userId = localStorage.getItem('userId');
+
   useEffect(() => {
-    const fetchProfileData = async () => {
-      try {
-        const res = await fetch(`http://localhost:8080/user/${userId}`, {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-          }
-        });
-        let user = await res.json();
-        console.log('u', user)
-
-        setData(user);
-        console.log('User after setting data:', user);
-
-      }
-      catch (error) {
-        console.log(error)
-      }
-    };
-    fetchProfileData();
-  }, [])
-
-  async function editProfile() {
-    try {
-
-      let res = await fetch(`http://localhost:8080/user/${userId}`, {
-        method: 'PUT',
-        body: JSON.stringify(data),
-
-        headers: {
-          'Content-Type': 'application/json',
-        }
-      })
-
-      const updatedData = await res.json();
-      console.log('viv', updatedData)
-      setData({
-        username: '',
-        email: '',
-        gender: '',
-        number: '',
-        address: '',
-        DOB: "",
-        profilephoto: ''
-
-      })
+    if (userId) {
+      dispatch(fetchUserData(userId));
     }
-    catch (err) {
-      console.log(err)
+  }, [dispatch, userId]);
+
+  useEffect(() => {
+    if (profileData) {
+        setData(profileData);
     }
-  }
+}, [ setData,profileData]);
 
   const handleChange = (e) => {
     setData({
@@ -94,7 +60,8 @@ function ProfileAd() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    editProfile();
+    dispatch(UpdateProf(userId, data))
+  
   }
 
   return (
@@ -151,7 +118,7 @@ function ProfileAd() {
              onChange={handleChange}
            />
            <br />
-           <button type='submit' onClick={() => editProfile()}>Update</button>
+           <button type='submit'>Update</button>
            </div>
  
            <div className='profilr-pic'>

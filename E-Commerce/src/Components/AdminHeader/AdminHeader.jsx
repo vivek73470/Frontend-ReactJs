@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import './index.css'
 import { useDispatch } from 'react-redux';
-import { Navigate, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { signIn } from '../../Redux/auth/action';
+import { fetchUserData } from '../../Redux/auth/action';
 
 function AdminHeader() {
-  const navigate =useNavigate();
   const dispatch =useDispatch();
-  const [name, setName] = useState([]);
-  const userDetails = useSelector((store)=>store.AuthReducer.user)
+  const userDetails = useSelector((store)=>store.AuthReducer.userData)
   console.log('headerdet',userDetails)
-  const userId = localStorage.getItem('userId');
+   const userId= localStorage.getItem('userId')
 
   useEffect(() => {
-dispatch(signIn())
-  }, [dispatch])
+    if (userId) {
+      dispatch(fetchUserData(userId));
+    }
+  }, [dispatch, userId]);
 
   return (
     <>

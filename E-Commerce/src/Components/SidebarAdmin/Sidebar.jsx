@@ -20,17 +20,17 @@ function Sidebar({ Children }) {
   const menuItem = [
     {
       title: 'Dashboard',
-      path: 'admin/dashboard',
+      path: '/admin/dashboard',
       icon: <MdOutlineDashboard />
     },
     {
       title: 'Add Product',
-      path: 'admin/add-product',
+      path: '/admin/add-product',
       icon: <MdOutlineProductionQuantityLimits />,
     },
     {
       title: 'Profile',
-      path: 'admin/profile',
+      path: '/admin/profile',
       icon: <CgProfile />
       ,
     }
@@ -71,17 +71,16 @@ function Sidebar({ Children }) {
             ))
           }
           <div className='sidebar-log'>
-            <NavLink
-              to="/signin"
+              <button
               className="link"
               activeClassName="active"
-              onClick={() => handleLogout()}
-            >
+              onClick={() => handleLogout()}>
+            
               <div className="icon">
                 <TbLogout />
               </div>
               <div style={{ display: isOpen ? "block" : "none" }} className="link_text">Logout</div>
-            </NavLink>
+              </button>
           </div>
         </div>
         <main>{Children}</main>

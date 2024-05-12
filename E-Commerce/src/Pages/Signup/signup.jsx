@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './signup.css'
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux'
 import { signUp } from '../../Redux/auth/action';
 import slider from '../../Assets/Slide.png'
@@ -8,6 +9,7 @@ import Footer from '../../Components/Footer/footer'
 import Navbar from '../../Components/Navbar/Navbar';
 
 function Signup() {
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const [formData, setFormData] = useState(
         { username: '', email: '', password: '' }
@@ -24,6 +26,7 @@ function Signup() {
         e.preventDefault();
         dispatch(signUp(formData))
         setFormData({ username: '', email: '', password: '' })
+        navigate('/login')
     }
 
     return (

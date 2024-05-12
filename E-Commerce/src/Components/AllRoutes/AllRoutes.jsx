@@ -49,11 +49,11 @@ function AllRoutes() {
             <Admin />
           </AuthWrapper>}>
               <Route index element={<Dashboard />} />
-          <Route path='admin/dashboard' element={<Dashboard />} />
-          <Route path='admin/sidebar' element={<Sidebar />} />
-          <Route path='admin/header' element={<AdminHeader />} />
-          <Route path='admin/profile' element={<ProfileAd />} />
-          <Route path='admin/add-product' element={<AddProduct />} />
+          <Route path='dashboard' element={<Dashboard />} />
+          <Route path='sidebar' element={<Sidebar />} />
+          <Route path='header' element={<AdminHeader />} />
+          <Route path='profile' element={<ProfileAd />} />
+          <Route path='add-product' element={<AddProduct />} />
 
         </Route>
 
