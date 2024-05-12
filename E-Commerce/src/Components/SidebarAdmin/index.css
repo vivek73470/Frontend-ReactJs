@@ -6,7 +6,7 @@
 
 .sidebar-screen{
     display: flex;
-
+z-index: 100;
     position: sticky;
     top: 0px;
   
@@ -34,16 +34,31 @@
 }
 .link{
     display: flex;
-    color: black;
+    color: #40475c;
     padding: 10px 30px;
     gap: 15px;
-    transition: all 0.5s;
-
+    border: none;
+    background-color: unset;
+    cursor: pointer;
+width: unset;
 }
-.link:hover{
-    background-color: lightgray;
-    counter-reset: #000;
-    transition: all 0.5s;
+.link-btn{
+    display: flex;
+    color: #40475c;
+    padding: 10px 30px;
+    gap: 15px;
+    border: none;
+    background-color: unset;
+    cursor: pointer;
+    width: 100%;
+}
+.link:focus{
+    background-color: #ff5757;
+    color: #fff;
+}
+.link-btn:focus{
+    background-color: #ff5757;
+    color: #fff;
 }
 
 .link, .link_text{
@@ -53,4 +68,9 @@
     position: absolute;
     bottom: 10px;
     width: 100%;
+    box-shadow: 0px 1.3124998807907104px 0px 0px #f2f4f6 inset;
 }
+/* .sidebar-log:focus{
+    background-color: #ff5757;
+    color: #fff;
+} */

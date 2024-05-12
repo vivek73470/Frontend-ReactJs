@@ -42,7 +42,8 @@ function Dashboard() {
                     <p className='product-actual-price-dash'>₹{item.actualPriceText}</p>
                   </div>
                   <p className='product-title-members-dash'>₹{item.discount_price_box} For Tribe Members</p>
-                  <button onClick={() => navigate(`/cartproducts/${item.id}`)} className='dash-ad-viewdtls'>View details</button>
+                  {/* <button onClick={() => navigate(`/cartproducts/${item.id}`,'_blank')} className='dash-ad-viewdtls'>View details</button> */}
+                  <button onClick={() => window.open(`/cartproducts/${item.id}`, '_blank')} className='dash-ad-viewdtls'>View details</button>
 
                 </div>
               ))

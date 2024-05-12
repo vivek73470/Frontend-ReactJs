@@ -42,7 +42,7 @@ function Addproduct() {
           <div className='add-admin-prd-rww'>
             <select
               name='category'
-              className='addproduct-input'
+              className='addproduct-input-drp'
               value={data.category}
               onChange={handleChange}
             >
@@ -57,7 +57,7 @@ function Addproduct() {
               type="text"
               className='addproduct-input'
               id="title"
-              placeholder="image"
+              placeholder=" enter image url"
               value={data.image}
               onChange={handleChange}
             />
@@ -68,7 +68,7 @@ function Addproduct() {
               type="text"
               className='addproduct-input'
               id="title"
-              placeholder="title"
+              placeholder="enter title"
               value={data.title}
               onChange={handleChange}
             />
@@ -77,7 +77,7 @@ function Addproduct() {
               type="text"
               className='addproduct-input'
               id="author"
-              placeholder="brand_namez"
+              placeholder="enter brand_namez"
               value={data.brand_namez}
               onChange={handleChange}
             />
@@ -88,7 +88,7 @@ function Addproduct() {
               type="text"
               className='addproduct-input'
               id="title"
-              placeholder="plp"
+              placeholder="enter size "
               value={data.plp}
               onChange={handleChange}
             />
@@ -97,7 +97,7 @@ function Addproduct() {
               type="text"
               className='addproduct-input'
               id="image"
-              placeholder="price"
+              placeholder=" enter price"
               value={data.price}
               onChange={handleChange}
             />
@@ -108,7 +108,7 @@ function Addproduct() {
               type="text"
               className='addproduct-input'
               id="image"
-              placeholder="actualPriceText"
+              placeholder="enter actualPriceText"
               value={data.actualPriceText}
               onChange={handleChange}
             />
@@ -117,7 +117,7 @@ function Addproduct() {
               type="text"
               className='addproduct-input'
               id="image"
-              placeholder="discount_price_box"
+              placeholder="enter discount_price_box"
               value={data.discount_price_box}
               onChange={handleChange}
             />
@@ -128,7 +128,7 @@ function Addproduct() {
               type="text"
               className='addproduct-input'
               id="image"
-              placeholder="discountedPriceText"
+              placeholder="enter discountedPriceText"
               value={data.discountedPriceText}
               onChange={handleChange}
             />
@@ -137,7 +137,7 @@ function Addproduct() {
               type="text"
               className='addproduct-input'
               id="author"
-              placeholder="description"
+              placeholder="enter description"
               value={data.description}
               onChange={handleChange}
             />

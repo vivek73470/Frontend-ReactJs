@@ -3,6 +3,8 @@ import './singleDet.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'
 import { addProductCart, getSingleProduct } from '../../Redux/products/action';
+import Navbar from '../../Components/Navbar/Navbar';
+import Footer from '../../Components/Footer/footer'
 
 
 function SingleProduct() {
@@ -27,6 +29,7 @@ function SingleProduct() {
 
   return (
     <>
+    <Navbar/>
       <div className='single-product-mainscreen'>
         <div className='single-product-wrapscreen'>
           <div className='prdct-size-mobile' >
@@ -87,7 +90,7 @@ function SingleProduct() {
           </div>
         </div>
       </div>
-
+<Footer/>
     </>
   )
 }

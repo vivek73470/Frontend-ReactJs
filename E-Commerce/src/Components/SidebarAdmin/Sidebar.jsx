@@ -72,10 +72,9 @@ function Sidebar({ Children }) {
           }
           <div className='sidebar-log'>
               <button
-              className="link"
+              className="link-btn"
               activeClassName="active"
               onClick={() => handleLogout()}>
-            
               <div className="icon">
                 <TbLogout />
               </div>
