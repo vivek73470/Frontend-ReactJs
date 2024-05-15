@@ -249,7 +249,6 @@ const AddProductsRequest =()=>{
 }
 }
 const AddProductsSuccess =(payload)=>{
-    console.log('add action',payload)
     return{
         type:types.ADD_PRODUCT_SUCCESS,
         payload,
@@ -267,6 +266,33 @@ const addProducts = (data) => (dispatch)=>{
     axios.post(`http://localhost:8080/products`,data)
     .then(r => dispatch(AddProductsSuccess(r.data)))
     .catch(e => dispatch(AddProductsFailure(e.data)))
+
+}
+
+const EditProductsRequest =()=>{
+    return{
+        type:types.EDIT_PRODUCT_REQUEST
+}
+}
+const EditProductsSuccess =(payload)=>{
+    console.log('23action edit',payload)
+    return{
+        type:types.EDIT_PRODUCT_SUCCESS,
+        payload,
+}
+}
+const EditProductsFailure =()=>{
+    return{
+        type:types.EDIT_PRODUCT_FAILURE
+}
+}
+
+const editProducts = (id,data) => (dispatch)=>{
+    console.log('action edit',id,data)
+    dispatch(EditProductsRequest());
+    axios.put(`http://localhost:8080/products/${id}`,data)
+    .then(r => dispatch(EditProductsSuccess(r.data)))
+    .catch(e => dispatch(EditProductsFailure(e.data)))
 
 }
 
@@ -300,4 +326,4 @@ const deleteProducts =(id)=> (dispatch) =>{
 }
 
 
-export { fetchData, deleteProducts,emptyCart, fetchOrder, getSingleProduct, addProductCart,fetchCart,deleteProductCart,addOrder,addProducts };
+export { fetchData,editProducts, deleteProducts,emptyCart, fetchOrder, getSingleProduct, addProductCart,fetchCart,deleteProductCart,addOrder,addProducts };

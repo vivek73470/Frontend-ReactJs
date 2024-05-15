@@ -12,7 +12,7 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     const { type, payload } = action;
-    console.log(' add reducer', payload)
+    console.log(' EDIT reducer', payload)
 
     switch (type) {
         case types.FETCH_DATA_REQUEST:
@@ -56,6 +56,27 @@ const reducer = (state = initialState, action) => {
                 error: payload,
                 loading: false
             }
+
+            case types.EDIT_PRODUCT_REQUEST:
+                return {
+                    ...state,
+                    loading: true,
+                }
+    
+            case types.EDIT_PRODUCT_SUCCESS:
+                return {
+                    ...state,
+                    error: '',
+                    CurrentProduct: payload,
+                    loading: false
+                }
+    
+            case types.EDIT_PRODUCT_FAILURE:
+                return {
+                    ...state,
+                    error: payload,
+                    loading: false
+                }
 
         case types.ADD_PRODUCT_CART_REQUEST:
             return {

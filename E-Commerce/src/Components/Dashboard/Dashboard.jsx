@@ -12,10 +12,13 @@ function Dashboard() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const watches = useSelector((store) => store.ProductReducer.products)
-  console.log('dash', watches)
+  console.log('edit-page', watches)
 
   const deleteProduct = (id) => {
     dispatch(deleteProducts(id))
+  };
+  const editProduct = (id) => {
+  
   };
 
   useEffect(() => {
@@ -41,7 +44,7 @@ function Dashboard() {
                       <i class="material-icons">more_vert</i>
                     </button>
                     <ul id='action-dropdown' class="dropdown-menu">
-                      <li> <TiEdit /> Edit</li>
+                      <li onClick={() => navigate(`edit-product/${item.id}`)}> <TiEdit /> Edit</li>
                       <li onClick={() => deleteProduct(item.id)}> <RiDeleteBin6Line /> Delete</li>
                     </ul>
                   </div>
