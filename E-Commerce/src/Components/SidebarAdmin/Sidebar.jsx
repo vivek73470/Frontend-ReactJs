@@ -6,6 +6,7 @@ import { MdOutlineDashboard, MdOutlineProductionQuantityLimits } from "react-ico
 import { FaBars } from "react-icons/fa";
 import { TbLogout } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
+import { IoMdCart } from "react-icons/io";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -27,6 +28,11 @@ function Sidebar({ Children }) {
       title: 'Add Product',
       path: '/admin/add-product',
       icon: <MdOutlineProductionQuantityLimits />,
+    },
+    {
+      title: 'Cart',
+      path: '/admin/cart-admin',
+      icon: <IoMdCart />,
     },
     {
       title: 'Profile',

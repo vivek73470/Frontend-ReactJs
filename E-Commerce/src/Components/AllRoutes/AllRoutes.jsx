@@ -21,6 +21,7 @@ import AdminHeader from '../AdminHeader/AdminHeader'
 import ProfileAd from '../AdminProfile/ProfileAd'
 import AddProduct from '../AddProduct/AddProduct'
 import EditProduct from '../EditProduct/EditProduct'
+import CartAdmin from '../CartAdmin/CartAdmin'
 
 
 
@@ -53,6 +54,7 @@ function AllRoutes() {
           <Route path='sidebar' element={<Sidebar />} />
           <Route path='header' element={<AdminHeader />} />
           <Route path='profile' element={<ProfileAd />} />
+          <Route path='cart-admin' element={<CartAdmin />} />
           <Route path='add-product' element={<AddProduct />} />
           <Route path='edit-product/:id' element={<EditProduct />} />
 
