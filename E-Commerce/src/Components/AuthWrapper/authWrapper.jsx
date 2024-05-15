@@ -3,7 +3,7 @@ import {Navigate } from 'react-router-dom'
 
 function AuthWrapper({children}) {
  const userId = localStorage.getItem('userId')
- console.log("userId",userId)
+
     if(!userId){
    return <Navigate to='/login' replace={true} />
 }

@@ -57,26 +57,26 @@ const reducer = (state = initialState, action) => {
                 loading: false
             }
 
-            case types.EDIT_PRODUCT_REQUEST:
-                return {
-                    ...state,
-                    loading: true,
-                }
-    
-            case types.EDIT_PRODUCT_SUCCESS:
-                return {
-                    ...state,
-                    error: '',
-                    CurrentProduct: payload,
-                    loading: false
-                }
-    
-            case types.EDIT_PRODUCT_FAILURE:
-                return {
-                    ...state,
-                    error: payload,
-                    loading: false
-                }
+        case types.EDIT_PRODUCT_REQUEST:
+            return {
+                ...state,
+                loading: true,
+            }
+
+        case types.EDIT_PRODUCT_SUCCESS:
+            return {
+                ...state,
+                error: '',
+                CurrentProduct: payload,
+                loading: false
+            }
+
+        case types.EDIT_PRODUCT_FAILURE:
+            return {
+                ...state,
+                error: payload,
+                loading: false
+            }
 
         case types.ADD_PRODUCT_CART_REQUEST:
             return {
@@ -180,6 +180,20 @@ const reducer = (state = initialState, action) => {
                 error: payload,
                 loading: false
             }
+
+            case types.DELETE_ORDER_REQUEST:
+                return {
+                    ...state,
+                    error: payload,
+                    loading: true,
+                }
+            case types.DELETE_ORDER_FAILURE:
+                return {
+                    ...state,
+                    error: payload,
+                    loading: false,
+                }
+    
         default:
             return state;
     }

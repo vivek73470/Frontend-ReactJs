@@ -12,14 +12,12 @@ function Dashboard() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const watches = useSelector((store) => store.ProductReducer.products)
-  console.log('edit-page', watches)
+
 
   const deleteProduct = (id) => {
     dispatch(deleteProducts(id))
   };
-  const editProduct = (id) => {
-  
-  };
+
 
   useEffect(() => {
     dispatch(fetchData())

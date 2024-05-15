@@ -31,7 +31,6 @@ function Addproduct() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(addProducts(data))
-    console.log('Data:', data);
   }
 
   return (

@@ -6,7 +6,6 @@ import { UpdateProf, fetchUserData } from '../../Redux/auth/action';
 function ProfileAd() {
   const dispatch = useDispatch();
   const profileData = useSelector((store)=>store.AuthReducer.userData)
-  console.log('profl details',profileData)
 
   const [data, setData] = useState({
     username: '',

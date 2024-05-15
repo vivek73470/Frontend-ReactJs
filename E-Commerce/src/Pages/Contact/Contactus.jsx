@@ -22,12 +22,11 @@ const handleChange = (e) =>{
     
   }));
 
-  console.log(`${name}: ${value}`);
+
 }
 
 const handleSubmit =(e)=>{
   e.preventDefault();
-  console.log(formData);
   setFormData(initState);
 
 }

@@ -485,7 +485,7 @@
       "plp": "OVERSIZED FIT",
       "brand_namez": "Burberry",
       "discountedPriceText": 149,
-      "actualPriceText": 599,
+      "actualPriceText": "595",
       "discount_price_box": 559,
       "image": "https://images.bewakoof.com/t640/women-s-black-one-with-the-universe-graphic-printed-boyfriend-t-shirt-483055-1655748960-1.jpg",
       "rating": {
@@ -502,7 +502,7 @@
       "plp": "OVERSIZED FIT",
       "brand_namez": "Burberry",
       "discountedPriceText": 149,
-      "actualPriceText": 599,
+      "actualPriceText": "599",
       "discount_price_box": 559,
       "image": "https://images.bewakoof.com/t640/cats-coffee-and-books-half-sleeve-t-shirt-384431-1655748506-1.jpg",
       "rating": {
@@ -512,27 +512,7 @@
     }
   ],
   "cart": [],
-  "orders": [
-    [
-      {
-        "id": 1,
-        "title": "Mens Casual Premium Slim Fit T-Shirts ",
-        "price": 22.3,
-        "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
-        "category": "men's clothing",
-        "plp": "OVERSIZED FIT",
-        "brand_namez": "Burberry",
-        "discountedPriceText": 149,
-        "actualPriceText": 599,
-        "discount_price_box": 559,
-        "image": "https://images.bewakoof.com/t640/the-ryuk-full-sleeve-t-shirt-554015-1667974706-1.jpg",
-        "rating": {
-          "rate": 4.1,
-          "count": 259
-        }
-      }
-    ]
-  ],
+  "orders": [],
   "user": [
     {
       "username": "vivek ",
