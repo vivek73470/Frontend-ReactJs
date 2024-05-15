@@ -40,7 +40,6 @@ function AllRoutes() {
         <Route path='/signup' element={<Signup />} />
         <Route path='/footer' element={<Footer />} />
         <Route path='/contact-us' element={<Contactus />} />
-     
         <Route path='*' element={<NotFound />} />
 
         {/* Admin Routes */}

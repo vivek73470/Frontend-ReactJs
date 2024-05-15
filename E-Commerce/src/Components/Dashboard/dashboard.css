@@ -16,6 +16,17 @@
     font-size: 18px;
     font-weight: 550;
 }
+.action_btn {
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px solid gray;
+}
+#action-dropdown{
+    padding-left: 15px;
+    z-index: 0;
+    width: 10px !important;
+    margin: auto !important;
+}
 .your-events{
     background: #db4444;
     border: 0;

@@ -1,36 +1,27 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect} from 'react'
 import './dashboard.css'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
-import { fetchData } from '../../Redux/products/action'
+import { deleteProducts, fetchData } from '../../Redux/products/action'
 import { useNavigate } from 'react-router-dom'
-import { BsThreeDotsVertical } from "react-icons/bs";
+import { TiEdit } from "react-icons/ti";
+import { RiDeleteBin6Line } from "react-icons/ri";
 
 
 function Dashboard() {
-  const [open, setOpen] = useState(false);
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const watches = useSelector((store) => store.ProductReducer.products)
   console.log('dash', watches)
 
-  const menuRef = useRef();
-  const imgRef = useRef();
+  const deleteProduct = (id) => {
+    dispatch(deleteProducts(id))
+  };
 
   useEffect(() => {
     dispatch(fetchData())
   }, [dispatch])
 
-  const openThree = () => {
-
-  }
-
-  window.addEventListener("click", (e) => {
-    if (e.target !== menuRef.current && e.target !== imgRef.current) {
-      setOpen(false);
-    }
-  }
-  );
   return (
     <>
       <div className='dashboard-screen'>
@@ -45,30 +36,14 @@ function Dashboard() {
             {watches.length > 0 &&
               watches.map((item) => (
                 <div className="productlist-design-dash" key={item.id} >
-
-                  <div onClick={() => { openThree() }} className='dashbr-pst-abs'>
-                    <span
-                      ref={imgRef}
-                      onClick={(e) => {
-                        e.stopPropagation(); // Stop event propagation
-                        setOpen(!open);
-                      }}>
-                      <BsThreeDotsVertical />
-                    </span>
-                    {
-                      open && (
-                        <div
-                        ref={menuRef}
-                        className='dash-menu-options'>
-                <ul>
-                  {
-                      <li onClick={() =>setOpen(false)} >view</li>   
-                  }
-                </ul>
-                          
-                        </div>
-                      )
-                    }
+                  <div class="dropdown">
+                    <button class="action_btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="material-icons">more_vert</i>
+                    </button>
+                    <ul id='action-dropdown' class="dropdown-menu">
+                      <li> <TiEdit /> Edit</li>
+                      <li onClick={() => deleteProduct(item.id)}> <RiDeleteBin6Line /> Delete</li>
+                    </ul>
                   </div>
                   <img className='product-imgstyle-dash' src={item.image} alt="cloth products" />
                   <p className='product-brandname-dash'>{item.brand_namez}</p>

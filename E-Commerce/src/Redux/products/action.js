@@ -126,6 +126,7 @@ const deleteProductCartRequest = () => {
 }
 
 const deleteProductCartSuccess = (payload) => {
+    console.log('DELETE ACTION', payload)
     return {
         type: types.REMOVE_PRODUCT_CART_SUCCESS,
         payload,
@@ -268,4 +269,35 @@ const addProducts = (data) => (dispatch)=>{
     .catch(e => dispatch(AddProductsFailure(e.data)))
 
 }
-export { fetchData,emptyCart, fetchOrder, getSingleProduct, addProductCart,fetchCart,deleteProductCart,addOrder,addProducts };
+
+const DeleteProductsRequest =()=>{
+    return{
+        type:types.DELETE_PRODUCT_REQUEST
+}
+}
+const DeleteProductsSuccess =(payload)=>{
+    return{
+        type:types.DELETE_PRODUCT_SUCCESS,
+        payload,
+}
+}
+const DeleteProductsFailure =()=>{
+    return{
+        type:types.DELETE_PRODUCT_FAILURE
+}
+}
+
+const deleteProducts =(id)=> (dispatch) =>{
+    console.log('delete prd',id)
+    dispatch(DeleteProductsRequest())
+    axios.delete(`http://localhost:8080/products/${id}`)
+    .then((r) => {
+     dispatch(DeleteProductsSuccess(r.data))
+     dispatch(fetchData());
+ } )
+ .then(() => dispatch(fetchCart()))
+    .catch((e) => dispatch(DeleteProductsFailure(e.data)))
+}
+
+
+export { fetchData, deleteProducts,emptyCart, fetchOrder, getSingleProduct, addProductCart,fetchCart,deleteProductCart,addOrder,addProducts };
