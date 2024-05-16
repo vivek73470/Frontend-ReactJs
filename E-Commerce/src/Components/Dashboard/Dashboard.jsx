@@ -42,7 +42,7 @@ function Dashboard() {
                       <i class="material-icons">more_vert</i>
                     </button>
                     <ul id='action-dropdown' class="dropdown-menu">
-                      <li onClick={() => navigate(`edit-product/${item.id}`)}> <TiEdit /> Edit</li>
+                      <li onClick={() => navigate(`/admin/edit-product/${item.id}`)}> <TiEdit /> Edit</li>
                       <li onClick={() => deleteProduct(item.id)}> <RiDeleteBin6Line /> Delete</li>
                     </ul>
                   </div>
