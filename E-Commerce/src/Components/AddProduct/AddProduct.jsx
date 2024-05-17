@@ -1,9 +1,11 @@
 import React from 'react'
 import './index.css'
 import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom';
 import { addProducts } from '../../Redux/products/action';
 
 function Addproduct() {
+  const navigate = useNavigate()
   const dispatch = useDispatch();
   const [data, setData] = React.useState({
     category: '',
@@ -31,6 +33,7 @@ function Addproduct() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(addProducts(data))
+    navigate('/admin')
   }
 
   return (

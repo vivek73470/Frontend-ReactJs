@@ -6,16 +6,22 @@
     position: relative;
 }
 .profile-menu-options {
+    padding: 15px;
     position: absolute;
-    right: 0px;
+    right: -30px;
     top: 40px;
-    background-color: #f8f8f8;
+    background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ box-shadow: 0px 4.934579372406006px 19.738317489624023px 0px #1f1b2d1f;
+
 }
-.list-mne{
-    cursor: pointer;
+.profile-menuflxx{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 18px;
 }
-.list-mne:hover{
-   background-color: gray;
+a{
+    color: #000000 !important;
+    font-weight: 600;
 }
