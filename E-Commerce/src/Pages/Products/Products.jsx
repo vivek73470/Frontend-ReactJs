@@ -7,12 +7,16 @@ import { useNavigate, useSearchParams } from "react-router-dom"
 import { fetchData } from "../../Redux/products/action";
 import Footer from "../../Components/Footer/footer";
 import Navbar from "../../Components/Navbar/Navbar";
+import Loading from "../../Components/LoadingOverlay/Loading";
+
 
 
 const Products = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch()
   const watches = useSelector((store) => store.ProductReducer.products)
+  const isLoading = useSelector((store)=>store.ProductReducer.loading)
+  console.log('loading',isLoading)
 
   const [searchParams] = useSearchParams()
 
@@ -28,38 +32,40 @@ const Products = () => {
 
   return (
     <>
-    <Navbar/>
-      <div className='product-screen'>
-        <div className='product-screen-wrapper'>
-          <div className='product-screen-wrapper1st'>
-          <div className='product-filter'>
-            <Filter />
-          </div>
-          <div className='product-listing'>
-            {watches.length > 0 &&
-              watches.map((item) => (
-                <div className="productlist-design" key={item.id}
-                    onClick={() => navigate(`/cartproducts/${item.id}`)}>
-                  <img className='product-imgstyle' src={item.image} alt="cloth products" />
-                  <p className='product-brandname'>{item.brand_namez}</p>
-                  <p className='product-actual-title'>{item.title}</p>
-                  {/* <p className='product-actual-price'>₹{item.price}</p> */}
-                  <div className='product-price-description'>
-                    <p className='product-discount-price'>₹{item.discountedPriceText}</p>
-                    <p className='product-actual-price'>₹{item.actualPriceText}</p>
-                  </div>
-                  <p className='product-title-members'>₹{item.discount_price_box} For Tribe Members</p>
-                  
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <>
+          <Navbar />
+          <div className='product-screen'>
+            <div className='product-screen-wrapper'>
+              <div className='product-screen-wrapper1st'>
+                <div className='product-filter'>
+                  <Filter />
                 </div>
-              ))
-            }
+                <div className='product-listing'>
+                  {watches.length > 0 &&
+                    watches.map((item) => (
+                      <div className="productlist-design" key={item.id}
+                        onClick={() => navigate(`/cartproducts/${item.id}`)}>
+                        <img className='product-imgstyle' src={item.image} alt="cloth products" />
+                        <p className='product-brandname'>{item.brand_namez}</p>
+                        <p className='product-actual-title'>{item.title}</p>
+                        <div className='product-price-description'>
+                          <p className='product-discount-price'>₹{item.discountedPriceText}</p>
+                          <p className='product-actual-price'>₹{item.actualPriceText}</p>
+                        </div>
+                        <p className='product-title-members'>₹{item.discount_price_box} For Tribe Members</p>
+                      </div>
+                    ))}
+                </div>
+              </div>
+            </div>
           </div>
-          </div>
-        </div>
-      </div>
-      <Footer />
+          <Footer />
+        </>
+      )}
     </>
-  )
-}
-
+  );
+};
 export default Products

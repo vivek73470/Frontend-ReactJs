@@ -16,6 +16,17 @@ const reducer = (state = initialState, action) => {
 
 
     switch (type) {
+        case types.START_LOADING:
+            return {
+                ...state,
+                loading: true
+            }
+        case types.STOP_LOADING:
+            return {
+                ...state,
+                loading: false
+            }
+
         case types.FETCH_DATA_REQUEST:
             return {
                 // creates a new version of the current state by copying the existing state 
@@ -92,7 +103,7 @@ const reducer = (state = initialState, action) => {
                 error: '',
                 cart: [...state.cart, payload],
                 loading: false
-             
+
             }
 
         case types.ADD_PRODUCT_CART_FAILURE:
@@ -165,26 +176,26 @@ const reducer = (state = initialState, action) => {
             }
 
 
-            case types.ADD_ORDER_REQUEST:
-                return {
-                    ...state,
-                    loading: true,
-                }
-    
-            case types.ADD_ORDER_SUCCESS:
-                return {
-                    ...state,
-                    error: '',
-                    orders: payload,
-                    loading: false
-                }
-    
-            case types.ADD_ORDER_FAILURE:
-                return {
-                    ...state,
-                    error: payload,
-                    loading: false
-                }
+        case types.ADD_ORDER_REQUEST:
+            return {
+                ...state,
+                loading: true,
+            }
+
+        case types.ADD_ORDER_SUCCESS:
+            return {
+                ...state,
+                error: '',
+                orders: payload,
+                loading: false
+            }
+
+        case types.ADD_ORDER_FAILURE:
+            return {
+                ...state,
+                error: payload,
+                loading: false
+            }
 
 
 
@@ -208,19 +219,19 @@ const reducer = (state = initialState, action) => {
                 loading: false
             }
 
-            case types.DELETE_ORDER_REQUEST:
-                return {
-                    ...state,
-                    error: payload,
-                    loading: true,
-                }
-            case types.DELETE_ORDER_FAILURE:
-                return {
-                    ...state,
-                    error: payload,
-                    loading: false,
-                }
-    
+        case types.DELETE_ORDER_REQUEST:
+            return {
+                ...state,
+                error: payload,
+                loading: true,
+            }
+        case types.DELETE_ORDER_FAILURE:
+            return {
+                ...state,
+                error: payload,
+                loading: false,
+            }
+
         default:
             return state;
     }

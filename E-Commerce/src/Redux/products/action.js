@@ -1,7 +1,17 @@
 import axios from 'axios';
 import * as types from './actionType';
+// import { type } from '@testing-library/user-event/dist/type';
 
-
+const startLoading =()=>{
+    return{
+        type:types.START_LOADING
+    }
+}
+const stopLoading =()=>{
+    return{
+        type:types.STOP_LOADING
+    }
+}
 
 const fetchDataRequest = () => {
     return {
@@ -26,10 +36,12 @@ const fetchDataFailure = () => {
 
 const fetchData = (params) => (dispatch) => {
     dispatch(fetchDataRequest());
+    dispatch(startLoading());
     axios.get(`http://localhost:8080/products`, params)
         .then((r) => dispatch(fetchDataSuccess(r.data)))
         // This response(r) object contains various properties including the data property, which holds the response data returned from the server.
         .catch((e) => dispatch(fetchDataFailure(e.data)))
+        dispatch(stopLoading());
 };
 
 const getSingleProductRequest = () => {
@@ -199,11 +211,11 @@ const emptyCartSuccess = () => {
     }
 }
 
-const emptyCartFailure = () => {
-    return {
-        type: types.EMPTY_CART_FAILURE
-    }
-}
+// const emptyCartFailure = () => {
+//     return {
+//         type: types.EMPTY_CART_FAILURE
+//     }
+// }
 
 // const emptyCart = (payload) => (dispatch) => {
 //     console.log('function empty cart',payload)
@@ -223,6 +235,7 @@ const emptyCart = (payload) => async (dispatch) => {
     dispatch(emptyCartRequest());
     const{id}=payload;
     dispatch(deleteProductCart(id))
+    dispatch(emptyCartSuccess)
 
 };
 
