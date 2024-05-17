@@ -8,16 +8,26 @@ import Navbar from '../../Components/Navbar/Navbar';
 
 
 function Cart() {
-  const cart = useSelector((store) => store.ProductReducer.cart)
+  let cart = useSelector((store) => store.ProductReducer.cart)
+  console.log('cart page',cart)
+   
   const dispatch = useDispatch();
-
+  
   const removeProduct = (id) => {
     dispatch(deleteProductCart(id))
   };
 
   const checkoutHandler = () => {
-    dispatch(addOrder(cart))
+    for(let i in cart){
+      dispatch(addOrder(cart[i]))
+
+    }
+  
+      // dispatch(addOrder(cart))
+
+    
   }
+
   return (
 
     <>

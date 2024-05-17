@@ -31,6 +31,7 @@ const Products = () => {
     <Navbar/>
       <div className='product-screen'>
         <div className='product-screen-wrapper'>
+          <div className='product-screen-wrapper1st'>
           <div className='product-filter'>
             <Filter />
           </div>
@@ -52,6 +53,7 @@ const Products = () => {
                 </div>
               ))
             }
+          </div>
           </div>
         </div>
       </div>

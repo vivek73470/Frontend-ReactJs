@@ -36,7 +36,7 @@
     },
     {
       "id": 3,
-      "title": "Mens Cotton Jacket",
+      "title": "Mens black color Premium Slim Fit T-Shirts ",
       "price": 55.99,
       "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
       "category": "men's clothing",
@@ -189,7 +189,7 @@
     },
     {
       "id": 12,
-      "title": "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
+      "title": "Rain Jacket Women Windbreaker Striped and Climbing Raincoats clothle",
       "price": 399,
       "description": "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.",
       "category": "women's clothing",
@@ -257,7 +257,7 @@
     },
     {
       "id": 16,
-      "title": "Arrow Men's Slim Shirt",
+      "title": "Arrow Men's Slim Shirt  The Purrnisher Graphic Printed Oversized",
       "price": 949,
       "description": "Arrow's shirts are an undeniable choice when you want to look your best. This formal shirt features a point collar and full sleeve while the combination of fine tailoring and soft fabric gives you a smart & crisp look.",
       "category": "men's clothing",
@@ -274,7 +274,7 @@
     },
     {
       "id": 17,
-      "title": "Jack & Jones Men's Carrot Slim Jeans",
+      "title": "Jack & Jones Men's Carrot Slim Jeans  The Purrnisher Graphic Printed Oversized",
       "price": 989,
       "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
       "category": "men's clothing",
@@ -511,26 +511,43 @@
       }
     }
   ],
-  "cart": [
+  "cart": [],
+  "orders": [
     {
-      "id": 1,
-      "title": "Mens Casual Premium Slim Fit T-Shirts ",
-      "price": 22.3,
-      "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
-      "category": "men's clothing",
+      "id": 8,
+      "title": "Pierced Owl Rose Gold Plated Stainless Steel Double",
+      "price": 10.99,
+      "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
+      "category": "covers",
       "plp": "OVERSIZED FIT",
       "brand_namez": "Burberry",
       "discountedPriceText": 149,
       "actualPriceText": 599,
       "discount_price_box": 559,
-      "image": "https://images.bewakoof.com/t640/the-ryuk-full-sleeve-t-shirt-554015-1667974706-1.jpg",
+      "image": "https://images.bewakoof.com/t1080/green-owl-printed-designer-hard-cover-for-samsung-a22-5g-impact-resistant-matte-finish-548089-1665565752-1.jpg",
       "rating": {
-        "rate": 4.1,
-        "count": 259
+        "rate": 1.9,
+        "count": 100
+      }
+    },
+    {
+      "id": 22,
+      "title": "Travel Map Printed Designer Hard Cover For Samsung A22 5G ()",
+      "price": 10.99,
+      "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
+      "category": "covers",
+      "plp": "OVERSIZED FIT",
+      "brand_namez": "Burberry",
+      "discountedPriceText": 149,
+      "actualPriceText": 599,
+      "discount_price_box": 559,
+      "image": "https://images.bewakoof.com/t1080/travel-map-printed-designer-hard-cover-for-samsung-a22-5g-impact-resistant-matte-finish-548090-1665565669-1.jpg",
+      "rating": {
+        "rate": 1.9,
+        "count": 100
       }
     }
   ],
-  "orders": [],
   "user": [
     {
       "username": "vivek ",

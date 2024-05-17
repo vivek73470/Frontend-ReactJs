@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react'
-import './index.css'
+import './sidebar.css'
 import { useNavigate, NavLink } from 'react-router-dom';
 import { MdOutlineDashboard, MdOutlineProductionQuantityLimits } from "react-icons/md";
 import { FaBars } from "react-icons/fa";
@@ -12,6 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 // takes a prop named Children.
 function Sidebar({ Children }) {
+
   const [isOpen, setIsOpen] = useState(true);
 
   // The toggle function is defined to toggle the value of isOpen between true and false when called.
@@ -58,7 +59,7 @@ function Sidebar({ Children }) {
       {/* If isOpen is true, the width is set to "300px"; otherwise, if isOpen is false, the width is set to "105px" */}
         <div style={{ width: isOpen ? "300px" : "105px" }} className='sidebar-screen-wrapper'>
           <div className='top-section'>
-            <h1 style={{ display: isOpen ? "block" : "none" }} className='logo'>Admin Panel</h1>
+            <h1 style={{ display: isOpen ? "block" : "none" }} className='logo'>Top Shop</h1>
             <div style={{ marginLeft: isOpen ? "105px" : "0px" }} className='bars'>
               <FaBars onClick={toggle} />
             </div>

@@ -3,7 +3,6 @@
 .container-addproduct {
   max-width: 1430px;
   margin: 0 auto;
-  margin-top: 25px;
     padding: 30px;
     background-color: #fff;
     border-radius: 8px;
@@ -31,7 +30,7 @@
     font-size: 16px;
   }
   .addproduct-input-drp {
-    width: 46.8%;
+    width: 44.9%;
     outline: none;
     margin-bottom: 15px;
     padding: 14px 10px;

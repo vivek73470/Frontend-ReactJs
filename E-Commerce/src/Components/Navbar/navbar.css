@@ -1,19 +1,28 @@
+a{
+    text-decoration: none !important;
+}
+
+
 .navbar-wrapper{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px 20px 60px;
+    padding: 20px 60px 20px 60px;
     background-color: #fff;
     box-shadow: 0px 4.934579372406006px 19.738317489624023px 0px #1f1b2d1f;
 }
 .navbar-cart{
     display: flex;
-    column-gap: 18px;
+    column-gap: 26px;
     align-items: center;
 }
 .navbar-cart-parent{
     display: flex;
-    column-gap: 30px;
+    column-gap: 50px;
     align-items: center;
 }
 .cart-counter{
@@ -42,16 +51,18 @@ a{
 }
 .header-cart-img{
     font-size: 18px;
+    color: black;
 }
-.header-exclusive{
-    font-size: 20px;
+.header-exclusive>p{
+    font-size: 22px;
     font-weight: bold;
+    margin-bottom: 0px;
 
 }
 .your-events-searchstyle {
     display: flex;
     flex-direction: row;
-    width: 270px;
+    width: 300px;
     background: #f5f5f5;
     border: 1px solid #f3f3f3;
     border-radius: 20px;
@@ -71,18 +82,18 @@ a{
     align-items: center;
 }
 .navbar-head-homcnt{
+    text-decoration: none !important;
     color: black;
-    font-size: 18px;
+    font-size: 21px;
     cursor: pointer;
 }
 .header-dsp-hme{
     display: flex;
     align-items: center;
-    column-gap: 35px;
+    column-gap: 48px;
     font-weight: 640;
-    padding-right:  60px;
 }
 .navbar-head-homcnt:hover {
     text-decoration: underline;
-    color: red; 
+    color: #db4444; 
   }

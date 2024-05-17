@@ -40,6 +40,7 @@ const getSingleProductRequest = () => {
 }
 
 const getSingleProductSuccess = (payload) => {
+    console.log('success get single prdt',payload)
     return {
         type: types.GET_SINGLE_PRODUCT_SUCCESS,
         payload,
@@ -68,6 +69,7 @@ const addProductCartRequest = () => {
 }
 
 const addProductCartSuccess = (payload) => {
+    console.log('add to cart success single prdct',payload)
     return {
         type: types.ADD_PRODUCT_CART_SUCCESS,
         payload,
@@ -140,6 +142,7 @@ const deleteProductCartFailure = () => {
 }
 
 const deleteProductCart = (id) => (dispatch) => {
+    console.log('del prct cart function ',id)
     dispatch(deleteProductCartRequest())
     axios.delete(`http://localhost:8080/cart/${id}`)
         .then((r) => {
@@ -156,6 +159,7 @@ const addOrderRequest = () => {
 }
 
 const addOrderSuccess = (payload) => {
+    console.log('success add order',payload)
     return {
         type: types.ADD_ORDER_SUCCESS,
         payload,
@@ -170,6 +174,7 @@ const addOrderFailure = (payload) => {
 }
 
 const addOrder = (payload) => (dispatch) => {
+    console.log('function add order',payload)
     dispatch(addOrderRequest());
 
     axios.post(`http://localhost:8080/orders`, payload)
@@ -200,17 +205,27 @@ const emptyCartFailure = () => {
     }
 }
 
-const emptyCart = (payload) => (dispatch) => {
+// const emptyCart = (payload) => (dispatch) => {
+//     console.log('function empty cart',payload)
+//     dispatch(emptyCartRequest());
+//     const deleteOrders = [];
+//     for (let obj of payload) {
+//         let temp = dispatch(deleteProductCart(obj.id));
+//         deleteOrders.push(temp)
+//     }
+//     Promise.all(deleteOrders)
+//         .then((r) => dispatch(emptyCartSuccess()))
+//         .catch((e) => dispatch(emptyCartFailure()))
+// }
+
+const emptyCart = (payload) => async (dispatch) => {
+    console.log('function empty cart', payload);
     dispatch(emptyCartRequest());
-    const deleteOrders = [];
-    for (let obj of payload) {
-        let temp = dispatch(deleteProductCart(obj.id));
-        deleteOrders.push(temp)
-    }
-    Promise.all(deleteOrders)
-        .then((r) => dispatch(emptyCartSuccess()))
-        .catch((e) => dispatch(emptyCartFailure()))
-}
+    const{id}=payload;
+    dispatch(deleteProductCart(id))
+
+};
+
 
 const fetchOrderRequest = () => {
     return {
@@ -220,6 +235,7 @@ const fetchOrderRequest = () => {
 }
 
 const fetchOrderSuccess = (payload) => {
+    console.log('fetch order success',payload)
     return {
         type: types.FETCH_ORDER_SUCCESS,
         payload,
@@ -233,7 +249,7 @@ const fetchOrderFailure = () => {
     }
 }
 
-const fetchOrder = (payload) => (dispatch) => {
+const fetchOrder = () => (dispatch) => {
     dispatch(fetchOrderRequest());
     axios.get(`http://localhost:8080/orders`)
         .then(r => dispatch(fetchOrderSuccess(r.data)))

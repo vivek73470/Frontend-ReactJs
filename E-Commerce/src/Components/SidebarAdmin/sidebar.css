@@ -33,6 +33,7 @@ z-index: 100;
     margin-left: 50px;
 }
 .link{
+    text-decoration: none;
     display: flex;
     color: #40475c;
     padding: 10px 30px;

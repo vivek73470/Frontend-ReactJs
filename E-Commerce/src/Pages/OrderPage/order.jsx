@@ -7,6 +7,7 @@ import Navbar from '../../Components/Navbar/Navbar';
 function Order() {
     const dispatch = useDispatch();
     const orders = useSelector((store) => store.ProductReducer.orders);
+    console.log('order page ',orders)
 
     useEffect(() => {
         dispatch(fetchOrder());
@@ -19,14 +20,14 @@ function Order() {
     return (
         <>
         <Navbar/>
-            <div>
-                <h2 style={{textAlign:'center'}}>Your Orders</h2>
+        <div className='orderpage-container'>
+            <div className='orderpage-wrapper'>
+                <h2>Your Orders</h2>
                 <div  className='order-scroll style-4'>
                     {orders.length > 0 &&
-                        orders.map((order, index) => (
+                        orders.map((elem, index) => (
                             <div key={index}>
-                                {order.map((elem) => (
-                                    <div key={elem.id}>
+                                    <div className=''>
                                         <div className='orders-degn-flx '>
                                             <div className='cartitm-bdr-ims'>
                                                 <img src={elem.image} alt="" />
@@ -40,10 +41,10 @@ function Order() {
                                            
                                         </div>
                                     </div>
-                                ))}
                             </div>
                         ))}
                 </div>
+            </div>
             </div>
         </>
     );

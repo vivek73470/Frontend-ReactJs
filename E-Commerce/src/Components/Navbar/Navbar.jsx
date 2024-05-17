@@ -16,7 +16,6 @@ function Navbar() {
           <div className='header-exclusive'>
             <p>TOPSHOP</p>
           </div>
-          <div className='navbar-cart-parent'>
           <div className='header-dsp-hme'>
             <Link to='/'>
             <span className='navbar-head-homcnt'>Home</span>
@@ -29,6 +28,8 @@ function Navbar() {
             </Link>
         
           </div>
+          <div className='navbar-cart-parent'>
+       
             <div class="your-events-searchstyle">
               <span className='span-search-header'>
                 < CiSearch />

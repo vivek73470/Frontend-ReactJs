@@ -15,6 +15,7 @@
     justify-content: center;
 }
 .ordersaadmin-degn-flx{
+    display: flex;
     text-align: center;
     border-radius: 18px;
     box-shadow: 7.1147541999816895px 7.1147541999816895px 35.57377243041992px 0px #0000000f;
