@@ -7,7 +7,7 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     const { type, payload } = action;
-    console.log("auth reducer",payload)
+
     
     switch (type) {
         case SIGNIN_REQUEST:

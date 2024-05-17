@@ -29,19 +29,19 @@ function Footer() {
         <footer className='footer-container'>
             <div className='footer-content'>
 
-                <div>
-                    <span className='footer-esclusive'>Exclusive</span>
-                    <p className='footer-subscribe-aa'>Subscribe</p>
-                    <p className='footer-subscribe-aa'>Get 10% off your first order</p>
+                <div className='footer-excl-ordrr'>
+                    <span className='footer-esclusivee'>Exclusive</span>
+                    <p className='footer-subscribe-aab-sb'>Subscribe</p>
+                    <p className='footer-subscribe-aab'>Get 10% off your first order</p>
                     <div class="your-events-searchstyle-footer">
               <span className='span-search-header'>
                 <input type="email" class="your-events-searchbox-head-footer" placeholder="Enter your email" />
-              <IoSendSharp />
+             <span style={{color:'#ff5757'}}> <IoSendSharp /></span>
               </span>
 
             </div>
                 </div>
-                <div>
+                <div className='footer-excl-sportt'>
                     <span className='footer-esclusive'>Support</span>
                     <p className='footer-subscribe-aa'>111 Bijoy sarani, Dhaka,<br />
                         DH 1515, Bangladesh.</p>

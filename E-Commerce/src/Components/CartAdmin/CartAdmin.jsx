@@ -9,7 +9,7 @@ import { deleteProductCart, fetchCart } from '../../Redux/products/action';
 function CartAdmin() {
     const dispatch = useDispatch();
     const cart = useSelector((store) => store.ProductReducer.cart)
-    console.log('admin cart', cart)
+
 
     const removeProduct = (id) => {
         dispatch(deleteProductCart(id))

@@ -9,7 +9,6 @@ import Navbar from '../../Components/Navbar/Navbar';
 
 function Cart() {
   let cart = useSelector((store) => store.ProductReducer.cart)
-  console.log('cart page',cart)
    
   const dispatch = useDispatch();
   

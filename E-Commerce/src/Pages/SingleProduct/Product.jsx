@@ -11,7 +11,7 @@ function SingleProduct() {
   const { id } = useParams();
   const dispatch = useDispatch();
   const currentProduct = useSelector(store => store.ProductReducer.CurrentProduct)
-  console.log(' get single prod page',currentProduct)
+
 
 
   useEffect(() => {

@@ -16,7 +16,7 @@ const Products = () => {
   const dispatch = useDispatch()
   const watches = useSelector((store) => store.ProductReducer.products)
   const isLoading = useSelector((store)=>store.ProductReducer.loading)
-  console.log('loading',isLoading)
+
 
   const [searchParams] = useSearchParams()
 

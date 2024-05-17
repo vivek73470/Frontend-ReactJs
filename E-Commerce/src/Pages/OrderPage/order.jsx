@@ -7,7 +7,7 @@ import Navbar from '../../Components/Navbar/Navbar';
 function Order() {
     const dispatch = useDispatch();
     const orders = useSelector((store) => store.ProductReducer.orders);
-    console.log('order page ',orders)
+
 
     useEffect(() => {
         dispatch(fetchOrder());
