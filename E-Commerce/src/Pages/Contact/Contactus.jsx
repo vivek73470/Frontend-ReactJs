@@ -1,5 +1,5 @@
 import React from 'react'
-import './index.css'
+import './contact.css'
 import { useState } from 'react'
 import Footer from '../../Components/Footer/footer';
 import Navbar from '../../Components/Navbar/Navbar';
