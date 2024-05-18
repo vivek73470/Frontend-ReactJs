@@ -28,7 +28,7 @@ const Filter = () => {
     <div className="filter-categrs">
       <h3>Categories</h3>
    
-      <div data-testid="filter-category">
+      <div className="filter-category">
         <div className="filter-pdng">
           <input type="checkbox"
           id="filtr-chck"
