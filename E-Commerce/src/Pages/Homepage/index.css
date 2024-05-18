@@ -2,14 +2,16 @@ body {
     overflow-x: hidden;
   }
   
-
+  .home-wrapper{
+    overflow: hidden;
+    margin: auto;
+}
 .home-1st-page{
     padding-top: 90px;
 }
 .home-1st-page-inside{
-max-width: 99.5%;
 margin: auto;
-width: 100%;
+width:100%;
 }
 
 .home-1st-page-inside-image-slider img{
@@ -33,7 +35,6 @@ margin-top: 25px;
     width: 100%;
     margin: auto;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
     height: 440px;
@@ -67,6 +68,7 @@ margin-top: 25px;
 }
 .best-heading{
     text-align: center;
+    padding-bottom: 25px;
 }
 .seller-design-data{
     
@@ -79,4 +81,33 @@ margin-top: 25px;
 .best-seller-imgeeq {
  width:300px !important ;
  height: 350px;
+}
+
+@media screen and (max-width:1685px){
+    .home-3rd-page-wrap{
+        height: auto;
+    }
+}
+
+@media screen and (max-width:768px){
+    .best-seller-imgeeq {
+        width: auto;
+        height: 250px;
+       }
+       .home-3rd-page-wrap{
+        display: grid;
+      grid-template-columns: 50% 50%;
+        justify-content: center;
+     
+    }
+
+}
+
+@media screen and (max-width:360px){
+       .home-3rd-page-wrap{
+        display: grid;
+      grid-template-columns: 100%;
+        justify-content: center;
+     
+    }
 }

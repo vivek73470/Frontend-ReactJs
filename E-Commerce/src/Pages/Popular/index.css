@@ -22,6 +22,7 @@
 
 }
 .pop-catg{
+    padding-top: 25px;
     text-align: center;
 }
 .pop-mens-multi{
@@ -31,4 +32,48 @@
 .pop-womens-multi{
     width: 100%;
     height: 440px;
+}
+
+@media screen and (max-width:1685px){
+    .pop-mens-multi {
+        height: auto !important;
+    }
+    .pop-womens-multi{
+
+        height: auto;
+    }
+}
+
+@media  screen and (max-width:768px) {
+    .pop-catg{
+      font-size: 20px;
+    }
+    .pop-mens-wrap{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+    .pop-women-wrap{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+@media  screen and (max-width:480px) {
+    .pop-mens-wrap{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .pop-women-wrap{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media  screen and (max-width:360px) {
+    .pop-mens-wrap{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .pop-women-wrap{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
 }
