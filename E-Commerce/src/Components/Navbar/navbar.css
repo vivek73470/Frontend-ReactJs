@@ -2,7 +2,6 @@ a{
     text-decoration: none !important;
 }
 
-
 .navbar-wrapper{
     position: fixed;
     top: 0;
@@ -174,6 +173,9 @@ a{
 }
 .navbar-hamburger-container{
     display: block;
+    position: fixed;
+    top: 0;
+    width: 100%;
   }
 
 

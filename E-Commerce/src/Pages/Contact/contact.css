@@ -85,15 +85,20 @@
 
 
 /* media query */
+@media screen and (max-width:1023px){
+  .contact-screen {
+    padding: 120px 0px 70px 0px;
+  }
+}
 
-@media screen and (max-width:500px){
+@media screen and (max-width:550px){
   .contact-form {
     max-width: -webkit-fill-available;
     padding-left: 30px;
     padding-right: 30px;
 }
 .contact-screen {
-  padding: 40px 0px 70px 0px !important;
+  padding: 100px 30px 70px 30px !important;
 }
 .contact-getin>h2 {
   font-size: 30px;
