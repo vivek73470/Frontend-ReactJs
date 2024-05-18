@@ -42,7 +42,7 @@ function Login() {
     <div className='register-image'>
         <img src={slider} alt="" />
     </div>
-    <div>
+    <div className='rigester-medmax-width'>
         <p className='register-acntcrt'>Login in to Topshop</p>
         <p className='register-acntcrt-entr'>Enter Your details below</p>
 

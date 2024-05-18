@@ -36,7 +36,7 @@ function Signup() {
                 <div className='register-image'>
                     <img src={slider} alt="" />
                 </div>
-                <div>
+                <div className='rigester-medmax-width'>
                     <p className='register-acntcrt'>Create an account</p>
                     <p className='register-acntcrt-entr'>Enter Your details below</p>
 
