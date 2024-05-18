@@ -1,7 +1,8 @@
 .checkout-btn{
 
     padding: 10px;
-    width: 35.5%;
+   max-width: 650px;
+   width: 100%;
     margin: auto;
     display: flex;
     justify-content: center;
@@ -53,4 +54,27 @@
 }
 .parent-chck-btn{
 text-align: center;
+}
+
+
+@media screen and (max-width:735px){
+    .cart-brdr {
+      display: grid;
+    }
+    .checkout-btn {
+        max-width: 350px;
+    }
+    .cartitm-bdr-ims {
+        margin-bottom: 30px !important;
+        border-right: none !important;
+    }
+}
+@media screen and (max-width:550px){
+.cart-shopping-crt{
+padding-top: 10px;
+}
+.cartitm-bdr {
+    width: 300px;
+    height: auto;
+}
 }

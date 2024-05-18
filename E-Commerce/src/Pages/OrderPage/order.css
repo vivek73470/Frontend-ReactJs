@@ -67,3 +67,42 @@ object-fit: contain;
 .order-description{
     text-align: center;
 }
+
+@media screen and (max-width:735px){
+.orders-degn-flx {
+display: grid;
+justify-content: center;
+}
+.order-scroll {
+    max-width: 500px;
+}
+}
+@media screen and (max-width:550px){
+    .cartitm-bdr-ims{
+        width: 300px;
+    }
+    .order-scroll {
+        max-width: 350px;
+    }
+    .orderpage-wrapper>h2 {
+        padding-top: 10px;
+    }
+    }
+@media screen and (max-width:380px){
+
+    .order-scroll {
+        max-width: 320px;
+    }
+    .cartitm-bdr{
+        width: 300px;
+    }
+    }
+@media screen and (max-width:370px){
+
+    .order-scroll {
+        max-width: 280px;
+    }
+    .cartitm-bdr{
+        width: 270px;
+    }
+    }

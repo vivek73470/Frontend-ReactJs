@@ -83,3 +83,10 @@ object-fit: contain;
 	background-color: red;
 	border: 2px solid #d5d2dc;
 }
+
+@media screen and (max-width:360px){
+.cart-headinf {
+    max-width: 290px;
+   
+}
+}
