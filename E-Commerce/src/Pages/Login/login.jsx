@@ -7,6 +7,8 @@ import slider from '../../Assets/Slide.png'
 import { Link } from 'react-router-dom';
 import Footer from '../../Components/Footer/footer'
 import Navbar from '../../Components/Navbar/Navbar';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function Login() {
@@ -28,6 +30,7 @@ function Login() {
             if (response.status ) {
                 setFormData({ email: '', password: '' });
                 navigate('/admin');
+                 toast("Login Successfully!");
             }
             if(!response.status){
                 alert("wrong password OR email")

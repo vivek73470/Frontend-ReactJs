@@ -6,7 +6,7 @@ import { UpdateProf, fetchUserData } from '../../Redux/auth/action';
 function ProfileAd() {
   const dispatch = useDispatch();
   const profileData = useSelector((store)=>store.AuthReducer.userData)
-
+const[message,setMessage]= useState('')
   const [data, setData] = useState({
     username: '',
     email: '',
@@ -56,11 +56,15 @@ function ProfileAd() {
   // };
   
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(UpdateProf(userId, data))
-  
-  }
+    await dispatch(UpdateProf(userId, data));
+    setMessage('Profile updated successfully!');
+    // You can reset the message after a certain time if needed
+    setTimeout(() => {
+      setMessage('')
+    }, 2000); 
+  };
 
   return (
     <>
@@ -117,6 +121,7 @@ function ProfileAd() {
            />
            <br />
            <button type='submit'>Update</button>
+           {message && <p  style={{display:'flex',justifyContent:'center',alignItems:'center',fontSize:'18px',color:'black',paddingTop:'5px'}}>{message}</p>}
            </div>
  
            {/* <div className='profilr-pic'>

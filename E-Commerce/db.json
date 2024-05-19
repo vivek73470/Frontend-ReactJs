@@ -394,7 +394,7 @@
     {
       "id": 24,
       "title": "Wakanda King Designer Hard Cover for Xiaomi Poco X2",
-      "price": 10.99,
+      "price": "10.91",
       "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
       "category": "covers",
       "plp": "OVERSIZED FIT",
@@ -511,76 +511,7 @@
       }
     }
   ],
-  "cart": [
-    {
-      "id": 1,
-      "title": "Mens Casual Premium Slim Fit T-Shirts ",
-      "price": 22.3,
-      "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
-      "category": "men's clothing",
-      "plp": "OVERSIZED FIT",
-      "brand_namez": "Burberry",
-      "discountedPriceText": 149,
-      "actualPriceText": 599,
-      "discount_price_box": 559,
-      "image": "https://images.bewakoof.com/t640/the-ryuk-full-sleeve-t-shirt-554015-1667974706-1.jpg",
-      "rating": {
-        "rate": 4.1,
-        "count": 259
-      }
-    },
-    {
-      "id": 3,
-      "title": "Mens black color Premium Slim Fit T-Shirts ",
-      "price": 55.99,
-      "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
-      "category": "men's clothing",
-      "plp": "OVERSIZED FIT",
-      "brand_namez": "Burberry",
-      "discountedPriceText": 149,
-      "actualPriceText": 599,
-      "discount_price_box": 559,
-      "image": "https://images.bewakoof.com/t640/the-ryuk-oversized-full-sleeve-t-shirt-554016-1667974663-1.jpg",
-      "rating": {
-        "rate": 4.7,
-        "count": 500
-      }
-    },
-    {
-      "id": 5,
-      "title": "Solid Gold Petite Micropave oneplus",
-      "price": 695,
-      "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
-      "category": "covers",
-      "plp": "OVERSIZED FIT",
-      "brand_namez": "Burberry",
-      "discountedPriceText": 149,
-      "actualPriceText": 599,
-      "discount_price_box": 559,
-      "image": "https://images.bewakoof.com/t1080/lion-the-king-printed-premium-glass-cover-for-oppo-a76-impact-resistant-matte-finish-527273-1659100776-1.jpg",
-      "rating": {
-        "rate": 4.6,
-        "count": 400
-      }
-    },
-    {
-      "id": 6,
-      "title": "Solid Gold Petite Micropave ",
-      "price": 168,
-      "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
-      "category": "covers",
-      "plp": "OVERSIZED FIT",
-      "brand_namez": "Burberry",
-      "discountedPriceText": 149,
-      "actualPriceText": 599,
-      "discount_price_box": 559,
-      "image": "https://images.bewakoof.com/t640/funny-pug-face-printed-premium-glass-cover-for-oneplus-9rt-impact-resistant-matte-finish-526356-1659101896-1.jpg",
-      "rating": {
-        "rate": 3.9,
-        "count": 70
-      }
-    }
-  ],
+  "cart": [],
   "orders": [],
   "user": [
     {
@@ -589,9 +520,15 @@
       "password": "12345",
       "id": 1,
       "gender": "Male",
-      "number": "7347063116",
+      "number": "7347063117",
       "address": "This is my address",
       "DOB": "2024-05-22"
+    },
+    {
+      "username": "CodeHarry",
+      "email": "vivek1@gmail.com",
+      "password": "123",
+      "id": 2
     }
   ]
 }

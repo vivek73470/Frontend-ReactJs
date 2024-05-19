@@ -2,6 +2,7 @@
 .contact-screen {
   padding: 140px 0px 70px 0px;
   background-color: whitesmoke;
+  height: 100vh;
 }
 
 .contact-getin>h2 {
