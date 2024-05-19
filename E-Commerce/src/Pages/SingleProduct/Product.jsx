@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './singleDet.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'
@@ -8,6 +8,7 @@ import Footer from '../../Components/Footer/footer'
 
 
 function SingleProduct() {
+  const[message,setMessage]=useState('')
   const { id } = useParams();
   const dispatch = useDispatch();
   const currentProduct = useSelector(store => store.ProductReducer.CurrentProduct)
@@ -24,13 +25,17 @@ function SingleProduct() {
   //  This check ensures that the action is dispatched only if there is a valid product to add to the cart.
   const addToCartHandler = () => {
     currentProduct && dispatch(addProductCart(currentProduct));
+    setMessage('Item Added Successfully');
+    setTimeout(()=>{
+      setMessage('')
+    },2000)
 
   }
 
 
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <div className='single-product-mainscreen'>
         <div className='single-product-wrapscreen'>
           <div className='prdct-size-mobile' >
@@ -75,23 +80,24 @@ function SingleProduct() {
               <p className='single-product-garment'>Garment:Chest (in Inch):38.0 | Front Length (in Inch):27.25 | Sleeve Length (in Inch):8.0</p>
             </div>
             <div className='single-product-detail-box'>
-                        <p className='single-product-datail-head' >Product Details</p>
-                        <div>
-                            <p className='single-product-brand'>Brand:Burberry</p>
-                            <p className='single-product-brand'>Product Name: Men's White "The Ryuk" Graphic Printed T-shirt</p>
-                            <p className='single-product-brand'>Product Type: Full Sleeve T-shirt</p>
-                        </div>
+              <p className='single-product-datail-head' >Product Details</p>
+              <div>
+                <p className='single-product-brand'>Brand:Burberry</p>
+                <p className='single-product-brand'>Product Name: Men's White "The Ryuk" Graphic Printed T-shirt</p>
+                <p className='single-product-brand'>Product Type: Full Sleeve T-shirt</p>
+              </div>
 
-                    </div>
+            </div>
             <div className='single-product-description'>
               <p className='single-product-datail-head'>Description</p>
               <p>{currentProduct.description}</p>
             </div>
             <button className='single-addto-butn' onClick={addToCartHandler}>Add to Cart</button>
+            {message && <p className='single-prdct-adaddedsuccessfully'>{message}</p>}
           </div>
         </div>
       </div>
-<Footer/>
+      <Footer />
     </>
   )
 }

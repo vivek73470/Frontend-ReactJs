@@ -57,6 +57,14 @@
       object-fit: contain;
     }
 
+    .admin-prfl-updatesucces{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      padding-top: 8px;
+      font-weight: 700;
+    }
     @media screen and (max-width:500px){
       .Profile-Form {
  

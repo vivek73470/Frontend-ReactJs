@@ -63,7 +63,7 @@ const[message,setMessage]= useState('')
     // You can reset the message after a certain time if needed
     setTimeout(() => {
       setMessage('')
-    }, 2000); 
+    }, 3000); 
   };
 
   return (
@@ -121,7 +121,7 @@ const[message,setMessage]= useState('')
            />
            <br />
            <button type='submit'>Update</button>
-           {message && <p  style={{display:'flex',justifyContent:'center',alignItems:'center',fontSize:'18px',color:'black',paddingTop:'5px'}}>{message}</p>}
+           {message && <p className='admin-prfl-updatesucces'>{message}</p>}
            </div>
  
            {/* <div className='profilr-pic'>
