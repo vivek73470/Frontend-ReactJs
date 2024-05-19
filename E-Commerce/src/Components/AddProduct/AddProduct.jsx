@@ -144,7 +144,7 @@ function Addproduct() {
               onChange={handleChange}
             />
           </div>
-          <button className='addproduct-button' >submit</button>
+          <button className='addproduct-button' >Submit</button>
         </form>
       </div>
 

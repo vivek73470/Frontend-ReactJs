@@ -3,6 +3,7 @@ import './order.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteOrderProducts, fetchOrder } from '../../Redux/products/action';
 import Navbar from '../../Components/Navbar/Navbar';
+import Footer from '../../Components/Footer/footer';
 
 function Order() {
     const dispatch = useDispatch();
@@ -46,6 +47,7 @@ function Order() {
                 </div>
             </div>
             </div>
+            <Footer/>
         </>
     );
 }

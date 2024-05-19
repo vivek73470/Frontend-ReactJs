@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { addOrder, deleteProductCart } from '../../Redux/products/action';
 import Checkout from '../../Components/Checkout/Checkout';
 import Navbar from '../../Components/Navbar/Navbar';
+import Footer from '../../Components/Footer/footer';
 
 
 function Cart() {
@@ -50,6 +51,7 @@ function Cart() {
         <Checkout cart={cart} checkoutHandler={checkoutHandler} />
         {/* curly braces like {cart} passing a JavaScript expression as a prop, we can write anything inside curly braces and pass as a props */}
       </div>
+      <Footer/>
     </>
   )
 }

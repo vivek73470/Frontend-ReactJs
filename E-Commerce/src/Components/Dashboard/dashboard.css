@@ -1,10 +1,13 @@
 .dashboard-wrappeer {
-    max-width: 1430px;
+    width: 100%;
     margin: auto;
     box-shadow: 7.831155300140381px 7.831155300140381px 19.5778865814209px 0px #00000014;
     background: #fff;
     border-radius: 16px;
     padding: 10px 20px 30px 20px;
+}
+.dashboard-screen{
+    padding: 0px 45px 30px 45px;
 }
 
 .dash-admin-addbtn {
@@ -80,10 +83,11 @@ cursor: pointer;
 
 .product-listing-dash {
     margin: auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     column-gap: 26px;
-    row-gap: 30px;
+    row-gap: 26px;
 }
 
 .productlist-design-dash {
@@ -217,4 +221,24 @@ cursor: pointer;
 
 .prdct-size-dash img:hover {
     transform: scale(0.9);
+}
+
+
+@media screen and (max-width:480px){
+    .dash-admin-addbtn{
+        display: grid;
+        grid-template-columns: 100%;
+        row-gap: 20px;
+        justify-content: center;
+    }
+    .your-events {
+        padding: 10px 15px;
+       
+    }
+    .dash-admin-addbtn>span {
+        text-align: center;
+    }
+    .product-listing-dash {
+        padding-top: 30px;
+    }
 }

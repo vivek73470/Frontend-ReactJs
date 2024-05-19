@@ -1,7 +1,7 @@
 /* adminaddprod.css */
 
 .container-addproduct {
-  max-width: 1430px;
+width: 100%;
   margin: 0 auto;
     padding: 30px;
     background-color: #fff;
@@ -65,4 +65,26 @@
     align-items: center;
     justify-content: space-between;
     padding-bottom: 25px;
+  }
+
+  @media screen and (max-width:767px){
+    .add-admin-prd-rww{
+      display: grid;
+     grid-template-columns: 100%;
+      justify-content: center;
+      padding-bottom: 25px;
+      row-gap: 15px;
+    }
+    .addproduct-input-drp {
+      width: 100%;
+    }
+    .addproduct-input {
+      margin-top: 20px;
+      width: 100%;
+    }
+    .addproduct-button {
+      margin: auto;
+      width: 100%;
+    }
+
   }

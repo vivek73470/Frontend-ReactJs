@@ -14,7 +14,6 @@ function ProfileAd() {
     number: '',
     address: '',
     DOB: "",
-    profilephoto: ""
 
   })
   const userId = localStorage.getItem('userId');
@@ -39,22 +38,22 @@ function ProfileAd() {
 
   }
 
-  const handleProfileChange = (e) => {
-    const file = e.target.files[0];
+  // const handleProfileChange = (e) => {
+  //   const file = e.target.files[0];
   
-    if (file) {
-      const reader = new FileReader();
+  //   if (file) {
+  //     const reader = new FileReader();
   
-      reader.onloadend = () => {
-        setData({
-          ...data,
-          [e.target.name]: reader.result
-        });
-      };
+  //     reader.onloadend = () => {
+  //       setData({
+  //         ...data,
+  //         [e.target.name]: reader.result
+  //       });
+  //     };
   
-      reader.readAsDataURL(file);
-    }
-  };
+  //     reader.readAsDataURL(file);
+  //   }
+  // };
   
 
   const handleSubmit = (e) => {
@@ -120,7 +119,7 @@ function ProfileAd() {
            <button type='submit'>Update</button>
            </div>
  
-           <div className='profilr-pic'>
+           {/* <div className='profilr-pic'>
            <input
              name='profilephoto'
              type="file"
@@ -133,7 +132,7 @@ function ProfileAd() {
                alt='Profile Photo'
              />
            )}
-         </div>
+         </div> */}
         
          </div>
  

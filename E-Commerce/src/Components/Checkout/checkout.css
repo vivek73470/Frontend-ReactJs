@@ -39,6 +39,7 @@
     max-width: 320px;
 }
 .confirm-prch-ctr{
+    padding-top: 90px;
     text-align: center;
 }
 .check-cnfm-ordr{
@@ -55,6 +56,13 @@
 .parent-chck-btn{
 text-align: center;
 }
+
+@media screen and (max-width:1023px){
+    .confirm-prch-ctr{
+        padding-top: 70px;
+    }
+    
+    }
 
 
 @media screen and (max-width:735px){
@@ -77,4 +85,23 @@ padding-top: 10px;
     width: 300px;
     height: auto;
 }
+.confirm-prch-ctr{
+    padding-top: 30px;
+}
+}
+@media screen and (max-width:440px){
+.checkout-imagels {
+    width: 240px;
+    height: 370px;
+}
+.check-cnfm-ordr {
+    margin-top: 40px;
+    padding: 10px 34px;
+}
+}
+@media screen and (max-width:360px){
+.checkout-imagels {
+    width: 200px;
+}
+
 }

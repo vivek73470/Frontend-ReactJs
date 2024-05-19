@@ -5,11 +5,7 @@
 }
 
 .sidebar-screen{
-    display: flex;
-z-index: 100;
-    position: sticky;
-    top: 0px;
-  
+height: 100vh;
 }
 .sidebar-screen-wrapper{
     background-color:#fff;
@@ -55,7 +51,7 @@ width: unset;
 }
 .link:focus{
     background-color: #ff5757;
-    color: #fff;
+    color: #fff !important;
 }
 .link-btn:focus{
     background-color: #ff5757;

@@ -28,7 +28,7 @@ function Navbar() {
       <div className='navbar-screen'>
         <div className='navbar-wrapper'>
           <div className='header-exclusive'>
-            <p>TOPSHOP</p>
+            <p>Topshop</p>
           </div>
           <div className='header-dsp-hme'>
             <Link to='/'>
