@@ -98,3 +98,14 @@
         width: 190px;
     }
 }
+
+@media screen and (min-width:941px) and (max-width:1052px){
+    .cartitmadmin-bdr-ims {
+        width: 260px;
+      
+    }
+    .cartitmadmin-bdr {
+        width: 270px;
+      
+    }
+}
