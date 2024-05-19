@@ -1,6 +1,6 @@
 .orderpage-container {
     /* min-height: 585px; */
-    height: 100vh;
+ 
     padding: 80px 0px 10px 0px;
 
 }
@@ -118,4 +118,8 @@
     .cartitm-bdr {
         width: 270px;
     }
+    .cartitm-bdr-ims {
+        width: 240px;
+    }
+
 }

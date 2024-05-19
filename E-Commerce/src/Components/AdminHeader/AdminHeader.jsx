@@ -31,7 +31,7 @@ function AdminHeader() {
             <div className='admin-header-offcanvas' data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
               <FaBars />
             </div>
-            <div className='Admin-Header-title-welcome'>Welcome {userDetails.username}</div>
+            <div className='Admin-Header-title-welcome'>{userDetails.username}</div>
           </div>
         </div>
       </div>

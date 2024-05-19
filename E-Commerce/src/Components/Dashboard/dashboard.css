@@ -241,4 +241,7 @@ cursor: pointer;
     .product-listing-dash {
         padding-top: 30px;
     }
+    .dashboard-screen{
+        padding: 0px 5px 30px 5px;
+    }
 }

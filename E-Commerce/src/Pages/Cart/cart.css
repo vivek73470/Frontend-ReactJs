@@ -1,7 +1,7 @@
 .cart-design-screen{
     padding-top: 80px;
     padding-bottom: 50px;
-    height: 100vh;
+    /* height: 100vh; */
 }
 .cart-headinf{
     text-align: center;
@@ -9,6 +9,9 @@
 .cartitm-bdr{
     width: 335px;
     height: auto;
+}
+.cartitm-bdr>h2{
+    font-size: 23px;
 }
 .cartitm-bdr-ims{
     width: 335px;
@@ -46,7 +49,7 @@ object-fit: contain;
     cursor: pointer;
 }
 .cart-brdr{
-    padding: 5px 5px 10px 5px;
+    padding: 15px 5px 10px 5px;
     border: 1px solid gray;
     display: flex;
     border-radius: 9px;
@@ -67,6 +70,12 @@ object-fit: contain;
 .cart-shopping-crt{
     padding-top: 50px;
     text-align: center;
+}
+.cart-nothing-item{
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 20px;
 }
 .style-4::-webkit-scrollbar-track
 {

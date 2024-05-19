@@ -34,7 +34,7 @@ function Cart() {
       <Navbar />
       <div className='cart-design-screen'>
         <h2 className='cart-shopping-crt'>Shopping Cart</h2>
-        <div className='cart-headinf style-4'>
+        {/* <div className='cart-headinf style-4'>
           {cart.length && cart.map((product) => {
             return <CartItem
               key={product.id}
@@ -46,8 +46,25 @@ function Cart() {
               removeProduct={removeProduct}
             />
           })}
-        </div>
+        </div> */}
 
+{cart.length > 0 ? (
+    <div className='cart-headinf style-4'>
+      {cart.map((product) => (
+        <CartItem
+          key={product.id}
+          id={product.id}
+          title={product.title}
+          price={product.price}
+          description={product.description}
+          image={product.image}
+          removeProduct={removeProduct}
+        />
+      ))}
+    </div>
+  ) : (
+    <p className='cart-nothing-item'>You have zero items in your cart.</p>
+  )}
         <Checkout cart={cart} checkoutHandler={checkoutHandler} />
         {/* curly braces like {cart} passing a JavaScript expression as a prop, we can write anything inside curly braces and pass as a props */}
       </div>

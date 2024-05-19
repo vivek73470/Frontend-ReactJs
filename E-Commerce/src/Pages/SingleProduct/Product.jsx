@@ -28,7 +28,7 @@ function SingleProduct() {
     setMessage('Item Added Successfully');
     setTimeout(()=>{
       setMessage('')
-    },2000)
+    },1000)
 
   }
 
