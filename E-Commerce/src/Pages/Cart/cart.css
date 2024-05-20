@@ -1,7 +1,8 @@
 .cart-design-screen{
     padding-top: 80px;
     padding-bottom: 50px;
-    /* height: 100vh; */
+   min-height: 585px;
+   height: 100%;
 }
 .cart-headinf{
     text-align: center;

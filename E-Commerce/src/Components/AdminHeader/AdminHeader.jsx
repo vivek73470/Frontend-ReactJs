@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import './index.css'
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { fetchUserData } from '../../Redux/auth/action';
-import { Link, NavLink } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { FaBars } from "react-icons/fa";
 import { TbLogout } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
@@ -11,9 +12,11 @@ import { IoMdCart } from "react-icons/io";
 import { MdOutlineDashboard, MdOutlineProductionQuantityLimits } from "react-icons/md";
 
 function AdminHeader() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const userDetails = useSelector((store) => store.AuthReducer.userData)
   const userId = localStorage.getItem('userId')
+
 
 
 
@@ -23,6 +26,16 @@ function AdminHeader() {
     }
   }, [dispatch, userId]);
 
+  const handleLogout=()=>{
+localStorage.removeItem('userId');
+navigate('/login')
+  }
+
+
+  const handleNavigation = (url) => {
+    navigate(url);
+  
+  };
   return (
     <>
       <div className='Admin-Header-screen'>
@@ -44,27 +57,27 @@ function AdminHeader() {
         <div class="offcanvas-body">
           <div class="adminoffcanvas-body-wrapper">
             <div className='admin-offcanvas-body-homecnt'>
-              <Link className='admin-offcanvas-body-linkk' to='/admin/dashboard'>
+                 <span className='admin-offcanvas-body-linkk' onClick={() => handleNavigation('/admin/dashboard')}   data-bs-dismiss="offcanvas">
                 <MdOutlineDashboard />
                 <span className='admin-navbar-head-homcnt-hamb'>Dashboard</span>
-              </Link>
-              <Link  className='admin-offcanvas-body-linkk' to='/admin/add-product'>
+              </span>
+              <span  className='admin-offcanvas-body-linkk' to='/admin/add-product'  onClick={() => handleNavigation('/admin/add-product')}   data-bs-dismiss="offcanvas">
                 <MdOutlineProductionQuantityLimits />
                 <span className='admin-navbar-head-homcnt-hamb'>Add Products</span>
-              </Link>
+              </span>
 
-              <Link  className='admin-offcanvas-body-linkk' to='/admin/cart-admin'>
+              <span  className='admin-offcanvas-body-linkk' to='/admin/cart-admin'  onClick={() => handleNavigation('/admin/cart-admin')}   data-bs-dismiss="offcanvas">
                 <IoMdCart />
                 <span className='admin-navbar-head-homcnt-hamb'>Cart</span>
-              </Link>
+              </span>
 
-              <Link  className='admin-offcanvas-body-linkk' to='/admin/profile'>
+              <span  className='admin-offcanvas-body-linkk' to='/admin/profile'  onClick={() => handleNavigation('/admin/profile')}   data-bs-dismiss="offcanvas">
                 <CgProfile />
                 <span className='admin-navbar-head-homcnt-hamb'>Profile</span>
-              </Link>
+              </span>
             </div>
             
-            <div className='admin-offcanvas-logout'>
+            <div className='admin-offcanvas-logout' onClick={()=>handleLogout()}  data-bs-dismiss="offcanvas">
             <TbLogout />
               <span className='admin-navbar-head-homcnt-hamb'>  Logout</span>
           
@@ -73,7 +86,6 @@ function AdminHeader() {
          
         </div>
       </div>
-
     </>
   )
 }
