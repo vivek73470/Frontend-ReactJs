@@ -2,6 +2,8 @@ import axios from 'axios';
 import * as types from './actionType';
 // import { type } from '@testing-library/user-event/dist/type';
 
+
+// loader 
 const startLoading =()=>{
     return{
         type:types.START_LOADING
@@ -13,27 +15,26 @@ const stopLoading =()=>{
     }
 }
 
+
+// Fetch all products 
 const fetchDataRequest = () => {
     return {
         type: types.FETCH_DATA_REQUEST,
 
     }
 }
-
 const fetchDataSuccess = (payload) => {
     return {
         type: types.FETCH_DATA_SUCCESS,
         payload,
     }
 }
-
 const fetchDataFailure = () => {
     return {
         type: types.FETCH_DATA_FAILURE,
 
     }
 }
-
 const fetchData = (params) => (dispatch) => {
     dispatch(fetchDataRequest());
     dispatch(startLoading());
@@ -44,27 +45,26 @@ const fetchData = (params) => (dispatch) => {
         dispatch(stopLoading());
 };
 
+
+// single page products 
 const getSingleProductRequest = () => {
     return {
         type: types.GET_SINGLE_PRODUCT_REQUEST,
 
     }
 }
-
 const getSingleProductSuccess = (payload) => {
     return {
         type: types.GET_SINGLE_PRODUCT_SUCCESS,
         payload,
     }
 }
-
 const getSingleProductFailure = () => {
     return {
         type: types.GET_SINGLE_PRODUCT_FAILURE,
 
     }
 }
-
 const getSingleProduct = (id) => (dispatch) => {
     dispatch(getSingleProductRequest())
     axios.get(`http://localhost:8080/products/${id}`)
@@ -72,28 +72,26 @@ const getSingleProduct = (id) => (dispatch) => {
         .catch(e => dispatch(getSingleProductFailure(e.data)))
 }
 
+
+// Add product to cart
 const addProductCartRequest = () => {
     return {
         type: types.ADD_PRODUCT_CART_REQUEST,
 
     }
 }
-
 const addProductCartSuccess = (payload) => {
     return {
         type: types.ADD_PRODUCT_CART_SUCCESS,
         payload,
     }
 }
-
 const addProductCartFailure = () => {
     return {
         type: types.ADD_PRODUCT_CART_FAILURE,
 
     }
 }
-
-// prod is a parameter representing the product that you want to add to the cart
 const addProductCart = (prod) => (dispatch) => {
     dispatch(addProductCartRequest());
     axios.post(`http://localhost:8080/cart`, prod)
@@ -101,27 +99,26 @@ const addProductCart = (prod) => (dispatch) => {
         .catch(e => dispatch(addProductCartFailure(e.data)))
 }
 
+
+// total cart lengt fetch 
 const fetchCartRequest = () => {
     return {
         type: types.FETCH_CART_REQUEST,
 
     }
 }
-
 const fetchCartSuccess = (payload) => {
     return {
         type: types.FETCH_CART_SUCCESS,
         payload,
     }
 }
-
 const fetchCartFailure = () => {
     return {
         type: types.FETCH_CART_FAILURE,
 
     }
 }
-
 const fetchCart = (payload) => (dispatch) => {
     dispatch(fetchCartRequest());
     axios.get(`http://localhost:8080/cart`)
@@ -130,27 +127,25 @@ const fetchCart = (payload) => (dispatch) => {
 
 }
 
+// delete product from cart
 const deleteProductCartRequest = () => {
     return {
         type: types.REMOVE_PRODUCT_CART_REQUEST,
 
     }
 }
-
 const deleteProductCartSuccess = (payload) => {
     return {
         type: types.REMOVE_PRODUCT_CART_SUCCESS,
         payload,
     }
 }
-
 const deleteProductCartFailure = () => {
     return {
         type: types.REMOVE_PRODUCT_CART_FAILURE,
 
     }
 }
-
 const deleteProductCart = (id) => (dispatch) => {
     dispatch(deleteProductCartRequest())
     axios.delete(`http://localhost:8080/cart/${id}`)
@@ -161,26 +156,25 @@ const deleteProductCart = (id) => (dispatch) => {
         .catch((e) => dispatch(deleteProductCartFailure(e.data)))
 }
 
+
+// Add order 
 const addOrderRequest = () => {
     return {
         type: types.ADD_ORDER_REQUEST
     }
 }
-
 const addOrderSuccess = (payload) => {
     return {
         type: types.ADD_ORDER_SUCCESS,
         payload,
     }
 }
-
 const addOrderFailure = (payload) => {
     return {
         type: types.ADD_ORDER_FAILURE,
         payload,
     }
 }
-
 const addOrder = (payload) => (dispatch) => {
     dispatch(addOrderRequest());
 
@@ -194,17 +188,25 @@ const addOrder = (payload) => (dispatch) => {
         });
 }
 
+
+// empty cart 
 const emptyCartRequest = () => {
     return {
         type: types.EMPTY_CART_REQUEST
     }
 }
-
 const emptyCartSuccess = () => {
     return {
         type: types.EMPTY_CART_SUCCESS
     }
 }
+const emptyCart = (payload) => async (dispatch) => {
+    dispatch(emptyCartRequest());
+    const{id}=payload;
+    dispatch(deleteProductCart(id))
+    dispatch(emptyCartSuccess)
+
+};
 
 // const emptyCartFailure = () => {
 //     return {
@@ -225,36 +227,28 @@ const emptyCartSuccess = () => {
 //         .catch((e) => dispatch(emptyCartFailure()))
 // }
 
-const emptyCart = (payload) => async (dispatch) => {
-    dispatch(emptyCartRequest());
-    const{id}=payload;
-    dispatch(deleteProductCart(id))
-    dispatch(emptyCartSuccess)
-
-};
 
 
+
+// fetch order to show on order page 
 const fetchOrderRequest = () => {
     return {
         type: types.FETCH_ORDER_REQUEST,
 
     }
 }
-
 const fetchOrderSuccess = (payload) => {
     return {
         type: types.FETCH_ORDER_SUCCESS,
         payload,
     }
 }
-
 const fetchOrderFailure = () => {
     return {
         type: types.FETCH_ORDER_FAILURE,
 
     }
 }
-
 const fetchOrder = () => (dispatch) => {
     dispatch(fetchOrderRequest());
     axios.get(`http://localhost:8080/orders`)
@@ -263,27 +257,27 @@ const fetchOrder = () => (dispatch) => {
 
 }
 
+
+
+// delete order 
 const deleteOrderRequest = () => {
     return {
         type: types.DELETE_ORDER_REQUEST,
 
     }
 }
-
 const deleteOrderSuccess = (payload) => {
     return {
         type: types.DELETE_ORDER_SUCCESS,
         payload,
     }
 }
-
 const deleteOrderFailure = () => {
     return {
         type: types.DELETE_ORDER_FAILURE,
 
     }
 }
-
 const deleteOrderProducts = (id) => (dispatch) => {
     dispatch(deleteOrderRequest())
     axios.delete(`http://localhost:8080/orders/${id}`)
@@ -297,6 +291,7 @@ const deleteOrderProducts = (id) => (dispatch) => {
 }
 
 
+// Add prducts Admin 
 const AddProductsRequest = () => {
     return {
         type: types.ADD_PRODUCT_REQUEST
@@ -313,7 +308,6 @@ const AddProductsFailure = () => {
         type: types.ADD_PRODUCT_FAILURE
     }
 }
-
 const addProducts = (data) => (dispatch) => {
     dispatch(AddProductsRequest());
     axios.post(`http://localhost:8080/products`, data)
@@ -322,6 +316,8 @@ const addProducts = (data) => (dispatch) => {
 
 }
 
+
+// edit products admin 
 const EditProductsRequest = () => {
     return {
         type: types.EDIT_PRODUCT_REQUEST
@@ -338,7 +334,6 @@ const EditProductsFailure = () => {
         type: types.EDIT_PRODUCT_FAILURE
     }
 }
-
 const editProducts = (id, data) => (dispatch) => {
 
     dispatch(EditProductsRequest());
@@ -348,6 +343,8 @@ const editProducts = (id, data) => (dispatch) => {
 
 }
 
+
+// delete products admin 
 const DeleteProductsRequest = () => {
     return {
         type: types.DELETE_PRODUCT_REQUEST
@@ -364,7 +361,6 @@ const DeleteProductsFailure = () => {
         type: types.DELETE_PRODUCT_FAILURE
     }
 }
-
 const deleteProducts = (id) => (dispatch) => {
     dispatch(DeleteProductsRequest())
     axios.delete(`http://localhost:8080/products/${id}`)
@@ -377,4 +373,5 @@ const deleteProducts = (id) => (dispatch) => {
 }
 
 
-export { fetchData,deleteOrderProducts, editProducts, deleteProducts, emptyCart, fetchOrder, getSingleProduct, addProductCart, fetchCart, deleteProductCart, addOrder, addProducts };
+export { fetchData,deleteOrderProducts, editProducts, deleteProducts, emptyCart, fetchOrder, getSingleProduct,
+     addProductCart, fetchCart, deleteProductCart, addOrder, addProducts };

@@ -60,7 +60,6 @@ const[message,setMessage]= useState('')
     e.preventDefault();
     await dispatch(UpdateProf(userId, data));
     setMessage('Profile updated successfully!');
-    // You can reset the message after a certain time if needed
     setTimeout(() => {
       setMessage('')
     }, 3000); 

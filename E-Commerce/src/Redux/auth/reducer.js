@@ -1,27 +1,46 @@
-import { SIGNIN_FAILURE, SIGNIN_SUCCESS, SIGNIN_REQUEST, SIGNUP_FAILURE, SIGNUP_SUCCESS, SIGNUP_REQUEST, UPDATE_REQUEST,UPDATE_SUCCESS,UPDATE_FAILURE,SET_SUCCESS } from "./action";
+import {
+    SIGNIN_FAILURE, SIGNIN_SUCCESS, SIGNIN_REQUEST, SIGNUP_FAILURE, SIGNUP_SUCCESS, SIGNUP_REQUEST, UPDATE_REQUEST,
+    UPDATE_SUCCESS, UPDATE_FAILURE, SET_SUCCESS, UPDATE_PASS_FAILURE, UPDATE_PASS_SUCCESS, UPDATE_PASS_REQUEST, 
+    CHANGGE_PASS_REQUEST, CHANGGE_PASS_SUCCESS, CHANGGE_PASS_FAILURE} from "./action";
 
 const initialState = {
     auth: false,
-    userData:{}
+    userData: {},
+    RequestPass: {},
+    user: []
 }
 
 const reducer = (state = initialState, action) => {
     const { type, payload } = action;
-
-    
+    console.log('change pass',payload)
     switch (type) {
         case SIGNIN_REQUEST:
             return {
                 ...state,
-                auth: false
+                auth: true
             }
         case SIGNIN_SUCCESS:
             return {
                 ...state,
-                auth: true,      
+                auth: false,
             }
-     
         case SIGNIN_FAILURE:
+            return {
+                auth: false
+            }
+
+
+        case SIGNUP_REQUEST:
+            return {
+                ...state,
+                auth: true
+            }
+        case SIGNUP_SUCCESS:
+            return {
+                ...state,
+                auth: false,
+            }
+        case SIGNUP_FAILURE:
             return {
                 auth: false
             }
@@ -29,37 +48,56 @@ const reducer = (state = initialState, action) => {
         case SET_SUCCESS:
             return {
                 ...state,
-                auth: true,
-                userData:payload,
+                userData: payload,
+                auth: false,
             }
-    
-        case SIGNUP_REQUEST:
-            return {
-                ...state,
-                auth: false
-            }
-        case SIGNUP_SUCCESS:
-            return {
-                ...state,
-                auth: true,
-            }
-        case SIGNUP_FAILURE:
-            return {
-                auth: false
-            }
+
 
         case UPDATE_REQUEST:
             return {
                 ...state,
-                auth: false
+                auth: true
             }
         case UPDATE_SUCCESS:
             return {
                 ...state,
-                auth: true,
-                user:payload
+                user: payload,
+                auth: false,
             }
         case UPDATE_FAILURE:
+            return {
+                auth: false
+            }
+
+
+        case UPDATE_PASS_REQUEST:
+            return {
+                auth: true
+            }
+        case UPDATE_PASS_SUCCESS:
+            return {
+                ...state,
+                RequestPass: payload,
+                auth: false
+            }
+        case UPDATE_PASS_FAILURE:
+            return {
+                auth: false
+            }
+
+
+        case CHANGGE_PASS_REQUEST:
+            return {
+                auth: true
+            }
+        case CHANGGE_PASS_SUCCESS:
+            return {
+                ...state,
+                user:[...state.user,payload],
+                auth: false
+            }
+            
+        case CHANGGE_PASS_FAILURE:
             return {
                 auth: false
             }

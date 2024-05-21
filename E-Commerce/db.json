@@ -501,7 +501,7 @@
       "category": "women's clothing",
       "plp": "OVERSIZED FIT",
       "brand_namez": "Burberry",
-      "discountedPriceText": 149,
+      "discountedPriceText": "150",
       "actualPriceText": "599",
       "discount_price_box": 559,
       "image": "https://images.bewakoof.com/t640/cats-coffee-and-books-half-sleeve-t-shirt-384431-1655748506-1.jpg",
@@ -515,20 +515,10 @@
   "orders": [],
   "user": [
     {
-      "username": "vivek ",
+      "username": "vivek",
       "email": "vivek@gmail.com",
-      "password": "12345",
-      "id": 1,
-      "gender": "Male",
-      "number": "7347063117",
-      "address": "Chandigarh",
-      "DOB": "2024-05-22"
-    },
-    {
-      "username": "CodeHarry",
-      "email": "vivek1@gmail.com",
-      "password": "123",
-      "id": 2
+      "password": "12",
+      "id": 1
     }
   ]
 }
