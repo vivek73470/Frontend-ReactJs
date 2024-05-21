@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import './index.css'
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { fetchUserData } from '../../Redux/auth/action';
-import { Link} from 'react-router-dom';
 import { FaBars } from "react-icons/fa";
 import { TbLogout } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";

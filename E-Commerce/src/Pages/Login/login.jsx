@@ -9,12 +9,14 @@ import Footer from '../../Components/Footer/footer'
 import Navbar from '../../Components/Navbar/Navbar';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { FaEyeSlash } from "react-icons/fa6";
 
 
 function Login() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const[formData, setFormData]=useState({ email: '', password: '' })
+    const [showPassword, setShowPassword] = useState(false);
 
 
     const handleChange =(e)=>{
@@ -22,6 +24,10 @@ function Login() {
             ...formData,
             [e.target.name]:e.target.value
         })
+    }
+
+    const eyeToggle =()=>{
+        setShowPassword(!showPassword);
     }
     const Submithandler = async (e) => {
         e.preventDefault();
@@ -60,15 +66,18 @@ function Login() {
             onChange={handleChange}
              />
         </div>
-        <div>
+        <div className='hide-show-funct'>
             <input 
             name='password'
-            type="password"
+            type={showPassword ? 'text' : 'password'}
             id='text'
             placeholder='password'
             value={formData.password}
             onChange={handleChange}
              />
+             <span onClick={()=>eyeToggle()}><FaEyeSlash />
+           
+             </span>
         </div>
         <button className='register-btn' type="submit">Log IN</button>
     </form>

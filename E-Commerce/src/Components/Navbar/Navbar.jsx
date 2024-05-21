@@ -6,8 +6,7 @@ import CartCounter from '../CartCounter/CartCounter';
 import { Link, useNavigate } from 'react-router-dom';
 import { CiSearch } from "react-icons/ci";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
 
 
 
@@ -22,7 +21,7 @@ function Navbar() {
   const handleLogout = () => {
     localStorage.removeItem('userId'); 
     navigate('/login')
-    toast("Logout Successfully!");
+
    
 
   };
