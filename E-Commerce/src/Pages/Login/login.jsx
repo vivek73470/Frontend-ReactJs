@@ -72,7 +72,9 @@ function Login() {
     const handlePassword = (e) => {
         e.preventDefault();
         const { id } = passId;
-        dispatch(Changepassword(id,passData))
+        passId.password=passData.password
+        dispatch(Changepassword(id,passId))
+        console.log('passData',passId)
 
     }
 

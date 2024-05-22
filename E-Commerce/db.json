@@ -517,8 +517,20 @@
     {
       "username": "vivek",
       "email": "vivek@gmail.com",
-      "password": "12",
+      "password": "2233",
       "id": 1
+    },
+    {
+      "username": "vivek",
+      "email": "vivek2@gmail.com",
+      "password": "123456789",
+      "id": 2
+    },
+    {
+      "username": "vivek",
+      "email": "vivek33@gmail.com",
+      "password": "2233",
+      "id": 3
     }
   ]
 }

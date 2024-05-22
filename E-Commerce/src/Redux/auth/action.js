@@ -202,7 +202,6 @@ const changeRequestPassword = () => {
     }
 }
 const changeSuccessPassword = (payload) => {
-    console.log('pass ch',payload)
     return {
         type: CHANGGE_PASS_SUCCESS,
         payload
@@ -215,10 +214,12 @@ const changeFailurePassword = () => {
 }
 
 export const Changepassword = (id, data) => (dispatch) => {
-    console.log('change pass  id', id,data)
+    console.log('data & id', id,data)
     dispatch(changeRequestPassword());
     axios.put(`http://localhost:8080/user/${id}`, data)
-        .then((res) => dispatch(changeSuccessPassword(res.data)))
+        .then((res) => {
+            dispatch(changeSuccessPassword(res.data))
+        })
         .catch((err) => dispatch(changeFailurePassword(err.data)))
 
 

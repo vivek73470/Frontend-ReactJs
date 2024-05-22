@@ -12,7 +12,7 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     const { type, payload } = action;
-    console.log('change pass',payload)
+    console.log('change pass reducer',payload)
     switch (type) {
         case SIGNIN_REQUEST:
             return {
@@ -93,10 +93,9 @@ const reducer = (state = initialState, action) => {
         case CHANGGE_PASS_SUCCESS:
             return {
                 ...state,
-                user:[...state.user,payload],
+                user:payload,
                 auth: false
             }
-            
         case CHANGGE_PASS_FAILURE:
             return {
                 auth: false
