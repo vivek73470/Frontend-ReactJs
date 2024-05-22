@@ -17,32 +17,67 @@ function Login() {
     const dispatch = useDispatch();
     const [formData, setFormData] = useState({ email: '', password: '' })
     const [showPassword, setShowPassword] = useState(false);
+    const [errors, setErrors] = useState({ email: '', password: '' });
 
 
     const handleChange = (e) => {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value
-        })
+        });
+        setErrors({
+            ...errors,
+            [e.target.name]: ''
+        });
     }
 
     const eyeToggle = () => {
         setShowPassword(!showPassword);
     }
 
+    const validateForm = () => {
+        let valid = true;
+        const newErrors = {};
+        if (!formData.email.trim()) {
+            newErrors.email = 'Email is required';
+            valid = false;
+        }
+        if (!formData.password.trim()) {
+            newErrors.password = 'Password is required';
+            valid = false;
+        }
+        setErrors(newErrors);
+        return valid;
+    };
+
     const Submithandler = async (e) => {
         e.preventDefault();
-        dispatch(signIn(formData));
-        const response = await dispatch(signIn(formData));
-        if (response.status) {
-            setFormData({ email: '', password: '' });
-            navigate('/admin');
-            toast("Login Successfully!");
-        }
-        if (!response.status) {
-            alert("wrong password OR email")
+        if (validateForm()) {
+            const response = await dispatch(signIn(formData));
+            if (response.status) {
+                setFormData({ email: '', password: '' });
+                navigate('/admin');
+                toast("Login Successfully!");
+            } else {
+                alert("Wrong password or email");
+            }
         }
     };
+
+
+    // const Submithandler = async (e) => {
+    //     e.preventDefault();
+    //     dispatch(signIn(formData));
+    //     const response = await dispatch(signIn(formData));
+    //     if (response.status) {
+    //         setFormData({ email: '', password: '' });
+    //         navigate('/admin');
+    //         toast("Login Successfully!");
+    //     }
+    //     if (!response.status) {
+    //         alert("wrong password OR email")
+    //     }
+    // };
 
 
     return (
@@ -67,6 +102,7 @@ function Login() {
                                 value={formData.email}
                                 onChange={handleChange}
                             />
+                              {errors.email && <span className="error">{errors.email}</span>}
                         </div>
                         <div className='hide-show-funct'>
                             <input
@@ -78,8 +114,8 @@ function Login() {
                                 onChange={handleChange}
                             />
                             <span className='design-eyetoggle' onClick={() => eyeToggle()}><FaEyeSlash />
-
                             </span>
+                            {errors.password && <span className="error">{errors.password}</span>}
                         </div>
                         <button className='register-btn' type="submit">Log IN</button>
                     </form>
