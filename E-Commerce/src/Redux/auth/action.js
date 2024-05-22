@@ -175,24 +175,26 @@ const updateFailureEmail = () => {
         type: UPDATE_PASS_FAILURE
     }
 }
-export const RequestchangePassword = (emailData) => (dispatch) => {
+export const RequestchangePassword = (emailData) => async (dispatch) => {
     dispatch(updateRequestEmail());
-    axios.get('http://localhost:8080/user')
-        .then(response => {
-            const details = response.data;
-            let userData = details.find(user => user.email === emailData.email);
-           if(userData){
+    try {
+        const response = await axios.get('http://localhost:8080/user');
+        const details = response.data;
+        let userData = details.find(user => user.email === emailData.email);
+        if (userData) {
             dispatch(updateSuccessEmail(userData));
-           }
-           else{
-            dispatch(updateFailureEmail('user not found'))
-           }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            dispatch(updateFailureEmail('error fetching user details'))
-        });
+            return { status: true };
+        } else {
+            dispatch(updateFailureEmail('user not found'));
+            return { status: false }; 
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        dispatch(updateFailureEmail('error fetching user details'));
+        return { status: false };
+    }
 };
+
 
 
 // new password
@@ -214,7 +216,6 @@ const changeFailurePassword = () => {
 }
 
 export const Changepassword = (id, data) => (dispatch) => {
-    console.log('data & id', id,data)
     dispatch(changeRequestPassword());
     axios.put(`http://localhost:8080/user/${id}`, data)
         .then((res) => {

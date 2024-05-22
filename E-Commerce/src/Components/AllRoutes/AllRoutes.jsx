@@ -22,6 +22,8 @@ import ProfileAd from '../AdminProfile/ProfileAd'
 import AddProduct from '../AddProduct/AddProduct'
 import EditProduct from '../EditProduct/EditProduct'
 import CartAdmin from '../CartAdmin/CartAdmin'
+import Forgot from '../ForgotScreen/Forgot'
+import Password from '../PasswordChange/Password'
 
 
 
@@ -39,6 +41,8 @@ function AllRoutes() {
         <Route path='/check' element={<Checkout />} />
         <Route path='/orders' element={<Order />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/forgot-password' element={<Forgot/>} />
+        <Route path='/new-password' element={<Password/>} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/footer' element={<Footer />} />
         <Route path='/contact-us' element={<Contactus />} />

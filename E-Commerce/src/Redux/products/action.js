@@ -215,7 +215,6 @@ const emptyCart = (payload) => async (dispatch) => {
 // }
 
 // const emptyCart = (payload) => (dispatch) => {
-//     console.log('function empty cart',payload)
 //     dispatch(emptyCartRequest());
 //     const deleteOrders = [];
 //     for (let obj of payload) {
