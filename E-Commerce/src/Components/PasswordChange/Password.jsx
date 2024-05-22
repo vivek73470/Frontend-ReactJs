@@ -8,12 +8,14 @@ import { Link } from 'react-router-dom';
 import Footer from '../../Components/Footer/footer'
 import Navbar from '../../Components/Navbar/Navbar';
 import { useNavigate } from 'react-router-dom'
+import { FaEyeSlash } from "react-icons/fa6";
 
 function Password() {
     const passId = useSelector((store) => store.AuthReducer.RequestPass)
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const[showPassword,setShowPassword] = useState(false);
     const [passData, setPassData] = useState({ password: '' })
 
 
@@ -24,7 +26,6 @@ function Password() {
             [e.target.name]: e.target.value
 
         })
-
     }
 
     const handlePassword = (e) => {
@@ -36,6 +37,9 @@ function Password() {
 
     }
 
+    const eyeToggle =()=>{
+        setShowPassword(!showPassword)
+    }
 
     return (
         <>
@@ -45,19 +49,26 @@ function Password() {
                     <img src={slider} alt="" />
                 </div>
                 <div className='rigester-medmax-width'>
-                    <p className='register-acntcrt'>Login in to Topshop</p>
-                    <p className='register-acntcrt-entr'>Enter Your details below</p>
+                    <p className='register-acntcrt'>Confirm password</p>
+                    <p className='register-acntcrt-entr'  style={{paddingBottom:'16px'}}>Enter new password </p>
                     <form onSubmit={handlePassword}>
-                        <label>Enter new password </label>
-                        <input
-                            name='password'
-                            type="password"
-                            className='email-forgot'
-                            value={passData.password}
-                            onChange={handlePass}
-                        />
-                        <br />
-                        <input type="submit" />
+                    <div className='padding-cont-required'>
+                        <div className='hide-show-funct'>
+                            <input
+                                name='password'
+                                type={showPassword ? 'text' :'password'}
+                                id='text-pas'
+                                value={passData.password}
+                                onChange={handlePass}
+                                required
+                            />
+                                <span className='design-eyetoggle' onClick={() => eyeToggle()}><FaEyeSlash />
+                            </span>
+                        </div>
+                        </div>
+                        <button className='register-btn' type="submit">Update</button>
+
+
                     </form>
 
                     <div style={{ textAlign: 'center' }}>

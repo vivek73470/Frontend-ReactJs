@@ -21,13 +21,18 @@
 }
 .hide-show-funct{
   display: flex;
-  margin-bottom: 38px;
+  margin-bottom: 10px;
   border-bottom: 1px solid gray;
 }
 .design-eyetoggle{
 cursor: pointer;
 }
-
+.error{
+  color: #db4444;
+}
+.padding-cont-required{
+  padding-bottom: 28px;
+}
 #text-pas {
   width: 100%;
   border: none;

@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
-import { useDispatch} from 'react-redux'
+import { useDispatch } from 'react-redux'
 import './forgot.css'
-import {  RequestchangePassword} from '../../Redux/auth/action'
+import { RequestchangePassword } from '../../Redux/auth/action'
 import slider from '../../Assets/Slide.png'
 import { Link } from 'react-router-dom';
 import Footer from '../../Components/Footer/footer'
@@ -12,9 +12,9 @@ import { useNavigate } from 'react-router-dom'
 
 
 function Forgot() {
-  const navigate = useNavigate();
+    const navigate = useNavigate();
     const dispatch = useDispatch();
-    const [emailData, setemailData] = useState({email: ''})
+    const [emailData, setemailData] = useState({ email: '' })
 
 
 
@@ -25,58 +25,61 @@ function Forgot() {
         })
     }
 
-    const handleEmailSubmit = async(e) => {
+    const handleEmailSubmit = async (e) => {
         e.preventDefault();
-       const response = await dispatch(RequestchangePassword(emailData))
-        if(response.status){
+        const response = await dispatch(RequestchangePassword(emailData))
+        if (response.status) {
             navigate('/new-password')
         }
-        else{
+        else {
             alert('user not found')
         }
-   
+
     }
 
 
 
-  return (
-    <>
-    <Navbar />
-    <div className='register-container'>
-        <div className='register-image'>
-            <img src={slider} alt="" />
-        </div>
-        <div className='rigester-medmax-width'>
-            <p className='register-acntcrt'>Login in to Topshop</p>
-            <p className='register-acntcrt-entr'>Enter Your details below</p>
+    return (
+        <>
+            <Navbar />
+            <div className='register-container'>
+                <div className='register-image'>
+                    <img src={slider} alt="" />
+                </div>
+                <div className='rigester-medmax-width'>
+                    <p className='register-acntcrt'>Forgot password</p>
+                    <p className='register-acntcrt-entr' style={{paddingBottom:'16px'}}>Enter your email to reset your password </p>
 
-            <form onSubmit={handleEmailSubmit}>
-                        <label>Enter your email to reset your password </label><br />
-                        <input
-                            name='email'
-                            type="email"
-                            className='email-forgot'
-                            value={emailData.email}
-                            onChange={handleEmail}
-                        />
-                        <br />
-                        <input type="submit" />
+                    <form onSubmit={handleEmailSubmit}>
+                        <div className='padding-cont-required'>
+                        <div className='hide-show-funct'>
+                            <input
+                                name='email'
+                                type="email"
+                                id='text-pas'
+                                value={emailData.email}
+                                onChange={handleEmail}
+                                required
+                            />
+                        </div>
+                        </div>
+                        <button className='register-btn' type="submit">Submit</button>
                     </form>
 
-            <div style={{ textAlign: 'center' }}>
-                <Link to='/login'>
-                    <span style={{ color: 'gray', textDecoration: 'underline' }}>Back to login</span>
-                </Link><br />
-               
+                    <div style={{ textAlign: 'center' }}>
+                        <Link to='/login'>
+                            <span style={{ color: 'gray', textDecoration: 'underline' }}>Back to login</span>
+                        </Link><br />
+
+                    </div>
+                </div>
+
             </div>
-        </div>
+            <Footer />
 
-    </div>
-    <Footer />
 
-  
-</>
-  )
+        </>
+    )
 }
 
 export default Forgot

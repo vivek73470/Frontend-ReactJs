@@ -3,7 +3,7 @@
   align-items: center;
   column-gap: 80px;
   padding: 140px 0px 50px 0px;
- 
+
 
 }
 
@@ -19,20 +19,28 @@
 
 
 }
+.hide-show-funct{
+  display: flex;
+  margin-bottom: 10px;
+  border-bottom: 1px solid gray;
+}
+.design-eyetoggle{
+cursor: pointer;
+}
 
-#text {
+#text-pas {
   width: 100%;
   border: none;
   outline: none;
   padding-bottom: 8px;
   color: gray;
-  margin-bottom: 38px;
-  border-bottom: 1px solid gray;
   transition: border-bottom-color 0.3s ease;
 }
-
-#text:focus {
-  border-bottom-color: black;
+.forget-pass{
+  color: #0e65d9;
+  font-weight: 600;
+  padding-top: 4px;
+  cursor: pointer;
 }
 
 .register-acntcrt {

@@ -21,13 +21,15 @@
   }
   .hide-show-funct{
     display: flex;
-    margin-bottom: 38px;
+    margin-bottom: 10px;
     border-bottom: 1px solid gray;
   }
   .design-eyetoggle{
   cursor: pointer;
   }
-  
+  .padding-cont-required{
+    padding-bottom: 28px;
+  }
   #text-pas {
     width: 100%;
     border: none;

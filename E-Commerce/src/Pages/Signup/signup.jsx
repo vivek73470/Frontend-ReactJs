@@ -7,10 +7,13 @@ import slider from '../../Assets/Slide.png'
 import { Link } from 'react-router-dom';
 import Footer from '../../Components/Footer/footer'
 import Navbar from '../../Components/Navbar/Navbar';
+import { FaEyeSlash } from "react-icons/fa6";
 
 function Signup() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const[showPassword,setShowPassword] = useState(false);
+    const [errors, setErrors] = useState({ username: '', email: '', password: '' });
     const [formData, setFormData] = useState(
         { username: '', email: '', password: '' }
     )
@@ -19,14 +22,42 @@ function Signup() {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value
-        })
+        });
+        setErrors({
+            ...errors,
+            [e.target.name]: ''
+        });
     }
+    const eyeToggle =()=>{
+        setShowPassword(!showPassword)
+    }
+
+    const validateForm = () => {
+        let valid = true;
+        const newErrors = {};
+        if (!formData.username.trim()) {
+            newErrors.username = 'username is required';
+            valid = false;
+        }
+        if (!formData.email.trim()) {
+            newErrors.email = 'Email is required';
+            valid = false;
+        }
+        if (!formData.password.trim()) {
+            newErrors.password = 'Password is required';
+            valid = false;
+        }
+        setErrors(newErrors);
+        return valid;
+    };
 
     const Submithandler = (e) => {
         e.preventDefault();
-        dispatch(signUp(formData))
-        setFormData({ username: '', email: '', password: '' })
-        navigate('/login')
+        if(validateForm()){
+            dispatch(signUp(formData))
+            setFormData({ username: '', email: '', password: '' })
+            navigate('/login')
+        }
     }
 
     return (
@@ -41,35 +72,48 @@ function Signup() {
                     <p className='register-acntcrt-entr'>Enter Your details below</p>
 
                     <form className='register-frm' onSubmit={Submithandler}>
-                        <div> 
+                    <div className='padding-cont-required'>
+                        <div className='hide-show-funct'> 
                             <input
                                 name='username'
                                 type="text"
-                                id='text'
+                                id='text-pas'
                                 placeholder='Name'
                                 value={formData.username}
                                 onChange={handleChange}
                             />
                         </div>
-                        <div>
+                        {errors.username && <span className="error">{errors.username}</span>}
+                        </div>
+
+                        <div className='padding-cont-required'>
+                        <div className='hide-show-funct'>
                             <input
                                 name='email'
                                 type="email"
-                                id='text'
+                                id='text-pas'
                                 placeholder='Email'
                                 value={formData.email}
                                 onChange={handleChange}
                             />
                         </div>
-                        <div>
+                        {errors.email && <span className="error">{errors.email}</span>}
+                        </div>
+
+                        <div className='padding-cont-required'>
+                        <div className='hide-show-funct'>
                             <input
                                 name='password'
-                                type="password"
-                                id='text'
+                                type={showPassword ? 'text' : 'password'}
+                                id='text-pas'
                                 placeholder='Password'
                                 value={formData.password}
                                 onChange={handleChange}
                             />
+                                   <span className='design-eyetoggle' onClick={() => eyeToggle()}><FaEyeSlash />
+                            </span>
+                        </div>
+                        {errors.password && <span className="error">{errors.password}</span>}
                         </div>
                         <button className='register-btn' type="submit">Create Account</button>
                     </form>
