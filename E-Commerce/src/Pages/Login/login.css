@@ -76,6 +76,11 @@ cursor: pointer;
   margin-bottom: 10px;
   cursor: pointer;
 }
+.register-btn:hover{
+  background-color: #fff;
+  color: #db4444;
+  border: 1px solid #db4444;
+}
 
 .register-already-actn {
   font-size: 16px;

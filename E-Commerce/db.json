@@ -172,7 +172,7 @@
     },
     {
       "id": 11,
-      "title": "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
+      "title": "Lock and Love Women's Removable Hooded Faux Leather Moto Biker",
       "price": 295,
       "description": "100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON",
       "category": "women's clothing",
@@ -189,7 +189,7 @@
     },
     {
       "id": 12,
-      "title": "Rain Jacket Women Windbreaker Striped and Climbing Raincoats clothle",
+      "title": "Rain Jacket Women Windbreaker Striped and Climbing Raincoats",
       "price": 399,
       "description": "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.",
       "category": "women's clothing",
@@ -274,7 +274,7 @@
     },
     {
       "id": 17,
-      "title": "Jack & Jones Men's Carrot Slim Jeans  The Purrnisher Graphic Printed Oversized",
+      "title": "Jack & Jones Men's Carrot Slim Jeans  The Purrnisher Graphic Printed",
       "price": 989,
       "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
       "category": "men's clothing",
@@ -410,7 +410,7 @@
     },
     {
       "id": 25,
-      "title": "DC Trio LED Cover for iPhone 12 Pro",
+      "title": "DC Trio LED Cover for iPhone 12 Pro covers",
       "price": 10.99,
       "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
       "category": "covers",
@@ -427,7 +427,7 @@
     },
     {
       "id": 26,
-      "title": "DC Trio LED Cover for iPhone 12 Pro",
+      "title": "DC Trio LED Cover for iPhone 12 Pro samsung cover",
       "price": 10.99,
       "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
       "category": "covers",
@@ -478,7 +478,7 @@
     },
     {
       "id": 29,
-      "title": "Women's Black One with the Universe Graphic Printed Boyfriend T-shirt",
+      "title": "Women's Black Universe Graphic Printed Boyfriend T-shirt",
       "price": 129,
       "description": "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
       "category": "women's clothing",
@@ -517,18 +517,12 @@
     {
       "username": "vivek",
       "email": "vivek@gmail.com",
-      "password": "9999",
-      "id": 1
-    },
-    {
-      "username": "SDf",
-      "email": "ankita199824@gmail.com",
-      "password": "567688",
-      "id": 6,
-      "DOB": "2024-05-10",
+      "password": "12",
+      "id": 1,
+      "gender": "Male",
       "number": "7347063116",
-      "gender": "female",
-      "address": "Chandigarh"
+      "address": "Chandigarh",
+      "DOB": "2024-05-01"
     }
   ]
 }

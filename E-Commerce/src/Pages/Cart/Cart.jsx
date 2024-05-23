@@ -22,10 +22,6 @@ function Cart() {
       dispatch(addOrder(cart[i]))
 
     }
-  
-      // dispatch(addOrder(cart))
-
-    
   }
 
   return (

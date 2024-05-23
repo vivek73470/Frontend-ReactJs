@@ -208,26 +208,6 @@ const emptyCart = (payload) => async (dispatch) => {
 
 };
 
-// const emptyCartFailure = () => {
-//     return {
-//         type: types.EMPTY_CART_FAILURE
-//     }
-// }
-
-// const emptyCart = (payload) => (dispatch) => {
-//     dispatch(emptyCartRequest());
-//     const deleteOrders = [];
-//     for (let obj of payload) {
-//         let temp = dispatch(deleteProductCart(obj.id));
-//         deleteOrders.push(temp)
-//     }
-//     Promise.all(deleteOrders)
-//         .then((r) => dispatch(emptyCartSuccess()))
-//         .catch((e) => dispatch(emptyCartFailure()))
-// }
-
-
-
 
 // fetch order to show on order page 
 const fetchOrderRequest = () => {

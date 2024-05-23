@@ -57,6 +57,7 @@ export const signIn = (formData) => async (dispatch) => {
 
     }
     catch (error) {
+        dispatch(SignInFailure())
         return { status: false }
     }
 };
@@ -114,18 +115,19 @@ const SetInSuccess = (payload) => {
     }
 
 }
-export const fetchUserData = (userId) => async (dispatch) => {
-    try {
-        dispatch(SetInRequest())
-        // Perform API call to fetch user data using userId
-        const res = await fetch(`http://localhost:8080/user/${userId}`);
-        const userData = await res.json();
-        // Dispatch user data to reducer
-        dispatch(SetInSuccess(userData));
-    } catch (error) {
-        // Handle error
-        console.error('Error fetching user data:', error);
+const SetInFailure = (payload) => {
+    return {
+        type: SET_FAILURE,
+        payload,
+
     }
+
+}
+export const fetchUserData = (userId) =>(dispatch) => {
+    dispatch(SetInRequest());
+    axios.get(`http://localhost:8080/user/${userId}`)
+    .then((response)=>dispatch(SetInSuccess(response.data)))
+    .catch((err)=>dispatch(SetInFailure(err)))
 };
 
 
@@ -147,7 +149,6 @@ const UpdateFailure = () => {
         type: UPDATE_FAILURE
     }
 }
-
 export const UpdateProf = (id, data) => (dispatch) => {
     dispatch(UpdateRequest());
     axios.put(`http://localhost:8080/user/${id}`, data)
@@ -214,7 +215,6 @@ const changeFailurePassword = () => {
         type: CHANGGE_PASS_FAILURE
     }
 }
-
 export const Changepassword = (id, data) => (dispatch) => {
     dispatch(changeRequestPassword());
     axios.put(`http://localhost:8080/user/${id}`, data)

@@ -1,7 +1,7 @@
 import {
     SIGNIN_FAILURE, SIGNIN_SUCCESS, SIGNIN_REQUEST, SIGNUP_FAILURE, SIGNUP_SUCCESS, SIGNUP_REQUEST, UPDATE_REQUEST,
     UPDATE_SUCCESS, UPDATE_FAILURE, SET_SUCCESS, UPDATE_PASS_FAILURE, UPDATE_PASS_SUCCESS, UPDATE_PASS_REQUEST, 
-    CHANGGE_PASS_REQUEST, CHANGGE_PASS_SUCCESS, CHANGGE_PASS_FAILURE} from "./action";
+    CHANGGE_PASS_REQUEST, CHANGGE_PASS_SUCCESS, CHANGGE_PASS_FAILURE, SET_REQUEST, SET_FAILURE} from "./action";
 
 const initialState = {
     auth: false,
@@ -45,10 +45,20 @@ const reducer = (state = initialState, action) => {
                 auth: false
             }
 
+        case SET_REQUEST:
+            return {
+                ...state,
+                auth: true,
+            }
         case SET_SUCCESS:
             return {
                 ...state,
                 userData: payload,
+                auth: false,
+            }
+        case SET_FAILURE:
+            return {
+                ...state,
                 auth: false,
             }
 

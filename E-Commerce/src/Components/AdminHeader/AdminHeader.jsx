@@ -25,15 +25,15 @@ function AdminHeader() {
     }
   }, [dispatch, userId]);
 
-  const handleLogout=()=>{
-localStorage.removeItem('userId');
-navigate('/login')
+  const handleLogout = () => {
+    localStorage.removeItem('userId');
+    navigate('/login')
   }
 
 
   const handleNavigation = (url) => {
     navigate(url);
-  
+
   };
   return (
     <>
@@ -43,7 +43,7 @@ navigate('/login')
             <div className='admin-header-offcanvas' data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
               <FaBars />
             </div>
-            <div className='Admin-Header-title-welcome'>{userDetails.username}</div>
+            <div className='Admin-Header-title-welcome'>{userDetails?.username}</div>
           </div>
         </div>
       </div>
@@ -56,33 +56,33 @@ navigate('/login')
         <div class="offcanvas-body">
           <div class="adminoffcanvas-body-wrapper">
             <div className='admin-offcanvas-body-homecnt'>
-                 <span className='admin-offcanvas-body-linkk' onClick={() => handleNavigation('/admin/dashboard')}   data-bs-dismiss="offcanvas">
+              <span className='admin-offcanvas-body-linkk' onClick={() => handleNavigation('/admin/dashboard')} data-bs-dismiss="offcanvas">
                 <MdOutlineDashboard />
                 <span className='admin-navbar-head-homcnt-hamb'>Dashboard</span>
               </span>
-              <span  className='admin-offcanvas-body-linkk' to='/admin/add-product'  onClick={() => handleNavigation('/admin/add-product')}   data-bs-dismiss="offcanvas">
+              <span className='admin-offcanvas-body-linkk' to='/admin/add-product' onClick={() => handleNavigation('/admin/add-product')} data-bs-dismiss="offcanvas">
                 <MdOutlineProductionQuantityLimits />
                 <span className='admin-navbar-head-homcnt-hamb'>Add Products</span>
               </span>
 
-              <span  className='admin-offcanvas-body-linkk' to='/admin/cart-admin'  onClick={() => handleNavigation('/admin/cart-admin')}   data-bs-dismiss="offcanvas">
+              <span className='admin-offcanvas-body-linkk' to='/admin/cart-admin' onClick={() => handleNavigation('/admin/cart-admin')} data-bs-dismiss="offcanvas">
                 <IoMdCart />
                 <span className='admin-navbar-head-homcnt-hamb'>Cart</span>
               </span>
 
-              <span  className='admin-offcanvas-body-linkk' to='/admin/profile'  onClick={() => handleNavigation('/admin/profile')}   data-bs-dismiss="offcanvas">
+              <span className='admin-offcanvas-body-linkk' to='/admin/profile' onClick={() => handleNavigation('/admin/profile')} data-bs-dismiss="offcanvas">
                 <CgProfile />
                 <span className='admin-navbar-head-homcnt-hamb'>Profile</span>
               </span>
             </div>
-            
-            <div className='admin-offcanvas-logout' onClick={()=>handleLogout()}  data-bs-dismiss="offcanvas">
-            <TbLogout />
+
+            <div className='admin-offcanvas-logout' onClick={() => handleLogout()} data-bs-dismiss="offcanvas">
+              <TbLogout />
               <span className='admin-navbar-head-homcnt-hamb'>  Logout</span>
-          
+
+            </div>
           </div>
-          </div>
-         
+
         </div>
       </div>
     </>

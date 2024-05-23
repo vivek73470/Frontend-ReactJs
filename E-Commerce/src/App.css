@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+
+body {
+  font-family: 'DM Sans', sans-serif;
+}
+
+p {
+  font-family: 'DM Sans', sans-serif;
+}
+span{
+  font-family: 'DM Sans', sans-serif;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: 'DM Sans', sans-serif;
+}
+input{
+  font-family: 'DM Sans', sans-serif !important;
+}

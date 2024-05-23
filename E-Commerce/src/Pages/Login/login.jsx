@@ -65,22 +65,6 @@ function Login() {
         }
     };
 
-
-    // const Submithandler = async (e) => {
-    //     e.preventDefault();
-    //     dispatch(signIn(formData));
-    //     const response = await dispatch(signIn(formData));
-    //     if (response.status) {
-    //         setFormData({ email: '', password: '' });
-    //         navigate('/admin');
-    //         toast("Login Successfully!");
-    //     }
-    //     if (!response.status) {
-    //         alert("wrong password OR email")
-    //     }
-    // };
-
-
     return (
 
         <>

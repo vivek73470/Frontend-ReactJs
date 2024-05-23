@@ -51,10 +51,11 @@ align-items: center;
   bottom: 0;
   display: flex;
   column-gap: 20px;
+  padding-right: 50px;
   align-items: center;
 }
 .admin-closebtn-canvas{
-  font-size: 28px;
+  font-size: 25px;
 }
 #admin-offcanvas-header-hambopen {
   padding: 20px 30px;
@@ -73,4 +74,10 @@ align-items: center;
     padding-left: 50px;
     padding-right: 50px;
   }
+}
+
+@media screen and (max-width:550px){
+.admin-closebtn-canvas{
+  font-size: 20px;
+}
 }

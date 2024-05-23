@@ -193,10 +193,11 @@ a{
 .navbar-hamburger-topshop>span {
     font-size: 23px;
 }
+.offcanvas-body-wrapper{
+    display: flex;
+    justify-content: center;
 }
-
-@media screen and (max-width:550px){
-    .hamburger-offcanvas-wid{
-        width: 70% !important;
-    }
+.hamburger-offcanvas-wid{
+    width: 70% !important;
+}
 }
