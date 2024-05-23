@@ -13,8 +13,6 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     const { type, payload } = action;
 
-
-
     switch (type) {
         case types.START_LOADING:
             return {

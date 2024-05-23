@@ -10,6 +10,7 @@ import Navbar from '../../Components/Navbar/Navbar';
 import { useNavigate } from 'react-router-dom'
 import { FaEyeSlash } from "react-icons/fa6";
 
+
 function Password() {
     const passId = useSelector((store) => store.AuthReducer.RequestPass)
 

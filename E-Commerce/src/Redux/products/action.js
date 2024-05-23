@@ -37,12 +37,10 @@ const fetchDataFailure = () => {
 }
 const fetchData = (params) => (dispatch) => {
     dispatch(fetchDataRequest());
-    dispatch(startLoading());
     axios.get(`http://localhost:8080/products`, params)
         .then((r) => dispatch(fetchDataSuccess(r.data)))
         // This response(r) object contains various properties including the data property, which holds the response data returned from the server.
         .catch((e) => dispatch(fetchDataFailure(e.data)))
-        dispatch(stopLoading());
 };
 
 
@@ -353,4 +351,4 @@ const deleteProducts = (id) => (dispatch) => {
 
 
 export { fetchData,deleteOrderProducts, editProducts, deleteProducts, emptyCart, fetchOrder, getSingleProduct,
-     addProductCart, fetchCart, deleteProductCart, addOrder, addProducts };
+     addProductCart, fetchCart, deleteProductCart, addOrder, addProducts,startLoading,stopLoading };

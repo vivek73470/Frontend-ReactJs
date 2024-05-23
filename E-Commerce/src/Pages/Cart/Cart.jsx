@@ -12,7 +12,6 @@ function Cart() {
   let cart = useSelector((store) => store.ProductReducer.cart)
    
   const dispatch = useDispatch();
-  
   const removeProduct = (id) => {
     dispatch(deleteProductCart(id))
   };
