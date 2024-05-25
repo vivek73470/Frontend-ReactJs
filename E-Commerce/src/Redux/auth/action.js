@@ -84,21 +84,32 @@ const SignUpFailure = () => {
 export const signUp = (formData) => async (dispatch) => {
     try {
         dispatch(SignUpRequest());
-        const res = await fetch('http://localhost:8080/user', {
-            method: 'POST',
-            body: JSON.stringify(formData),
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
-        const user = await res.json();
-        dispatch(SignUpSuccess(user));
+        // Check if the email is already registered
+        const emailCheckResponse = await fetch(`http://localhost:8080/user?email=${formData.email}`);
+        const existingUser = await emailCheckResponse.json();
 
+        if (existingUser.length > 0) {
+            dispatch(SignUpFailure());
+            return { status: false }
+
+        } else {
+            const signUpResponse = await fetch('http://localhost:8080/user', {
+                method: 'POST',
+                body: JSON.stringify(formData),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+            const user = await signUpResponse.json();
+            dispatch(SignUpSuccess(user));
+            return { status: true }
+        }
     } catch (error) {
         console.error('Error during sign up:', error);
         dispatch(SignUpFailure());
     }
 };
+
 
 
 // Single user fetch details
@@ -123,11 +134,11 @@ const SetInFailure = (payload) => {
     }
 
 }
-export const fetchUserData = (userId) =>(dispatch) => {
+export const fetchUserData = (userId) => (dispatch) => {
     dispatch(SetInRequest());
     axios.get(`http://localhost:8080/user/${userId}`)
-    .then((response)=>dispatch(SetInSuccess(response.data)))
-    .catch((err)=>dispatch(SetInFailure(err)))
+        .then((response) => dispatch(SetInSuccess(response.data)))
+        .catch((err) => dispatch(SetInFailure(err)))
 };
 
 
@@ -187,7 +198,7 @@ export const RequestchangePassword = (emailData) => async (dispatch) => {
             return { status: true };
         } else {
             dispatch(updateFailureEmail('user not found'));
-            return { status: false }; 
+            return { status: false };
         }
     } catch (error) {
         console.error('Error:', error);

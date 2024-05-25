@@ -55,8 +55,14 @@ function Signup() {
         e.preventDefault();
         if(validateForm()){
             dispatch(signUp(formData))
-            setFormData({ username: '', email: '', password: '' })
-            navigate('/login')
+            if(Response.status){
+                setFormData({ username: '', email: '', password: '' })
+                navigate('/login')
+            }
+            else{
+                alert('Email already registered !')
+            }
+         
         }
     }
 

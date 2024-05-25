@@ -37,8 +37,7 @@ const Products = () => {
             <div className='product-listing'>
               {watches.length > 0 &&
                 watches.map((item) => (
-                  <div className="productlist-design" key={item.id}
-                    onClick={() => navigate(`/cartproducts/${item.id}`)}>
+                  <div className="productlist-design" key={item.id} >
                     <img className='product-imgstyle' src={item.image} alt="cloth products" />
                     <p className='product-brandname'>{item.brand_namez}</p>
                     <p className='product-actual-title'>{item.title}</p>
@@ -47,6 +46,7 @@ const Products = () => {
                       <p className='product-actual-price'>₹{item.actualPriceText}</p>
                     </div>
                     <p className='product-title-members'>₹{item.discount_price_box} For Tribe Members</p>
+                    <button className="product-viewdtls-dgn" onClick={() => navigate(`/cartproducts/${item.id}`)}>View details</button>
                   </div>
                 ))}
             </div>
