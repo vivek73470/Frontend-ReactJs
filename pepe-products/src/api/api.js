@@ -18,7 +18,7 @@ export const getData = async () => {
 export const getWomenData = async () => {
     try {
         let res = await fetch(`server-bice-three.vercel.app
-        /`);
+        /womensdata/`);
         let data = await res.json();
         return data
     }
