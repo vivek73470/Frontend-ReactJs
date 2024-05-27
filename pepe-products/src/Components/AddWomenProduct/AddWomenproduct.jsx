@@ -14,7 +14,7 @@ function AddWomenproduct() {
       })
     
       async function addproduct() {
-        let res = await fetch(`http://localhost:3500/womensdata`, {
+        let res = await fetch(`http://localhost:3000/womensdata`, {
           method: 'POST',
     
           body: JSON.stringify(data),

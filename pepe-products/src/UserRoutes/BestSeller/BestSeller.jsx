@@ -21,7 +21,7 @@ function BestSeller() {
 
     async function getData() {
         try {
-            let res = await fetch(`http://localhost:3500/womensdata?_limit=12`);
+            let res = await fetch(`http://localhost:3000/womensdata?_limit=12`);
             let data = await res.json();
             console.log(data)
             setHomeData(data);

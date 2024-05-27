@@ -14,7 +14,7 @@ function SingleMobile() {
 
     async function getData() {
         try {
-            let res = await fetch(`http://localhost:3500/mobiles/${id}`)
+            let res = await fetch(`http://localhost:3000/mobiles/${id}`)
             console.log('try', res)
             let data = await res.json();
             setMobileData(data)

@@ -11,7 +11,7 @@ function AuthContextProvider({ children }) {
 
     const toggleAuth = () => {
       // whatsever value is just change it 
-        setIsAuth(!isAuth);
+        setIsAuth(!isAuth);  
     }
 
     return (

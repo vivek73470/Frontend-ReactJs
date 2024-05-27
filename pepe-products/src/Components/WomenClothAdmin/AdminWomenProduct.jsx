@@ -12,7 +12,7 @@ function AdminWomenProduct() {
 
     async function getData() {
         try {
-            let res = await fetch(`http://localhost:3500/womensdata`);
+            let res = await fetch(`http://localhost:3000/womensdata`);
             let data = await res.json();
             setApiData(data);
         }
@@ -23,7 +23,7 @@ function AdminWomenProduct() {
 
     async function DeleteProduct(id) {
         try {
-            let res = await fetch(`http://localhost:3500/womensdata/${id}`, {
+            let res = await fetch(`http://localhost:3000/womensdata/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',

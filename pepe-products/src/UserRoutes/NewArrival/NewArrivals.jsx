@@ -22,7 +22,7 @@ function NewArrivals() {
 
     async function getData() {
         try {
-            let res = await fetch(`http://localhost:3500/mensdata?_limit=12`);
+            let res = await fetch(`http://localhost:3000/mensdata?_limit=12`);
             let data = await res.json();
             console.log(data)
             setHomeData(data);

@@ -40,7 +40,7 @@ function Signup() {
     // navigate("/");
 
     try{
-      let res = await fetch(`http://localhost:3500/user`,{
+      let res = await fetch(`http://localhost:3000/user`,{
         method:'POST',
 
         body:JSON.stringify(formData),

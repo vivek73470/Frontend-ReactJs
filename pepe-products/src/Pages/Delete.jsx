@@ -6,7 +6,7 @@ function Delete() {
     });
 
     async function deleteProduct() {
-        let res = await fetch(`http://localhost:3500/product/${deleteData.id}`, {
+        let res = await fetch(`http://localhost:3000/product/${deleteData.id}`, {
             method: 'DELETE',
 
             headers: {

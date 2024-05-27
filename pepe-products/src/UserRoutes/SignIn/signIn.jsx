@@ -28,7 +28,7 @@ const SignIn = () => {
   async function LoginToDashboard() {
     try {
       let isUserFound = false;
-      let res = await fetch(`http://localhost:3500/user`, {
+      let res = await fetch(`http://localhost:3000/user`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -44,10 +44,6 @@ const SignIn = () => {
           localStorage.setItem('userId', user.id)
           navigate(`/dashboard`);
           toast("Login Successfully!");
-       
-
-          
-
 
         }
       });

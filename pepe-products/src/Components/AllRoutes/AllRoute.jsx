@@ -28,7 +28,7 @@ import AddWomenproduct from '../AddWomenProduct/AddWomenproduct';
 import AddMobileproduct from '../AddMobileProduct/AddMobileproduct';
 import EditWomenProduct from '../EditWomen/EditWomenProduct';
 import EditMobileProduct from '../EditMobile/EditMobileProduct';
-import NotFound from '../NotFoundPage/NotFound';
+import NotFound from '../NotFoundPage/NotFound'; 
 
 
 
@@ -62,7 +62,7 @@ function AllRoute() {
           <PrivateRoute>
             <Admin />
           </PrivateRoute>}>
-          <Route index element={<Dashboard />} />
+          {/* <Route index element={<Dashboard />} /> */}
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="addproduct" element={<AdminAddProducts />} />
           <Route path="profile" element={<Profile />} />

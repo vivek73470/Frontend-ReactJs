@@ -18,7 +18,7 @@ function EditMobileProduct() {
     async function EditProduct() {
   
       try {
-        let res = await fetch(`http://localhost:3500/mobiles/${id}`, {
+        let res = await fetch(`http://localhost:3000/mobiles/${id}`, {
           method: 'PUT',
   
           body: JSON.stringify(formData),

@@ -10,7 +10,7 @@ function AdminHeader() {
   useEffect(() => {
     const fetchProfileData = async () => {
       try {
-        const res = await fetch(`http://localhost:3500/user/${userId}`, {
+        const res = await fetch(`http://localhost:3000/user/${userId}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',

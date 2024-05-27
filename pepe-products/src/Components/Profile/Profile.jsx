@@ -18,7 +18,7 @@ function Profile() {
   useEffect(() => {
     const fetchProfileData = async () => {
       try {
-        const res = await fetch(`http://localhost:3500/user/${userId}`, {
+        const res = await fetch(`http://localhost:3000/user/${userId}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ function Profile() {
   async function editProfile() {
     try {
 
-      let res = await fetch(`http://localhost:3500/user/${userId}`, {
+      let res = await fetch(`http://localhost:3000/user/${userId}`, {
         method: 'PUT',
         body: JSON.stringify(data),
 

@@ -19,7 +19,7 @@ function EditProductAdmin() {
   async function EditProduct() {
 
     try {
-      let res = await fetch(`http://localhost:3500/mensdata/${id}`, {
+      let res = await fetch(`http://localhost:3000/mensdata/${id}`, {
         method: 'PUT',
 
         body: JSON.stringify(formData),

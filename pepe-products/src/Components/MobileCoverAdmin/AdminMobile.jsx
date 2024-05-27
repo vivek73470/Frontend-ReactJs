@@ -12,7 +12,7 @@ function AdminMobile() {
 
     async function getData() {
         try {
-            let res = await fetch(`http://localhost:3500/mobiles`);
+            let res = await fetch(`http://localhost:3000/mobiles`);
             let data = await res.json();
             setApiData(data);
         }
@@ -22,7 +22,7 @@ function AdminMobile() {
     }
     async function DeleteProduct(id) {
         try {
-            let res = await fetch(`http://localhost:3500/mobiles/${id}`, {
+            let res = await fetch(`http://localhost:3000/mobiles/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',

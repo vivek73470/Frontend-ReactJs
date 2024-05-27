@@ -13,7 +13,7 @@ function AddMobileproduct() {
       })
     
       async function addproduct() {
-        let res = await fetch(`http://localhost:3500/mobiles`, {
+        let res = await fetch(`http://localhost:3000/mobiles`, {
           method: 'POST',
     
           body: JSON.stringify(data),

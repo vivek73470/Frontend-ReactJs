@@ -20,7 +20,7 @@ function SingleMenPage() {
             let a = location.pathname.split("/")[2]
 
             console.log(a)
-            let res = await fetch(`http://localhost:3500/mensdata/${a}`);
+            let res = await fetch(`http://localhost:3000/mensdata/${a}`);
             let data = await res.json();
 
             // You are fetching data from an API endpoint. Once the data is received (after converting it to JSON format),
