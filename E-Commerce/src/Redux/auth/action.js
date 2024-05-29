@@ -27,6 +27,7 @@ export const CHANGGE_PASS_REQUEST = 'CHANGGE_PASS_REQUEST';
 export const CHANGGE_PASS_SUCCESS = 'CHANGGE_PASS_SUCCESS';
 export const CHANGGE_PASS_FAILURE = 'CHANGGE_PASS_FAILURE';
 
+const BASE_URL = process.env.REACT_APP_SERVER_URL;
 
 const SignInRequest = () => {
     return {
@@ -47,7 +48,7 @@ const SignInFailure = () => {
 export const signIn = (formData) => async (dispatch) => {
     try {
         dispatch(SignInRequest());
-        const res = await fetch('http://localhost:8080/user');
+        const res = await fetch(`${BASE_URL}/user`);
         const users = await res.json();
         const userdata = users.find(u => u.email === formData.email && u.password === formData.password);
         localStorage.setItem('userId', userdata.id);
@@ -84,8 +85,7 @@ const SignUpFailure = () => {
 export const signUp = (formData) => async (dispatch) => {
     try {
         dispatch(SignUpRequest());
-        // Check if the email is already registered
-        const emailCheckResponse = await fetch(`http://localhost:8080/user?email=${formData.email}`);
+        const emailCheckResponse = await fetch(`${BASE_URL}/user?email=${formData.email}`);
         const existingUser = await emailCheckResponse.json();
 
         if (existingUser.length > 0) {
@@ -93,7 +93,7 @@ export const signUp = (formData) => async (dispatch) => {
             return { status: false }
 
         } else {
-            const signUpResponse = await fetch('http://localhost:8080/user', {
+            const signUpResponse = await fetch(`${BASE_URL}/user`, {
                 method: 'POST',
                 body: JSON.stringify(formData),
                 headers: {
@@ -136,7 +136,7 @@ const SetInFailure = (payload) => {
 }
 export const fetchUserData = (userId) => (dispatch) => {
     dispatch(SetInRequest());
-    axios.get(`http://localhost:8080/user/${userId}`)
+    axios.get(`${BASE_URL}/user/${userId}`)
         .then((response) => dispatch(SetInSuccess(response.data)))
         .catch((err) => dispatch(SetInFailure(err)))
 };
@@ -162,7 +162,7 @@ const UpdateFailure = () => {
 }
 export const UpdateProf = (id, data) => (dispatch) => {
     dispatch(UpdateRequest());
-    axios.put(`http://localhost:8080/user/${id}`, data)
+    axios.put(`${BASE_URL}/user/${id}`, data)
         .then((res) => dispatch(UpdateSuccess(res.data)))
         .catch((err) => dispatch(UpdateFailure(err.data)))
 
@@ -190,7 +190,7 @@ const updateFailureEmail = () => {
 export const RequestchangePassword = (emailData) => async (dispatch) => {
     dispatch(updateRequestEmail());
     try {
-        const response = await axios.get('http://localhost:8080/user');
+        const response = await axios.get(`${BASE_URL}/user`);
         const details = response.data;
         let userData = details.find(user => user.email === emailData.email);
         if (userData) {
@@ -228,7 +228,7 @@ const changeFailurePassword = () => {
 }
 export const Changepassword = (id, data) => (dispatch) => {
     dispatch(changeRequestPassword());
-    axios.put(`http://localhost:8080/user/${id}`, data)
+    axios.put(`${BASE_URL}/user/${id}`, data)
         .then((res) => {
             dispatch(changeSuccessPassword(res.data))
         })

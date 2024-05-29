@@ -523,6 +523,12 @@
       "number": "7347063116",
       "address": "Chandigarh",
       "DOB": "2024-05-01"
+    },
+    {
+      "username": "vivek",
+      "email": "vivek1@gmail.com",
+      "password": "2233",
+      "id": 2
     }
   ]
 }

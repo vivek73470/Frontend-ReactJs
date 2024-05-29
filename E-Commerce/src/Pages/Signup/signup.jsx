@@ -51,11 +51,11 @@ function Signup() {
         return valid;
     };
 
-    const Submithandler = (e) => {
+    const Submithandler = async(e) => {
         e.preventDefault();
         if(validateForm()){
-            dispatch(signUp(formData))
-            if(Response.status){
+            const response = await dispatch(signUp(formData))
+            if(response.status){
                 setFormData({ username: '', email: '', password: '' })
                 navigate('/login')
             }

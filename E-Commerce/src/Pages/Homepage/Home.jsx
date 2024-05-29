@@ -24,7 +24,7 @@ import Footer from '../../Components/Footer/footer';
 import { useDispatch } from 'react-redux';
 import { fetchData } from '../../Redux/products/action';
 import Navbar from '../../Components/Navbar/Navbar';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 

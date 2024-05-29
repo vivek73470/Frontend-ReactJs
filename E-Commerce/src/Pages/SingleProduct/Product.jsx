@@ -39,7 +39,7 @@ function SingleProduct() {
       <div className='single-product-mainscreen'>
         <div className='single-product-wrapscreen'>
           <div className='prdct-size-mobile' >
-            <img src={currentProduct.image} alt='info image' />
+            <img src={currentProduct.image} alt='info_image' />
           </div>
           <div className='single-product-details'>
             <p className='single-product-fashion'>Fashion Store</p>

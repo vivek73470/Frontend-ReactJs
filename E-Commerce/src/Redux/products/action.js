@@ -2,6 +2,7 @@ import axios from 'axios';
 import * as types from './actionType';
 // import { type } from '@testing-library/user-event/dist/type';
 
+const BASE_URL = process.env.REACT_APP_SERVER_URL;
 
 // loader 
 const startLoading =()=>{
@@ -37,7 +38,7 @@ const fetchDataFailure = () => {
 }
 const fetchData = (params) => (dispatch) => {
     dispatch(fetchDataRequest());
-    axios.get(`http://localhost:8080/products`, params)
+    axios.get(`${BASE_URL}/products`, params)
         .then((r) => dispatch(fetchDataSuccess(r.data)))
         // This response(r) object contains various properties including the data property, which holds the response data returned from the server.
         .catch((e) => dispatch(fetchDataFailure(e.data)))
@@ -65,7 +66,7 @@ const getSingleProductFailure = () => {
 }
 const getSingleProduct = (id) => (dispatch) => {
     dispatch(getSingleProductRequest())
-    axios.get(`http://localhost:8080/products/${id}`)
+    axios.get(`${BASE_URL}/products/${id}`)
         .then(r => dispatch(getSingleProductSuccess(r.data)))
         .catch(e => dispatch(getSingleProductFailure(e.data)))
 }
@@ -92,13 +93,13 @@ const addProductCartFailure = () => {
 }
 const addProductCart = (prod) => (dispatch) => {
     dispatch(addProductCartRequest());
-    axios.post(`http://localhost:8080/cart`, prod)
+    axios.post(`${BASE_URL}/cart`, prod)
         .then(r => dispatch(addProductCartSuccess(r.data)))
         .catch(e => dispatch(addProductCartFailure(e.data)))
 }
 
 
-// total cart lengt fetch 
+// total cart lengtt fetch 
 const fetchCartRequest = () => {
     return {
         type: types.FETCH_CART_REQUEST,
@@ -119,7 +120,7 @@ const fetchCartFailure = () => {
 }
 const fetchCart = (payload) => (dispatch) => {
     dispatch(fetchCartRequest());
-    axios.get(`http://localhost:8080/cart`)
+    axios.get(`${BASE_URL}/cart`)
         .then(r => dispatch(fetchCartSuccess(r.data)))
         .catch(e => dispatch(fetchCartFailure(e.data)))
 
@@ -146,7 +147,7 @@ const deleteProductCartFailure = () => {
 }
 const deleteProductCart = (id) => (dispatch) => {
     dispatch(deleteProductCartRequest())
-    axios.delete(`http://localhost:8080/cart/${id}`)
+    axios.delete(`${BASE_URL}/cart/${id}`)
         .then((r) => {
             dispatch(deleteProductCartSuccess(r.data))
         })
@@ -176,7 +177,7 @@ const addOrderFailure = (payload) => {
 const addOrder = (payload) => (dispatch) => {
     dispatch(addOrderRequest());
 
-    axios.post(`http://localhost:8080/orders`, payload)
+    axios.post(`${BASE_URL}/orders`, payload)
         .then(response => {
             dispatch(addOrderSuccess(response.data));
         })
@@ -228,7 +229,7 @@ const fetchOrderFailure = () => {
 }
 const fetchOrder = () => (dispatch) => {
     dispatch(fetchOrderRequest());
-    axios.get(`http://localhost:8080/orders`)
+    axios.get(`${BASE_URL}/orders`)
         .then(r => dispatch(fetchOrderSuccess(r.data)))
         .catch(e => dispatch(fetchOrderFailure(e.data)))
 
@@ -257,7 +258,7 @@ const deleteOrderFailure = () => {
 }
 const deleteOrderProducts = (id) => (dispatch) => {
     dispatch(deleteOrderRequest())
-    axios.delete(`http://localhost:8080/orders/${id}`)
+    axios.delete(`${BASE_URL}/orders/${id}`)
     .then((res)=>{
         dispatch(deleteOrderSuccess(res.data))
           dispatch(fetchOrder());
@@ -287,7 +288,7 @@ const AddProductsFailure = () => {
 }
 const addProducts = (data) => (dispatch) => {
     dispatch(AddProductsRequest());
-    axios.post(`http://localhost:8080/products`, data)
+    axios.post(`${BASE_URL}/products`, data)
         .then(r => dispatch(AddProductsSuccess(r.data)))
         .catch(e => dispatch(AddProductsFailure(e.data)))
 
@@ -312,9 +313,8 @@ const EditProductsFailure = () => {
     }
 }
 const editProducts = (id, data) => (dispatch) => {
-
     dispatch(EditProductsRequest());
-    axios.put(`http://localhost:8080/products/${id}`, data)
+    axios.put(`${BASE_URL}/products/${id}`, data)
         .then(r => dispatch(EditProductsSuccess(r.data)))
         .catch(e => dispatch(EditProductsFailure(e.data)))
 
@@ -340,7 +340,7 @@ const DeleteProductsFailure = () => {
 }
 const deleteProducts = (id) => (dispatch) => {
     dispatch(DeleteProductsRequest())
-    axios.delete(`http://localhost:8080/products/${id}`)
+    axios.delete(`${BASE_URL}/products/${id}`)
         .then((r) => {
             dispatch(DeleteProductsSuccess(r.data))
             dispatch(fetchData());

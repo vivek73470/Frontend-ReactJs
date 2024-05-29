@@ -9,9 +9,9 @@ function CartCounter() {
 
     useEffect(() => {
         if (cart?.length === 0) {
-            dispatch(fetchCart())
+            dispatch(fetchCart());
         }
-    }, [cart?.lenght, dispatch])
+    }, [cart?.length, dispatch]);
     return (
         <>
             <div className='cart-counter-screen'>
