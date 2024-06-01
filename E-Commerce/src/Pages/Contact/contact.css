@@ -83,6 +83,12 @@
   border: 1px solid #db4444;
 }
 
+.contact-after-submitt{
+  font-size: 18px;
+  font-family: 700;
+  color: #000000;
+  text-align: center;
+}
 
 /* media query */
 @media screen and (max-width:1023px){

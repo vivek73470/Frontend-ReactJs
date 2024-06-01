@@ -7,6 +7,7 @@ import Navbar from '../../Components/Navbar/Navbar';
 
 
 function Contactus() {
+  const [submitted, setSubmitted] = useState('');
   const initState ={
     name: "",
     email: "",
@@ -29,6 +30,10 @@ const handleChange = (e) =>{
 const handleSubmit =(e)=>{
   e.preventDefault();
   setFormData(initState);
+  setSubmitted("Thank you for contacting us! We'll get back to you soon.")
+  setTimeout(()=>{
+    setSubmitted('')
+  },3000)
 
 }
   return (
@@ -49,6 +54,7 @@ const handleSubmit =(e)=>{
               placeholder="Your Name"
               value={formData.name}
               onChange={handleChange}
+              required
                />
           </div>
           <div className="form-group">
@@ -60,6 +66,7 @@ const handleSubmit =(e)=>{
               placeholder="Your Email"
               value={formData.email}
               onChange={handleChange}
+              required
                />
           </div>
           <div className="form-group">
@@ -71,6 +78,7 @@ const handleSubmit =(e)=>{
               placeholder="Your Phone Number"
               value={formData.phone}
               onChange={handleChange}
+              required
               />
           </div>
           <div className="form-group">
@@ -81,12 +89,15 @@ const handleSubmit =(e)=>{
               placeholder="Your Message"
               value={formData.message}
               onChange={handleChange}
+              required
               >
               </textarea>
           </div>
           <input type="submit" className='contact-bnt' value="Submit"/>
+          {submitted && <p className='contact-after-submitt'>{submitted}</p>}
         </form>
       </div>
+      
       </div>
       <Footer />
     </>
