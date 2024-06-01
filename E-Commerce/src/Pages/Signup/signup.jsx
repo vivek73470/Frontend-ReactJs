@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import Footer from '../../Components/Footer/footer'
 import Navbar from '../../Components/Navbar/Navbar';
 import { FaEyeSlash } from "react-icons/fa6";
-
+import { LuEye } from "react-icons/lu";
 function Signup() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -116,7 +116,8 @@ function Signup() {
                                 value={formData.password}
                                 onChange={handleChange}
                             />
-                                   <span className='design-eyetoggle' onClick={() => eyeToggle()}><FaEyeSlash />
+                                   <span className='design-eyetoggle' onClick={() => eyeToggle()}>
+                                   {showPassword ? <LuEye /> : <FaEyeSlash />}
                             </span>
                         </div>
                         {errors.password && <span className="error">{errors.password}</span>}

@@ -9,6 +9,7 @@ import Footer from '../../Components/Footer/footer'
 import Navbar from '../../Components/Navbar/Navbar';
 import { useNavigate } from 'react-router-dom'
 import { FaEyeSlash } from "react-icons/fa6";
+import { LuEye } from "react-icons/lu";
 
 
 function Password() {
@@ -63,7 +64,8 @@ function Password() {
                                 onChange={handlePass}
                                 required
                             />
-                                <span className='design-eyetoggle' onClick={() => eyeToggle()}><FaEyeSlash />
+                                <span className='design-eyetoggle' onClick={() => eyeToggle()}>
+                                {showPassword ? <LuEye /> : <FaEyeSlash />}
                             </span>
                         </div>
                         </div>

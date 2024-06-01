@@ -138,13 +138,11 @@ function Home() {
             </div>
             <Link to="/products">
               <div className='seller-design-data'>
-                {/* <Slider {...settings}> */}
                   {seller.length > 0 && seller.map((elem) =>
                     <div className='best-seller-imgeeq' key={elem.id}>
                       <img src={elem.image} alt='' />
                     </div>
                   )}
-                {/* </Slider> */}
               </div>
             </Link>
           </div>
