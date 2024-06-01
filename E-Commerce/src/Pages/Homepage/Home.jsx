@@ -22,7 +22,7 @@ import { useSelector } from 'react-redux';
 import '../../Components/Footer/footer'
 import Footer from '../../Components/Footer/footer';
 import { useDispatch } from 'react-redux';
-import { fetchData } from '../../Redux/products/action';
+import { fetchData} from '../../Redux/products/action';
 import Navbar from '../../Components/Navbar/Navbar';
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -35,6 +35,7 @@ function Home() {
   useEffect(() => {
     dispatch(fetchData()); // Dispatch action to fetch products when component mounts
   }, [dispatch]);
+
 
   // Remaining component code...
 

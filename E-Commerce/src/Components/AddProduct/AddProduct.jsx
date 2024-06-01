@@ -47,6 +47,7 @@ function Addproduct() {
               className='addproduct-input-drp'
               value={data.category}
               onChange={handleChange}
+              required
             >
               <option value='' disabled>Select Category</option>
               <option value="men's clothing">Men's Clothing</option>
@@ -62,6 +63,7 @@ function Addproduct() {
               placeholder=" enter image url"
               value={data.image}
               onChange={handleChange}
+              required
             />
           </div>
           <div className='add-admin-prd-rww'>
@@ -73,6 +75,7 @@ function Addproduct() {
               placeholder="enter title"
               value={data.title}
               onChange={handleChange}
+              required
             />
             <input
               name='brand_namez'
@@ -82,6 +85,7 @@ function Addproduct() {
               placeholder="enter brand_namez"
               value={data.brand_namez}
               onChange={handleChange}
+              required
             />
           </div>
           <div className='add-admin-prd-rww'>
@@ -93,6 +97,7 @@ function Addproduct() {
               placeholder="enter size "
               value={data.plp}
               onChange={handleChange}
+              required
             />
             <input
               name='price'
@@ -102,6 +107,7 @@ function Addproduct() {
               placeholder=" enter price"
               value={data.price}
               onChange={handleChange}
+              required
             />
           </div>
           <div className='add-admin-prd-rww'>
@@ -113,6 +119,7 @@ function Addproduct() {
               placeholder="enter actualPriceText"
               value={data.actualPriceText}
               onChange={handleChange}
+              required
             />
             <input
               name='discount_price_box'
@@ -122,6 +129,7 @@ function Addproduct() {
               placeholder="enter discount_price_box"
               value={data.discount_price_box}
               onChange={handleChange}
+              required
             />
           </div>
           <div className='add-admin-prd-rww'>
@@ -133,6 +141,7 @@ function Addproduct() {
               placeholder="enter discountedPriceText"
               value={data.discountedPriceText}
               onChange={handleChange}
+              required
             />
             <input
               name='description'
@@ -142,6 +151,7 @@ function Addproduct() {
               placeholder="enter description"
               value={data.description}
               onChange={handleChange}
+              required
             />
           </div>
           <button className='addproduct-button' >Submit</button>
