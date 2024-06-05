@@ -13,6 +13,7 @@ const initState = {
 };
 
 function Signup() {
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
   const [formData, setFormData] = useState(initState);
   const navigate = useNavigate();
 
@@ -40,7 +41,7 @@ function Signup() {
     // navigate("/");
 
     try{
-      let res = await fetch(`http://localhost:3000/user`,{
+      let res = await fetch(`${BASE_URL}/user`,{
         method:'POST',
 
         body:JSON.stringify(formData),

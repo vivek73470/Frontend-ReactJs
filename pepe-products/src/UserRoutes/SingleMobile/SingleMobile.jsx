@@ -8,13 +8,14 @@ import Navbar from '../../Components/Header/Header';
 
 function SingleMobile() {
 
+    const BASE_URL = process.env.REACT_APP_BASE_URL;
     const [mobileData, setMobileData] = useState({});
     let { id } = useParams();
 
 
     async function getData() {
         try {
-            let res = await fetch(`http://localhost:3000/mobiles/${id}`)
+            let res = await fetch(`${BASE_URL}/mobiles/${id}`)
             console.log('try', res)
             let data = await res.json();
             setMobileData(data)
@@ -27,7 +28,7 @@ function SingleMobile() {
 
     useEffect(() => {
         getData();
-    },[])
+    },[getData])
 
     return (
         <>

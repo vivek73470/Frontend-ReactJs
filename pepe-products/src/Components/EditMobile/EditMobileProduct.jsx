@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 
 function EditMobileProduct() {
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
     const { id } = useParams();
     const [formData, setFormData] = useState({
       productImgTagSrc: '',
@@ -18,7 +19,7 @@ function EditMobileProduct() {
     async function EditProduct() {
   
       try {
-        let res = await fetch(`http://localhost:3000/mobiles/${id}`, {
+        let res = await fetch(`${BASE_URL}/mobiles/${id}`, {
           method: 'PUT',
   
           body: JSON.stringify(formData),

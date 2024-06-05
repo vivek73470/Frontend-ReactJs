@@ -1,12 +1,13 @@
 import React from 'react'
 
 function Delete() {
+    const BASE_URL = process.env.REACT_APP_BASE_URL;
     const [deleteData, setDeleteData] = React.useState({
         id: ''
     });
 
     async function deleteProduct() {
-        let res = await fetch(`http://localhost:3000/product/${deleteData.id}`, {
+        let res = await fetch(`${BASE_URL}/product/${deleteData.id}`, {
             method: 'DELETE',
 
             headers: {

@@ -5,13 +5,14 @@ import { useNavigate } from 'react-router-dom';
 
 
 function AdminMenProducts() {
+    const BASE_URL = process.env.REACT_APP_BASE_URL;
     const [apiData, setApiData] = useState([]);
     const [showSubLinks, setShowSubLinks] = useState(null);
     const navigate = useNavigate()
 
     async function getData() {
         try {
-            let res = await fetch(`http://localhost:3000/mensdata/`);
+            let res = await fetch(`${BASE_URL}/mensdata/`);
             let data = await res.json();
             setApiData(data);
         }
@@ -26,7 +27,7 @@ function AdminMenProducts() {
 
     async function DeleteProduct(id) {
         try {
-            let res = await fetch(`http://localhost:3000/mensdata/${id}`, {
+            let res = await fetch(`${BASE_URL}/mensdata/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',

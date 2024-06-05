@@ -11,7 +11,7 @@ function PrivateRoute({children}){
         return <Navigate to="/signin"/>;
     }
     else{
-       < Navigate to="/dashboard"/>
+      < Navigate to="/dashboard"/>
     }
 
     return children;

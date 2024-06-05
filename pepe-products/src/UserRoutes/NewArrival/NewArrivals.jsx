@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 
 function NewArrivals() {
+    const BASE_URL = process.env.REACT_APP_BASE_URL;
     const [homeData, setHomeData] = useState([]);
 
     const settings = {
@@ -22,7 +23,7 @@ function NewArrivals() {
 
     async function getData() {
         try {
-            let res = await fetch(`http://localhost:3000/mensdata?_limit=12`);
+            let res = await fetch(`${BASE_URL}/mensdata?_limit=12`);
             let data = await res.json();
             console.log(data)
             setHomeData(data);

@@ -4,6 +4,7 @@ import { useState } from 'react'
 
 
 function Profile() {
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
   const [data, setData] = useState({
     username: '',
     email: '',
@@ -18,7 +19,7 @@ function Profile() {
   useEffect(() => {
     const fetchProfileData = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/user/${userId}`, {
+        const res = await fetch(`${BASE_URL}/user/${userId}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -41,7 +42,7 @@ function Profile() {
   async function editProfile() {
     try {
 
-      let res = await fetch(`http://localhost:3000/user/${userId}`, {
+      let res = await fetch(`${BASE_URL}/user/${userId}`, {
         method: 'PUT',
         body: JSON.stringify(data),
 

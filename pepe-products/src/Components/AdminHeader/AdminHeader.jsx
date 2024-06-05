@@ -3,6 +3,7 @@ import '../AdminHeader/adminheader.css'
 import { Navigate, useNavigate } from 'react-router-dom';
 
 function AdminHeader() {
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
   const navigate =useNavigate();
   const [name, setName] = useState([]);
   const userId = localStorage.getItem('userId');
@@ -10,7 +11,7 @@ function AdminHeader() {
   useEffect(() => {
     const fetchProfileData = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/user/${userId}`, {
+        const res = await fetch(`${BASE_URL}/user/${userId}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',

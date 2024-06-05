@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 function EditProductAdmin() {
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
   const { id } = useParams();
   const [formData, setFormData] = useState({
     productImgTagSrc: '',
@@ -19,7 +20,7 @@ function EditProductAdmin() {
   async function EditProduct() {
 
     try {
-      let res = await fetch(`http://localhost:3000/mensdata/${id}`, {
+      let res = await fetch(`${BASE_URL}/mensdata/${id}`, {
         method: 'PUT',
 
         body: JSON.stringify(formData),

@@ -5,6 +5,7 @@ import Footer from '../../Components/Footer/footer';
 import Navbar from '../../Components/Header/Header';
 
 function SingleMenPage() {
+    const BASE_URL = process.env.REACT_APP_BASE_URL;
     // apidata and selectedImage are state variables managed using the useState hook
 
     // apidata: Stores data retrieved from an API call.
@@ -20,7 +21,7 @@ function SingleMenPage() {
             let a = location.pathname.split("/")[2]
 
             console.log(a)
-            let res = await fetch(`http://localhost:3000/mensdata/${a}`);
+            let res = await fetch(`${BASE_URL}/mensdata/${a}`);
             let data = await res.json();
 
             // You are fetching data from an API endpoint. Once the data is received (after converting it to JSON format),
@@ -35,7 +36,7 @@ function SingleMenPage() {
 
     useEffect(() => {
         singledata();
-    }, []);
+    }, [singledata]);
 
     // hook monitors changes in the apidata state. When apidata changes, 
     // it updates the selectedImage state with the first image's URL from the fetched product data.

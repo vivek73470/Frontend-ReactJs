@@ -1,26 +1,49 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../SignIn/sign.css';
 import LoginImage from '../../Assets/login image.webp';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Components/Context/AuthContext';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { auth, provider } from '../../firebase.config'
+import { signInWithPopup } from 'firebase/auth'
+import Dashboard from '../../Components/Dashboard/Dashboard';
 
 
 const SignIn = () => {
-  const { toggleAuth } = React.useContext(AuthContext);
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
   const initState = {
     email: '',
     password: ''
   };
 
   const [formData, setFormData] = useState(initState);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [userEmail, setUserEmail] = useState('');
+  const { toggleAuth } = React.useContext(AuthContext);
+
   const navigate = useNavigate()
+
+  const handleClick = () => {
+    signInWithGoogle();
+  };
+
+  const signInWithGoogle = async () => {
+    try {
+      const { user } = await signInWithPopup(auth, provider);
+      setUserEmail(user.email);
+      localStorage.setItem('userId', user.email);
+      setIsAuthenticated(true);
+      navigate(`/dashboard`); // Navigate to the dashboard after setting isAuthenticated
+    } catch (error) {
+      console.error("Google sign-in error:", error);
+    }
+  };
+  
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-
       [e.target.name]: e.target.value
     });
   };
@@ -28,20 +51,19 @@ const SignIn = () => {
   async function LoginToDashboard() {
     try {
       let isUserFound = false;
-      let res = await fetch(`http://localhost:3000/user`, {
+      let res = await fetch(`${BASE_URL}/user`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
         },
       })
       let users = await res.json();
-
-      // Check if provided credentials match any user data
       users.forEach((user) => {
         if (user.email === formData.email && user.password === formData.password) {
           isUserFound = true;
           toggleAuth();
-          localStorage.setItem('userId', user.id)
+          localStorage.setItem('userId', user.id);
+             setIsAuthenticated(true);
           navigate(`/dashboard`);
           toast("Login Successfully!");
 
@@ -54,13 +76,13 @@ const SignIn = () => {
   }
   const handleSubmit = (e) => {
     e.preventDefault(e);
-  
+
   };
 
 
   return (
     <>
-     
+
       <div className='sign-incard'>
         <div className='sign-incard-left-side'>
           <div>
@@ -114,12 +136,14 @@ const SignIn = () => {
                 <button id='btn-frm' onClick={() => LoginToDashboard()}>Submit</button>
               </div>
             </form>
+           
+            {!isAuthenticated && <button onClick={handleClick}>Sign In with Google</button>}
           </div>
         </div>
- 
+
       </div>
-     
-     
+
+
     </>
   );
 };

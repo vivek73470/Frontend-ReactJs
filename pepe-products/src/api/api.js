@@ -1,13 +1,14 @@
 
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 // mobile cover api
-export const getData = async () => {
+export const getData=async()=> {
     try {
 
-        let res = await fetch(`server-bice-three.vercel.app
-        /mobiles/`);
+        let res = await fetch(`${BASE_URL}/mobiles/`);
         let data = await res.json();
         return data
-    }
+        }
     catch (err) {
         console.log(err);
     }
@@ -15,12 +16,11 @@ export const getData = async () => {
 
 // women products
 
-export const getWomenData = async () => {
+ export const  getWomenData =async() =>{
     try {
-        let res = await fetch(`server-bice-three.vercel.app
-        /womensdata/`);
+        let res = await fetch(`${BASE_URL}/womensdata/`);
         let data = await res.json();
-        return data
+      return data
     }
     catch (err) {
         console.log(err);
@@ -28,12 +28,11 @@ export const getWomenData = async () => {
 }
 
 // mens products
-export const getMenData = async () => {
+export const getMenData =async()=> {
     try {
-        let res = await fetch(`server-bice-three.vercel.app
-        /mensdata/`);
+        let res = await fetch(`${BASE_URL}/mensdata/`);
         let data = await res.json();
-        return data
+       return data
     }
     catch (err) {
         console.log(err);

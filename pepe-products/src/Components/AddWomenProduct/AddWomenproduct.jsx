@@ -2,6 +2,7 @@ import React from 'react'
 import '../../css/adminaddprod.css'
 
 function AddWomenproduct() {
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
     const [data, setData] = React.useState({
         // id: '',
         productImgTagSrc: '',
@@ -14,7 +15,7 @@ function AddWomenproduct() {
       })
     
       async function addproduct() {
-        let res = await fetch(`http://localhost:3000/womensdata`, {
+        let res = await fetch(`${BASE_URL}/womensdata`, {
           method: 'POST',
     
           body: JSON.stringify(data),

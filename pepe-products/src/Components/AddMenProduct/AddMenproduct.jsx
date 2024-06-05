@@ -2,6 +2,7 @@ import React from 'react'
 import '../../css/adminaddprod.css'
 
 function Addproduct() {
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
   const [data, setData] = React.useState({
     productImgTagSrc: '',
     plp: '',
@@ -13,8 +14,7 @@ function Addproduct() {
   })
 
   async function addproduct() {
-    let res = await fetch(`server-bice-three.vercel.app
-    /mensdata/`, {
+    let res = await fetch(`${BASE_URL}/mensdata/`, {
       method: 'POST',
 
       body: JSON.stringify(data),

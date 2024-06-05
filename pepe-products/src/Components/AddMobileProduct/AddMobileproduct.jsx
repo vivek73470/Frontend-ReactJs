@@ -2,6 +2,7 @@ import React from 'react'
 import '../../css/adminaddprod.css'
 
 function AddMobileproduct() {
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
     const [data, setData] = React.useState({
         // id: '',
         productImgTagSrc: '',
@@ -13,7 +14,7 @@ function AddMobileproduct() {
       })
     
       async function addproduct() {
-        let res = await fetch(`http://localhost:3000/mobiles`, {
+        let res = await fetch(`${BASE_URL}/mobiles`, {
           method: 'POST',
     
           body: JSON.stringify(data),

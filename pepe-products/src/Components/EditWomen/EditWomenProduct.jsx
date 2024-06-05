@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 
 function EditWomenProduct() {
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
   const { id } = useParams();
   const [formData, setFormData] = useState({
     productImgTagSrc: '',
@@ -18,7 +19,7 @@ function EditWomenProduct() {
   async function EditProduct() {
 
     try {
-      let res = await fetch(`http://localhost:3000/womensdata/${id}`, {
+      let res = await fetch(`${BASE_URL}/womensdata/${id}`, {
         method: 'PUT',
 
         body: JSON.stringify(formData),
