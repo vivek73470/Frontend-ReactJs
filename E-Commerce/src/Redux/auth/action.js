@@ -1,7 +1,12 @@
 // import { useDispatch } from "react-redux";
 // import { type } from "@testing-library/user-event/dist/type";
 import axios from "axios";
+import { auth, provider } from '../../firebase/firebase.config'
+import { signInWithPopup } from 'firebase/auth'
 
+export const SIGNIN_GOOGLE_REQUEST = 'SIGNIN_GOOGLE_REQUEST';
+export const SIGNIN_GOOGLE_SUCCESS = 'SIGNIN_GOOGLE_SUCCESS';
+export const SIGNIN_GOOGLE_FAILURE = 'SIGNIN_GOOGLE_FAILURE';
 
 export const SIGNIN_REQUEST = 'SIGNIN_REQUEST';
 export const SIGNIN_SUCCESS = 'SIGNIN_SUCCESS';
@@ -28,6 +33,37 @@ export const CHANGGE_PASS_SUCCESS = 'CHANGGE_PASS_SUCCESS';
 export const CHANGGE_PASS_FAILURE = 'CHANGGE_PASS_FAILURE';
 
 const BASE_URL = process.env.REACT_APP_SERVER_URL;
+
+const SignInGoogleRequest = () => {
+    return {
+        type: SIGNIN_REQUEST
+    }
+}
+const SignInGoogleSuccess = () => {
+    return {
+        type: SIGNIN_SUCCESS,
+    }
+}
+const SignInGoogleFailure = () => {
+    return {
+        type: SIGNIN_FAILURE
+    }
+}
+
+export const signInGoogle = () => async (dispatch) => {
+    try {
+        dispatch(SignInGoogleRequest());
+        const { user } = await signInWithPopup(auth, provider);
+        localStorage.setItem('userId', user.email);
+        dispatch(SignInGoogleSuccess())
+        return {status: true}
+    }
+    catch (error) {
+        dispatch(SignInGoogleFailure())
+        return {status:false}
+    }
+
+}
 
 const SignInRequest = () => {
     return {

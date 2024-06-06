@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import './login.css'
-import { signIn } from '../../Redux/auth/action'
+import { signIn, signInGoogle } from '../../Redux/auth/action'
 import { useNavigate } from 'react-router-dom';
 import slider from '../../Assets/Slide.png'
 import { Link } from 'react-router-dom';
@@ -65,7 +65,15 @@ function Login() {
             }
         }
     };
-
+    const handleSignInGoogle = async () => {
+        const response = await dispatch(signInGoogle());
+        if (response.status) {
+            navigate('/admin');
+        }
+        else {
+            alert("error while signIn with Google")
+        }
+    }
     return (
 
         <>
@@ -105,7 +113,7 @@ function Login() {
                                 />
                                 <span className='design-eyetoggle' onClick={() => eyeToggle()}>
                                     {showPassword ? <LuEye /> : <FaEyeSlash />}
-                                   
+
                                 </span>
                             </div>
                             {errors.password && <span className="error">{errors.password}</span>}
@@ -121,6 +129,9 @@ function Login() {
                         <Link to='/forgot-password'>
                             <span className='forget-pass'>Forgot password ?</span>
                         </Link>
+                    </div>
+                    <div>
+                        <button onClick={handleSignInGoogle}>Sign In with Google</button>
                     </div>
                 </div>
 
