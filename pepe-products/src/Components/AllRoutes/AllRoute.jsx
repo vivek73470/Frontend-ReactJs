@@ -29,6 +29,7 @@ import AddMobileproduct from '../AddMobileProduct/AddMobileproduct';
 import EditWomenProduct from '../EditWomen/EditWomenProduct';
 import EditMobileProduct from '../EditMobile/EditMobileProduct';
 import NotFound from '../NotFoundPage/NotFound'; 
+import Phone from '../../UserRoutes/Phone/phone';
 
 
 
@@ -48,6 +49,7 @@ function AllRoute() {
         <Route path={'/contact-us'} element={<Contactus />}/>
         <Route path={'/signin'} element={<SignIn />}/>
         <Route path={'/signup'} element={<Signup />}/>
+        <Route path={'/phone'} element={<Phone />}/>
         <Route path={'/footer'} element={<Footer />}/>
 
         <Route path={'/womencloths'} element={<WomenPage />}/>

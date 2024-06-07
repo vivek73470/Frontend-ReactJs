@@ -19,7 +19,6 @@ const SignIn = () => {
 
   const [formData, setFormData] = useState(initState);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [userEmail, setUserEmail] = useState('');
   const { toggleAuth } = React.useContext(AuthContext);
 
   const navigate = useNavigate()
@@ -31,7 +30,6 @@ const SignIn = () => {
   const signInWithGoogle = async () => {
     try {
       const { user } = await signInWithPopup(auth, provider);
-      setUserEmail(user.email);
       localStorage.setItem('userId', user.email);
       setIsAuthenticated(true);
       navigate(`/dashboard`); // Navigate to the dashboard after setting isAuthenticated
@@ -138,6 +136,9 @@ const SignIn = () => {
             </form>
            
             {!isAuthenticated && <button onClick={handleClick}>Sign In with Google</button>}
+<Link to='/phone'>
+            <span>Login with phone number </span>
+</Link>
           </div>
         </div>
 

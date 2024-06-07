@@ -24,21 +24,10 @@ function Signup() {
       [e.target.name]: e.target.value
 
     }));
-
-
   }
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-
-    // Save form data to localStorage
-    // let users = JSON.parse(localStorage.getItem('users')) || [];
-    // users.push(formData);
-    // localStorage.setItem('users', JSON.stringify(users));
-
-    // Clear form fields after submission
-    // setFormData(initState);
-    // navigate("/");
 
     try{
       let res = await fetch(`${BASE_URL}/user`,{
