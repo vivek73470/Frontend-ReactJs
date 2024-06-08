@@ -4,8 +4,8 @@ import Profile from '../Profile/Profile'
 import { MdOutlineShoppingCart } from "react-icons/md";
 import CartCounter from '../CartCounter/CartCounter';
 import { Link, useNavigate } from 'react-router-dom';
-import { CiSearch } from "react-icons/ci";
 import { RxHamburgerMenu } from "react-icons/rx";
+import Search from '../SearchBar/Search';
 
 
 
@@ -16,14 +16,11 @@ function Navbar() {
 
   const userId = localStorage.getItem('userId')
  
-
-
   const handleLogout = () => {
     localStorage.removeItem('userId'); 
     navigate('/login')
 
    
-
   };
   return (
     <>
@@ -44,13 +41,7 @@ function Navbar() {
             </Link>
           </div>
           <div className='navbar-cart-parent'>
-            <div class="your-events-searchstyle">
-              <span className='span-search-header'>
-                < CiSearch />
-                <input type="search" class="your-events-searchbox-head" placeholder="What are you looking for" />
-              </span>
-
-            </div>
+        <Search/>
             <div className='navbar-cart'>
               <Link to='/orders'>
                 <span className='header-registr-yr'>Your <br />Orders</span>

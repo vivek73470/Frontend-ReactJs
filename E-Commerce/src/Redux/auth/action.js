@@ -2,11 +2,12 @@
 // import { type } from "@testing-library/user-event/dist/type";
 import axios from "axios";
 import { auth, provider } from '../../firebase/firebase.config'
-import { signInWithPopup } from 'firebase/auth'
+import { signInWithPopup} from 'firebase/auth'
 
 export const SIGNIN_GOOGLE_REQUEST = 'SIGNIN_GOOGLE_REQUEST';
 export const SIGNIN_GOOGLE_SUCCESS = 'SIGNIN_GOOGLE_SUCCESS';
 export const SIGNIN_GOOGLE_FAILURE = 'SIGNIN_GOOGLE_FAILURE';
+
 
 export const SIGNIN_REQUEST = 'SIGNIN_REQUEST';
 export const SIGNIN_SUCCESS = 'SIGNIN_SUCCESS';
@@ -34,6 +35,8 @@ export const CHANGGE_PASS_FAILURE = 'CHANGGE_PASS_FAILURE';
 
 const BASE_URL = process.env.REACT_APP_SERVER_URL;
 
+
+
 const SignInGoogleRequest = () => {
     return {
         type: SIGNIN_REQUEST
@@ -49,7 +52,6 @@ const SignInGoogleFailure = () => {
         type: SIGNIN_FAILURE
     }
 }
-
 export const signInGoogle = () => async (dispatch) => {
     try {
         dispatch(SignInGoogleRequest());
@@ -64,6 +66,8 @@ export const signInGoogle = () => async (dispatch) => {
     }
 
 }
+
+
 
 const SignInRequest = () => {
     return {

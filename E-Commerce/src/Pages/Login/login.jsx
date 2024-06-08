@@ -4,6 +4,7 @@ import './login.css'
 import { signIn, signInGoogle } from '../../Redux/auth/action'
 import { useNavigate } from 'react-router-dom';
 import slider from '../../Assets/Slide.png'
+import google from '../../Assets/Google.png'
 import { Link } from 'react-router-dom';
 import Footer from '../../Components/Footer/footer'
 import Navbar from '../../Components/Navbar/Navbar';
@@ -11,6 +12,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaEyeSlash } from "react-icons/fa6";
 import { LuEye } from "react-icons/lu";
+
 
 
 function Login() {
@@ -74,6 +76,7 @@ function Login() {
             alert("error while signIn with Google")
         }
     }
+ 
     return (
 
         <>
@@ -130,8 +133,11 @@ function Login() {
                             <span className='forget-pass'>Forgot password ?</span>
                         </Link>
                     </div>
-                    <div>
-                        <button onClick={handleSignInGoogle}>Sign In with Google</button>
+                    <div className='login-with-google' onClick={handleSignInGoogle}>
+                        <div className='google-width-sett'>
+                        <img src={google} alt="google" />
+                        </div>
+                        <span>Sign In with Google</span>
                     </div>
                 </div>
 

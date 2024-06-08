@@ -7,19 +7,18 @@
 
 }
 .product-screen-wrapper{
-    padding: 80px 20px;
+    padding: 18px 20px;
 }
 .product-screen-wrapper1st{
     display: flex;
-    display: flex;
-    border-radius: 14px;
+    border-radius: 6px;
     box-shadow:
     1.5px 3.5px 8px rgba(0, 0, 0, 0.036),
     4.9px 11.6px 26.8px rgba(0, 0, 0, 0.054),
     22px 52px 120px rgba(0, 0, 0, 0.09)
   ;
     background: #fff;
-    padding: 40px 30px;
+    padding: 60px 30px;
 }
 
 .product-listing{
@@ -153,7 +152,7 @@ color: #fff;
         row-gap: 30px;
     }
     .product-screen-wrapper {
-        padding: 50px 20px;
+        padding: 2px 20px;
     }
 
   }
@@ -188,9 +187,12 @@ color: #fff;
   }
   @media screen and (max-width:550px){
     .product-screen-wrapper {
-        padding: 20px 20px;
+        padding: 0px 20px;
     }
-  }
-  @media screen and (max-width:290px){
- 
+    .product-screen-wrapper1st {
+        padding: 40px 30px;
+    }
+    .product-screen {
+        margin-top: 60px;
+    }
   }

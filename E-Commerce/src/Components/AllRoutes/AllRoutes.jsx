@@ -53,7 +53,7 @@ function AllRoutes() {
           <AuthWrapper>
             <Admin />
           </AuthWrapper>}>
-              <Route index element={<Dashboard />} />
+          <Route index element={<Dashboard />} />
           <Route path='dashboard' element={<Dashboard />} />
           <Route path='sidebar' element={<Sidebar />} />
           <Route path='header' element={<AdminHeader />} />
