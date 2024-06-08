@@ -15,7 +15,7 @@
 }
 .cartitm-bdr-ims{
     width: 335px;
-    margin: auto;
+    /* margin: auto; */
     height: 370px;
     border-right: 1px solid gray;
 }

@@ -6,7 +6,7 @@
 }
 
 .cartitm-bdr-ims {
-    margin: auto;
+    /* margin: auto; */
     width: 335px;
     height: 370px;
     border-right: 1px solid gray;

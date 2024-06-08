@@ -42,9 +42,11 @@ const SignInGoogleRequest = () => {
         type: SIGNIN_REQUEST
     }
 }
-const SignInGoogleSuccess = () => {
+const SignInGoogleSuccess = (payload) => {
+    console.log('googl payload',payload)
     return {
         type: SIGNIN_SUCCESS,
+        payload
     }
 }
 const SignInGoogleFailure = () => {
@@ -56,8 +58,9 @@ export const signInGoogle = () => async (dispatch) => {
     try {
         dispatch(SignInGoogleRequest());
         const { user } = await signInWithPopup(auth, provider);
+        console.log('google',user.displayName)
         localStorage.setItem('userId', user.email);
-        dispatch(SignInGoogleSuccess())
+        dispatch(SignInGoogleSuccess(user.displayName))
         return {status: true}
     }
     catch (error) {
