@@ -18,6 +18,7 @@ function BestSeller() {
         autoplaySpeed: 2000,
         cssEase: "linear"
       };
+      
     const [homeData, setHomeData] = useState([]);
 
     async function getData() {
