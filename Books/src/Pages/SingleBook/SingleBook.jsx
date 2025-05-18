@@ -40,5 +40,5 @@ useEffect(()=>{
     )
 }
 
-//Search params :anything after ?
+//query params :anything after ?
 //params :anything before ?
